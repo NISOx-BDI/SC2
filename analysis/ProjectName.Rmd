@@ -1,0 +1,45 @@
+---
+title: "ProjectName"
+author: "Your Name"
+date: "11 Jul 2017"
+output: html_document
+---
+
+## Install R Markdown 
+```{r Install R Markdown}
+# install.packages("rmarkdown")
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Install required packages 
+```{r install required packages}
+# install.packages("ggplot2")
+# install.packages("cowplot")
+```
+
+## Load libraries 
+```{r Load required libraries, message=FALSE}
+library(ggplot2)
+library(cowplot)
+```
+
+## Main variables
+```{r Main variables}
+N=50 # Number of subjects
+PATH_HOME = "/home/simon"
+PATH_PROJ = file.path(PATH_HOME, "Dropbox", "Data", "ProjectName")  # Project path
+PATH_DATA = file.path(PATH_PROJ, 'data') # path where time series data is stored
+```
+
+## Specific analysis xy, describe!
+```{r Analysis xy, fig.height=3, fig.width=3}
+d=data.frame(a=rnorm(20,1), c=as.factor(c(rep(1,10), rep(2,10))))
+
+ggplot(d, aes(x=c, y=a, fill=NULL)) + geom_violin() + geom_boxplot(width=0.4) +
+   geom_point(shape=1, color="gray70", size=3, position = position_jitter(width = 0.5, height = 0.1))
+
+```
+
