@@ -1,6 +1,6 @@
 # Project template
 
-This is a data management templete for github used by the *Neuroimaging Statistics Oxford (NISOx)* reserach group. This README file should cointain the most relevant information, and also a link to the publication. A github markdown cheat sheet is available [here] (https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
+This is a data management templete for github used by the *Neuroimaging Statistics Oxford (NISOx)* reserach group. This README file should cointain the most relevant information, and also a link to the publication. A github markdown cheat sheet is available [here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
 ## Folder structure
 There should be a general consensus on the folder structure, but extensions and adjustments are are possible.
@@ -36,5 +36,5 @@ There are different types of notebooks, and some are directly rendered by github
 
 ## Further readings
 
-- (Cookiecutter Data Science)[https://drivendata.github.io/cookiecutter-data-science/]
-- (Good Enough Practices for Scientific Computing)[https://swcarpentry.github.io/good-enough-practices-in-scientific-computing/#project-organization]
+- [Cookiecutter Data Science](https://drivendata.github.io/cookiecutter-data-science/)
+- [Good Enough Practices for Scientific Computing](https://swcarpentry.github.io/good-enough-practices-in-scientific-computing/#project-organization)
