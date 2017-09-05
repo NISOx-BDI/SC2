@@ -1,9 +1,12 @@
 # Project template
 
-This is a data management templete for github used by the *Neuroimaging Statistics Oxford (NISOx)* reserach group. This README file should cointain the most relevant information, and also a link to the publication. A github markdown cheat sheet is available [here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+This is a data management templete for github used by the *Neuroimaging Statistics Oxford (NISOx)* reserach group. This README file should cointain the most relevant information, and also a link to the publication.
+
+## Markdown
+A Github markdown cheat sheet is available from [here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 
 ## Folder structure
-There should be a general consensus on the folder structure, but extensions and adjustments are are possible.
+There should be a general consensus on the folder structure, but extensions and adjustments are are possible. If a dataset that is analyzed is open, it should contain a reference to the source, in the README.md
 
 	.
 	|-- CITATION
@@ -11,27 +14,36 @@ There should be a general consensus on the folder structure, but extensions and 
 	|-- LICENSE
 	|-- requirements.txt
 	|-- data
-	|   -- birds_count_table.csv
+	|   -- responde_time.csv
         |   -- raw
         |   -- processed
 	|-- doc
-	|   -- notebook.md
-	|   -- manuscript.md
-	|   -- changelog.txt
+	|   -- clincal_scores.doc
 	|-- results
+	|   -- 10_node_network
+	    |  -- subj_01_node01.txt
+	    |  -- subj_01_node02.txt
 	|   -- summarized_results.csv
+	|   -- ProjectName.Rmd
+	|-- figures
+	    -- fig1.png
+	    -- fig2.png
+	    -- time-series_ID057.png
 	|-- src
-	|   -- sightings_analysis.py
-	|   -- runall.py
+	|   -- specific_analysis.py
 
 
 The `data` folder can have subfolder for different stages of processing, for example `raw`, `processed`.
 
 ## Notebooks
 
-There are different types of notebooks, and some are directly rendered by github. For R Notebooks, a `htmlpreview` prefix to the URL can be used to render the notebook, for example
+There are different types of notebooks, and some are directly rendered by Github.
+### R Notebooks
 
-- [R Notebook](http://htmlpreview.github.com/?https://github.com/schw4b/dm-template/blob/master/analysis/ProjectName.html)
+For R Notebooks, [RawGit](https://rawgit.com/) serves raw html files directly from Github. To get an URL enter the link to the html files created by `knit`. Here is an example:
+
+- [R Notebook](https://rawgit.com/NISOx-BDI/dm-template/master/results/ProjectName.html)
+- [RawGit](https://rawgit.com/) provides a URL for development, use this so new changes you push will be reflected within minutes.
 
 
 ## Further readings
