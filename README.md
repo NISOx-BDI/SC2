@@ -47,7 +47,7 @@ Mandatory.  The lab default license for the data shared is CC-BY**link**, though
 
 ## `requirements.txt`
 
-Mandatory.  List software tools and packages that the repository depends on.  If using Python, use pip syntax.
+Mandatory.  List software tools and packages that the repository depends on.  If using Python, use [pip syntax](https://pip.pypa.io/en/stable/user_guide/#requirements-files).
 
 ## `data` directory
 
