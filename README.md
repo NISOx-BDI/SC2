@@ -39,11 +39,11 @@ Mandatory.  A description of the repository, its citation, and information to he
 
 ## `CITATION`
 
-Mandatory.  Provide informaton on how users of this shared repository should reference the the work.  It may be the bibliographic referene of the paper that this repository supports, and/or data or software descriptor paper for the work.
+Mandatory.  Provide information on how users of this shared repository should reference the the work. It may be the bibliographic reference of the paper that this repository supports, and/or data or software descriptor paper for the work.
 
 ## `LICENSE`
 
-Mandatory.  The lab default license for the data shared is CC-BY**link**, though ensure that the source of the data is compatible with this.  The lab default licnese for any scripts and code is MIT ***link**, though pay special care that if code is derived from GPL-licensed code then the license must be GPL.
+Mandatory.  The lab default license for the data shared is [CC-BY](https://creativecommons.org/licenses/by/3.0/), though ensure that the source of the data is compatible with this.  The lab default license for any scripts and code is [MIT](https://opensource.org/licenses/MIT), though pay special care that if code is derived from GPL-licensed code then the license must be GPL.
 
 ## `requirements.txt`
 
@@ -51,7 +51,7 @@ Mandatory.  List software tools and packages that the repository depends on.  If
 
 ## `data` directory
 
-Mandatory.  Provide all data needed to produce the outputs of the repository, when possible. If original data is impractially large, include derived datasets of manageable size.
+Mandatory.  Provide all data needed to produce the outputs of the repository, when possible. If original data is impractically large, include derived datasets of manageable size.
 
 Organisation.  It is recommended that neuroimaging data should be represented in BIDS format.  Consider a "raw" folder that includes unprocessed versions of the folder.
 
@@ -64,7 +64,7 @@ Organisation.  It is recommended that neuroimaging data should be represented in
 ## `src` directory
 
 
-The `data` folder can have subfolder for different stages of processing, for example `raw`, `processed`.
+The `data` folder can have subfolders for different stages of processing, for example `raw`, `processed`.
 
 ## Notebooks
 
