@@ -57,8 +57,6 @@ Organisation.  Simple projects may not need any subfolders, while large [....]
 
 It is recommended that neuroimaging data should be represented in BIDS format.  Consider a "raw" folder that includes unprocessed versions of your data.
 
-## `doc` directory
-
 ## `results` directory
 
 Mandatory.  Summary data, derived data, scripts, notebooks, figures and tables.  The data in this directory is that needed to produce the results reported in paper text, tables and figures; the notebooks or scripts are those used to create said results.
