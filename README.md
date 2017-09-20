@@ -51,20 +51,33 @@ Mandatory.  List software tools and packages that the repository depends on.  If
 
 ## `data` directory
 
-Mandatory.  Provide all data needed to produce the outputs of the repository, when possible. If original data is impractically large, include derived datasets of manageable size.
+Mandatory.  Original source data and preprocessed data.  Summary data and derived data directly used to produces should `results` directory.
 
-Organisation.  It is recommended that neuroimaging data should be represented in BIDS format.  Consider a "raw" folder that includes unprocessed versions of the folder.
+Organisation.  Simple projects may not need any subfolders, while large [....]
+
+It is recommended that neuroimaging data should be represented in BIDS format.  Consider a "raw" folder that includes unprocessed versions of your data.
 
 ## `doc` directory
 
 ## `results` directory
 
-## `figures` directory
+Mandatory.  Summary data, derived data, scripts, notebooks, figures and tables.  The data in this directory is that needed to produce the results reported in paper text, tables and figures; the notebooks or scripts are those used to create said results.
+
+General functions and scripts used to pre-process and generate derived data should be in the `src` directory.
+
+Be sure to clearly name tables and figures.  Please use the following conventions:
+
+ * `Fig_<num>_<label>.<ext>`
+ * `Tab_<num>_<label>.<ext>`
+
+For figures the best format is PDF, followed by PNG or TIFF.  Avoid JPEG at all costs.
+
+For tables, always provide a CSV or TSV with column headers; if possible use full precision (i.e. avoid saving rounded values that may have been used for typsetting a table for publication).
 
 ## `src` directory
 
+Mandatory. Library functions and scripts used to pre-process and generate derived data.  Scripts that directly generate results (tables or figures) should be in `results`.
 
-The `data` folder can have subfolders for different stages of processing, for example `raw`, `processed`.
 
 ## Notebooks
 
