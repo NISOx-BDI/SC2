@@ -33,6 +33,37 @@ There should be a general consensus on the folder structure, but extensions and 
 	|   -- specific_analysis.py
 
 
+## README.md
+
+Mandatory.  A description of the repository, its citation, and information to help a user to get started with contents as quickly as possible.
+
+## `CITATION`
+
+Mandatory.  Provide informaton on how users of this shared repository should reference the the work.  It may be the bibliographic referene of the paper that this repository supports, and/or data or software descriptor paper for the work.
+
+## `LICENSE`
+
+Mandatory.  The lab default license for the data shared is CC-BY**link**, though ensure that the source of the data is compatible with this.  The lab default licnese for any scripts and code is MIT ***link**, though pay special care that if code is derived from GPL-licensed code then the license must be GPL.
+
+## `requirements.txt`
+
+Mandatory.  List software tools and packages that the repository depends on.  If using Python, use [pip syntax](https://pip.pypa.io/en/stable/user_guide/#requirements-files).
+
+## `data` directory
+
+Mandatory.  Provide all data needed to produce the outputs of the repository, when possible. If original data is impractially large, include derived datasets of manageable size.
+
+Organisation.  It is recommended that neuroimaging data should be represented in BIDS format.  Consider a "raw" folder that includes unprocessed versions of the folder.
+
+## `doc` directory
+
+## `results` directory
+
+## `figures` directory
+
+## `src` directory
+
+
 The `data` folder can have subfolder for different stages of processing, for example `raw`, `processed`.
 
 ## Notebooks
