@@ -2,6 +2,17 @@
 
 This is a data management templete for github used by the *Neuroimaging Statistics Oxford (NISOx)* reserach group. This README file should cointain the most relevant information, and also a link to the publication.
 
+# Getting started
+To get a copy of this template for your own project, please use GitHub import utility available at: [https://github.com/new/import](https://github.com/new/import), and:
+ - under "old repository’s clone URL" enter https://github.com/NISOx-BDI/dm-template.git
+ - Pick a Name for your project
+ - Click "Begin Import"
+ 
+This will ensure that your project is independent from this template repository (rather than being a fork).
+
+## Markdown
+A Github markdown cheat sheet is available from [here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
+
 ## Markdown
 A Github markdown cheat sheet is available from [here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 
