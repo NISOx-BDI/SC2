@@ -13,9 +13,6 @@ This will ensure that your project is independent from this template repository 
 ## Markdown
 A Github markdown cheat sheet is available from [here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 
-## Markdown
-A Github markdown cheat sheet is available from [here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
-
 ## Folder structure
 There should be a general consensus on the folder structure, but extensions and adjustments are are possible. If a dataset that is analyzed is open, it should contain a reference to the source, in the README.md
 
