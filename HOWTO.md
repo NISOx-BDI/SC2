@@ -25,8 +25,6 @@ There should be a general consensus on the folder structure, but extensions and 
 	|   -- responde_time.csv
         |   -- raw
         |   -- processed
-	|-- doc
-	|   -- clincal_scores.doc
 	|-- results
 	|   -- 10_node_network
 	    |  -- subj_01_node01.txt
