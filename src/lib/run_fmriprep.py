@@ -11,7 +11,7 @@ def run_fmriprep(raw_dir, out_dir, template_script, packages_dir, fmriprep_singu
 	#	packages_dir:			Directory containing all the modules on the Linux HPC. i.e. the directory where 'module avail' packages are stored
 	#	fmriprep_singularity_image:	The version of fmriprep that will be used (installed as a .simg file)
 	#	FS_license:			FreeSurfer license.txt file required for fmriprep
-	#	subject_ids:			(optional) a vector of subject ids specifying the subjects fmriprep will be ran on (i.e. [01, 02] to run fmriprep on sub-01 and sub-02)
+	#	subject_ids:			(optional) a vector of subject ids specifying the subjects fmriprep will be run on (i.e. [01, 02] to run fmriprep on sub-01 and sub-02)
 	# Outputs:
 	#	out_dir/scripts/ :		Subject specific fmriprep scripts will be stored here
 	#	out_dir/ds???_sub-??_work/ :	Directory containing the intermediate files fmriprep creates for the subject
@@ -30,9 +30,14 @@ def run_fmriprep(raw_dir, out_dir, template_script, packages_dir, fmriprep_singu
 
 
 	# Obtain the list of subjects from the raw data directory
-	sub_dirs = glob.glob(os.path.join(raw_dir, 'sub-*'))
-	subs     = [os.path.basename(w) for w in sub_dirs]
-	
+	if subject_ids == 0:
+		sub_dirs = glob.glob(os.path.join(raw_dir, 'sub-*'))
+		else
+		sub_dirs = []
+		for i in subjects_ids:
+			sub_dirs.append(os.path.join(raw_dir, 'sub-' + s))
+	subs = [os.path.basename(w) for w in sub_dirs]
+			
 	# Obtain the study id from the output dir name
 	study = os.path.basename(out_dir)
 	

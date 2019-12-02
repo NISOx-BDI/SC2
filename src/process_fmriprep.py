@@ -29,6 +29,8 @@ ds001_processed_dir = os.path.join(processed_data_dir,'ds001')
 ds109_processed_dir = os.path.join(processed_data_dir,'ds109')
 ds120_processed_dir = os.path.join(processed_data_dir,'ds120')
 
+# Specifying the subjects to include for ds109 and ds120
+
 # Run fmriprep on all ds001 subjects
 run_fmriprep(ds001_raw_dir, ds001_processed_dir, ds001_fmriprep_template, packages_dir, fmriprep_singularity_image, FS_license)
 
