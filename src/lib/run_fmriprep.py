@@ -1,4 +1,4 @@
-import os, glob, re, string
+import os, glob, re, string, stat
 
 def run_fmriprep(raw_dir, out_dir, template_script, packages_dir, fmriprep_singularity_image, FS_license):	
 	# Make the directory where all fmriprep scripts and outputs will be stored
@@ -6,7 +6,7 @@ def run_fmriprep(raw_dir, out_dir, template_script, packages_dir, fmriprep_singu
     		os.mkdir(out_dir)
 
 	# Directory where subject-level fmriprep scripts will be made
-	scripts_dir = os.path.join(out_dir, os.pardir, 'scripts')
+	scripts_dir = os.path.join(out_dir, 'scripts')
 
 	if not os.path.isdir(scripts_dir):
 		os.mkdir(scripts_dir)
