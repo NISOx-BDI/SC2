@@ -7,7 +7,7 @@ packages_dir = '/well/win/software/packages'
 # Specifiy the home directory 
 home_dir = '/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2'
 # Specify the location of the fmriprep singularity image
-fmriprep_singularity_image = '/well/nichols/users/bas627/fmriprep/fmriprep-1.5.1rc1.simg'
+fmriprep_singularity_image = '/well/nichols/users/bas627/fmriprep/fmriprep-1.5.1.simg'
 # Specifiy the freesurfer license file, needed to run fmriprep
 FS_license = os.path.join(home_dir,'license.txt')
 
