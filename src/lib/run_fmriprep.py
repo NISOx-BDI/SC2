@@ -32,12 +32,12 @@ def run_fmriprep(raw_dir, out_dir, template_script, packages_dir, fmriprep_singu
 	# Obtain the list of subjects from the raw data directory
 	if subject_ids == 0:
 		sub_dirs = glob.glob(os.path.join(raw_dir, 'sub-*'))
-		else
+	else:
 		sub_dirs = []
-		for i in subjects_ids:
-			sub_dirs.append(os.path.join(raw_dir, 'sub-' + s))
+		for i in subject_ids:
+			sub_dirs.append(os.path.join(raw_dir, 'sub-' + i))
 	subs = [os.path.basename(w) for w in sub_dirs]
-			
+	print(subs)		
 	# Obtain the study id from the output dir name
 	study = os.path.basename(out_dir)
 	

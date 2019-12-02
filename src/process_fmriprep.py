@@ -31,10 +31,10 @@ ds120_processed_dir = os.path.join(processed_data_dir,'ds120')
 
 # Specifying the subjects to include for ds109 and ds120
 ds109_subject_ids = [1, 2, 3, 8, 9, 10, 11, 14, 15, 17, 18, 21, 22, 26, 27, 28, 30, 31, 32, 43, 48]
-ds109_subject_ids = ['{num:02d}'.format(num=x) for x in subject_ids]
+ds109_subject_ids = ['{num:02d}'.format(num=x) for x in ds109_subject_ids]
 
 ds120_subject_ids = [1, 2, 3, 4, 6, 8, 10, 11, 14, 17, 18, 19, 21, 22, 25, 26, 27]
-ds120_subject_ids = ['{num:02d}'.format(num=x) for x in subject_ids]
+ds120_subject_ids = ['{num:02d}'.format(num=x) for x in ds120_subject_ids]
 
 # Run fmriprep on all ds001 subjects
 run_fmriprep(ds001_raw_dir, ds001_processed_dir, ds001_fmriprep_template, packages_dir, fmriprep_singularity_image, FS_license)
