@@ -1,17 +1,17 @@
 #!/bin/bash
-#$ -N ${study}_sub-${sub_id}
+#$ -N ${study}_${sub}
 #$ -q long.qc
 #$ -o $out_dir/logs
 #$ -e $out_dir/logs
 
-singularity run --cleanenv -B $packages_dir /well/nichols/users/bas627/fmriprep/fmriprep-1.5.1rc1.simg \
+singularity run --cleanenv -B $packages_dir $singularity_image \
     $raw_dir $out_dir \
     participant \
     --participant-label $sub_id \
     --ignore slicetiming \
     --fs-license-file $FS_license \
     --fs-no-reconall \
-    -w $out_dir/${study}_sub-${sub_id}_work \
+    -w $out_dir/${study}_${sub}_work \
     --mem-mb 13000 \
     --low-mem \
     --resource-monitor \

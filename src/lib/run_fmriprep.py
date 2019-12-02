@@ -1,4 +1,4 @@
-import os, glob, re
+import os, glob, re, string
 
 def run_fmriprep(raw_dir, out_dir, template_script, packages_dir, fmriprep_singularity_image, FS_license):	
 	# Make the directory where all fmriprep scripts and outputs will be stored
@@ -34,7 +34,7 @@ def run_fmriprep(raw_dir, out_dir, template_script, packages_dir, fmriprep_singu
 		values["sub"] = sub
 		sub_id = sub.split("-")[1]
 		values["sub_id"] = sub_id
-
+		
 	if not os.path.isfile(os.path.join(scripts_dir, study + '_' + sub + '_fmriprep.sh')):
 			# Fill-in the subject-level fmriprep template
 			with open(template_script) as f:
