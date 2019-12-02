@@ -228,10 +228,10 @@ data/raw
 
 # Derived data, except don't ignore the scripts! 
 data/processed/ds001/*
-!data/processed/ds001/scripts
+!data/processed/ds001/scripts/
 data/processed/ds109/*
-!data/processed/d109/scripts
+!data/processed/d109/scripts/
 data/processed/ds120/*
-!data/processed/ds120/script
+!data/processed/ds120/scripts/
 
 
