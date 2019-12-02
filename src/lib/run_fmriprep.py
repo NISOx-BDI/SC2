@@ -1,7 +1,24 @@
 import os, glob, re, string, stat
 from subprocess import check_call
 
-def run_fmriprep(raw_dir, out_dir, template_script, packages_dir, fmriprep_singularity_image, FS_license):	
+def run_fmriprep(raw_dir, out_dir, template_script, packages_dir, fmriprep_singularity_image, FS_license):
+
+	# Runs fmriprep on all (or a specified number of) subjects in a BIDS dataset
+	# Inputs:
+	#	raw_dir:					Directory of the raw BIDS dataset
+	#	out_dir:					Directory where all subject-level fmriprep scripts and dervied data will be outputted
+	#	template_script:			A template script specifying the fmriprep pipeline that will be ran on all subjects
+	#	packages_dir:			    Directory containing all the modules on the Linux HPC. i.e. the directory where 'module avail' packages are stored
+	#   fmriprep_singularity_image: The version of fmriprep that will be used (installed as a .simg file)
+	#   FS_license:					FreeSurfer license.txt file required for fmriprep
+	#   subject_ids:                (optional) a vector of subject ids specifying the subjects fmriprep will be ran on (i.e. [01, 02] to run fmriprep on sub-01 and sub-02)
+	#   subject_ids:                (optional) a vector of subject ids specifying the subjects fmriprep will be ran on (i.e. [01, 02] to run fmriprep on sub-01 and sub-02)
+	# Outputs:
+	#	out_dir/scripts/ : Subject specific fmriprep scripts will be stored here
+	#   out_dir/ds???_sub-??_work/ : Directory containing the intermediate files fmriprep creates for the subject
+	#	out_dir/fmriprep/ : Directory containing each subjects fmriprep preprocessed data
+	#	out_dir/logs/ : Directory containg each subjects fmriprep log files
+
 	# Make the directory where all fmriprep scripts and outputs will be stored
 	if not os.path.isdir(out_dir):
     		os.mkdir(out_dir)
