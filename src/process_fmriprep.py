@@ -2,8 +2,12 @@
 import os
 from lib
 
+# Specifiy the directory containing all the packages needed for fmriprep
+packages_dir = '/well/win/software/packages'
 # Specifiy the home directory 
 home_dir = '/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2'
+# Specifiy the freesurfer license file, needed to run fmriprep
+FS_license = os.path.join(home_dir,'license.txt')
 
 # Raw data directories for ds001, ds109, and ds120
 raw_data_dir  = os.path.join(home_dir,'data','raw')
@@ -24,10 +28,10 @@ ds109_fmriprep_template = os.path.join(scripts_dir,'ds109','ds109_fmriprep_templ
 ds120_fmriprep_template = os.path.join(scripts_dir,'ds120','ds120_fmriprep_template')
 
 # Run fmriprep on all ds001 subjects
-run_fmriprep(ds001_raw_dir, ds001_processed_dir, ds001_fmriprep_template)
+run_fmriprep(ds001_raw_dir, ds001_processed_dir, ds001_fmriprep_template, packages_dir, FS_license)
 
 # Run fmriprep on all ds109 subjects
-run_fmriprep(ds109_raw_dir, ds109_processed_dir, ds109_fmriprep_template)
+run_fmriprep(ds109_raw_dir, ds109_processed_dir, ds109_fmriprep_template, packages_dir, FS_license)
 
 # Run fmriprep on all ds120 subjects
-run_fmriprep(ds120_raw_dir, ds120_processed_dir, ds120_fmriprep_template)
+run_fmriprep(ds120_raw_dir, ds120_processed_dir, ds120_fmriprep_template, packages_dir, FS_license)
