@@ -26,6 +26,7 @@ def run_fmriprep(raw_dir, out_dir, template_script, packages_dir, FS_license):
 		values["FS_license"]   = FS_license
 		values["out_dir"]	   = out_dir
 		sub_reg = re.search('sub-\d+', s)
+		print(sub_reg)
 		sub = subreg.group(0)
-        values["sub"] = sub
-        print(sub)
+		values["sub"] = sub
+		print(sub)
