@@ -20,14 +20,14 @@ def run_fmriprep(raw_dir, out_dir, template_script, packages_dir, FS_license):
 	# Creating and running an fmriprep script for each subjects
 	for s in subs:
 		# New dict for each subject
-		values 		       = dict()
+		values = dict()
 		values["packages_dir"] = packages_dir
-		values["FS_license"]   = FS_license
-		values["out_dir"]      = out_dir
-		sub_reg 	       = re.search('sub-\d+', s)
-		sub 	               = sub_reg.group(0)
-		values["sub"] 	       = sub
-		sub_id 		       = sub.split("-")[1]
-		values["sub_id"]       = sub_id
-		study  	               = os.path.basename(out_dir)
+		values["FS_license"] = FS_license
+		values["out_dir"] = out_dir
+		sub_reg = re.search('sub-\d+', s)
+		sub = sub_reg.group(0)
+		values["sub"] = sub
+		sub_id = sub.split("-")[1]
+		values["sub_id"] = sub_id
+		study = os.path.basename(out_dir)
 		print(study) 
