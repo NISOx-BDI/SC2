@@ -1,6 +1,6 @@
 import os, glob 
 
-def run_fmriprep(input_dir, output_dir, template_script, packages_dir, FS_license):
+def run_fmriprep(raw_dir, output_dir, template_script, packages_dir, FS_license):
 	
 	# Make the directory where all fmriprep scripts and outputs will be stored
 	if not os.path.isdir(output_dir):
@@ -13,5 +13,7 @@ def run_fmriprep(input_dir, output_dir, template_script, packages_dir, FS_licens
 		os.mkdir(scripts_dir)
 
 
-	sub_dirs = glob.glob(os.path.join(input_dir, 'sub-*'))
-	print(sub_dirs)
+	# Obtain the list of subjects from the raw data directory
+	sub_dirs = glob.glob(os.path.join(raw_dir, 'sub-*'))
+	subs     = [os.path.basename(w) for w in sub_dirs]
+	print(subs)
