@@ -31,7 +31,7 @@ ds120_processed_dir = os.path.join(processed_data_dir,'ds120')
 run_fmriprep(ds001_raw_dir, ds001_processed_dir, ds001_fmriprep_template, packages_dir, FS_license)
 
 # Run fmriprep on all ds109 subjects
-run_fmriprep(ds109_raw_dir, ds109_processed_dir, ds109_fmriprep_template, packages_dir, FS_license)
+#run_fmriprep(ds109_raw_dir, ds109_processed_dir, ds109_fmriprep_template, packages_dir, FS_license)
 
 # Run fmriprep on all ds120 subjects
-run_fmriprep(ds120_raw_dir, ds120_processed_dir, ds120_fmriprep_template, packages_dir, FS_license)
+#run_fmriprep(ds120_raw_dir, ds120_processed_dir, ds120_fmriprep_template, packages_dir, FS_license)
