@@ -35,29 +35,29 @@ def run_fmriprep(raw_dir, out_dir, template_script, packages_dir, fmriprep_singu
 		sub_id = sub.split("-")[1]
 		values["sub_id"] = sub_id
 		
-	if not os.path.isfile(os.path.join(scripts_dir, study + '_' + sub + '_fmriprep.sh')):
-		# Fill-in the subject-level fmriprep template
-		with open(template_script) as f:
-		    tpm = f.read()
-		    t = string.Template(tpm)
-		    sub_script = t.substitute(values)
-	
-		sub_script_file = os.path.join(scripts_dir, study + '_' + sub + '_fmriprep.sh')
+		if not os.path.isfile(os.path.join(scripts_dir, study + '_' + sub + '_fmriprep.sh')):
+			# Fill-in the subject-level fmriprep template
+			with open(template_script) as f:
+			    tpm = f.read()
+			    t = string.Template(tpm)
+			    sub_script = t.substitute(values)
+		
+			sub_script_file = os.path.join(scripts_dir, study + '_' + sub + '_fmriprep.sh')
 
-		with open(sub_script_file, "w") as f:
-		    f.write(sub_script)
+			with open(sub_script_file, "w") as f:
+			    f.write(sub_script)
 
-		# Make the script executable
-		st = os.stat(sub_script_file)
-		os.chmod(sub_script_file, st.st_mode | stat.S_IEXEC)
+			# Make the script executable
+			st = os.stat(sub_script_file)
+			os.chmod(sub_script_file, st.st_mode | stat.S_IEXEC)
 
 
-		#cmd = os.path.join('.', sub_script_file)
-		#print(cmd)
-		#check_call(cmd, shell=True)
+			#cmd = os.path.join('.', sub_script_file)
+			#print(cmd)
+			#check_call(cmd, shell=True)
 
-		# Putting the proc. script in the correct directory, making it executable, and running
-		#sub_proc_script_file = os.path.join(sub_results_dir, 'proc.' + shortsub)
-		#cmd = os.path.join('tcsh -xef ' + sub_proc_script_file)
-		#print(cmd)
-		#check_call(cmd, shell=True)
+			# Putting the proc. script in the correct directory, making it executable, and running
+			#sub_proc_script_file = os.path.join(sub_results_dir, 'proc.' + shortsub)
+			#cmd = os.path.join('tcsh -xef ' + sub_proc_script_file)
+			#print(cmd)
+			#check_call(cmd, shell=True)
