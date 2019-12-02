@@ -15,7 +15,7 @@ def run_fmriprep(raw_dir, out_dir, template_script, packages_dir, FS_license):
 
 	# Obtain the list of subjects from the raw data directory
 	sub_dirs = glob.glob(os.path.join(raw_dir, 'sub-*'))
-	subs     = [os.path.basename(w) for w in sub_dirs
+	subs     = [os.path.basename(w) for w in sub_dirs]
 
 	# Creating and running an fmriprep script for each subjects
 	for s in subs:
