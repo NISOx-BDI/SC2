@@ -6,6 +6,8 @@ from lib.run_fmriprep import run_fmriprep
 packages_dir = '/well/win/software/packages'
 # Specifiy the home directory 
 home_dir = '/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2'
+# Specify the location of the fmriprep singularity image
+fmriprep_singularity_image = '/well/nichols/users/bas627/fmriprep/fmriprep-1.5.1rc1.simg'
 # Specifiy the freesurfer license file, needed to run fmriprep
 FS_license = os.path.join(home_dir,'license.txt')
 
@@ -28,10 +30,10 @@ ds109_processed_dir = os.path.join(processed_data_dir,'ds109')
 ds120_processed_dir = os.path.join(processed_data_dir,'ds120')
 
 # Run fmriprep on all ds001 subjects
-run_fmriprep(ds001_raw_dir, ds001_processed_dir, ds001_fmriprep_template, packages_dir, FS_license)
+run_fmriprep(ds001_raw_dir, ds001_processed_dir, ds001_fmriprep_template, packages_dir, fmriprep_singularity_image, FS_license)
 
 # Run fmriprep on all ds109 subjects
-#run_fmriprep(ds109_raw_dir, ds109_processed_dir, ds109_fmriprep_template, packages_dir, FS_license)
+#run_fmriprep(ds109_raw_dir, ds109_processed_dir, ds109_fmriprep_template, packages_dir, fmriprep_singularity_image, FS_license)
 
 # Run fmriprep on all ds120 subjects
-#run_fmriprep(ds120_raw_dir, ds120_processed_dir, ds120_fmriprep_template, packages_dir, FS_license)
+#run_fmriprep(ds120_raw_dir, ds120_processed_dir, ds120_fmriprep_template, packages_dir, fmriprep_singularity_image, FS_license)
