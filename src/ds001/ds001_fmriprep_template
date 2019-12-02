@@ -1,10 +1,10 @@
 #!/bin/bash
 #$$ -N ${study}_${sub}
 #$$ -q long.qc
-#$$ -o $out_dir/logs
-#$$ -e $out_dir/logs
+#$$ -o $out_dir/logs/
+#$$ -e $out_dir/logs/
 
-singularity run --cleanenv -B $packages_dir $singularity_image \
+singularity run --cleanenv -B $packages_dir,$home_dir $singularity_image \
     $raw_dir $out_dir \
     participant \
     --participant-label $sub_id \
