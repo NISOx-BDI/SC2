@@ -36,8 +36,7 @@ def run_fmriprep(raw_dir, out_dir, template_script, packages_dir, fmriprep_singu
 		sub_dirs = []
 		for i in subject_ids:
 			sub_dirs.append(os.path.join(raw_dir, 'sub-' + i))
-	subs = [os.path.basename(w) for w in sub_dirs]
-	print(subs)		
+	subs = [os.path.basename(w) for w in sub_dirs]		
 	# Obtain the study id from the output dir name
 	study = os.path.basename(out_dir)
 	
@@ -78,5 +77,4 @@ def run_fmriprep(raw_dir, out_dir, template_script, packages_dir, fmriprep_singu
 			os.chmod(sub_script_file, st.st_mode | stat.S_IEXEC)
 
 			cmd = "qsub " + sub_script_file
-			print(cmd)
 			check_call(cmd, shell=True)
