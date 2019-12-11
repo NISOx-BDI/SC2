@@ -226,15 +226,18 @@ license.txt
 # Raw data
 data/raw
 
-# Derived data, except don't ignore the scripts! 
+# Derived data, except don't ignore the scripts and summary reports! 
 data/processed/ds001/*
 !data/processed/ds001/scripts/
 !data/processed/ds001/fmriprep/
 data/processed/ds001/fmriprep/*/
 data/processed/ds109/*
 !data/processed/ds109/scripts/
+!data/processed/ds109/fmriprep/
+data/processed/ds109/fmriprep/*/
 data/processed/ds120/*
 !data/processed/ds120/scripts/
-
+!data/processed/ds120/fmriprep/
+data/processed/ds109/fmriprep/*/
 
 
