@@ -229,7 +229,8 @@ data/raw
 # Derived data, except don't ignore the scripts! 
 data/processed/ds001/*
 !data/processed/ds001/scripts/
-!data/processed/ds001/fmriprep/*.html
+!data/processed/ds001/fmriprep/
+data/processed/ds001/fmriprep/*/
 data/processed/ds109/*
 !data/processed/ds109/scripts/
 data/processed/ds120/*
