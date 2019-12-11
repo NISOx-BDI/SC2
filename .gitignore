@@ -230,19 +230,16 @@ data/raw
 data/processed/ds001/*
 !data/processed/ds001/scripts/
 !data/processed/ds001/fmriprep/
-data/processed/ds001/fmriprep/sub-*/*
-!data/processed/ds001/fmriprep/sub-*/figures/
+data/processed/ds001/fmriprep/*/
 
 data/processed/ds109/*
 !data/processed/ds109/scripts/
 !data/processed/ds109/fmriprep/
-data/processed/ds109/fmriprep/sub-*/*
-!data/processed/d109/fmriprep/sub-*/figures/
+data/processed/ds109/fmriprep/*/
 
 data/processed/ds120/*
 !data/processed/ds120/scripts/
 !data/processed/ds120/fmriprep/
-data/processed/ds120/fmriprep/sub-*/*
-!data/processed/ds120/fmriprep/sub-*/figures/
+data/processed/ds120/fmriprep/*/
 
 
