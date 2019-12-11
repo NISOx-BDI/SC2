@@ -61,13 +61,10 @@ def run_fmriprep(raw_dir, out_dir, template_script, packages_dir, fmriprep_singu
 		values["sub_id"] = sub_id
 
 		# If fmriprep failed last time (i.e. the summary report sub-??.html was not created), then we delete all subject's fmriprep files and re-run
-		if not os.path.isfile(os.path.join(out_dir, fmriprep, sub + '.html')):
-			print(study + sub + ' fail')
-			#shutil.rmtree(os.path.join(out_dir, fmriprep, sub))
-			#shutil.rmtree(os.path.join(out_dir, study + '_' + sub + '_work'))
-			#os.remove(os.path.join(scripts_dir, study + '_' + sub + '_fmriprep.sh'))
-		else:
-			print(study + sub + ' success')
+		if not os.path.isfile(os.path.join(out_dir, 'fmriprep', sub + '.html')):
+			shutil.rmtree(os.path.join(out_dir, 'fmriprep', sub))
+			shutil.rmtree(os.path.join(out_dir, study + '_' + sub + '_work'))
+			os.remove(os.path.join(scripts_dir, study + '_' + sub + '_fmriprep.sh'))
 		
 		if not os.path.isfile(os.path.join(scripts_dir, study + '_' + sub + '_fmriprep.sh')):
 			# Fill-in the subject-level fmriprep template
