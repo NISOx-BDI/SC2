@@ -10,7 +10,7 @@ locals().update(paths)
 ds001_raw_dir = os.path.join(home_dir,'data','raw','ds001_R2.0.4')
 ds001_processed_dir = os.path.join(home_dir,'data','processed','ds001')
 fmriprep_dir = os.path.join(ds001_processed_dir,'fmriprep')
-fsl_dir = os.path.join(ds001_processed_dir,'FSL')
+fsl_dir = os.path.join(home_dir,'results','ds001','FSL')
 
 if not os.path.isdir(fsl_dir):
     os.mkdir(fsl_dir)
@@ -45,8 +45,11 @@ conditions = (
 # Create 3-columns onset files based on BIDS tsv files
 cond_files = create_fsl_onset_files(ds001_raw_dir, onsets_dir, conditions, removed_TR_time)
 
+cwd = os.path.dirname(os.path.realpath(__file__))
+run_level_fsf = os.path.join(cwd,'template_ds001_FSL_level1.fsf')
+
 # Run a GLM for each fMRI run of each subject
-#run_run_level_analyses(preproc_dir, run_level_fsf, level1_dir, cond_files)
+run_run_level_analyses(fmriprep_dir, run_level_fsf, level1_dir, cond_files)
 
 # Run a GLM combining all the fMRI runs of each subject
 #run_subject_level_analyses(level1_dir, sub_level_fsf, level2_dir)

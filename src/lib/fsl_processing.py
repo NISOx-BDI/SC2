@@ -160,37 +160,33 @@ def wait_for_feat(report_file):
                 sys.stdout.flush()
 
 
-def run_run_level_analyses(preproc_dir, run_level_fsf, level1_dir, cond_files):
+def run_run_level_analyses(fmriprep_dir, run_level_fsf, level1_dir, cond_files):
     """
     Run a GLM for each fMRI run of each subject
     """
-    scripts_dir = os.path.join(preproc_dir, os.pardir, 'SCRIPTS')
+    scripts_dir = os.path.join(level1_dir, os.pardir, 'SCRIPTS')
 
     if not os.path.isdir(scripts_dir):
         os.mkdir(scripts_dir)
 
-    # Pre-processing directories storing the fMRIs and aMRIs for all subjects
-    func_dir = os.path.join(preproc_dir, 'FUNCTIONAL')
-    anat_dir = os.path.join(preproc_dir, 'ANATOMICAL')
-
-    # All aMRI files (for all subjects)
-    amri_files = glob.glob(os.path.join(anat_dir, 'sub-*_brain.nii.gz'))
-
+    # All fmriprep subject-level directories
+    fmriprep_dirs = glob.glob(os.path.join(fmriprep_dir, 'sub-??'))
+    print(fmriprep_dirs)
     # For each subject
-    for amri in amri_files:
-        subreg = re.search('sub-\d+', amri)
-        sub = subreg.group(0)
-
+    for fmriprep_dir in fmriprep_dirs:
+	subreg = re.search('sub-\d+', fmriprep_dir)
+	sub = subreg.group(0)
+	print(sub)
         # All fMRI files for this subject
-        fmri_files = glob.glob(os.path.join(func_dir, sub + '*.nii.gz'))
-
+        fmri_files = glob.glob(os.path.join(fmriprep_dir, sub, func, '*.preproc_bold.nii.gz'))
+	print(fmri_files)
         # For each fMRI file
-        for fmri in fmri_files:
-            runreg = re.search('run-\d+', fmri)
-            run = runreg.group(0)
-            sub_run = sub + '_' + run
+        #for fmri in fmri_files:
+        #    runreg = re.search('run-\d+', fmri)
+        #    run = runreg.group(0)
+        #    sub_run = sub + '_' + run
 
-            out_dir = os.path.join(level1_dir, sub, run)
+        #    out_dir = os.path.join(level1_dir, sub, run)
 
             # Retreive inputs required to fill-in the design.fsf template:
             #   - amri: Path to the anatomical image (this subject)
@@ -198,25 +194,25 @@ def run_run_level_analyses(preproc_dir, run_level_fsf, level1_dir, cond_files):
             #   - outdir: Path to output feat directory
             #   - FSLDIR: Path to FSL (retreive from env variable FSLDIR)
             #   - onsets_xx: Path to onset file for condition 'xx'
-            values = {'amri': amri, 'fmri': fmri, 'out_dir': out_dir,
-                      'FSLDIR': os.environ['FSLDIR']}
-            for i, cond_file in enumerate(cond_files[sub_run]):
-                values['onsets_' + str(i+1)] = cond_file
+        #    values = {'amri': amri, 'fmri': fmri, 'out_dir': out_dir,
+        #              'FSLDIR': os.environ['FSLDIR']}
+        #    for i, cond_file in enumerate(cond_files[sub_run]):
+        #        values['onsets_' + str(i+1)] = cond_file
 
             # Fill-in the template run-level design.fsf
-            with open(run_level_fsf) as f:
-                tpm = f.read()
-                t = string.Template(tpm)
-                run_fsf = t.substitute(values)
+        #    with open(run_level_fsf) as f:
+        #        tpm = f.read()
+        #        t = string.Template(tpm)
+        #        run_fsf = t.substitute(values)
 
-            run_fsf_file = os.path.join(scripts_dir, sub_run + '_level1.fsf')
-            with open(run_fsf_file, "w") as f:
-                f.write(run_fsf)
+        #    run_fsf_file = os.path.join(scripts_dir, sub_run + '_level1.fsf')
+        #    with open(run_fsf_file, "w") as f:
+        #        f.write(run_fsf)
 
             # Run feat
-            cmd = "feat " + run_fsf_file
-            print(cmd)
-            check_call(cmd, shell=True)
+        #    cmd = "feat " + run_fsf_file
+        #    print(cmd)
+        #    check_call(cmd, shell=True)
 
 
 def run_subject_level_analyses(level1_dir, sub_level_fsf, level2_dir):
@@ -232,8 +228,8 @@ def run_subject_level_analyses(level1_dir, sub_level_fsf, level2_dir):
     # For each subject
     for sub_dir in sub_dirs:
         values = dict()
-        subreg = re.search('sub-\d+', sub_dir)
-        sub = subreg.group(0)
+	subreg = re.search('sub-\d+', sub_dir)
+	sub = subreg.group(0)
 
         # Retreive values inputs to fill-in the design.fsf template:
         #   - out_dir: Path to output feat directory
