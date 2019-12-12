@@ -174,12 +174,12 @@ def run_run_level_analyses(fmriprep_dir, run_level_fsf, level1_dir, cond_files):
     print(fmriprep_dirs)
     # For each subject
     for fmriprep_dir in fmriprep_dirs:
-	subreg = re.search('sub-\d+', fmriprep_dir)
-	sub = subreg.group(0)
-	print(sub)
+    	subreg = re.search('sub-\d+', fmriprep_dir)
+    	sub = subreg.group(0)
+    	print(sub)
         # All fMRI files for this subject
         fmri_files = glob.glob(os.path.join(fmriprep_dir, sub, func, '*.preproc_bold.nii.gz'))
-	print(fmri_files)
+	    print(fmri_files)
         # For each fMRI file
         #for fmri in fmri_files:
         #    runreg = re.search('run-\d+', fmri)
