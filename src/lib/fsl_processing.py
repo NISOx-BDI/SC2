@@ -228,8 +228,8 @@ def run_subject_level_analyses(level1_dir, sub_level_fsf, level2_dir):
     # For each subject
     for sub_dir in sub_dirs:
         values = dict()
-    	subreg = re.search('sub-\d+', sub_dir)
-    	sub = subreg.group(0)
+        subreg = re.search('sub-\d+', sub_dir)
+        sub = subreg.group(0)
 
         # Retreive values inputs to fill-in the design.fsf template:
         #   - out_dir: Path to output feat directory
