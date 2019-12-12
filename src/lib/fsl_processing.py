@@ -164,6 +164,9 @@ def run_run_level_analyses(fmriprep_dir, run_level_fsf, level1_dir, cond_files):
     """
     Run a GLM for each fMRI run of each subject
     """
+    if not os.path.isdir(level1_dir):
+        os.mkdir(level1_dir)
+
     scripts_dir = os.path.join(level1_dir, os.pardir, 'SCRIPTS')
 
     if not os.path.isdir(scripts_dir):
