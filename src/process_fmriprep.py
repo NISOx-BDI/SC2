@@ -1,15 +1,10 @@
 # Preprocessing of ds001, ds109 and ds120 with fmriprep
 import os
+from config import paths
 from lib.run_fmriprep import run_fmriprep
 
-# Specifiy the directory containing all the packages needed for fmriprep
-packages_dir = '/well/win/software/packages'
-# Specifiy the home directory 
-home_dir = '/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2'
-# Specify the location of the fmriprep singularity image
-fmriprep_singularity_image = '/well/nichols/users/bas627/fmriprep/fmriprep-1.5.1.simg'
-# Specifiy the freesurfer license file, needed to run fmriprep
-FS_license = os.path.join(home_dir,'license.txt')
+# Get any absolute paths from the config.py file
+locals().update(paths)
 
 # Raw data directories for ds001, ds109, and ds120
 raw_data_dir  = os.path.join(home_dir,'data','raw')
