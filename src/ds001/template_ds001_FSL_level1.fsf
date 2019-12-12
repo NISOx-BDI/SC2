@@ -595,7 +595,7 @@ set fmri(tempfilt_yn5) 1
 set fmri(deriv_yn5) 1
 
 # Custom EV file (EV 5)
-set fmri(custom5) "$onsets_5$"
+set fmri(custom5) "$onsets_5"
 
 # Orthogonalise EV 5 wrt EV 0
 set fmri(ortho5.0) 0

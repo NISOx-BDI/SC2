@@ -3,7 +3,7 @@ import sys
 sys.path.append("..")
 
 from config import paths
-from lib.fsl_processing import create_fsl_onset_files
+from lib.fsl_processing import create_fsl_onset_files, run_run_level_analyses
 
 locals().update(paths)
 
