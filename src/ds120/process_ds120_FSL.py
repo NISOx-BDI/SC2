@@ -7,10 +7,10 @@ from lib.fsl_processing import create_fsl_onset_files, run_run_level_analyses
 
 locals().update(paths)
 
-ds109_raw_dir = os.path.join(home_dir,'data','raw','ds000109_R2.0.1')
-ds109_processed_dir = os.path.join(home_dir,'data','processed','ds109')
-fmriprep_dir = os.path.join(ds109_processed_dir,'fmriprep')
-fsl_dir = os.path.join(home_dir,'results','ds109','FSL')
+ds120_raw_dir = os.path.join(home_dir,'data','raw','ds120_R1.0.0')
+ds120_processed_dir = os.path.join(home_dir,'data','processed','ds120')
+fmriprep_dir = os.path.join(ds120_processed_dir,'fmriprep')
+fsl_dir = os.path.join(home_dir,'results','ds120','FSL')
 
 if not os.path.isdir(fsl_dir):
     os.mkdir(fsl_dir)
@@ -22,26 +22,29 @@ perm_dir = os.path.join(fsl_dir, 'LEVEL2', 'permutation_test')
 mni_dir = os.path.join(fsl_dir, 'mean_mni_images')
 
 # Specify the subjects of interest from the raw data
-subject_ids = [1, 2, 3, 8, 9, 10, 11, 14, 15, 17, 18, 21, 22, 26, 27, 28, 30, 31, 32, 43, 48]
+subject_ids = [1, 2, 3, 4, 6, 8, 10, 11, 14, 17, 18, 19, 21, 22, 25, 26, 27]
 subject_ids = ['{num:02d}'.format(num=x) for x in subject_ids]
 
-removed_TR_time = 0
+# Specify the number of functional volumes ignored in the study
+TR = 1.5
+num_ignored_volumes = 4
+
+# Specify the TR that will be removed from onesets, equal to num_ignored_volumes*TR
+removed_TR_time = num_ignored_volumes*TR 
 
 # Directory to store the onset files
 onsetDir = os.path.join(fsl_dir, 'ONSETS')
 
 # Define conditions and parametric modulations (if any)
 conditions = (
-    ('false_belief_story', ('false belief story', 'duration')),
-    ('false_belief_question', ('false belief question', 'duration')),
-    ('false_photo_story', ('false photo story', 'duration')),
-    ('false_photo_question', ('false photo question', 'duration')))
+    ('neutral', ('neutral_resp', 'duration')),
+    ('reward', ('reward_resp', 'duration')))
 
 # Create 3-columns onset files based on BIDS tsv files
-cond_files = create_fsl_onset_files(ds109_raw_dir, onsets_dir, conditions, removed_TR_time)
+cond_files = create_fsl_onset_files(ds120_raw_dir, onsets_dir, conditions, removed_TR_time)
 
 cwd = os.path.dirname(os.path.realpath(__file__))
-run_level_fsf = os.path.join(cwd,'template_ds109_FSL_level1.fsf')
+run_level_fsf = os.path.join(cwd,'template_ds120_FSL_level1.fsf')
 
 # Run a GLM for each fMRI run of each subject
 run_run_level_analyses(fmriprep_dir, run_level_fsf, level1_dir, cond_files)
