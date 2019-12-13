@@ -30,7 +30,7 @@ set fmri(featwatcher_yn) 1
 set fmri(sscleanup_yn) 0
 
 # Output directory
-set fmri(outputdir) "/gpfs2/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/FSL/LEVEL1/sub-01/run-01"
+set fmri(outputdir) "$out_dir"
 
 # TR(s)
 set fmri(tr) 2.000000 
@@ -245,7 +245,7 @@ set fmri(regstandard_yn) 1
 set fmri(alternateReference_yn) 0
 
 # Standard image
-set fmri(regstandard) "/well/win/software/packages/fsl/5.0.11/data/standard/MNI152_T1_2mm_brain"
+set fmri(regstandard) "$FSLDIR/data/standard/MNI152_T1_2mm_brain"
 
 # Search space for registration to standard space
 # 0   : No search
@@ -273,7 +273,7 @@ set fmri(totalVoxels) 50170120
 set fmri(ncopeinputs) 0
 
 # 4D AVW data or FEAT directory (1)
-set feat_files(1) "/gpfs2/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/data/processed/ds109/fmriprep/sub-01/func/sub-01_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold"
+set feat_files(1) "$fmri"
 
 # Add confound EVs text file
 set fmri(confoundevs) 0
@@ -311,7 +311,7 @@ set fmri(tempfilt_yn1) 1
 set fmri(deriv_yn1) 0
 
 # Custom EV file (EV 1)
-set fmri(custom1) "/gpfs2/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/FSL/ONSETS/sub-01_run-01_false_belief_question.txt"
+set fmri(custom1) "$onsets_1"
 
 # Orthogonalise EV 1 wrt EV 0
 set fmri(ortho1.0) 0
@@ -361,7 +361,7 @@ set fmri(tempfilt_yn2) 1
 set fmri(deriv_yn2) 0
 
 # Custom EV file (EV 2)
-set fmri(custom2) "/gpfs2/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/FSL/ONSETS/sub-01_run-01_false_belief_story.txt"
+set fmri(custom2) "$onsets_2"
 
 # Orthogonalise EV 2 wrt EV 0
 set fmri(ortho2.0) 0
@@ -411,7 +411,7 @@ set fmri(tempfilt_yn3) 1
 set fmri(deriv_yn3) 0
 
 # Custom EV file (EV 3)
-set fmri(custom3) "/gpfs2/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/FSL/ONSETS/sub-01_run-01_false_photo_question.txt"
+set fmri(custom3) "$onsets_3"
 
 # Orthogonalise EV 3 wrt EV 0
 set fmri(ortho3.0) 0
@@ -461,7 +461,7 @@ set fmri(tempfilt_yn4) 1
 set fmri(deriv_yn4) 0
 
 # Custom EV file (EV 4)
-set fmri(custom4) "/gpfs2/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/FSL/ONSETS/sub-01_run-01_false_photo_story.txt"
+set fmri(custom4) "$onsets_4"
 
 # Orthogonalise EV 4 wrt EV 0
 set fmri(ortho4.0) 0
