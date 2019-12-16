@@ -248,12 +248,12 @@ def run_subject_level_analyses(level1_dir, sub_level_fsf, level2_dir):
         # Create dummy registration files so that higher level analyses can be carried out
         for feat_dir in feat_dirs:
             reg_dir = os.path.join(feat_dir,'reg')
-            if not os.path.isdir(reg_dir):
-                os.mkdir(reg_dir)
-                dummy_functostandard = os.path.join(os.environ['FSLDIR'],'etc','flirtsch','ident.mat')
-                standard_image = os.path.join(os.environ['FSLDIR'],'data','standard','MNI152_T1_2mm_brain.nii.gz')
-                shutil.copyfile(dummy_functostandard,os.path.join(reg_dir,'example_func2standard.mat'))
-                shutil.copyfile(standard_image,os.path.join(reg_dir,'standard.nii.gz'))
+            mat_files = glob.glob(os.path.join(reg_dir,'*.mat'))
+            dummy_functostandard = os.path.join(os.environ['FSLDIR'],'etc','flirtsch','ident.mat')
+            mean_func_image = os.path.join(feat_dir,'mean_func.nii.gz')
+            for mat_file in mat_files:
+                shutil.copyfile(dummy_functostandard,mat_file)
+            shutil.copyfile(mean_func_image,os.path.join(reg_dir,'standard.nii.gz'))
 
         # Fill-in the template subject-level design.fsf
         with open(sub_level_fsf) as f:
