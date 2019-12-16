@@ -245,6 +245,16 @@ def run_subject_level_analyses(level1_dir, sub_level_fsf, level2_dir):
             # Wait for the run-level analysis to be completed
             wait_for_feat(report_file)
 
+        # Create dummy registration files so that higher level analyses can be carried out
+        for feat_dir in enumerate(feat_dirs)
+            reg_dir = os.path.join(feat_dir,'reg')
+            if not os.path.isdir(reg_dir)
+                os.mkdir(reg_dir)
+                dummy_functostandard = os.path.join(os.environ['FSLDIR'],etc,flirtsch,ident.mat)
+                standard_image = os.path.join(os.environ['FSLDIR'],data,standard,'MNI152_T1_2mm_brain.nii.gz')
+                copyfile(dummy_functostandard,os.path.join(reg_dir,'example_func2standard.mat'))
+                copyfile(standard_image,os.path.join(reg_dir,'standard.nii.gz'))
+
         # Fill-in the template subject-level design.fsf
         with open(sub_level_fsf) as f:
             tpm = f.read()
