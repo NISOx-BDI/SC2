@@ -5,6 +5,8 @@ sys.path.append("..")
 from config import paths
 from lib.afni_processing import run_orthogonalize, create_afni_onset_files, run_subject_level_analyses
 
+locals().update(paths)
+
 ds001_raw_dir = os.path.join(home_dir,'data','raw','ds001_R2.0.4')
 ds001_processed_dir = os.path.join(home_dir,'data','processed','ds001')
 fmriprep_dir = os.path.join(ds001_processed_dir,'fmriprep')
