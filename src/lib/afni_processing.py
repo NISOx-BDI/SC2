@@ -120,10 +120,10 @@ def create_afni_onset_files(study_dir, onset_dir, conditions, removed_TR_time, *
                     os.remove(fname)
 
 
-def run_subject_level_analyses(preproc_dir, onset_dir, level1_dir,
-    sub_level_template):
+def run_subject_level_analyses(fmriprep_dir, onsets_dir, level1_dir,
+    sub_level_template, home_dir, AFNI_SPM_singularity_image, AFNI_bin):
 
-    scripts_dir = os.path.join(preproc_dir, os.pardir, 'SCRIPTS')
+    scripts_dir = os.path.join(onsets_dir, os.pardir, 'SCRIPTS')
 
     if not os.path.isdir(scripts_dir):
         os.mkdir(scripts_dir)
@@ -131,26 +131,25 @@ def run_subject_level_analyses(preproc_dir, onset_dir, level1_dir,
     if not os.path.isdir(level1_dir):
         os.mkdir(level1_dir)
 
-    # Pre-processing directories storing the fMRIs and aMRIs for all subjects
-    func_dir = os.path.join(preproc_dir, 'FUNCTIONAL')
-    anat_dir = os.path.join(preproc_dir, 'ANATOMICAL')
-
-    # All aMRI files (for all subjects)
-    amri_files = glob.glob(os.path.join(anat_dir, 'sub-*_T1w.nii.gz'))
+    # Obtaining all subjects to shuffle through
+    html_files = glob.glob(os.path.join(fmriprep_dir, 'sub-*.html'))
 
     # For each subject
-    for amri in amri_files:
+    for html in html_files:
         # New dict for each subject
         values = dict()
-        values["anat_dir"] = anat_dir
-        values["func_dir"] = func_dir
-        values["stim_dir"] = onset_dir
-
+        # Getting subject ID
         subreg = re.search('sub-\d+', amri)
         sub = subreg.group(0)
         values["sub"] = sub
         shortsub = sub.replace("-", "")
         values["subj"] = shortsub
+        # Specifying subject's fmriprep anat and func dirs
+        anat_dir = os.path.join(fmriprep_dir,sub,'anat')
+        values["anat_dir"] = anat_dir
+        func_dir = os.path.join(fmriprep_dir,sub,'func')
+        values["func_dir"] = func_dir
+        values["stim_dir"] = onsets_dir
 
     if not os.path.isfile(os.path.join(scripts_dir, sub + '_level1.sh')):
         # Fill-in the subject-level template

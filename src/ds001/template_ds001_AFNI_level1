@@ -1,0 +1,37 @@
+# run afni_proc.py to create a single subject processing script
+singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image $AFNI_bin/afni_proc.py -subj_id ${subj}                                                  \
+        -script proc.${subj} -scr_overwrite                                    \
+        -blocks blur mask scale regress               \
+        -copy_anat $anat_dir/${sub}_space-MNI152NLin2009cAsym_desc-preproc_T1w.nii.gz                                 \
+		-anat_has_skull yes					       \
+        -tcat_remove_first_trs 2                                               \
+        -dsets                                                                 \
+            $func_dir/${sub}_task-balloonanalogrisktask_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz     \
+            $func_dir/${sub}_task-balloonanalogrisktask_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz    \
+            $func_dir/${sub}_task-balloonanalogrisktask_run-03_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz   \
+        -blur_size 5.0                                                         \
+        -regress_stim_times                                                    \
+            $stim_dir/${sub}_combined_cash_demean_afni.1d                      \
+            $stim_dir/${sub}_combined_cash_RT_ort_afni.1D                          \
+            $stim_dir/${sub}_combined_control_pumps_demean_afni.1d             \
+            $stim_dir/${sub}_combined_control_pumps_RT_ort_afni.1D                 \
+            $stim_dir/${sub}_combined_explode_demean_afni.1d                   \
+            $stim_dir/${sub}_combined_pumps_demean_afni.1d                     \
+            $stim_dir/${sub}_combined_pumps_RT_ort_afni.1D                         \
+        -regress_stim_labels                                                   \
+            cash_demean cash_RT control_pumps_demean                           \
+            control_pumps_RT explode_demean pumps_demean                       \
+            pumps_RT                                                           \
+        -regress_basis_multi                                                   \
+            'BLOCK(0.772,1)' 'NONE' 'BLOCK(0.772,1)' 'NONE'              \
+        'BLOCK(0.772,1)' 'BLOCK(0.772,1)' 'NONE'                            \
+        -regress_stim_types                                                    \
+            AM2 file AM2 file AM2 AM2 file                                        \
+	-regress_3dD_stop						       \
+	-regress_reml_exec 						       \
+        -regress_opts_3dD                                                      \
+            -gltsym 'SYM: pumps_demean[1] -control_pumps_demean[1]'            \
+        -glt_label 1 pumps_demean_vs_ctrl_demean                               \
+        -regress_make_ideal_sum sum_ideal.1D                                   \
+        -regress_est_blur_epits                                                \
+        -regress_est_blur_errts
