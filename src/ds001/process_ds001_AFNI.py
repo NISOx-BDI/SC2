@@ -59,7 +59,7 @@ perm_template = os.path.join(cwd, 'template_ds001_AFNI_perm_test')
 run_orthogonalize(fmriprep_dir, onsets_dir, orthogonalize_template, home_dir, AFNI_SPM_singularity_image, AFNI_bin)
 
 # Run a GLM combining all the fMRI runs of each subject
-run_subject_level_analyses(fmriprep_dir, onsets_dir, level1_dir, sub_level_template, home_dir, AFNI_SPM_singularity_image, AFNI_bin, python)
+run_subject_level_analyses(fmriprep_dir, onsets_dir, level1_dir, sub_level_template, home_dir, AFNI_SPM_singularity_image, AFNI_bin, packages_dir)
 
 # Run the group-level GLM
 #run_group_level_analysis(level1_dir, level2_dir, grp_level_template)
