@@ -7,7 +7,6 @@ import string
 import shutil
 from lib.fsl_processing import create_fsl_onset_files
 import stat
-from nilearn import image
 import numpy as np
 import nibabel as nib
 
