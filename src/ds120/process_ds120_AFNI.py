@@ -56,7 +56,7 @@ conditions = (
     ('reward', ('reward_resp', 'duration')))
 
 # Create onset files based on BIDS tsv files
-cond_files = create_afni_onset_files(raw_dir, onset_dir, conditions, removed_TR_time, subject_ids)
+cond_files = create_afni_onset_files(ds120_raw_dir, onsets_dir, conditions, removed_TR_time, subject_ids)
 
 sub_level_template = os.path.join(cwd, 'lib', 'template_ds120_AFNI_level1')
 grp_level_template = os.path.join(cwd, 'lib', 'template_ds120_AFNI_level2')
