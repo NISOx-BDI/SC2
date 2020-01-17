@@ -439,28 +439,28 @@ def run_orthogonalize(fmriprep_dir, onsets_dir, orthogonalize_template, home_dir
         values["AFNI_SPM_singularity_image"] = AFNI_SPM_singularity_image
 
 
-    if not os.path.isfile(os.path.join(scripts_dir, sub + '_orthorgonalize.sh')):
-        # Fill-in the subject-level template
-        with open(orthogonalize_template) as f:
-            tpm = f.read()
-            t = string.Template(tpm)
-            sub_script = t.substitute(values)
-    
-        sub_script_file = os.path.join(scripts_dir, sub + '_orthogonalize.sh')
+        if not os.path.isfile(os.path.join(scripts_dir, sub + '_orthorgonalize.sh')):
+            # Fill-in the subject-level template
+            with open(orthogonalize_template) as f:
+                tpm = f.read()
+                t = string.Template(tpm)
+                sub_script = t.substitute(values)
+        
+            sub_script_file = os.path.join(scripts_dir, sub + '_orthogonalize.sh')
 
-        with open(sub_script_file, "w") as f:
-            f.write(sub_script)
+            with open(sub_script_file, "w") as f:
+                f.write(sub_script)
 
-        # Make the script executable
-        st = os.stat(sub_script_file)
-        os.chmod(sub_script_file, st.st_mode | stat.S_IEXEC)
+            # Make the script executable
+            st = os.stat(sub_script_file)
+            os.chmod(sub_script_file, st.st_mode | stat.S_IEXEC)
 
-        # Run subject-level analysis
-        if not os.path.isdir(onsets_dir):
-            os.mkdir(onsets_dir)
+            # Run subject-level analysis
+            if not os.path.isdir(onsets_dir):
+                os.mkdir(onsets_dir)
 
-        os.chdir(onsets_dir)
+            os.chdir(onsets_dir)
 
-        cmd = os.path.join('.', sub_script_file)
-        print(cmd)
-        check_call(cmd, shell=True)
+            cmd = os.path.join('.', sub_script_file)
+            print(cmd)
+            check_call(cmd, shell=True)
