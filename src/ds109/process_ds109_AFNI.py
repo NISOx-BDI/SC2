@@ -9,7 +9,7 @@ locals().update(paths)
 
 ds109_raw_dir = os.path.join(home_dir,'data','raw','ds000109_R2.0.1')
 ds109_processed_dir = os.path.join(home_dir,'data','processed','ds109')
-fmriprep_dir = os.path.join(ds001_processed_dir,'fmriprep')
+fmriprep_dir = os.path.join(ds109_processed_dir,'fmriprep')
 afni_dir = os.path.join(home_dir,'results','ds109','AFNI')
 
 if not os.path.isdir(afni_dir):
@@ -56,13 +56,13 @@ grp_level_template = os.path.join(cwd, 'lib', 'template_ds109_AFNI_level2')
 perm_template = os.path.join(cwd, 'lib', 'template_ds109_AFNI_perm_test')
 
 # Run a GLM combining all the fMRI runs of each subject
-run_subject_level_analyses(preproc_dir, onset_dir, level1_dir, sub_level_template)
+#run_subject_level_analyses(preproc_dir, onset_dir, level1_dir, sub_level_template)
 
 # Run the group-level GLM
-run_group_level_analysis(level1_dir, level2_dir, grp_level_template)
+#run_group_level_analysis(level1_dir, level2_dir, grp_level_template)
 
 # Run a permutation test
-run_permutation_test(level1_dir, perm_dir, perm_template)
+#run_permutation_test(level1_dir, perm_dir, perm_template)
 
 # Create mean and standard deviations maps of the mean func and anat images in MNI space
-mean_mni_images(preproc_dir, level1_dir, mni_dir)
+#mean_mni_images(preproc_dir, level1_dir, mni_dir)
