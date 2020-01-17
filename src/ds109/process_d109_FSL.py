@@ -25,6 +25,8 @@ mni_dir = os.path.join(fsl_dir, 'mean_mni_images')
 subject_ids = [1, 2, 3, 8, 9, 10, 11, 14, 15, 17, 18, 21, 22, 26, 27, 28, 30, 31, 32, 43, 48]
 subject_ids = ['{num:02d}'.format(num=x) for x in subject_ids]
 
+removed_TR_time = 0
+
 # Directory to store the onset files
 onsetDir = os.path.join(fsl_dir, 'ONSETS')
 
@@ -42,7 +44,7 @@ cwd = os.path.dirname(os.path.realpath(__file__))
 run_level_fsf = os.path.join(cwd,'template_ds109_FSL_level1.fsf')
 
 # Run a GLM for each fMRI run of each subject
-#run_run_level_analyses(fmriprep_dir, run_level_fsf, level1_dir, cond_files)
+run_run_level_analyses(fmriprep_dir, run_level_fsf, level1_dir, cond_files)
 
 # Run a GLM combining all the fMRI runs of each subject
 #run_subject_level_analyses(level1_dir, sub_level_fsf, level2_dir)

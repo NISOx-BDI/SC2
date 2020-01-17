@@ -3,7 +3,7 @@ import sys
 sys.path.append("..")
 
 from config import paths
-from lib.fsl_processing import create_fsl_onset_files, run_run_level_analyses
+from lib.fsl_processing import create_fsl_onset_files, run_run_level_analyses, run_subject_level_analyses
 
 locals().update(paths)
 
@@ -43,16 +43,18 @@ conditions = (
     ('control_pumps_RT', ('control_pumps_demean', 'response_time')))
 
 # Create 3-columns onset files based on BIDS tsv files
-cond_files = create_fsl_onset_files(ds001_raw_dir, onsets_dir, conditions, removed_TR_time)
+#cond_files = create_fsl_onset_files(ds001_raw_dir, onsets_dir, conditions, removed_TR_time)
 
 cwd = os.path.dirname(os.path.realpath(__file__))
 run_level_fsf = os.path.join(cwd,'template_ds001_FSL_level1.fsf')
+sub_level_fsf = os.path.join(cwd,'template_ds001_FSL_level2.fsf')
+grp_level_fsf = os.path.join(cwd,'template_ds001_FSL_level3.fsf')
 
 # Run a GLM for each fMRI run of each subject
-run_run_level_analyses(fmriprep_dir, run_level_fsf, level1_dir, cond_files)
+#run_run_level_analyses(fmriprep_dir, run_level_fsf, level1_dir, cond_files)
 
 # Run a GLM combining all the fMRI runs of each subject
-#run_subject_level_analyses(level1_dir, sub_level_fsf, level2_dir)
+run_subject_level_analyses(level1_dir, sub_level_fsf, level1_dir)
 
 # Run the group-level GLM
 #run_group_level_analysis(level2_dir, grp_level_fsf, level3_dir, '1')
