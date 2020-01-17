@@ -416,24 +416,21 @@ def run_SSWarper(preproc_dir, SSWarper_template):
         print(cmd)
         check_call(cmd, shell=True)
 
-def run_orthogonalize(preproc_dir, onset_dir, orthogonalize_template):
+def run_orthogonalize(fmriprep_dir, onsets_dir, orthogonalize_template):
 
-    scripts_dir = os.path.join(preproc_dir, os.pardir, 'SCRIPTS')
+    scripts_dir = os.path.join(onsets_dir, os.pardir, 'SCRIPTS')
 
     if not os.path.isdir(scripts_dir):
         os.mkdir(scripts_dir)
 
-    # Pre-processing directories storing the fMRIs and aMRIs for all subjects
-    anat_dir = os.path.join(preproc_dir, 'ANATOMICAL')
-
-    # All aMRI files (for all subjects)
-    amri_files = glob.glob(os.path.join(anat_dir, 'sub-*_T1w.nii.gz'))
+    # Obtaining all subjects to shuffle through
+    html_files = glob.glob(os.path.join(fmriprep_dir, 'sub-*.html'))
 
     # For each subject
-    for amri in amri_files:
+    for html in html_files:
         # New dict for each subject
         values = dict()
-        values["stim_dir"] = onset_dir
+        values["stim_dir"] = onsets_dir
 
         subreg = re.search('sub-\d+', amri)
         sub = subreg.group(0)
@@ -457,10 +454,10 @@ def run_orthogonalize(preproc_dir, onset_dir, orthogonalize_template):
         os.chmod(sub_script_file, st.st_mode | stat.S_IEXEC)
 
         # Run subject-level analysis
-        if not os.path.isdir(onset_dir):
-            os.mkdir(onset_dir)
+        if not os.path.isdir(onsets_dir):
+            os.mkdir(onsets_dir)
 
-        os.chdir(onset_dir)
+        os.chdir(onsets_dir)
 
         cmd = os.path.join('.', sub_script_file)
         print(cmd)
