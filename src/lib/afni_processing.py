@@ -414,8 +414,8 @@ def run_SSWarper(preproc_dir, SSWarper_template):
         os.chdir(anat_dir)
 
         cmd = os.path.join('.', sub_script_file)
-            print(cmd)
-            check_call(cmd, shell=True)
+        print(cmd)
+        check_call(cmd, shell=True)
 
 def run_orthogonalize(preproc_dir, onset_dir, orthogonalize_template):
 
