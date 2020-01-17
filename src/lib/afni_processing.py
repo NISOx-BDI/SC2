@@ -139,7 +139,7 @@ def run_subject_level_analyses(fmriprep_dir, onsets_dir, level1_dir,
         # New dict for each subject
         values = dict()
         # Getting subject ID
-        subreg = re.search('sub-\d+', amri)
+        subreg = re.search('sub-\d+', html)
         sub = subreg.group(0)
         values["sub"] = sub
         shortsub = sub.replace("-", "")
