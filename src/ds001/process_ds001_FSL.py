@@ -28,9 +28,6 @@ num_ignored_volumes = 2
 # Specify the TR that will be removed from onesets, equal to num_ignored_volumes*TR
 removed_TR_time = num_ignored_volumes*TR 
 
-# Directory to store the onset files
-onsetDir = os.path.join(fsl_dir, 'ONSETS')
-
 # Define conditions and parametric modulations (if any)
 conditions = (
     (('pumps_fixed', 'pumps_demean'), ('pumps_demean',)),
