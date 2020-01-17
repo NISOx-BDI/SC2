@@ -432,7 +432,7 @@ def run_orthogonalize(fmriprep_dir, onsets_dir, orthogonalize_template):
         values = dict()
         values["stim_dir"] = onsets_dir
 
-        subreg = re.search('sub-\d+', amri)
+        subreg = re.search('sub-\d+', html)
         sub = subreg.group(0)
         values["sub"] = sub
 
