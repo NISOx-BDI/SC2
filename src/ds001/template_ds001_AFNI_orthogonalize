@@ -30,14 +30,14 @@ singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image /opt/afni-l
    -stim_label 7 pumps_RT					     			  \
    -x1D temp.xmat.1D
 
-singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image /opt/afni-latest/ -ort temp.xmat.1D'[0]' -input temp.xmat.1D'[2]'\'     \
+singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image /opt/afni-latest/3dTproject -ort temp.xmat.1D'[0]' -input temp.xmat.1D'[2]'\'     \
            -prefix ${sub}_combined_cash_RT_temp.ort.tr.1D
-singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image /opt/afni-latest/ ${sub}_combined_cash_RT_temp.ort.tr.1D > ${sub}_combined_cash_RT_ort_afni.1D
+singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image /opt/afni-latest/1dtranspose  ${sub}_combined_cash_RT_temp.ort.tr.1D > ${sub}_combined_cash_RT_ort_afni.1D
 
-singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image /opt/afni-latest/ -ort temp.xmat.1D'[5]' -input temp.xmat.1D'[3]'\'     \
+singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image /opt/afni-latest/3dTproject -ort temp.xmat.1D'[5]' -input temp.xmat.1D'[3]'\'     \
            -prefix ${sub}_combined_control_pumps_RT_temp.ort.tr.1D
-singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image /opt/afni-latest/ ${sub}_combined_control_pumps_RT_temp.ort.tr.1D > ${sub}_combined_control_pumps_RT_ort_afni.1D
+singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image /opt/afni-latest/1dtranspose ${sub}_combined_control_pumps_RT_temp.ort.tr.1D > ${sub}_combined_control_pumps_RT_ort_afni.1D
 
-singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image /opt/afni-latest/ -ort temp.xmat.1D'[10]' -input temp.xmat.1D'[8]'\'     \
+singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image /opt/afni-latest/3dTproject -ort temp.xmat.1D'[10]' -input temp.xmat.1D'[8]'\'     \
            -prefix ${sub}_combined_pumps_RT_temp.ort.tr.1D
-singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image /opt/afni-latest/ ${sub}_combined_pumps_RT_temp.ort.tr.1D > ${sub}_combined_pumps_RT_ort_afni.1D
+singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image /opt/afni-latest/1dtranspose ${sub}_combined_pumps_RT_temp.ort.tr.1D > ${sub}_combined_pumps_RT_ort_afni.1D
