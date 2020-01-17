@@ -47,7 +47,7 @@ conditions = (
     ('control_pumps_RT', ('control_pumps_demean', 'response_time')))
 
 # Create onset files based on BIDS tsv files
-cond_files = create_afni_onset_files(raw_dir, onset_dir, conditions, removed_TR_time)
+cond_files = create_afni_onset_files(ds001_raw_dir, onsets_dir, conditions, removed_TR_time)
 
 cwd = os.path.dirname(os.path.realpath(__file__))
 orthogonalize_template = os.path.join(cwd, 'template_ds001_AFNI_orthogonalize')
