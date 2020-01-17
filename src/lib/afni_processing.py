@@ -149,7 +149,11 @@ def run_subject_level_analyses(fmriprep_dir, onsets_dir, level1_dir,
         values["anat_dir"] = anat_dir
         func_dir = os.path.join(fmriprep_dir,sub,'func')
         values["func_dir"] = func_dir
+        # Specifying values for the other place holders
         values["stim_dir"] = onsets_dir
+        values["home_dir"] = home_dir
+        values["AFNI_SPM_singularity_image"] = AFNI_SPM_singularity_image
+        values["AFNI_bin"] = AFNI_bin
 
     if not os.path.isfile(os.path.join(scripts_dir, sub + '_level1.sh')):
         # Fill-in the subject-level template
