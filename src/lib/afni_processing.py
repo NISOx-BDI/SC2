@@ -416,7 +416,7 @@ def run_SSWarper(preproc_dir, SSWarper_template):
         print(cmd)
         check_call(cmd, shell=True)
 
-def run_orthogonalize(fmriprep_dir, onsets_dir, orthogonalize_template, home_dir, AFNI_SPM_singularity_image):
+def run_orthogonalize(fmriprep_dir, onsets_dir, orthogonalize_template, home_dir, AFNI_SPM_singularity_image, AFNI_bin):
 
     scripts_dir = os.path.join(onsets_dir, os.pardir, 'SCRIPTS')
 
@@ -437,6 +437,7 @@ def run_orthogonalize(fmriprep_dir, onsets_dir, orthogonalize_template, home_dir
         values["sub"] = sub
         values["home_dir"] = home_dir
         values["AFNI_SPM_singularity_image"] = AFNI_SPM_singularity_image
+        values["AFNI_bin"] = AFNI_bin
 
 
         if not os.path.isfile(os.path.join(scripts_dir, sub + '_orthorgonalize.sh')):
