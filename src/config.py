@@ -6,4 +6,5 @@ paths["fmriprep_singularity_image"] = '/well/nichols/users/bas627/fmriprep/fmrip
 paths["FS_license"] = os.path.join(paths.get("home_dir"),'license.txt')
 paths["AFNI_SPM_singularity_image"] = '/apps/singularity/afni-fsl-spm12.sif'
 paths["AFNI_bin"] = '/opt/afni-latest'
-paths["python"] = '/well/nichols/shared/miniconda3/envs/py3/bin/python'
+paths["python"] = '/well/nichols/shared/miniconda3/envs/py3/bin/'
+paths["python_bin"] = '/well/nichols/shared/miniconda3/envs/py3/bin/python'
