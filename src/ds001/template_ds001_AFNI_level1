@@ -1,5 +1,5 @@
 # run afni_proc.py to create a single subject processing script
-SINGULARITYENV_PREPEND_PATH=${python} singularity exec --cleanenv -B $home_dir,$python_bin $AFNI_SPM_singularity_image $AFNI_bin/afni_proc.py -subj_id ${subj}                                                  \
+SINGULARITYENV_PREPEND_PATH=${python} singularity exec --cleanenv -B $home_dir,$python_bin $AFNI_SPM_singularity_image $python_bin $AFNI_bin/afni_proc.py -subj_id ${subj}                                                  \
         -script proc.${subj} -scr_overwrite                                    \
         -blocks blur mask scale regress               \
         -copy_anat $anat_dir/${sub}_space-MNI152NLin2009cAsym_desc-preproc_T1w.nii.gz                                 \
