@@ -8,7 +8,6 @@ import shutil
 from lib.fsl_processing import create_fsl_onset_files
 import stat
 import numpy as np
-import nibabel as nib
 
 
 def copy_raw(raw_dir, preproc_dir, *args):

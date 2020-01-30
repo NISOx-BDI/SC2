@@ -8,7 +8,6 @@ import string
 import shutil
 import stat
 import numpy as np
-import nibabel as nib
 
 
 def copy_and_BET(raw_dir, preproc_dir, *args):
