@@ -242,4 +242,7 @@ data/processed/ds120/*
 !data/processed/ds120/fmriprep/
 data/processed/ds120/fmriprep/*/
 
-
+# Ignore all results files except the scripts and onsets
+results/*/*/*
+!results/*/*/SCRIPTS
+!results/*/*/ONSETS
