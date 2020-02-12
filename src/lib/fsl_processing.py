@@ -462,6 +462,9 @@ def create_confound_files(fmriprep_dir, confounds_dir):
     Extracts the motion regressors from the confounds.tsv files outputted by fmriprep
     """
 
+    if not os.path.isdir(confounds_dir):
+        os.mkdir(confounds_dir)
+
     # All fmriprep subject-level directories
     fmriprep_dirs = glob.glob(os.path.join(fmriprep_dir, 'sub-??'))
     
@@ -470,7 +473,7 @@ def create_confound_files(fmriprep_dir, confounds_dir):
         subreg = re.search('sub-\d+', fmriprep_dir)
         sub = subreg.group(0)
         
-        # All fMRI files for this subject
+        # All regressor files for this subject
         regressor_files = glob.glob(os.path.join(fmriprep_dir, 'func', '*-confounds_regressors.tsv'))
         
         # For each run
