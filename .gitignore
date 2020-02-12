@@ -230,17 +230,28 @@ data/raw
 data/processed/ds001/*
 !data/processed/ds001/scripts/
 !data/processed/ds001/fmriprep/
-data/processed/ds001/fmriprep/*/
+data/processed/ds001/fmriprep/*/*
+!data/processed/ds001/fmriprep/*/func/
+data/processed/ds001/fmriprep/*/func/*
+!data/processed/ds001/fmriprep/*/func/*.tsv
 
 data/processed/ds109/*
 !data/processed/ds109/scripts/
 !data/processed/ds109/fmriprep/
-data/processed/ds109/fmriprep/*/
+data/processed/ds109/fmriprep/*/*
+!data/processed/ds109/fmriprep/*/func/
+data/processed/ds109/fmriprep/*/func/*
+!data/processed/ds109/fmriprep/*/func/*.tsv
 
 data/processed/ds120/*
 !data/processed/ds120/scripts/
 !data/processed/ds120/fmriprep/
-data/processed/ds120/fmriprep/*/
+data/processed/ds120/fmriprep/*/*
+!data/processed/ds120/fmriprep/*/func/
+data/processed/ds120/fmriprep/*/func/*
+!data/processed/ds120/fmriprep/*/func/*.tsv
+
+
 
 # Ignore all results files except the scripts and onsets
 results/*/*/*
