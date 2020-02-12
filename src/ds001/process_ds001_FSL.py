@@ -3,7 +3,7 @@ import sys
 sys.path.append("..")
 
 from config import paths
-from lib.fsl_processing import create_fsl_onset_files, run_run_level_analyses, run_subject_level_analyses
+from lib.fsl_processing import create_fsl_onset_files, create_confound_files, run_run_level_analyses, run_subject_level_analyses, run_group_level_analysis
 
 locals().update(paths)
 
@@ -52,7 +52,7 @@ grp_level_fsf = os.path.join(cwd,'template_ds001_FSL_level3.fsf')
 #run_run_level_analyses(fmriprep_dir, run_level_fsf, level1_dir, cond_files)
 
 # Extract motion regressors from fmriprep confounds .tsv
-create_confound_files(fmriprep_dir,confounds_dir)
+create_confound_files(fmriprep_dir,confounds_dir,num_ignored_volumes)
 
 # Run a GLM combining all the fMRI runs of each subject
 #run_subject_level_analyses(level1_dir, sub_level_fsf, level1_dir)

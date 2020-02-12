@@ -7,7 +7,7 @@ from lib.fsl_processing import create_fsl_onset_files, run_run_level_analyses
 
 locals().update(paths)
 
-ds120_raw_dir = os.path.join(home_dir,'data','raw','ds120_R1.0.0')
+ds120_raw_dir = os.path.join(home_dir,'data','raw','ds120_R1.0.0_AMENDED')
 ds120_processed_dir = os.path.join(home_dir,'data','processed','ds120')
 fmriprep_dir = os.path.join(ds120_processed_dir,'fmriprep')
 fsl_dir = os.path.join(home_dir,'results','ds120','FSL')
@@ -47,7 +47,7 @@ cwd = os.path.dirname(os.path.realpath(__file__))
 run_level_fsf = os.path.join(cwd,'template_ds120_FSL_level1.fsf')
 
 # Run a GLM for each fMRI run of each subject
-run_run_level_analyses(fmriprep_dir, run_level_fsf, level1_dir, cond_files)
+#run_run_level_analyses(fmriprep_dir, run_level_fsf, level1_dir, cond_files)
 
 # Run a GLM combining all the fMRI runs of each subject
 #run_subject_level_analyses(level1_dir, sub_level_fsf, level2_dir)

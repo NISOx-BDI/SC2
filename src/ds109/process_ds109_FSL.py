@@ -3,7 +3,7 @@ import sys
 sys.path.append("..")
 
 from config import paths
-from lib.fsl_processing import create_fsl_onset_files, run_run_level_analyses
+from lib.fsl_processing import create_fsl_onset_files, run_run_level_analyses, run_subject_level_analyses, run_group_level_analysis
 
 locals().update(paths)
 
@@ -42,15 +42,17 @@ cond_files = create_fsl_onset_files(ds109_raw_dir, onsets_dir, conditions, remov
 
 cwd = os.path.dirname(os.path.realpath(__file__))
 run_level_fsf = os.path.join(cwd,'template_ds109_FSL_level1.fsf')
+sub_level_fsf = os.path.join(cwd,'template_ds109_FSL_level2.fsf')
+grp_level_fsf = os.path.join(cwd,'template_ds109_FSL_level3.fsf')
 
 # Run a GLM for each fMRI run of each subject
-run_run_level_analyses(fmriprep_dir, run_level_fsf, level1_dir, cond_files)
+#run_run_level_analyses(fmriprep_dir, run_level_fsf, level1_dir, cond_files)
 
 # Run a GLM combining all the fMRI runs of each subject
-#run_subject_level_analyses(level1_dir, sub_level_fsf, level2_dir)
+#run_subject_level_analyses(level1_dir, sub_level_fsf, level1_dir)
 
 # Run the group-level GLM
-#run_group_level_analysis(level2_dir, grp_level_fsf, level3_dir, '1')
+run_group_level_analysis(level1_dir, grp_level_fsf, level3_dir, '1')
 
 # Run a permutation test
 #run_permutation_test(level1_dir, perm_dir, perm_template)
