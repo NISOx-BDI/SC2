@@ -8,6 +8,7 @@ import string
 import shutil
 import stat
 import numpy as np
+import pandas as pd
 
 
 def copy_and_BET(raw_dir, preproc_dir, *args):
@@ -455,3 +456,31 @@ def nidm_export(level1_dir, level3_dir):
     cmd = 'nidmfsl -g control ' + num_subs + ' ' + feat_dir
     print(cmd)
     check_call(cmd, shell=True)
+
+def create_confound_files(fmriprep_dir, confounds_dir):
+    """
+    Extracts the motion regressors from the confounds.tsv files outputted by fmriprep
+    """
+
+    # All fmriprep subject-level directories
+    fmriprep_dirs = glob.glob(os.path.join(fmriprep_dir, 'sub-??'))
+    
+    # For each subject
+    for fmriprep_dir in fmriprep_dirs:
+        subreg = re.search('sub-\d+', fmriprep_dir)
+        sub = subreg.group(0)
+        
+        # All fMRI files for this subject
+        regressor_files = glob.glob(os.path.join(fmriprep_dir, 'func', '*-confounds_regressors.tsv'))
+        
+        # For each run
+        for regressor_file in regressor_files:
+            runreg = re.search('run-\d+', regressor_file)
+            run = runreg.group(0)
+
+            out_dir = os.path.join(confounds_dir)
+
+            regressor_data = pd.read_csv(regressor_file, delimiter='\t')
+            df = pd.DataFrame(regressor_data)
+            df_motion = df[["trans_x","trans_y","trans_z","rot_x","rot_y","rot_z"]]
+            df_motion.to_csv(os.path.join(confounds_dir, sub + '_' + run + '_motion_regressors.txt'))

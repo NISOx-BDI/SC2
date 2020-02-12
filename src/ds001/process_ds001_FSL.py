@@ -16,6 +16,7 @@ if not os.path.isdir(fsl_dir):
     os.mkdir(fsl_dir)
 
 onsets_dir = os.path.join(fsl_dir, 'ONSETS')
+confounds_dir = os.path.join(fsl_dir, 'MOTION_REGRESSORS')
 level1_dir = os.path.join(fsl_dir, 'LEVEL1')
 level3_dir = os.path.join(fsl_dir, 'LEVEL2', 'group')
 perm_dir = os.path.join(fsl_dir, 'LEVEL2', 'permutation_test')
@@ -50,8 +51,11 @@ grp_level_fsf = os.path.join(cwd,'template_ds001_FSL_level3.fsf')
 # Run a GLM for each fMRI run of each subject
 #run_run_level_analyses(fmriprep_dir, run_level_fsf, level1_dir, cond_files)
 
+# Extract motion regressors from fmriprep confounds .tsv
+create_confound_files(fmriprep_dir,confounds_dir)
+
 # Run a GLM combining all the fMRI runs of each subject
-run_subject_level_analyses(level1_dir, sub_level_fsf, level1_dir)
+#run_subject_level_analyses(level1_dir, sub_level_fsf, level1_dir)
 
 # Run the group-level GLM
 #run_group_level_analysis(level2_dir, grp_level_fsf, level3_dir, '1')
