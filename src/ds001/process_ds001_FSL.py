@@ -52,7 +52,7 @@ grp_level_fsf = os.path.join(cwd,'template_ds001_FSL_level3.fsf')
 #run_run_level_analyses(fmriprep_dir, run_level_fsf, level1_dir, cond_files)
 
 # Extract motion regressors from fmriprep confounds .tsv
-create_confound_files(fmriprep_dir,confounds_dir,num_ignored_volumes)
+#create_confound_files(fmriprep_dir,confounds_dir,num_ignored_volumes)
 
 # Run a GLM combining all the fMRI runs of each subject
 #run_subject_level_analyses(level1_dir, sub_level_fsf, level1_dir)
@@ -65,3 +65,4 @@ create_confound_files(fmriprep_dir,confounds_dir,num_ignored_volumes)
 
 # Create mean and standard deviations maps of the mean func and anat images in MNI space
 #mean_mni_images(preproc_dir, level1_dir, mni_dir)
+
