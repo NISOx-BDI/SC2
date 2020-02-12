@@ -41,16 +41,16 @@ conditions = (
 # Create 3-columns onset files based on BIDS tsv files
 #cond_files = create_fsl_onset_files(ds109_raw_dir, onsets_dir, conditions, removed_TR_time)
 
+# Extract motion regressors from fmriprep confounds .tsv
+#create_confound_files(fmriprep_dir,confounds_dir)
+
 cwd = os.path.dirname(os.path.realpath(__file__))
 run_level_fsf = os.path.join(cwd,'template_ds109_FSL_level1.fsf')
 sub_level_fsf = os.path.join(cwd,'template_ds109_FSL_level2.fsf')
 grp_level_fsf = os.path.join(cwd,'template_ds109_FSL_level3.fsf')
 
 # Run a GLM for each fMRI run of each subject
-#run_run_level_analyses(fmriprep_dir, run_level_fsf, level1_dir, cond_files)
-
-# Extract motion regressors from fmriprep confounds .tsv
-create_confound_files(fmriprep_dir,confounds_dir)
+run_run_level_analyses(fmriprep_dir, run_level_fsf, level1_dir, cond_files)
 
 # Run a GLM combining all the fMRI runs of each subject
 #run_subject_level_analyses(level1_dir, sub_level_fsf, level1_dir)
