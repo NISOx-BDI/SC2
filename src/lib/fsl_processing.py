@@ -176,7 +176,7 @@ def run_run_level_analyses(fmriprep_dir, run_level_fsf, level1_dir, cond_files):
     fmriprep_dirs = glob.glob(os.path.join(fmriprep_dir, 'sub-??'))
 
     # Directory containing motion regressor .tsv files for all subjects
-    motion_regressor_dir = os.path.join(level1_dir,'MOTION_REGRESSORS')
+    motion_regressor_dir = os.path.join(level1_dir, os.pardir, 'MOTION_REGRESSORS')
     
     # For each subject
     for fmriprep_dir in fmriprep_dirs:
@@ -463,7 +463,7 @@ def nidm_export(level1_dir, level3_dir):
     print(cmd)
     check_call(cmd, shell=True)
 
-def create_confound_files(fmriprep_dir, confounds_dir, args):
+def create_confound_files(fmriprep_dir, confounds_dir, *args):
     """
     Extracts the motion regressors from the confounds.tsv files outputted by fmriprep
     """

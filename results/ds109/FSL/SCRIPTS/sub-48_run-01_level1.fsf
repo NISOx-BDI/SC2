@@ -70,7 +70,7 @@ set fmri(noisear) 0.34
 # Motion correction
 # 0 : None
 # 1 : MCFLIRT
-set fmri(mc) 1
+set fmri(mc) 0
 
 # Spin-history (currently obsolete)
 set fmri(sh_yn) 0
@@ -109,7 +109,7 @@ set fmri(st_file) ""
 set fmri(bet_yn) 0
 
 # Spatial smoothing FWHM (mm)
-set fmri(smooth) 0
+set fmri(smooth) 8
 
 # Intensity normalization
 set fmri(norm_yn) 0
@@ -245,7 +245,7 @@ set fmri(regstandard_yn) 1
 set fmri(alternateReference_yn) 0
 
 # Standard image
-set fmri(regstandard) "/well/win/software/packages/fsl/5.0.11/data/standard/MNI152_T1_2mm_brain"
+set fmri(regstandard) "/well/win/software/packages/fsl/6.0.3/data/standard/MNI152_T1_2mm_brain"
 
 # Search space for registration to standard space
 # 0   : No search
@@ -276,7 +276,10 @@ set fmri(ncopeinputs) 0
 set feat_files(1) "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/data/processed/ds109/fmriprep/sub-48/func/sub-48_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz"
 
 # Add confound EVs text file
-set fmri(confoundevs) 0
+set fmri(confoundevs) 1
+
+# Confound EVs text file for analysis 1
+set confoundev_files(1) "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/FSL/LEVEL1/../MOTION_REGRESSORS/sub-48_run-01_motion_regressors.txt"
 
 # EV 1 title
 set fmri(evtitle1) "false_belief_question"

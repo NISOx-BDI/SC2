@@ -70,7 +70,7 @@ set fmri(noisear) 0.34
 # Motion correction
 # 0 : None
 # 1 : MCFLIRT
-set fmri(mc) 1
+set fmri(mc) 0
 
 # Spin-history (currently obsolete)
 set fmri(sh_yn) 0
@@ -109,7 +109,7 @@ set fmri(st_file) ""
 set fmri(bet_yn) 0
 
 # Spatial smoothing FWHM (mm)
-set fmri(smooth) 0
+set fmri(smooth) 8
 
 # Intensity normalization
 set fmri(norm_yn) 0
