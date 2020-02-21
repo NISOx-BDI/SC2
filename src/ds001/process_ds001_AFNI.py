@@ -48,7 +48,7 @@ conditions = (
     ('control_pumps_RT', ('control_pumps_demean', 'response_time')))
 
 # Create onset files based on BIDS tsv files
-#cond_files = create_afni_onset_files(ds001_raw_dir, onsets_dir, conditions, removed_TR_time)
+cond_files = create_afni_onset_files(ds001_raw_dir, onsets_dir, conditions, removed_TR_time)
 
 # Extract motion regressors from fmriprep confounds .tsv
 create_confound_files(fmriprep_dir, confounds_dir, num_ignored_volumes)
@@ -60,10 +60,10 @@ grp_level_template = os.path.join(cwd, 'template_ds001_AFNI_level2')
 perm_template = os.path.join(cwd, 'template_ds001_AFNI_perm_test')
 
 # Orthogonalize conditions following the original study
-#run_orthogonalize(fmriprep_dir, onsets_dir, orthogonalize_template, home_dir, AFNI_SPM_singularity_image, AFNI_bin)
+run_orthogonalize(fmriprep_dir, onsets_dir, orthogonalize_template, home_dir, AFNI_SPM_singularity_image, AFNI_bin)
 
 # Run a GLM combining all the fMRI runs of each subject
-#run_subject_level_analyses(fmriprep_dir, onsets_dir, level1_dir, sub_level_template, home_dir, AFNI_SPM_singularity_image, AFNI_bin, python, python_bin)
+run_subject_level_analyses(fmriprep_dir, onsets_dir, level1_dir, sub_level_template, home_dir, AFNI_SPM_singularity_image, AFNI_bin)
 
 # Run the group-level GLM
 #run_group_level_analysis(level1_dir, level2_dir, grp_level_template)

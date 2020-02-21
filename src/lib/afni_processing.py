@@ -121,7 +121,7 @@ def create_afni_onset_files(study_dir, onset_dir, conditions, removed_TR_time, *
 
 
 def run_subject_level_analyses(fmriprep_dir, onsets_dir, level1_dir,
-    sub_level_template, home_dir, AFNI_SPM_singularity_image, AFNI_bin, python, python_bin):
+    sub_level_template, home_dir, AFNI_SPM_singularity_image, AFNI_bin):
 
     scripts_dir = os.path.join(onsets_dir, os.pardir, 'SCRIPTS')
     motion_regressors_dir = os.path.join(onsets_dir, os.pardir, 'MOTION_REGRESSORS')
@@ -156,8 +156,6 @@ def run_subject_level_analyses(fmriprep_dir, onsets_dir, level1_dir,
         values["motion_regressors_dir"] = motion_regressors_dir
         values["AFNI_SPM_singularity_image"] = AFNI_SPM_singularity_image
         values["AFNI_bin"] = AFNI_bin
-        values["python"] = python
-        values["python_bin"] = python_bin
 
     if not os.path.isfile(os.path.join(scripts_dir, sub + '_level1.sh')):
         # Fill-in the subject-level template
