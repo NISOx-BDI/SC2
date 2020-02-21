@@ -118,7 +118,7 @@ set fmri(norm_yn) 0
 set fmri(perfsub_yn) 0
 
 # Highpass temporal filtering
-set fmri(temphp_yn) 0
+set fmri(temphp_yn) 1
 
 # Lowpass temporal filtering
 set fmri(templp_yn) 0
@@ -245,7 +245,7 @@ set fmri(regstandard_yn) 1
 set fmri(alternateReference_yn) 0
 
 # Standard image
-set fmri(regstandard) "/well/win/software/packages/fsl/6.0.3/data/standard/MNI152_T1_2mm_brain"
+set fmri(regstandard) "/well/nichols/shared/fsl/6.0.3/data/standard/MNI152_T1_2mm_brain"
 
 # Search space for registration to standard space
 # 0   : No search
