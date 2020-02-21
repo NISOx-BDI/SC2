@@ -506,5 +506,17 @@ def create_confound_files(fmriprep_dir, confounds_dir, *args):
             df_motion = df[["trans_x","trans_y","trans_z","rot_x","rot_y","rot_z"]]
             df_motion = df_motion.iloc[removed_TRs:]
             combined_regressor_data = combined_regressor_data.append(df_motion)
-        combined_regressor_data.to_csv(os.path.join(confounds_dir, sub + '_' + 'combined_motion_regressors.txt'), index=None, sep='\t')
+
+        trans_x_data = combined_regressor_data[["trans_x"]]
+        trans_x_data.to_csv(os.path.join(confounds_dir, sub + '_' + 'combined_trans_x.1d'), index=None, sep='\t', header=False)
+        trans_y_data = combined_regressor_data[["trans_y"]]
+        trans_y_data.to_csv(os.path.join(confounds_dir, sub + '_' + 'combined_trans_y.1d'), index=None, sep='\t', header=False)
+        trans_z_data = combined_regressor_data[["trans_z"]]
+        trans_z_data.to_csv(os.path.join(confounds_dir, sub + '_' + 'combined_trans_z.1d'), index=None, sep='\t', header=False)
+        rot_x_data = combined_regressor_data[["rot_x"]]
+        rot_x_data.to_csv(os.path.join(confounds_dir, sub + '_' + 'combined_rot_x.1d'), index=None, sep='\t', header=False)
+        rot_y_data = combined_regressor_data[["rot_y"]]
+        rot_y_data.to_csv(os.path.join(confounds_dir, sub + '_' + 'combined_rot_y.1d'), index=None, sep='\t', header=False)
+        rot_z_data = combined_regressor_data[["rot_z"]]
+        rot_z_data.to_csv(os.path.join(confounds_dir, sub + '_' + 'combined_rot_z.1d'), index=None, sep='\t', header=False)
 
