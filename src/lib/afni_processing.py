@@ -507,6 +507,7 @@ def create_confound_files(fmriprep_dir, confounds_dir, *args):
             regressor_data = pd.read_csv(regressor_file, delimiter='\t')
             df = pd.DataFrame(regressor_data)
             df_motion = df[["trans_x","trans_y","trans_z","rot_x","rot_y","rot_z"]]
+            print(df_motion)
             df_motion = df_motion.iloc[removed_TRs:]
             combined_regressor_data.append(df_motion)
         combined_regressor_data.to_csv(os.path.join(confounds_dir, sub + '_' + 'combined_motion_regressors.txt'), index=None, sep='\t')
