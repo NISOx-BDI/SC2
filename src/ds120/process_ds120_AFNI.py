@@ -19,6 +19,7 @@ if not os.path.isdir(afni_dir):
     os.mkdir(afni_dir)
 
 onsets_dir = os.path.join(afni_dir, 'ONSETS')
+confounds_dir = os.path.join(afni_dir, 'MOTION_REGRESSORS')
 level1_dir = os.path.join(afni_dir, 'LEVEL1')
 level3_dir = os.path.join(afni_dir, 'LEVEL2', 'group')
 perm_dir = os.path.join(afni_dir, 'LEVEL2', 'permutation_test')
@@ -56,7 +57,10 @@ conditions = (
     ('reward', ('reward_resp', 'duration')))
 
 # Create onset files based on BIDS tsv files
-cond_files = create_afni_onset_files(ds120_raw_dir, onsets_dir, conditions, removed_TR_time, subject_ids)
+#cond_files = create_afni_onset_files(ds120_raw_dir, onsets_dir, conditions, removed_TR_time, subject_ids)
+
+# Extract motion regressors from fmriprep confounds .tsv
+create_confound_files(fmriprep_dir, confounds_dir)
 
 sub_level_template = os.path.join(cwd, 'lib', 'template_ds120_AFNI_level1')
 grp_level_template = os.path.join(cwd, 'lib', 'template_ds120_AFNI_level2')

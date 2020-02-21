@@ -16,6 +16,7 @@ if not os.path.isdir(afni_dir):
     os.mkdir(afni_dir)
 
 onsets_dir = os.path.join(afni_dir, 'ONSETS')
+confounds_dir = os.path.join(afni_dir, 'MOTION_REGRESSORS')
 level1_dir = os.path.join(afni_dir, 'LEVEL1')
 level3_dir = os.path.join(afni_dir, 'LEVEL2', 'group')
 perm_dir = os.path.join(afni_dir, 'LEVEL2', 'permutation_test')
@@ -49,6 +50,9 @@ conditions = (
 # Create onset files based on BIDS tsv files
 #cond_files = create_afni_onset_files(ds001_raw_dir, onsets_dir, conditions, removed_TR_time)
 
+# Extract motion regressors from fmriprep confounds .tsv
+create_confound_files(fmriprep_dir, confounds_dir, num_ignored_volumes)
+
 cwd = os.path.dirname(os.path.realpath(__file__))
 orthogonalize_template = os.path.join(cwd, 'template_ds001_AFNI_orthogonalize')
 sub_level_template = os.path.join(cwd, 'template_ds001_AFNI_level1')
@@ -62,7 +66,7 @@ perm_template = os.path.join(cwd, 'template_ds001_AFNI_perm_test')
 #run_subject_level_analyses(fmriprep_dir, onsets_dir, level1_dir, sub_level_template, home_dir, AFNI_SPM_singularity_image, AFNI_bin, python, python_bin)
 
 # Run the group-level GLM
-run_group_level_analysis(level1_dir, level2_dir, grp_level_template)
+#run_group_level_analysis(level1_dir, level2_dir, grp_level_template)
 
 # Run a permutation test
 #run_permutation_test(level1_dir, perm_dir, perm_template)
