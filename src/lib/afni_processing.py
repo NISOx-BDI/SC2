@@ -469,3 +469,43 @@ def run_orthogonalize(fmriprep_dir, onsets_dir, orthogonalize_template, home_dir
             cmd = os.path.join('.', sub_script_file)
             print(cmd)
             check_call(cmd, shell=True)
+
+def create_confound_files(fmriprep_dir, confounds_dir, *args)
+    """
+    Extracts the motion regressors from the confounds.tsv files outputted by fmriprep, outputting a text files for each motion regressor (combined across runs)
+    """
+    if not os.path.isdir(confounds_dir):
+        os.mkdir(confounds_dir)
+
+    # If removed TRs = c, we drop the first c rows of the regressors files
+    if args:
+        removed_TRs = args
+    else:
+        removed_TRs = 0
+
+    # All fmriprep subject-level directories
+    fmriprep_dirs = glob.glob(os.path.join(fmriprep_dir, 'sub-??'))
+
+    
+    # For each subject
+    for fmriprep_dir in fmriprep_dirs:
+        subreg = re.search('sub-\d+', fmriprep_dir)
+        sub = subreg.group(0)
+        
+        # All regressor files for this subject
+        regressor_files = glob.glob(os.path.join(fmriprep_dir, 'func', '*-confounds_regressors.tsv'))
+
+        combined_regressor_data = pd.DataFrame()
+        # For each run we combine the .tsv files into one dataframe
+        for regressor_file in regressor_files:
+            runreg = re.search('run-\d+', regressor_file)
+            run = runreg.group(0)
+
+            out_dir = os.path.join(confounds_dir)
+
+            regressor_data = pd.read_csv(regressor_file, delimiter='\t')
+            df = pd.DataFrame(regressor_data)
+            df_motion = df[["trans_x","trans_y","trans_z","rot_x","rot_y","rot_z"]]
+            df_motion = df_motion.iloc[removed_TRs:]
+            combined_regressor_data.append(df_motion)
+        combined_regressor_data.to_csv(os.path.join(confounds_dir, sub + '_' + 'combined_motion_regressors.txt'), index=None, sep='\t')
