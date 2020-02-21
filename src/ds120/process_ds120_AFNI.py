@@ -5,7 +5,7 @@ from subprocess import check_call
 sys.path.append("..")
 
 from config import paths
-from lib.afni_processing import create_afni_onset_files, run_subject_level_analyses
+from lib.afni_processing import create_afni_onset_files, run_subject_level_analyses, create_confound_files
 
 locals().update(paths)
 
