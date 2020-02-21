@@ -1,4 +1,4 @@
-import os, glob, re, string, stat
+import os, glob, re, string, stat, shutil
 from subprocess import check_call
 
 def run_fmriprep(raw_dir, out_dir, template_script, packages_dir, fmriprep_singularity_image, FS_license, subject_ids=0):
