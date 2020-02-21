@@ -8,6 +8,7 @@ import shutil
 from lib.fsl_processing import create_fsl_onset_files
 import stat
 import numpy as np
+import pandas as pd
 
 
 def copy_raw(raw_dir, preproc_dir, *args):
@@ -470,7 +471,7 @@ def run_orthogonalize(fmriprep_dir, onsets_dir, orthogonalize_template, home_dir
             print(cmd)
             check_call(cmd, shell=True)
 
-def create_confound_files(fmriprep_dir, confounds_dir, *args)
+def create_confound_files(fmriprep_dir, confounds_dir, *args):
     """
     Extracts the motion regressors from the confounds.tsv files outputted by fmriprep, outputting a text files for each motion regressor (combined across runs)
     """
