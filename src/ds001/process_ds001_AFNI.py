@@ -51,7 +51,7 @@ conditions = (
 #cond_files = create_afni_onset_files(ds001_raw_dir, onsets_dir, conditions, removed_TR_time)
 
 # Extract motion regressors from fmriprep confounds .tsv
-create_confound_files(fmriprep_dir, confounds_dir, num_ignored_volumes)
+create_confound_files(fmriprep_dir,confounds_dir,num_ignored_volumes)
 
 cwd = os.path.dirname(os.path.realpath(__file__))
 orthogonalize_template = os.path.join(cwd, 'template_ds001_AFNI_orthogonalize')

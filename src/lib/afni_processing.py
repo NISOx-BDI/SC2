@@ -502,8 +502,6 @@ def create_confound_files(fmriprep_dir, confounds_dir, *args):
             runreg = re.search('run-\d+', regressor_file)
             run = runreg.group(0)
 
-            out_dir = os.path.join(confounds_dir)
-
             regressor_data = pd.read_csv(regressor_file, delimiter='\t')
             df = pd.DataFrame(regressor_data)
             df_motion = df[["trans_x","trans_y","trans_z","rot_x","rot_y","rot_z"]]
