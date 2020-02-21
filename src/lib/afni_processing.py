@@ -480,14 +480,13 @@ def create_confound_files(fmriprep_dir, confounds_dir, *args):
 
     # If removed TRs = c, we drop the first c rows of the regressors files
     if args:
-        removed_TRs = args
+        removed_TRs = args[0]
     else:
         removed_TRs = 0
 
     # All fmriprep subject-level directories
     fmriprep_dirs = glob.glob(os.path.join(fmriprep_dir, 'sub-??'))
 
-    
     # For each subject
     for fmriprep_dir in fmriprep_dirs:
         subreg = re.search('sub-\d+', fmriprep_dir)
@@ -496,7 +495,7 @@ def create_confound_files(fmriprep_dir, confounds_dir, *args):
         # All regressor files for this subject
         regressor_files = glob.glob(os.path.join(fmriprep_dir, 'func', '*-confounds_regressors.tsv'))
 
-        combined_regressor_data = pd.DataFrame()
+        combined_regressor_data = pd.DataFrame(columns=['trans_x','trans_y','trans_z','rot_x','rot_y','rot_z'])
         # For each run we combine the .tsv files into one dataframe
         for regressor_file in regressor_files:
             runreg = re.search('run-\d+', regressor_file)
@@ -505,7 +504,7 @@ def create_confound_files(fmriprep_dir, confounds_dir, *args):
             regressor_data = pd.read_csv(regressor_file, delimiter='\t')
             df = pd.DataFrame(regressor_data)
             df_motion = df[["trans_x","trans_y","trans_z","rot_x","rot_y","rot_z"]]
-            print(df_motion)
             df_motion = df_motion.iloc[removed_TRs:]
-            combined_regressor_data.append(df_motion)
+            combined_regressor_data = combined_regressor_data.append(df_motion)
         combined_regressor_data.to_csv(os.path.join(confounds_dir, sub + '_' + 'combined_motion_regressors.txt'), index=None, sep='\t')
+

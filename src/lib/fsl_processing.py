@@ -472,7 +472,7 @@ def create_confound_files(fmriprep_dir, confounds_dir, *args):
 
     # If removed TRs = c, we drop the first c rows of the regressors files
     if args:
-        removed_TRs = args
+        removed_TRs = args[0]
     else:
         removed_TRs = 0
 
@@ -497,3 +497,4 @@ def create_confound_files(fmriprep_dir, confounds_dir, *args):
             df_motion = df[["trans_x","trans_y","trans_z","rot_x","rot_y","rot_z"]]
             df_motion = df_motion.iloc[removed_TRs:]
             df_motion.to_csv(os.path.join(confounds_dir, sub + '_' + run + '_motion_regressors.txt'), index=None, sep='\t')
+
