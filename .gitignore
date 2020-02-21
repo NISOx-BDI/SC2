@@ -257,3 +257,4 @@ data/processed/ds120/fmriprep/*/func/*
 results/*/*/*
 !results/*/*/SCRIPTS
 !results/*/*/ONSETS
+!results/*/*/MOTION_REGRESSORS
