@@ -7,8 +7,8 @@ singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image $AFNI_bin/a
         -copy_anat $anat_dir/${sub}_space-MNI152NLin2009cAsym_desc-preproc_T1w.nii.gz \
 		-anat_has_skull no \
         -dsets                                                                 \
-            $func_dir/${sub}_task-theoryofmindwithmanualresponse_run-01_bold.nii.gz     \
-            $func_dir/${sub}_task-theoryofmindwithmanualresponse_run-02_bold.nii.gz     \
+            $func_dir/${sub}_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz     \
+            $func_dir/${sub}_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz     \
         -blur_size 8.0                                                         \
         -regress_stim_times                                                    \
             $stim_dir/${sub}_combined_false_belief_story_afni.1d               \
