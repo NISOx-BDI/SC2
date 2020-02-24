@@ -6,9 +6,9 @@ singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image $AFNI_bin/a
         -anat_has_skull no                         \
         -tcat_remove_first_trs 4                                               \
         -dsets                                                                 \
-            $func_dir/${sub}_task-antisaccadetaskwithfixedorder_run-01_bold.nii.gz    \
-            $func_dir/${sub}_task-antisaccadetaskwithfixedorder_run-02_bold.nii.gz    \
-            $func_dir/${sub}_task-antisaccadetaskwithfixedorder_run-03_bold.nii.gz    \
+            $func_dir/${sub}_task-antisaccadetaskwithfixedorder_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz    \
+            $func_dir/${sub}_task-antisaccadetaskwithfixedorder_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz    \
+            $func_dir/${sub}_task-antisaccadetaskwithfixedorder_run-03_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz    \
         -tshift_opts_ts -tpattern alt+z                                        \
         -blur_size 5.0                                                         \
         -regress_stim_times                                                    \
