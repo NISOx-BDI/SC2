@@ -1,0 +1,39 @@
+# run afni_proc.py to create a single subject processing script
+singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image $AFNI_bin/afni_proc.py -subj_id ${subj} \
+        -script proc.${subj} -scr_overwrite                                    \
+        -blocks tshift blur mask scale regress               \
+        -copy_anat $anat_dir/${sub}_space-MNI152NLin2009cAsym_desc-preproc_T1w.nii.gz                                 \
+        -anat_has_skull no                         \
+        -tcat_remove_first_trs 4                                               \
+        -dsets                                                                 \
+            $func_dir/${sub}_task-antisaccadetaskwithfixedorder_run-01_bold.nii.gz    \
+            $func_dir/${sub}_task-antisaccadetaskwithfixedorder_run-02_bold.nii.gz    \
+            $func_dir/${sub}_task-antisaccadetaskwithfixedorder_run-03_bold.nii.gz    \
+        -tshift_opts_ts -tpattern alt+z                                        \
+        -blur_size 5.0                                                         \
+        -regress_stim_times                                                    \
+            $stim_dir/${sub}_combined_neutral_afni.1d                          \
+            $stim_dir/${sub}_combined_reward_afni.1d                           \
+            $motion_regressors_dir/${sub}_combined_trans_x.1d                  \
+            $motion_regressors_dir/${sub}_combined_trans_y.1d                  \
+            $motion_regressors_dir/${sub}_combined_trans_z.1d                  \
+            $motion_regressors_dir/${sub}_combined_rot_x.1d                    \
+            $motion_regressors_dir/${sub}_combined_rot_y.1d                    \
+            $motion_regressors_dir/${sub}_combined_rot_z.1d                    \
+        -regress_stim_labels                                                   \
+            neutral reward trans_x trans_y trans_z rot_x rot_y rot_z           \
+        -regress_basis_multi                                                   \
+            'SIN(0,24,8)' 'SIN(0,24,8)' 'NONE' 'NONE' 'NONE' 'NONE' 'NONE' 'NONE' \
+        -regress_stim_types                                                    \
+            times times file file file file file file                          \
+	-regress_3dD_stop						       \
+	-regress_reml_exec 						       \
+        -regress_opts_3dD                                                      \
+            -gltsym 'SYM: neutral'                                             \
+        -glt_label 1 neutral_vs_baseline                                       \
+             -gltsym 'SYM: reward'                                             \
+        -glt_label 2 reward_vs_baseline                                        \
+        -regress_make_ideal_sum sum_ideal.1D                                   \
+        -regress_est_blur_epits                                                \
+        -regress_est_blur_errts
+        
