@@ -57,16 +57,17 @@ conditions = (
     ('reward', ('reward_resp', 'duration')))
 
 # Create onset files based on BIDS tsv files
-#cond_files = create_afni_onset_files(ds120_raw_dir, onsets_dir, conditions, removed_TR_time, subject_ids)
+cond_files = create_afni_onset_files(ds120_raw_dir, onsets_dir, conditions, removed_TR_time, subject_ids)
 
 # Extract motion regressors from fmriprep confounds .tsv
-create_confound_files(fmriprep_dir, confounds_dir)
+create_confound_files(fmriprep_dir, confounds_dir, num_ignored_volumes)
 
-sub_level_template = os.path.join(cwd, 'lib', 'template_ds120_AFNI_level1')
-grp_level_template = os.path.join(cwd, 'lib', 'template_ds120_AFNI_level2')
+cwd = os.path.dirname(os.path.realpath(__file__))
+sub_level_template = os.path.join(cwd, 'template_ds120_AFNI_level1')
+#grp_level_template = os.path.join(cwd, 'template_ds120_AFNI_level2')
 
 # Run a GLM combining all the fMRI runs of each subject
-#run_subject_level_analyses(preproc_dir, onset_dir, level1_dir, sub_level_template)
+run_subject_level_analyses(fmriprep_dir, onsets_dir, level1_dir, sub_level_template, home_dir, AFNI_SPM_singularity_image, AFNI_bin)
 
 # Run the group-level GLM
 #run_group_level_analysis(level1_dir, level2_dir, grp_level_template)
