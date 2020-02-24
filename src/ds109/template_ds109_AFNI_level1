@@ -27,6 +27,8 @@ singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image $AFNI_bin/a
         -regress_basis_multi                                                   \
             'SPMG1(10)' 'SPMG1(6)' 'SPMG1(10)' 'SPMG1(6)'                      \
             'NONE' 'NONE' 'NONE' 'NONE' 'NONE' 'NONE'                          \
+        -regress_stim_types                                                    \
+            AM1 AM1 AM1 AM1 file file file file file file file                 \
     -regress_3dD_stop                                                          \
     -regress_reml_exec                                                         \
         -regress_opts_3dD                                                      \
