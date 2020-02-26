@@ -3,7 +3,7 @@ singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image $AFNI_bin/a
         -script proc.${subj} -scr_overwrite                                    \
         -blocks blur mask scale regress               \
         -copy_anat $anat_dir/${sub}_space-MNI152NLin2009cAsym_desc-preproc_T1w.nii.gz                                 \
-		-anat_has_skull yes					       \
+		-anat_has_skull no					       \
         -tcat_remove_first_trs 2                                               \
         -dsets                                                                 \
             $func_dir/${sub}_task-balloonanalogrisktask_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz     \
