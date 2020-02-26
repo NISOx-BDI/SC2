@@ -190,7 +190,7 @@ def run_subject_level_analyses(fmriprep_dir, onsets_dir, level1_dir,
             print(cmd)
             check_call(cmd, shell=True)
 
-def run_group_level_analysis(level1_dir, level2_dir, grp_level_template):
+def run_group_level_analysis(level1_dir, level2_dir, grp_level_template, home_dir, AFNI_SPM_singularity_image, AFNI_bin):
 
     scripts_dir = os.path.join(level1_dir, os.pardir, 'SCRIPTS')
 
@@ -204,6 +204,9 @@ def run_group_level_analysis(level1_dir, level2_dir, grp_level_template):
     values = dict()
     values["level2_dir"] = level2_dir
     values["level1_dir"] = level1_dir
+    values["home_dir"] = home_dir
+    values["AFNI_SPM_singularity_image"] = AFNI_SPM_singularity_image
+    values["AFNI_bin"] = AFNI_bin
 
     with open(grp_level_template) as f:
         tpm = f.read()
