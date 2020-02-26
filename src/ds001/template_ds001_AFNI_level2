@@ -32,10 +32,11 @@ grep -h "err_reml ACF" $level1_dir/sub-*/sub*/blur_est*   \
     | cut -d\  -f1-3                                   	  \
     > group_ACF_ests.1D
 
-blur_est=`3dTstat -mean -prefix - group_ACF_ests.1D\'` 
+blur_est=# Create a group mask
+singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image $AFNI_bin/3dTstat -mean -prefix - group_ACF_ests.1D\'` 
 echo "++ The group average ACF params are: $$blur_est"
 
- Simulations for FWE corrected cluster-size inference
+# Simulations for FWE corrected cluster-size inference
 singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image $AFNI_bin/3dClustSim                                       \
     -both                                        \
     -mask   mask.nii.gz                          \
