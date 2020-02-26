@@ -32,7 +32,7 @@ grep -h "err_reml ACF" $level1_dir/sub-*/sub*/blur_est*   \
     | cut -d\  -f1-3                                   	  \
     > group_ACF_ests.1D
 
-blur_est= singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image $AFNI_bin/3dTstat -mean -prefix - group_ACF_ests.1D\'` 
+blur_est=`singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image $AFNI_bin/3dTstat -mean -prefix - group_ACF_ests.1D\'` 
 echo "++ The group average ACF params are: $$blur_est"
 
 # Simulations for FWE corrected cluster-size inference
@@ -43,14 +43,14 @@ singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image $AFNI_bin/3
     -prefix ClustSim 
 
 # Obtaining cluster extent threshold from the ClustSim.*.1D table
-clust_thrvol= singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image $AFNI_bin/1d_tool.py -verb 0                                 \
+clust_thrvol=`singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image $AFNI_bin/1d_tool.py -verb 0                                 \
                         -infile ClustSim.NN1_1sided.1D           \
                         -csim_pthr   0.01                        \
                         -csim_alpha "0.05"`
 echo "++ The final cluster volume threshold is: $$clust_thrvol"
 
 # Obtaining cluster-forming threshold
-voxstat_thr= singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image $AFNI_bin/p2dsetstat -quiet                                   \
+voxstat_thr=`singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image $AFNI_bin/p2dsetstat -quiet                                   \
                     -pval 0.01                                   \
                     "-1sided"                                    \
                     -inset 3dMEMA_result.nii.gz'[controls:t]'`
