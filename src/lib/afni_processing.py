@@ -197,8 +197,12 @@ def run_group_level_analysis(level1_dir, level2_dir, grp_level_template, home_di
     if not os.path.isdir(scripts_dir):
         os.mkdir(scripts_dir)
 
+    if not os.path.isdir(os.path.join(level2_dir, os.pardir)):
+        os.mkdir(os.path.join(level2_dir, os.pardir))
+
     if not os.path.isdir(level2_dir):
         os.mkdir(level2_dir)
+
 
     # Fill-in the group-level template
     values = dict()
