@@ -12,6 +12,7 @@ if ~isdir(spm_dir)
 end
 
 onsets_dir = fullfile(spm_dir, 'ONSETS');
+confounds_dir = fullfile(spm_dir, 'MOTION_REGRESSORS');
 level1_dir = fullfile(spm_dir, 'LEVEL1');
 level2_dir = fullfile(spm_dir, 'LEVEL2');
 perm_dir = fullfile(level2_dir, 'permutation_test');
