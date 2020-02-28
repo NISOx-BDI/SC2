@@ -11,6 +11,7 @@ if ~isdir(spm_dir)
 end
 
 onsets_dir = fullfile(spm_dir, 'ONSETS');
+confounds_dir = fullfile(spm_dir, 'MOTION_REGRESSORS');
 level1_dir = fullfile(spm_dir, 'LEVEL1');
 level2_dir = fullfile(spm_dir, 'LEVEL2');
 perm_dir = fullfile(level2_dir, 'permutation_test');
@@ -31,6 +32,7 @@ conditions = {...
     {'false_photo_question', {'false photo question', 'duration'}}};
 
 create_onset_files(ds109_raw_dir, onsets_dir, conditions, 0, subject_ids);
+create_confound_files(fmriprep_dir,confounds_dir,num_ignored_volumes)
 %spm('defaults','FMRI');
 %run_subject_level_analyses(study_dir, preproc_dir, 'template_ds109_SPM_level1', level1_dir, num_ignored_volumes, TR, subject_ids);
 %run_group_level_analysis(level1_dir, 'template_ds109_SPM_level2', level2_dir, '0001');
