@@ -12,9 +12,10 @@ singularity run --cleanenv -B $packages_dir,$home_dir $singularity_image \
     --fs-license-file $FS_license \
     --fs-no-reconall \
     -w $out_dir/${study}_${sub}_work \
-    --mem-mb 13000 \
+    --mem-mb 15000 \
     --low-mem \
     --resource-monitor \
     --nthreads 4 \
-    -vvv
+    -vvv \
+    --force-bbr
 
