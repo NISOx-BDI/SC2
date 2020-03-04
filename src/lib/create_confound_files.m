@@ -24,7 +24,7 @@ function create_confound_files(fmriprep_dir, confounds_dir, varargin)
         % For each run
         for j = 1:numel(regressor_files)
             regressor_data = importdata(regressor_files{j}, '\t');
-            motion_regressor_mat = [regressor_data.data(:,254), regressor_data.data(:,258), regressor_data.data(:,262), regressor_data.data(:,266), regressor_data.data(:,270), regressor_data.data(:,274)];
+            motion_regressor_mat = [regressor_data.data(:,find(strcmp(A.colheaders, 'trans_x'),1)), regressor_data.data(:,find(strcmp(A.colheaders, 'trans_y'),1)), regressor_data.data(:,find(strcmp(A.colheaders, 'trans_z'),1)), regressor_data.data(:,find(strcmp(A.colheaders, 'rot_x'),1)), regressor_data.data(:,find(strcmp(A.colheaders, 'rot_y'),1)), regressor_data.data(:,find(strcmp(A.colheaders, 'rot_z'),1))];
             R = motion_regressor_mat(removed_TRs+1:end,:);
             save(fullfile(confounds_dir, [sub '_run-' num2str(j,'%02d') '_motion_regressors.mat']), 'R')
         end
