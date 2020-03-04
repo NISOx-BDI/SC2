@@ -45,7 +45,7 @@ function run_subject_level_analyses(fmriprep_dir, sub_template, level1_dir, num_
     spm_jobman('run', matlabbatch);
     
     for i = 1:numel(sub_dirs)
-        clearvars FUNC_RUN_* ONSETS_RUN_* MOTION_REGRESSORS_RUN_* OUT_DIR matlabbatch
+        clear FUNC_RUN_* ONSETS_RUN_* MOTION_REGRESSORS_RUN_* OUT_DIR matlabbatch
         
         [~,sub,~] = fileparts(sub_dirs{i});
         OUT_DIR = fullfile(level1_dir, sub);
