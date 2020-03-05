@@ -38,7 +38,7 @@ function run_subject_level_analyses(fmriprep_dir, sub_template, level1_dir, num_
             matlabbatch{end}.cfg_basicio.file_dir.file_ops.file_move.action.copyto = {func_dir};
             func_files{r} = spm_file(func_files{r}, 'path', func_dir);
             matlabbatch{end+1}.cfg_basicio.file_dir.file_ops.cfg_gunzip_files.files(1) = func_files(r);
-            matlabbatch{end}.cfg_basicio.file_dir.file_ops.cfg_gunzip_files.outdir = {''};
+            matlabbatch{end}.cfg_basicio.file_dir.file_ops.cfg_gunzip_files.outdir = {func_dir};
             matlabbatch{end}.cfg_basicio.file_dir.file_ops.cfg_gunzip_files.keep = false;  
         end    
     end
