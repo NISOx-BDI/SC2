@@ -1,5 +1,5 @@
-[config_child_dir,~,~] = fileparts(pwd);
-load(fullfile(config_child_dir,'..','config.mat'))
+[config_dir,~,~] = fileparts(pwd);
+load(fullfile(config_dir,'config.mat'))
 
 ds109_raw_dir = fullfile(home_dir,'data','raw','ds000109_R2.0.1');
 ds109_processed_dir = fullfile(home_dir,'data','processed','ds109');
@@ -34,7 +34,8 @@ conditions = {...
 %create_onset_files(ds109_raw_dir, onsets_dir, conditions, 0, subject_ids);
 %create_confound_files(fmriprep_dir,confounds_dir);
 spm('defaults','FMRI');
-run_subject_level_analyses(fmriprep_dir, 'template_ds109_SPM_level1', level1_dir, num_ignored_volumes, TR, subject_ids);
+copy_unzip_func(fmriprep_dir, spm_dir)
+run_subject_level_analyses(fmriprep_dir, 'template_ds001_SPM_level1', level1_dir, num_ignored_volumes, TR);
 %run_group_level_analysis(level1_dir, 'template_ds109_SPM_level2', level2_dir, '0001');
 %run_permutation_test(level1_dir, 'template_ds109_SPM_perm_test', perm_dir, '0001');
 %mean_mni_images(preproc_dir, level1_dir, mni_dir);
