@@ -20,6 +20,13 @@ mni_dir = fullfile(spm_dir, 'mean_mni_images');
 % Specify the subjects of interest from the raw data
 subject_ids = [1,2,3,8,9,10,11,14,15,17,18,21,22,26,27,28,30,31,32,43,48];
 
+% Specify the number of functional volumes ignored in the study
+TR = 2;
+num_ignored_volumes = 0;
+
+% Specify the TR that will be removed from onsets, equal to num_ignored_volumes*TR
+removed_TR_time = num_ignored_volumes*TR;
+
 % Define conditions and parametric modulations (if any)
 % FORMAT
 %   {VariableLabel,{TrialType,Durations}}
@@ -31,11 +38,11 @@ conditions = {...
     {'false_photo_story', {'false photo story', 'duration'}},...
     {'false_photo_question', {'false photo question', 'duration'}}};
 
-%create_onset_files(ds109_raw_dir, onsets_dir, conditions, 0, subject_ids);
-%create_confound_files(fmriprep_dir,confounds_dir);
+create_onset_files(ds109_raw_dir, onsets_dir, conditions, 0, subject_ids);
+create_confound_files(fmriprep_dir,confounds_dir);
 spm('defaults','FMRI');
 copy_unzip_func(fmriprep_dir, spm_dir)
-run_subject_level_analyses(fmriprep_dir, 'template_ds001_SPM_level1', level1_dir, num_ignored_volumes, TR);
+run_subject_level_analyses(fmriprep_dir, 'template_ds109_SPM_level1', level1_dir, num_ignored_volumes, TR);
 %run_group_level_analysis(level1_dir, 'template_ds109_SPM_level2', level2_dir, '0001');
 %run_permutation_test(level1_dir, 'template_ds109_SPM_perm_test', perm_dir, '0001');
 %mean_mni_images(preproc_dir, level1_dir, mni_dir);
