@@ -1,17 +1,7 @@
-function run_subject_level_analyses(fmriprep_dir, sub_template, level1_dir, num_ignored_volumes, TR, varargin)
+function run_subject_level_analyses(fmriprep_dir, sub_template, level1_dir, num_ignored_volumes, TR)
     
     if ~isdir(level1_dir)
         mkdir(level1_dir)
-    end
-
-    if length(varargin) == 0 
-        sub_dirs = cellstr(spm_select('FPList',fmriprep_dir, 'dir','sub-*'));
-    else
-        subject_ids = varargin{1};
-        sub_dirs = cell(length(subject_ids),1);
-        for i=1:length(subject_ids)
-            sub_dirs(i,1) = cellstr(fullfile(fmriprep_dir, sprintf('sub-%02d', subject_ids(i))));
-        end
     end
 
     onsets_dir = fullfile(level1_dir, '..', 'ONSETS');
@@ -21,7 +11,9 @@ function run_subject_level_analyses(fmriprep_dir, sub_template, level1_dir, num_
 
     if ~isdir(scripts_dir)
         mkdir(scripts_dir)
-    end   
+    end
+
+    sub_dirs = cellstr(spm_select('FPList',fmriprep_dir, 'dir','sub-*'));   
     
     for i = 1:numel(sub_dirs)
         clear FUNC_RUN_* ONSETS_RUN_* MOTION_REGRESSORS_RUN_* OUT_DIR matlabbatch

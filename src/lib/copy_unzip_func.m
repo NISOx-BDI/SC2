@@ -1,14 +1,4 @@
-function copy_unzip_func(fmriprep_dir, spm_dir, varargin)
-
-    if length(varargin) == 0 
-        sub_dirs = cellstr(spm_select('FPList',fmriprep_dir, 'dir','sub-*'));
-    else
-        subject_ids = varargin{1};
-        sub_dirs = cell(length(subject_ids),1);
-        for i=1:length(subject_ids)
-            sub_dirs(i,1) = cellstr(fullfile(fmriprep_dir, sprintf('sub-%02d', subject_ids(i))));
-        end
-    end
+function copy_unzip_func(fmriprep_dir, spm_dir)
 
     func_dir = fullfile(spm_dir, 'FUNCTIONAL');
 
@@ -16,6 +6,8 @@ function copy_unzip_func(fmriprep_dir, spm_dir, varargin)
         mkdir(func_dir)
     end
 
+    sub_dirs = cellstr(spm_select('FPList',fmriprep_dir, 'dir','sub-*'));
+    
     % Copying all fmriprep functional files to a new directory and unzipping
     matlabbatch = cell(0);
     for i = 1:numel(sub_dirs)
