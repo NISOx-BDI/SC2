@@ -1,5 +1,5 @@
-[config_child_dir,~,~] = fileparts(pwd);
-load(fullfile(config_child_dir,'..','config.mat'))
+[config_dir,~,~] = fileparts(pwd);
+load(fullfile(config_dir,'config.mat'))
 
 ds001_raw_dir = fullfile(home_dir,'data','raw','ds001_R2.0.4');
 ds001_processed_dir = fullfile(home_dir,'data','processed','ds001');
