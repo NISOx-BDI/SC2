@@ -1,0 +1,4774 @@
+# Created by Octave 4.4.1, Thu Mar 05 13:28:40 2020 GMT <bas627@compe017.hpc.in.bmrc.ox.ac.uk>
+# name: matlabbatch
+# type: cell
+# rows: 1
+# columns: 6
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: spm
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: spatial
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: smooth
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 5
+# name: data
+# type: cell
+# rows: 179
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 177
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,1
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 177
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,2
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 177
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,3
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 177
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,4
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 177
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,5
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 177
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,6
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 177
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,7
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 177
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,8
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 177
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,9
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,10
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,11
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,12
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,13
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,14
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,15
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,16
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,17
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,18
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,19
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,20
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,21
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,22
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,23
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,24
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,25
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,26
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,27
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,28
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,29
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,30
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,31
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,32
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,33
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,34
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,35
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,36
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,37
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,38
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,39
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,40
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,41
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,42
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,43
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,44
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,45
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,46
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,47
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,48
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,49
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,50
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,51
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,52
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,53
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,54
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,55
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,56
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,57
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,58
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,59
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,60
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,61
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,62
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,63
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,64
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,65
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,66
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,67
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,68
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,69
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,70
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,71
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,72
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,73
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,74
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,75
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,76
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,77
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,78
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,79
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,80
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,81
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,82
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,83
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,84
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,85
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,86
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,87
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,88
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,89
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,90
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,91
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,92
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,93
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,94
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,95
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,96
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,97
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,98
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,99
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,100
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,101
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,102
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,103
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,104
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,105
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,106
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,107
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,108
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,109
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,110
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,111
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,112
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,113
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,114
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,115
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,116
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,117
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,118
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,119
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,120
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,121
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,122
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,123
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,124
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,125
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,126
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,127
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,128
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,129
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,130
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,131
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,132
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,133
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,134
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,135
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,136
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,137
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,138
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,139
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,140
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,141
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,142
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,143
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,144
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,145
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,146
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,147
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,148
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,149
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,150
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,151
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,152
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,153
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,154
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,155
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,156
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,157
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,158
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,159
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,160
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,161
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,162
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,163
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,164
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,165
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,166
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,167
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,168
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,169
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,170
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,171
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,172
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,173
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,174
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,175
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,176
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,177
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,178
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,179
+
+
+
+
+
+# name: fwhm
+# type: matrix
+# rows: 1
+# columns: 3
+ 8 8 8
+
+
+# name: dtype
+# type: scalar
+0
+
+
+# name: im
+# type: scalar
+0
+
+
+# name: prefix
+# type: sq_string
+# elements: 1
+# length: 1
+s
+
+
+
+
+
+
+
+
+
+
+
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: spm
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: spatial
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: smooth
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 5
+# name: data
+# type: cell
+# rows: 179
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 177
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,1
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 177
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,2
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 177
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,3
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 177
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,4
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 177
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,5
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 177
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,6
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 177
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,7
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 177
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,8
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 177
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,9
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,10
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,11
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,12
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,13
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,14
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,15
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,16
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,17
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,18
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,19
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,20
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,21
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,22
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,23
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,24
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,25
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,26
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,27
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,28
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,29
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,30
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,31
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,32
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,33
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,34
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,35
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,36
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,37
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,38
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,39
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,40
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,41
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,42
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,43
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,44
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,45
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,46
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,47
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,48
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,49
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,50
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,51
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,52
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,53
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,54
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,55
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,56
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,57
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,58
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,59
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,60
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,61
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,62
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,63
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,64
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,65
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,66
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,67
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,68
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,69
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,70
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,71
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,72
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,73
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,74
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,75
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,76
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,77
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,78
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,79
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,80
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,81
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,82
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,83
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,84
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,85
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,86
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,87
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,88
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,89
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,90
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,91
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,92
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,93
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,94
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,95
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,96
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,97
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,98
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 178
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,99
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,100
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,101
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,102
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,103
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,104
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,105
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,106
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,107
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,108
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,109
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,110
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,111
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,112
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,113
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,114
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,115
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,116
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,117
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,118
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,119
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,120
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,121
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,122
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,123
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,124
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,125
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,126
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,127
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,128
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,129
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,130
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,131
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,132
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,133
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,134
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,135
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,136
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,137
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,138
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,139
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,140
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,141
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,142
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,143
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,144
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,145
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,146
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,147
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,148
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,149
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,150
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,151
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,152
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,153
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,154
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,155
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,156
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,157
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,158
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,159
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,160
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,161
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,162
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,163
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,164
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,165
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,166
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,167
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,168
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,169
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,170
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,171
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,172
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,173
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,174
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,175
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,176
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,177
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,178
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 179
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/FUNCTIONAL/sub-27_task-theoryofmindwithmanualresponse_run-02_space-MNI152NLin2009cAsym_desc-preproc_bold.nii,179
+
+
+
+
+
+# name: fwhm
+# type: matrix
+# rows: 1
+# columns: 3
+ 8 8 8
+
+
+# name: dtype
+# type: scalar
+0
+
+
+# name: im
+# type: scalar
+0
+
+
+# name: prefix
+# type: sq_string
+# elements: 1
+# length: 1
+s
+
+
+
+
+
+
+
+
+
+
+
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: spm
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: stats
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: fmri_spec
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 10
+# name: dir
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 80
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/LEVEL1/sub-27
+
+
+
+
+
+# name: timing
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 4
+# name: units
+# type: sq_string
+# elements: 1
+# length: 4
+secs
+
+
+# name: RT
+# type: scalar
+2
+
+
+# name: fmri_t
+# type: scalar
+16
+
+
+# name: fmri_t0
+# type: scalar
+8
+
+
+
+
+# name: sess
+# type: struct
+# ndims: 2
+ 1 2
+# length: 6
+# name: scans
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: class
+# classname: cfg_dep
+# length: 8
+# name: jtsubs
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 0 0
+# length: 2
+# name: type
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: subs
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+
+
+# name: sname
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 23
+Smooth: Smoothed Images
+
+
+
+
+
+# name: src_exbranch
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 1 6
+# length: 2
+# name: type
+# type: cell
+# rows: 1
+# columns: 6
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+{}
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+{}
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+{}
+
+
+
+
+
+# name: subs
+# type: cell
+# rows: 1
+# columns: 6
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+val
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+val
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+val
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+
+
+
+
+
+
+
+
+
+
+# name: src_output
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 2
+# name: type
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+# name: subs
+# type: sq_string
+# elements: 1
+# length: 5
+files
+
+
+
+
+
+
+
+# name: tgt_exbranch
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 0 0
+# length: 2
+# name: type
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: subs
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+
+
+# name: tgt_input
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 0 0
+# length: 2
+# name: type
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: subs
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+
+
+# name: tgt_spec
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+# name: tname
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 6
+Target
+
+
+
+
+
+
+
+
+# name: <cell-element>
+# type: class
+# classname: cfg_dep
+# length: 8
+# name: jtsubs
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 0 0
+# length: 2
+# name: type
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: subs
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+
+
+# name: sname
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 23
+Smooth: Smoothed Images
+
+
+
+
+
+# name: src_exbranch
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 1 6
+# length: 2
+# name: type
+# type: cell
+# rows: 1
+# columns: 6
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+{}
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+{}
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+{}
+
+
+
+
+
+# name: subs
+# type: cell
+# rows: 1
+# columns: 6
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+val
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar
+2
+
+
+
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+val
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+val
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+
+
+
+
+
+
+
+
+
+
+# name: src_output
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 2
+# name: type
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+# name: subs
+# type: sq_string
+# elements: 1
+# length: 5
+files
+
+
+
+
+
+
+
+# name: tgt_exbranch
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 0 0
+# length: 2
+# name: type
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: subs
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+
+
+# name: tgt_input
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 0 0
+# length: 2
+# name: type
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: subs
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+
+
+# name: tgt_spec
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+# name: tname
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 6
+Target
+
+
+
+
+
+
+
+
+
+
+# name: cond
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 0 0
+# length: 6
+# name: name
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: onset
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: duration
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: tmod
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: pmod
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: orth
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 0 0
+# length: 6
+# name: name
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: onset
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: duration
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: tmod
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: pmod
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: orth
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+
+
+# name: multi
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 104
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/ONSETS/sub-27_run-01_SPM_MultCond.mat
+
+
+
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 104
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/ONSETS/sub-27_run-02_SPM_MultCond.mat
+
+
+
+
+
+
+
+
+# name: regress
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 0 0
+# length: 2
+# name: name
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: val
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 0 0
+# length: 2
+# name: name
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: val
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+
+
+# name: multi_reg
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 120
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/MOTION_REGRESSORS/sub-27_run-01_motion_regressors.mat
+
+
+
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 120
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/MOTION_REGRESSORS/sub-27_run-02_motion_regressors.mat
+
+
+
+
+
+
+
+
+# name: hpf
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: scalar
+128
+
+
+
+# name: <cell-element>
+# type: scalar
+128
+
+
+
+
+
+
+
+# name: fact
+# type: struct
+# ndims: 2
+ 0 0
+# length: 2
+# name: name
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: levels
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+# name: bases
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: hrf
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: derivs
+# type: matrix
+# rows: 1
+# columns: 2
+ 0 0
+
+
+
+
+
+
+# name: volt
+# type: scalar
+1
+
+
+# name: global
+# type: sq_string
+# elements: 1
+# length: 4
+None
+
+
+# name: mthresh
+# type: scalar
+0.80000000000000004
+
+
+# name: mask
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: null_sq_string
+# elements: 0
+
+
+
+
+
+# name: cvi
+# type: sq_string
+# elements: 1
+# length: 5
+AR(1)
+
+
+
+
+
+
+
+
+
+
+
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: spm
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: stats
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: fmri_est
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 3
+# name: spmmat
+# type: class
+# classname: cfg_dep
+# length: 8
+# name: jtsubs
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 0 0
+# length: 2
+# name: type
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: subs
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+
+
+# name: sname
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 38
+fMRI model specification: SPM.mat File
+
+
+
+
+
+# name: src_exbranch
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 1 6
+# length: 2
+# name: type
+# type: cell
+# rows: 1
+# columns: 6
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+{}
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+{}
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+{}
+
+
+
+
+
+# name: subs
+# type: cell
+# rows: 1
+# columns: 6
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+val
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar
+3
+
+
+
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+val
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+val
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+
+
+
+
+
+
+
+
+
+
+# name: src_output
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 2
+# name: type
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+# name: subs
+# type: sq_string
+# elements: 1
+# length: 6
+spmmat
+
+
+
+
+
+
+
+# name: tgt_exbranch
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 0 0
+# length: 2
+# name: type
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: subs
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+
+
+# name: tgt_input
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 0 0
+# length: 2
+# name: type
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: subs
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+
+
+# name: tgt_spec
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+# name: tname
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 6
+Target
+
+
+
+
+
+
+
+# name: write_residuals
+# type: scalar
+0
+
+
+# name: method
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: Classical
+# type: scalar
+1
+
+
+
+
+
+
+
+
+
+
+
+
+
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: spm
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: stats
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: con
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 3
+# name: spmmat
+# type: class
+# classname: cfg_dep
+# length: 8
+# name: jtsubs
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 0 0
+# length: 2
+# name: type
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: subs
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+
+
+# name: sname
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 30
+Model estimation: SPM.mat File
+
+
+
+
+
+# name: src_exbranch
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 1 6
+# length: 2
+# name: type
+# type: cell
+# rows: 1
+# columns: 6
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+{}
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+{}
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+{}
+
+
+
+
+
+# name: subs
+# type: cell
+# rows: 1
+# columns: 6
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+val
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar
+4
+
+
+
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+val
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+val
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+
+
+
+
+
+
+
+
+
+
+# name: src_output
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 2
+# name: type
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+# name: subs
+# type: sq_string
+# elements: 1
+# length: 6
+spmmat
+
+
+
+
+
+
+
+# name: tgt_exbranch
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 0 0
+# length: 2
+# name: type
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: subs
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+
+
+# name: tgt_input
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 0 0
+# length: 2
+# name: type
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: subs
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+
+
+# name: tgt_spec
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+# name: tname
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 6
+Target
+
+
+
+
+
+
+
+# name: consess
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: tcon
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 3
+# name: name
+# type: sq_string
+# elements: 1
+# length: 32
+false belief vs false photograph
+
+
+# name: weights
+# type: matrix
+# rows: 1
+# columns: 22
+ 1 0 -1 0 0 0 0 0 0 0 1 0 -1 0 0 0 0 0 0 0 0 0
+
+
+# name: sessrep
+# type: sq_string
+# elements: 1
+# length: 4
+none
+
+
+
+
+
+
+
+
+
+# name: delete
+# type: scalar
+0
+
+
+
+
+
+
+
+
+
+
+
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: spm
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: stats
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: results
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 4
+# name: spmmat
+# type: class
+# classname: cfg_dep
+# length: 8
+# name: jtsubs
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 0 0
+# length: 2
+# name: type
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: subs
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+
+
+# name: sname
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 30
+Contrast Manager: SPM.mat File
+
+
+
+
+
+# name: src_exbranch
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 1 6
+# length: 2
+# name: type
+# type: cell
+# rows: 1
+# columns: 6
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+{}
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+{}
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+{}
+
+
+
+
+
+# name: subs
+# type: cell
+# rows: 1
+# columns: 6
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+val
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar
+5
+
+
+
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+val
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+val
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+
+
+
+
+
+
+
+
+
+
+# name: src_output
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 2
+# name: type
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+# name: subs
+# type: sq_string
+# elements: 1
+# length: 6
+spmmat
+
+
+
+
+
+
+
+# name: tgt_exbranch
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 0 0
+# length: 2
+# name: type
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: subs
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+
+
+# name: tgt_input
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 0 0
+# length: 2
+# name: type
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: subs
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+
+
+# name: tgt_spec
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+# name: tname
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 6
+Target
+
+
+
+
+
+
+
+# name: conspec
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 7
+# name: titlestr
+# type: sq_string
+# elements: 1
+# length: 32
+false belief vs false photograph
+
+
+# name: contrasts
+# type: scalar
+Inf
+
+
+# name: threshdesc
+# type: sq_string
+# elements: 1
+# length: 4
+none
+
+
+# name: thresh
+# type: scalar
+0.01
+
+
+# name: extent
+# type: scalar
+0
+
+
+# name: conjunction
+# type: scalar
+1
+
+
+# name: mask
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: none
+# type: scalar
+1
+
+
+
+
+
+
+# name: units
+# type: scalar
+1
+
+
+# name: export
+# type: cell
+# rows: 1
+# columns: 3
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: pdf
+# type: bool
+1
+
+
+
+
+
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: tspm
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: basename
+# type: sq_string
+# elements: 1
+# length: 7
+thresh_
+
+
+
+
+
+
+
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: nidm
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 3
+# name: modality
+# type: sq_string
+# elements: 1
+# length: 4
+FMRI
+
+
+# name: refspace
+# type: sq_string
+# elements: 1
+# length: 3
+ixi
+
+
+# name: group
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 2
+# name: nsubj
+# type: scalar
+1
+
+
+# name: label
+# type: sq_string
+# elements: 1
+# length: 7
+subject
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
