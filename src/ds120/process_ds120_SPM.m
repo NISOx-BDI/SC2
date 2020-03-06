@@ -43,10 +43,10 @@ conditions = {...
     {'neutral', {'neutral_resp', 0}},...
     {'reward', {'reward_resp', 0}}};
 
-create_onset_files(ds120_raw_dir, onsets_dir, conditions, removed_TR_time, subject_ids);
-create_confound_files(fmriprep_dir,confounds_dir,num_ignored_volumes)
+%create_onset_files(ds120_raw_dir, onsets_dir, conditions, removed_TR_time, subject_ids);
+%create_confound_files(fmriprep_dir,confounds_dir,num_ignored_volumes)
 spm('defaults','FMRI');
-copy_unzip_func(fmriprep_dir, spm_dir)
-run_subject_level_analyses(fmriprep_dir, 'template_ds120_SPM_level1', level1_dir, num_ignored_volumes, TR);
-%run_group_level_analysis(level1_dir, 'template_ds120_SPM_level2', level2_dir, '0001');
+%copy_unzip_func(fmriprep_dir, spm_dir)
+%run_subject_level_analyses(fmriprep_dir, 'template_ds120_SPM_level1', level1_dir, num_ignored_volumes, TR);
+run_group_level_analysis(level1_dir, 'template_ds120_SPM_level2', level2_dir, '0001');
 %mean_mni_images(preproc_dir, level1_dir, mni_dir);
