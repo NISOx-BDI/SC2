@@ -9,6 +9,10 @@ function run_group_level_analysis(level1_dir, group_batch_template, level2_dir, 
     if ~isdir(scripts_dir)
         mkdir(scripts_dir)
     end
+
+    if ~isdir(level2_dir)
+        mkdir(level2_dir)
+    end
     
     num_sub = numel(sub_dirs);
     CON_FILES = cell(num_sub,0);
