@@ -43,6 +43,6 @@ conditions = {...
 %spm('defaults','FMRI');
 %copy_unzip_func(fmriprep_dir, spm_dir)
 %run_subject_level_analyses(fmriprep_dir, 'template_ds109_SPM_level1', level1_dir, num_ignored_volumes, TR);
-&run_group_level_analysis(level1_dir, 'template_ds109_SPM_level2', level2_dir, '0001');
+%run_group_level_analysis(level1_dir, 'template_ds109_SPM_level2', level2_dir, '0001');
 run_permutation_test(level1_dir, 'template_ds109_SPM_perm_test', perm_dir, '0001');
 %mean_mni_images(preproc_dir, level1_dir, mni_dir);
