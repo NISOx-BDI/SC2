@@ -1,0 +1,1596 @@
+# Created by Octave 4.4.1, Fri Mar 06 17:31:26 2020 GMT <bas627@compe089.hpc.in.bmrc.ox.ac.uk>
+# name: matlabbatch
+# type: cell
+# rows: 1
+# columns: 4
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: spm
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: stats
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: factorial_design
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 7
+# name: dir
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 73
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/SPM/LEVEL2
+
+
+
+
+
+# name: des
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: t1
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: scans
+# type: cell
+# rows: 16
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 93
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/SPM/LEVEL1/sub-01/con_0001.nii
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 93
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/SPM/LEVEL1/sub-02/con_0001.nii
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 93
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/SPM/LEVEL1/sub-03/con_0001.nii
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 93
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/SPM/LEVEL1/sub-04/con_0001.nii
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 93
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/SPM/LEVEL1/sub-05/con_0001.nii
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 93
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/SPM/LEVEL1/sub-06/con_0001.nii
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 93
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/SPM/LEVEL1/sub-07/con_0001.nii
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 93
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/SPM/LEVEL1/sub-08/con_0001.nii
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 93
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/SPM/LEVEL1/sub-09/con_0001.nii
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 93
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/SPM/LEVEL1/sub-10/con_0001.nii
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 93
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/SPM/LEVEL1/sub-11/con_0001.nii
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 93
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/SPM/LEVEL1/sub-12/con_0001.nii
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 93
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/SPM/LEVEL1/sub-13/con_0001.nii
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 93
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/SPM/LEVEL1/sub-14/con_0001.nii
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 93
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/SPM/LEVEL1/sub-15/con_0001.nii
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 93
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/SPM/LEVEL1/sub-16/con_0001.nii
+
+
+
+
+
+
+
+
+
+# name: cov
+# type: struct
+# ndims: 2
+ 0 0
+# length: 4
+# name: c
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: cname
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: iCFI
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: iCC
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+# name: multi_cov
+# type: struct
+# ndims: 2
+ 0 0
+# length: 3
+# name: files
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: iCFI
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: iCC
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+# name: masking
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 3
+# name: tm
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: tm_none
+# type: scalar
+1
+
+
+
+
+# name: im
+# type: scalar
+1
+
+
+# name: em
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: null_sq_string
+# elements: 0
+
+
+
+
+
+
+
+# name: globalc
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: g_omit
+# type: scalar
+1
+
+
+
+
+# name: globalm
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 2
+# name: gmsca
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: gmsca_no
+# type: scalar
+1
+
+
+
+
+# name: glonorm
+# type: scalar
+1
+
+
+
+
+
+
+
+
+
+
+
+
+
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: spm
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: stats
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: fmri_est
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 3
+# name: spmmat
+# type: class
+# classname: cfg_dep
+# length: 8
+# name: jtsubs
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 0 0
+# length: 2
+# name: type
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: subs
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+
+
+# name: sname
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 44
+Factorial design specification: SPM.mat File
+
+
+
+
+
+# name: src_exbranch
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 1 6
+# length: 2
+# name: type
+# type: cell
+# rows: 1
+# columns: 6
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+{}
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+{}
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+{}
+
+
+
+
+
+# name: subs
+# type: cell
+# rows: 1
+# columns: 6
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+val
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+val
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+val
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+
+
+
+
+
+
+
+
+
+
+# name: src_output
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 2
+# name: type
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+# name: subs
+# type: sq_string
+# elements: 1
+# length: 6
+spmmat
+
+
+
+
+
+
+
+# name: tgt_exbranch
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 0 0
+# length: 2
+# name: type
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: subs
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+
+
+# name: tgt_input
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 0 0
+# length: 2
+# name: type
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: subs
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+
+
+# name: tgt_spec
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+# name: tname
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 6
+Target
+
+
+
+
+
+
+
+# name: write_residuals
+# type: scalar
+0
+
+
+# name: method
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: Classical
+# type: scalar
+1
+
+
+
+
+
+
+
+
+
+
+
+
+
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: spm
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: stats
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: con
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 3
+# name: spmmat
+# type: class
+# classname: cfg_dep
+# length: 8
+# name: jtsubs
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 0 0
+# length: 2
+# name: type
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: subs
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+
+
+# name: sname
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 30
+Model estimation: SPM.mat File
+
+
+
+
+
+# name: src_exbranch
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 1 6
+# length: 2
+# name: type
+# type: cell
+# rows: 1
+# columns: 6
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+{}
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+{}
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+{}
+
+
+
+
+
+# name: subs
+# type: cell
+# rows: 1
+# columns: 6
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+val
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar
+2
+
+
+
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+val
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+val
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+
+
+
+
+
+
+
+
+
+
+# name: src_output
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 2
+# name: type
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+# name: subs
+# type: sq_string
+# elements: 1
+# length: 6
+spmmat
+
+
+
+
+
+
+
+# name: tgt_exbranch
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 0 0
+# length: 2
+# name: type
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: subs
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+
+
+# name: tgt_input
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 0 0
+# length: 2
+# name: type
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: subs
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+
+
+# name: tgt_spec
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+# name: tname
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 6
+Target
+
+
+
+
+
+
+
+# name: consess
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: tcon
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 3
+# name: name
+# type: sq_string
+# elements: 1
+# length: 27
+pumps demean vs ctrl demean
+
+
+# name: weights
+# type: scalar
+1
+
+
+# name: sessrep
+# type: sq_string
+# elements: 1
+# length: 4
+none
+
+
+
+
+
+
+
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: tcon
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 3
+# name: name
+# type: sq_string
+# elements: 1
+# length: 31
+pumps demean vs ctrl demean neg
+
+
+# name: weights
+# type: scalar
+-1
+
+
+# name: sessrep
+# type: sq_string
+# elements: 1
+# length: 4
+none
+
+
+
+
+
+
+
+
+
+# name: delete
+# type: scalar
+0
+
+
+
+
+
+
+
+
+
+
+
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: spm
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: stats
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: results
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 4
+# name: spmmat
+# type: class
+# classname: cfg_dep
+# length: 8
+# name: jtsubs
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 0 0
+# length: 2
+# name: type
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: subs
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+
+
+# name: sname
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 30
+Contrast Manager: SPM.mat File
+
+
+
+
+
+# name: src_exbranch
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 1 6
+# length: 2
+# name: type
+# type: cell
+# rows: 1
+# columns: 6
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+{}
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+{}
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+{}
+
+
+
+
+
+# name: subs
+# type: cell
+# rows: 1
+# columns: 6
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+val
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar
+3
+
+
+
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+val
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+val
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+
+
+
+
+
+
+
+
+
+
+# name: src_output
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 2
+# name: type
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+# name: subs
+# type: sq_string
+# elements: 1
+# length: 6
+spmmat
+
+
+
+
+
+
+
+# name: tgt_exbranch
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 0 0
+# length: 2
+# name: type
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: subs
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+
+
+# name: tgt_input
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 0 0
+# length: 2
+# name: type
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: subs
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+
+
+# name: tgt_spec
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+# name: tname
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 6
+Target
+
+
+
+
+
+
+
+# name: conspec
+# type: struct
+# ndims: 2
+ 1 2
+# length: 7
+# name: titlestr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 0
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 0
+
+
+
+
+
+# name: contrasts
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+# name: <cell-element>
+# type: scalar
+2
+
+
+
+
+
+# name: threshdesc
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 4
+none
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 4
+none
+
+
+
+
+
+# name: thresh
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: scalar
+0.01
+
+
+
+# name: <cell-element>
+# type: scalar
+0.01
+
+
+
+
+
+# name: extent
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: scalar
+203
+
+
+
+# name: <cell-element>
+# type: scalar
+255
+
+
+
+
+
+# name: conjunction
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+
+
+# name: mask
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: none
+# type: scalar
+1
+
+
+
+
+
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: none
+# type: scalar
+1
+
+
+
+
+
+
+
+
+
+# name: units
+# type: scalar
+1
+
+
+# name: export
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: nidm
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 3
+# name: modality
+# type: sq_string
+# elements: 1
+# length: 4
+FMRI
+
+
+# name: refspace
+# type: sq_string
+# elements: 1
+# length: 3
+ixi
+
+
+# name: group
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 2
+# name: nsubj
+# type: scalar
+16
+
+
+# name: label
+# type: sq_string
+# elements: 1
+# length: 5
+group
+
+
+
+
+
+
+
+
+
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: tspm
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: basename
+# type: sq_string
+# elements: 1
+# length: 11
+thresholded
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
