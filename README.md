@@ -39,7 +39,7 @@ See [CITATION](CITATION).
 
 We have used three publicly available datasets from the [OpenNeuro](https://openneuro.org/) online data repository: [ds000001 (version 00006)](https://openneuro.org/datasets/ds000001/versions/00006), [ds000109 (version 00001)](https://openneuro.org/datasets/ds000109/versions/00001) and [ds000120 (version 00001)](https://openneuro.org/datasets/ds000120/versions/00001).
 
-For compatibility with the analysis scripts, the ds000001 data should be downloaded to `/PATH_TO_SC2_DIR/data/raw/ds001_R2.0.4`, the ds000109 data should be downloaded to `/PATH_TO_SC2_DIR/data/raw/ds000109_R2.0.1`, and the ds000120 data should be downloaded to `ds120_R1.0.0`. 
+For compatibility with the analysis scripts, the ds000001 data should be downloaded to `/PATH_TO_SC2_DIR/data/raw/ds001_R2.0.4`, the ds000109 data should be downloaded to `/PATH_TO_SC2_DIR/data/raw/ds000109_R2.0.1`, and the ds000120 data should be downloaded to `/PATH_TO_SC2_DIR/data/raw/ds120_R1.0.0`. 
 
 ### Config files 
 Users will need to edit the `config.py` and `config.mat` files in `/PATH_TO_SC2_DIR/src/`, providing absolute paths to the fundamental directories and files needed to run the analyses.
