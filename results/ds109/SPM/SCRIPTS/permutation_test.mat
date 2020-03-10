@@ -1,0 +1,1606 @@
+# Created by Octave 4.4.1, Mon Mar 09 13:35:17 2020 GMT <bas627@compe033.hpc.in.bmrc.ox.ac.uk>
+# name: matlabbatch
+# type: cell
+# rows: 1
+# columns: 4
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: spm
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: tools
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: snpm
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: des
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: OneSampT
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 12
+# name: DesignName
+# type: sq_string
+# elements: 1
+# length: 46
+MultiSub: One Sample T test on diffs/contrasts
+
+
+# name: DesignFile
+# type: sq_string
+# elements: 1
+# length: 20
+snpm_bch_ui_OneSampT
+
+
+# name: dir
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 90
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/LEVEL2/permutation_test
+
+
+
+
+
+# name: P
+# type: cell
+# rows: 21
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 93
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/LEVEL1/sub-01/con_0001.nii
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 93
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/LEVEL1/sub-02/con_0001.nii
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 93
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/LEVEL1/sub-03/con_0001.nii
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 93
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/LEVEL1/sub-08/con_0001.nii
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 93
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/LEVEL1/sub-09/con_0001.nii
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 93
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/LEVEL1/sub-10/con_0001.nii
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 93
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/LEVEL1/sub-11/con_0001.nii
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 93
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/LEVEL1/sub-14/con_0001.nii
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 93
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/LEVEL1/sub-15/con_0001.nii
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 93
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/LEVEL1/sub-17/con_0001.nii
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 93
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/LEVEL1/sub-18/con_0001.nii
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 93
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/LEVEL1/sub-21/con_0001.nii
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 93
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/LEVEL1/sub-22/con_0001.nii
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 93
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/LEVEL1/sub-26/con_0001.nii
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 93
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/LEVEL1/sub-27/con_0001.nii
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 93
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/LEVEL1/sub-28/con_0001.nii
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 93
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/LEVEL1/sub-30/con_0001.nii
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 93
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/LEVEL1/sub-31/con_0001.nii
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 93
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/LEVEL1/sub-32/con_0001.nii
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 93
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/LEVEL1/sub-43/con_0001.nii
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 93
+/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/SPM/LEVEL1/sub-48/con_0001.nii
+
+
+
+
+
+# name: cov
+# type: struct
+# ndims: 2
+ 0 0
+# length: 2
+# name: c
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: cname
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+# name: nPerm
+# type: scalar
+10000
+
+
+# name: vFWHM
+# type: matrix
+# rows: 1
+# columns: 3
+ 0 0 0
+
+
+# name: bVolm
+# type: scalar
+1
+
+
+# name: ST
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: ST_U
+# type: scalar
+0.0050000000000000001
+
+
+
+
+# name: masking
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 3
+# name: tm
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: tm_none
+# type: scalar
+1
+
+
+
+
+# name: im
+# type: scalar
+1
+
+
+# name: em
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: null_sq_string
+# elements: 0
+
+
+
+
+
+
+
+# name: globalc
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: g_omit
+# type: scalar
+1
+
+
+
+
+# name: globalm
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 2
+# name: gmsca
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: gmsca_no
+# type: scalar
+1
+
+
+
+
+# name: glonorm
+# type: scalar
+1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: spm
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: tools
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: snpm
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: cp
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: snpmcfg
+# type: class
+# classname: cfg_dep
+# length: 8
+# name: jtsubs
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 0 0
+# length: 2
+# name: type
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: subs
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+
+
+# name: sname
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 78
+MultiSub: One Sample T test on diffs/contrasts: SnPMcfg.mat configuration file
+
+
+
+
+
+# name: src_exbranch
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 1 10
+# length: 2
+# name: type
+# type: cell
+# rows: 1
+# columns: 10
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+{}
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+{}
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+{}
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+{}
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+{}
+
+
+
+
+
+# name: subs
+# type: cell
+# rows: 1
+# columns: 10
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+val
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+val
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+val
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+val
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+val
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+
+
+
+
+
+
+
+
+
+
+# name: src_output
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 2
+# name: type
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+# name: subs
+# type: sq_string
+# elements: 1
+# length: 7
+SnPMcfg
+
+
+
+
+
+
+
+# name: tgt_exbranch
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 0 0
+# length: 2
+# name: type
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: subs
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+
+
+# name: tgt_input
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 0 0
+# length: 2
+# name: type
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: subs
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+
+
+# name: tgt_spec
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+# name: tname
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 6
+Target
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: spm
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: tools
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: snpm
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: inference
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 5
+# name: SnPMmat
+# type: class
+# classname: cfg_dep
+# length: 8
+# name: jtsubs
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 0 0
+# length: 2
+# name: type
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: subs
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+
+
+# name: sname
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 30
+Compute: SnPM.mat results file
+
+
+
+
+
+# name: src_exbranch
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 1 8
+# length: 2
+# name: type
+# type: cell
+# rows: 1
+# columns: 8
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+{}
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+{}
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+{}
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+{}
+
+
+
+
+
+# name: subs
+# type: cell
+# rows: 1
+# columns: 8
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+val
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar
+2
+
+
+
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+val
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+val
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+val
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+
+
+
+
+
+
+
+
+
+
+# name: src_output
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 2
+# name: type
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+# name: subs
+# type: sq_string
+# elements: 1
+# length: 4
+SnPM
+
+
+
+
+
+
+
+# name: tgt_exbranch
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 0 0
+# length: 2
+# name: type
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: subs
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+
+
+# name: tgt_input
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 0 0
+# length: 2
+# name: type
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: subs
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+
+
+# name: tgt_spec
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+# name: tname
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 6
+Target
+
+
+
+
+
+
+
+# name: Thr
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: Clus
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: ClusSize
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 2
+# name: CFth
+# type: scalar
+NaN
+
+
+# name: ClusSig
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: FWEthC
+# type: scalar
+0.050000000000000003
+
+
+
+
+
+
+
+
+
+
+# name: Tsign
+# type: scalar
+1
+
+
+# name: WriteFiltImg
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: name
+# type: sq_string
+# elements: 1
+# length: 17
+SnPM_pos_filtered
+
+
+
+
+# name: Report
+# type: sq_string
+# elements: 1
+# length: 8
+MIPtable
+
+
+
+
+
+
+
+
+
+
+
+
+
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: spm
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: tools
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: snpm
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: inference
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 5
+# name: SnPMmat
+# type: class
+# classname: cfg_dep
+# length: 8
+# name: jtsubs
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 0 0
+# length: 2
+# name: type
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: subs
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+
+
+# name: sname
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 30
+Compute: SnPM.mat results file
+
+
+
+
+
+# name: src_exbranch
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 1 8
+# length: 2
+# name: type
+# type: cell
+# rows: 1
+# columns: 8
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+{}
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+{}
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+{}
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+{}
+
+
+
+
+
+# name: subs
+# type: cell
+# rows: 1
+# columns: 8
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+val
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar
+2
+
+
+
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+val
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+val
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+val
+
+
+
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+
+
+
+
+
+
+
+
+
+
+# name: src_output
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 2
+# name: type
+# type: sq_string
+# elements: 1
+# length: 1
+.
+
+
+# name: subs
+# type: sq_string
+# elements: 1
+# length: 4
+SnPM
+
+
+
+
+
+
+
+# name: tgt_exbranch
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 0 0
+# length: 2
+# name: type
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: subs
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+
+
+# name: tgt_input
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: struct
+# ndims: 2
+ 0 0
+# length: 2
+# name: type
+# type: cell
+# rows: 0
+# columns: 0
+
+
+# name: subs
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+
+
+# name: tgt_spec
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: cell
+# rows: 0
+# columns: 0
+
+
+
+
+
+# name: tname
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 6
+Target
+
+
+
+
+
+
+
+# name: Thr
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: Clus
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: ClusSize
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 2
+# name: CFth
+# type: scalar
+NaN
+
+
+# name: ClusSig
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: FWEthC
+# type: scalar
+0.050000000000000003
+
+
+
+
+
+
+
+
+
+
+# name: Tsign
+# type: scalar
+-1
+
+
+# name: WriteFiltImg
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: name
+# type: sq_string
+# elements: 1
+# length: 17
+SnPM_neg_filtered
+
+
+
+
+# name: Report
+# type: sq_string
+# elements: 1
+# length: 8
+MIPtable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
