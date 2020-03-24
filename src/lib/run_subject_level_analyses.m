@@ -23,13 +23,13 @@ function run_subject_level_analyses(fmriprep_dir, sub_template, level1_dir, num_
         sub = ['^' sub];
         
         % If subject did not complete from a previous attempt, removes all results files and runs again
-        if ~isfile(fullfile(OUT_DIR,'spmT_0001.nii'))
+        if ~exist(fullfile(OUT_DIR,'spmT_0001.nii'))
             
             if isdir(OUT_DIR)
                 rmdir(OUT_DIR)
             end
             
-            if isfile(fullfile(scripts_dir, [strrep(sub,'^','') '_level1.mat']))
+            if exist(fullfile(scripts_dir, [strrep(sub,'^','') '_level1.mat']))
                 delete(fullfile(scripts_dir, [strrep(sub,'^','') '_level1.mat']))
             end
 
