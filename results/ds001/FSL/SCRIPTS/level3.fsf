@@ -36,7 +36,7 @@ set fmri(outputdir) "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds
 set fmri(tr) 3
 
 # Total volumes
-set fmri(npts) 16
+set fmri(npts) 15
 
 # Delete volumes
 set fmri(ndelete) 0
@@ -45,7 +45,7 @@ set fmri(ndelete) 0
 set fmri(tagfirst) 1
 
 # Number of first-level analyses
-set fmri(multiple) 16
+set fmri(multiple) 15
 
 # Higher-level input type
 # 1 : Inputs are lower-level FEAT directories
@@ -303,19 +303,16 @@ set feat_files(10) "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds0
 set feat_files(11) "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/FSL/LEVEL1/sub-16/combined.gfeat/cope1.feat"
 
 # 4D AVW data or FEAT directory (12)
-set feat_files(12) "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/FSL/LEVEL1/sub-04/combined.gfeat/cope1.feat"
+set feat_files(12) "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/FSL/LEVEL1/sub-09/combined.gfeat/cope1.feat"
 
 # 4D AVW data or FEAT directory (13)
-set feat_files(13) "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/FSL/LEVEL1/sub-09/combined.gfeat/cope1.feat"
+set feat_files(13) "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/FSL/LEVEL1/sub-10/combined.gfeat/cope1.feat"
 
 # 4D AVW data or FEAT directory (14)
-set feat_files(14) "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/FSL/LEVEL1/sub-10/combined.gfeat/cope1.feat"
+set feat_files(14) "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/FSL/LEVEL1/sub-15/combined.gfeat/cope1.feat"
 
 # 4D AVW data or FEAT directory (15)
-set feat_files(15) "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/FSL/LEVEL1/sub-15/combined.gfeat/cope1.feat"
-
-# 4D AVW data or FEAT directory (16)
-set feat_files(16) "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/FSL/LEVEL1/sub-14/combined.gfeat/cope1.feat"
+set feat_files(15) "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/FSL/LEVEL1/sub-14/combined.gfeat/cope1.feat"
 
 # Add confound EVs text file
 set fmri(confoundevs) 0
@@ -405,9 +402,6 @@ set fmri(evg14.1) 1.0
 # Higher-level EV value for EV 1 and input 15
 set fmri(evg15.1) 1.0
 
-# Higher-level EV value for EV 1 and input 16
-set fmri(evg16.1) 1.0
-
 # Group membership for input 1
 set fmri(groupmem.1) 1
 
@@ -452,9 +446,6 @@ set fmri(groupmem.14) 1
 
 # Group membership for input 15
 set fmri(groupmem.15) 1
-
-# Group membership for input 16
-set fmri(groupmem.16) 1
 
 # Contrast & F-tests mode
 # real : control real EVs
