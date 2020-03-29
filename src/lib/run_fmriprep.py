@@ -66,6 +66,7 @@ def run_fmriprep(raw_dir, out_dir, template_script, packages_dir, fmriprep_singu
 				shutil.rmtree(os.path.join(out_dir, 'fmriprep', sub))
 				shutil.rmtree(os.path.join(out_dir, study + '_' + sub + '_work'))
 				os.remove(os.path.join(scripts_dir, study + '_' + sub + '_fmriprep.sh'))
+				shutil.rmtree(os.path.join(out_dir, 'freesurfer', sub))
 		
 		if not os.path.isfile(os.path.join(scripts_dir, study + '_' + sub + '_fmriprep.sh')):
 			# Fill-in the subject-level fmriprep template
