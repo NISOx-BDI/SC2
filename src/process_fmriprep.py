@@ -1,5 +1,6 @@
 # Preprocessing of ds001, ds109 and ds120 with fmriprep
-import os
+import os, shutil
+from subprocess import check_call
 from config import paths
 from lib.run_fmriprep import run_fmriprep
 
@@ -8,15 +9,20 @@ locals().update(paths)
 
 # Raw data directories for ds001, ds109, and ds120
 raw_data_dir  = os.path.join(home_dir,'data','raw')
-ds001_raw_dir = os.path.join(raw_data_dir,'ds001_R2.0.4')
+ds001_pre_raw_dir = os.path.join(raw_data_dir,'ds001_R2.0.4')
+ds001_raw_dir = os.path.join(raw_data_dir,'ds001_R2.0.4_AMENDED')
 ds109_raw_dir = os.path.join(raw_data_dir,'ds000109_R2.0.1')
 ds120_raw_dir = os.path.join(raw_data_dir,'ds120_R1.0.0')
 
-# Template subject-level processing scripts
-scripts_dir             = os.path.join(home_dir,'src')
-ds001_fmriprep_template = os.path.join(scripts_dir,'ds001','ds001_fmriprep_template')
-ds109_fmriprep_template = os.path.join(scripts_dir,'ds109','ds109_fmriprep_template')
-ds120_fmriprep_template = os.path.join(scripts_dir,'ds120','ds120_fmriprep_template')
+# Template fmriprep processing script
+fmriprep_template       = os.path.join(home_dir,'src','lib','fmriprep_template')
+
+# The original ds001 sub-04 T1w image has been badly skull-stripped, so we copy the data and apply a custom mask for a better brain extraction
+Amendds001_script = os.path.join(home_dir,'src','ds001','Amendds001.sh')
+if not os.path.isdir(ds001_raw_dir):
+        shutil.copytree(ds001_pre_raw_dir, ds001_raw_dir)
+        cmd = Amendds001_script + " " + ds001_raw_dir
+        check_call(cmd, shell=True)
 
 # Output directories for preprocessed ds001, ds109, and ds120
 processed_data_dir  = os.path.join(home_dir,'data','processed')
@@ -32,10 +38,10 @@ ds120_subject_ids = [1, 2, 3, 4, 6, 8, 10, 11, 14, 17, 18, 19, 21, 22, 25, 26, 2
 ds120_subject_ids = ['{num:02d}'.format(num=x) for x in ds120_subject_ids]
 
 # Run fmriprep on all ds001 subjects
-run_fmriprep(ds001_raw_dir, ds001_processed_dir, ds001_fmriprep_template, packages_dir, fmriprep_singularity_image, FS_license)
+run_fmriprep(ds001_raw_dir, ds001_processed_dir, fmriprep_template, packages_dir, fmriprep_singularity_image, FS_license)
 
 # Run fmriprep on all ds109 subjects
-run_fmriprep(ds109_raw_dir, ds109_processed_dir, ds109_fmriprep_template, packages_dir, fmriprep_singularity_image, FS_license, ds109_subject_ids)
+run_fmriprep(ds109_raw_dir, ds109_processed_dir, fmriprep_template, packages_dir, fmriprep_singularity_image, FS_license, ds109_subject_ids)
 
 # Run fmriprep on all ds120 subjects
-run_fmriprep(ds120_raw_dir, ds120_processed_dir, ds120_fmriprep_template, packages_dir, fmriprep_singularity_image, FS_license, ds120_subject_ids)
+run_fmriprep(ds120_raw_dir, ds120_processed_dir, fmriprep_template, packages_dir, fmriprep_singularity_image, FS_license, ds120_subject_ids)
