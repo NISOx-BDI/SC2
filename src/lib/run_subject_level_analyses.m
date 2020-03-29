@@ -26,7 +26,7 @@ function run_subject_level_analyses(fmriprep_dir, sub_template, level1_dir, num_
         if ~exist(fullfile(OUT_DIR,'spmT_0001.nii'))
             
             if isdir(OUT_DIR)
-                rmdir(OUT_DIR)
+                rmdir(OUT_DIR,'s')
             end
             
             if exist(fullfile(scripts_dir, [strrep(sub,'^','') '_level1.mat']))
