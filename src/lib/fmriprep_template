@@ -4,18 +4,16 @@
 #$$ -o $out_dir/logs/
 #$$ -e $out_dir/logs/
 
-singularity run --cleanenv -B $packages_dir,$home_dir $singularity_image \
+singularity run -B $packages_dir,$home_dir --home $home_dir --cleanenv $singularity_image \
     $raw_dir $out_dir \
     participant \
     --participant-label $sub_id \
     --ignore slicetiming \
     --fs-license-file $FS_license \
-    --fs-no-reconall \
     -w $out_dir/${study}_${sub}_work \
     --mem-mb 15000 \
     --low-mem \
     --resource-monitor \
     --nthreads 4 \
-    -vvv \
-    --force-bbr
+    -vvv 
 
