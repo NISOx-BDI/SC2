@@ -4,17 +4,16 @@
 #$ -o /well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/data/processed/ds109/logs/
 #$ -e /well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/data/processed/ds109/logs/
 
-singularity run --cleanenv -B /well/win/software/packages,/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/data/raw/ds000109_R2.0.1/../../.. /well/nichols/users/bas627/fmriprep/fmriprep-1.5.1.simg \
+singularity run -B /well/win/software/packages,/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/data/raw/ds000109_R2.0.1/../../.. --home /well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/data/raw/ds000109_R2.0.1/../../.. --cleanenv /well/nichols/users/bas627/fmriprep/fmriprep-20.0.2.simg \
     /well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/data/raw/ds000109_R2.0.1 /well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/data/processed/ds109 \
     participant \
     --participant-label 15 \
     --ignore slicetiming \
     --fs-license-file /well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/license.txt \
-    --fs-no-reconall \
     -w /well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/data/processed/ds109/ds109_sub-15_work \
-    --mem-mb 13000 \
+    --mem-mb 15000 \
     --low-mem \
     --resource-monitor \
     --nthreads 4 \
-    -vvv
+    -vvv 
 

@@ -49,6 +49,9 @@ div#boilerplate pre {
     background-color: #F8F9FA;
 }
 
+#errors div, #errors p {
+    padding-left: 1em;
+}
 </style>
 </head>
 <body>
@@ -88,7 +91,7 @@ div#boilerplate pre {
 		</ul>
 		<li>Standard output spaces: MNI152NLin2009cAsym</li>
 		<li>Non-standard output spaces: </li>
-		<li>FreeSurfer reconstruction: Not run</li>
+		<li>FreeSurfer reconstruction: Run by fMRIPrep</li>
 	</ul>
         </div>
     </div>
@@ -122,6 +125,14 @@ Problem loading figure sub-32/figures/sub-32_space-MNI152NLin2009cAsym_T1w.svg. 
 </div>
 
         </div>
+        <div id="datatype-anat_desc-reconall_suffix-T1w">
+<h3 class="run-title">Surface reconstruction</h3><p class="elem-caption">Surfaces (white and pial) reconstructed with FreeSurfer (<code>recon-all</code>) overlaid on the participant's T1w template.</p>                    <img class="svg-reportlet" src="./sub-32/figures/sub-32_desc-reconall_T1w.svg" style="width: 100%" />
+</div>
+<div class="elem-filename">
+    Get figure file: <a href="./sub-32/figures/sub-32_desc-reconall_T1w.svg" target="_blank">sub-32/figures/sub-32_desc-reconall_T1w.svg</a>
+</div>
+
+        </div>
     </div>
     <div id="Functional">
     <h1 class="sub-report-title">Functional</h1>
@@ -132,17 +143,17 @@ Problem loading figure sub-32/figures/sub-32_space-MNI152NLin2009cAsym_T1w.svg. 
 			<li>Phase-encoding (PE) direction: MISSING - Assuming Anterior-Posterior</li>
 			<li>Slice timing correction: Not applied</li>
 			<li>Susceptibility distortion correction: None</li>
-			<li>Registration: FSL <code>flirt</code> with boundary-based registration (BBR) metric - 6 dof</li>
-			<li>Confounds collected: csf, csf_derivative1, csf_power2, csf_derivative1_power2, white_matter, white_matter_derivative1, white_matter_derivative1_power2, white_matter_power2, global_signal, global_signal_derivative1, global_signal_derivative1_power2, global_signal_power2, std_dvars, dvars, framewise_displacement, t_comp_cor_00, t_comp_cor_01, t_comp_cor_02, t_comp_cor_03, t_comp_cor_04, t_comp_cor_05, t_comp_cor_06, a_comp_cor_00, a_comp_cor_01, a_comp_cor_02, a_comp_cor_03, a_comp_cor_04, a_comp_cor_05, a_comp_cor_06, a_comp_cor_07, a_comp_cor_08, a_comp_cor_09, a_comp_cor_10, a_comp_cor_11, a_comp_cor_12, a_comp_cor_13, a_comp_cor_14, a_comp_cor_15, a_comp_cor_16, a_comp_cor_17, a_comp_cor_18, a_comp_cor_19, a_comp_cor_20, a_comp_cor_21, a_comp_cor_22, a_comp_cor_23, a_comp_cor_24, a_comp_cor_25, a_comp_cor_26, a_comp_cor_27, a_comp_cor_28, a_comp_cor_29, a_comp_cor_30, a_comp_cor_31, a_comp_cor_32, a_comp_cor_33, a_comp_cor_34, a_comp_cor_35, a_comp_cor_36, a_comp_cor_37, a_comp_cor_38, a_comp_cor_39, a_comp_cor_40, a_comp_cor_41, a_comp_cor_42, a_comp_cor_43, a_comp_cor_44, a_comp_cor_45, a_comp_cor_46, a_comp_cor_47, a_comp_cor_48, a_comp_cor_49, a_comp_cor_50, a_comp_cor_51, a_comp_cor_52, a_comp_cor_53, a_comp_cor_54, a_comp_cor_55, a_comp_cor_56, a_comp_cor_57, a_comp_cor_58, a_comp_cor_59, a_comp_cor_60, a_comp_cor_61, a_comp_cor_62, a_comp_cor_63, a_comp_cor_64, a_comp_cor_65, a_comp_cor_66, a_comp_cor_67, a_comp_cor_68, a_comp_cor_69, a_comp_cor_70, a_comp_cor_71, a_comp_cor_72, a_comp_cor_73, a_comp_cor_74, a_comp_cor_75, a_comp_cor_76, a_comp_cor_77, a_comp_cor_78, a_comp_cor_79, a_comp_cor_80, a_comp_cor_81, a_comp_cor_82, a_comp_cor_83, a_comp_cor_84, a_comp_cor_85, a_comp_cor_86, a_comp_cor_87, a_comp_cor_88, a_comp_cor_89, a_comp_cor_90, a_comp_cor_91, a_comp_cor_92, a_comp_cor_93, a_comp_cor_94, a_comp_cor_95, a_comp_cor_96, a_comp_cor_97, a_comp_cor_98, a_comp_cor_99, a_comp_cor_100, a_comp_cor_101, a_comp_cor_102, a_comp_cor_103, a_comp_cor_104, a_comp_cor_105, a_comp_cor_106, a_comp_cor_107, a_comp_cor_108, a_comp_cor_109, a_comp_cor_110, a_comp_cor_111, a_comp_cor_112, a_comp_cor_113, a_comp_cor_114, a_comp_cor_115, a_comp_cor_116, a_comp_cor_117, a_comp_cor_118, a_comp_cor_119, a_comp_cor_120, a_comp_cor_121, a_comp_cor_122, a_comp_cor_123, a_comp_cor_124, a_comp_cor_125, a_comp_cor_126, a_comp_cor_127, a_comp_cor_128, a_comp_cor_129, a_comp_cor_130, a_comp_cor_131, a_comp_cor_132, a_comp_cor_133, a_comp_cor_134, a_comp_cor_135, a_comp_cor_136, a_comp_cor_137, a_comp_cor_138, a_comp_cor_139, a_comp_cor_140, a_comp_cor_141, a_comp_cor_142, cosine00, cosine01, cosine02, cosine03, trans_x, trans_x_derivative1, trans_x_power2, trans_x_derivative1_power2, trans_y, trans_y_derivative1, trans_y_derivative1_power2, trans_y_power2, trans_z, trans_z_derivative1, trans_z_power2, trans_z_derivative1_power2, rot_x, rot_x_derivative1, rot_x_derivative1_power2, rot_x_power2, rot_y, rot_y_derivative1, rot_y_power2, rot_y_derivative1_power2, rot_z, rot_z_derivative1, rot_z_derivative1_power2, rot_z_power2, motion_outlier00, motion_outlier01</li>
+			<li>Registration: FreeSurfer <code>bbregister</code> (boundary-based registration, BBR) - 6 dof</li>
+			<li>Confounds collected: csf, csf_derivative1, csf_power2, csf_derivative1_power2, white_matter, white_matter_derivative1, white_matter_derivative1_power2, white_matter_power2, global_signal, global_signal_derivative1, global_signal_power2, global_signal_derivative1_power2, std_dvars, dvars, framewise_displacement, t_comp_cor_00, t_comp_cor_01, t_comp_cor_02, t_comp_cor_03, t_comp_cor_04, t_comp_cor_05, a_comp_cor_00, a_comp_cor_01, a_comp_cor_02, a_comp_cor_03, a_comp_cor_04, a_comp_cor_05, a_comp_cor_06, a_comp_cor_07, a_comp_cor_08, a_comp_cor_09, a_comp_cor_10, a_comp_cor_11, a_comp_cor_12, a_comp_cor_13, a_comp_cor_14, a_comp_cor_15, a_comp_cor_16, a_comp_cor_17, a_comp_cor_18, a_comp_cor_19, a_comp_cor_20, a_comp_cor_21, a_comp_cor_22, a_comp_cor_23, a_comp_cor_24, a_comp_cor_25, a_comp_cor_26, a_comp_cor_27, a_comp_cor_28, a_comp_cor_29, a_comp_cor_30, a_comp_cor_31, a_comp_cor_32, a_comp_cor_33, a_comp_cor_34, a_comp_cor_35, a_comp_cor_36, a_comp_cor_37, a_comp_cor_38, a_comp_cor_39, a_comp_cor_40, a_comp_cor_41, a_comp_cor_42, a_comp_cor_43, a_comp_cor_44, a_comp_cor_45, a_comp_cor_46, a_comp_cor_47, a_comp_cor_48, a_comp_cor_49, a_comp_cor_50, a_comp_cor_51, a_comp_cor_52, a_comp_cor_53, a_comp_cor_54, a_comp_cor_55, a_comp_cor_56, a_comp_cor_57, a_comp_cor_58, a_comp_cor_59, a_comp_cor_60, a_comp_cor_61, a_comp_cor_62, a_comp_cor_63, a_comp_cor_64, a_comp_cor_65, a_comp_cor_66, a_comp_cor_67, a_comp_cor_68, a_comp_cor_69, a_comp_cor_70, a_comp_cor_71, a_comp_cor_72, a_comp_cor_73, a_comp_cor_74, a_comp_cor_75, a_comp_cor_76, a_comp_cor_77, a_comp_cor_78, a_comp_cor_79, a_comp_cor_80, a_comp_cor_81, a_comp_cor_82, a_comp_cor_83, a_comp_cor_84, a_comp_cor_85, a_comp_cor_86, a_comp_cor_87, a_comp_cor_88, a_comp_cor_89, a_comp_cor_90, a_comp_cor_91, a_comp_cor_92, a_comp_cor_93, a_comp_cor_94, a_comp_cor_95, a_comp_cor_96, a_comp_cor_97, a_comp_cor_98, a_comp_cor_99, a_comp_cor_100, a_comp_cor_101, a_comp_cor_102, a_comp_cor_103, a_comp_cor_104, a_comp_cor_105, a_comp_cor_106, a_comp_cor_107, a_comp_cor_108, a_comp_cor_109, a_comp_cor_110, a_comp_cor_111, a_comp_cor_112, a_comp_cor_113, a_comp_cor_114, a_comp_cor_115, a_comp_cor_116, a_comp_cor_117, a_comp_cor_118, a_comp_cor_119, a_comp_cor_120, a_comp_cor_121, a_comp_cor_122, a_comp_cor_123, a_comp_cor_124, a_comp_cor_125, a_comp_cor_126, a_comp_cor_127, a_comp_cor_128, a_comp_cor_129, a_comp_cor_130, cosine00, cosine01, cosine02, cosine03, trans_x, trans_x_derivative1, trans_x_derivative1_power2, trans_x_power2, trans_y, trans_y_derivative1, trans_y_power2, trans_y_derivative1_power2, trans_z, trans_z_derivative1, trans_z_power2, trans_z_derivative1_power2, rot_x, rot_x_derivative1, rot_x_derivative1_power2, rot_x_power2, rot_y, rot_y_derivative1, rot_y_derivative1_power2, rot_y_power2, rot_z, rot_z_derivative1, rot_z_power2, rot_z_derivative1_power2, motion_outlier00, motion_outlier01</li>
 			<li>Non-steady-state volumes: 0</li>
 		</ul>
         </div>
-        <div id="datatype-func_desc-flirtbbr_run-1_suffix-bold_task-theoryofmindwithmanualresponse">
-<h3 class="run-title">Alignment of functional and anatomical MRI data (surface driven)</h3><p class="elem-caption">FSL <code>flirt</code> was used to generate transformations from EPI-space to T1w-space - The white matter mask calculated with FSL <code>fast</code> (brain tissue segmentation) was used for BBR. Note that Nearest Neighbor interpolation is used in the reportlets in order to highlight potential spin-history and other artifacts, whereas final images are resampled using Lanczos interpolation.</p>                    <object class="svg-reportlet" type="image/svg+xml" data="./sub-32/figures/sub-32_task-theoryofmindwithmanualresponse_run-1_desc-flirtbbr_bold.svg">
-Problem loading figure sub-32/figures/sub-32_task-theoryofmindwithmanualresponse_run-1_desc-flirtbbr_bold.svg. If the link below works, please try reloading the report in your browser.</object>
+        <div id="datatype-func_desc-bbregister_run-1_suffix-bold_task-theoryofmindwithmanualresponse">
+<h3 class="run-title">Alignment of functional and anatomical MRI data (surface driven)</h3><p class="elem-caption"><code>bbregister</code> was used to generate transformations from EPI-space to T1w-space. Note that Nearest Neighbor interpolation is used in the reportlets in order to highlight potential spin-history and other artifacts, whereas final images are resampled using Lanczos interpolation.</p>                    <object class="svg-reportlet" type="image/svg+xml" data="./sub-32/figures/sub-32_task-theoryofmindwithmanualresponse_run-1_desc-bbregister_bold.svg">
+Problem loading figure sub-32/figures/sub-32_task-theoryofmindwithmanualresponse_run-1_desc-bbregister_bold.svg. If the link below works, please try reloading the report in your browser.</object>
 </div>
 <div class="elem-filename">
-    Get figure file: <a href="./sub-32/figures/sub-32_task-theoryofmindwithmanualresponse_run-1_desc-flirtbbr_bold.svg" target="_blank">sub-32/figures/sub-32_task-theoryofmindwithmanualresponse_run-1_desc-flirtbbr_bold.svg</a>
+    Get figure file: <a href="./sub-32/figures/sub-32_task-theoryofmindwithmanualresponse_run-1_desc-bbregister_bold.svg" target="_blank">sub-32/figures/sub-32_task-theoryofmindwithmanualresponse_run-1_desc-bbregister_bold.svg</a>
 </div>
 
         </div>
@@ -191,8 +202,8 @@ confound regression.
 			<li>Phase-encoding (PE) direction: MISSING - Assuming Anterior-Posterior</li>
 			<li>Slice timing correction: Not applied</li>
 			<li>Susceptibility distortion correction: None</li>
-			<li>Registration: FSL <code>flirt</code> with boundary-based registration (BBR) metric - 6 dof</li>
-			<li>Confounds collected: csf, csf_derivative1, csf_power2, csf_derivative1_power2, white_matter, white_matter_derivative1, white_matter_derivative1_power2, white_matter_power2, global_signal, global_signal_derivative1, global_signal_derivative1_power2, global_signal_power2, std_dvars, dvars, framewise_displacement, t_comp_cor_00, t_comp_cor_01, t_comp_cor_02, t_comp_cor_03, t_comp_cor_04, t_comp_cor_05, t_comp_cor_06, a_comp_cor_00, a_comp_cor_01, a_comp_cor_02, a_comp_cor_03, a_comp_cor_04, a_comp_cor_05, a_comp_cor_06, a_comp_cor_07, a_comp_cor_08, a_comp_cor_09, a_comp_cor_10, a_comp_cor_11, a_comp_cor_12, a_comp_cor_13, a_comp_cor_14, a_comp_cor_15, a_comp_cor_16, a_comp_cor_17, a_comp_cor_18, a_comp_cor_19, a_comp_cor_20, a_comp_cor_21, a_comp_cor_22, a_comp_cor_23, a_comp_cor_24, a_comp_cor_25, a_comp_cor_26, a_comp_cor_27, a_comp_cor_28, a_comp_cor_29, a_comp_cor_30, a_comp_cor_31, a_comp_cor_32, a_comp_cor_33, a_comp_cor_34, a_comp_cor_35, a_comp_cor_36, a_comp_cor_37, a_comp_cor_38, a_comp_cor_39, a_comp_cor_40, a_comp_cor_41, a_comp_cor_42, a_comp_cor_43, a_comp_cor_44, a_comp_cor_45, a_comp_cor_46, a_comp_cor_47, a_comp_cor_48, a_comp_cor_49, a_comp_cor_50, a_comp_cor_51, a_comp_cor_52, a_comp_cor_53, a_comp_cor_54, a_comp_cor_55, a_comp_cor_56, a_comp_cor_57, a_comp_cor_58, a_comp_cor_59, a_comp_cor_60, a_comp_cor_61, a_comp_cor_62, a_comp_cor_63, a_comp_cor_64, a_comp_cor_65, a_comp_cor_66, a_comp_cor_67, a_comp_cor_68, a_comp_cor_69, a_comp_cor_70, a_comp_cor_71, a_comp_cor_72, a_comp_cor_73, a_comp_cor_74, a_comp_cor_75, a_comp_cor_76, a_comp_cor_77, a_comp_cor_78, a_comp_cor_79, a_comp_cor_80, a_comp_cor_81, a_comp_cor_82, a_comp_cor_83, a_comp_cor_84, a_comp_cor_85, a_comp_cor_86, a_comp_cor_87, a_comp_cor_88, a_comp_cor_89, a_comp_cor_90, a_comp_cor_91, a_comp_cor_92, a_comp_cor_93, a_comp_cor_94, a_comp_cor_95, a_comp_cor_96, a_comp_cor_97, a_comp_cor_98, a_comp_cor_99, a_comp_cor_100, a_comp_cor_101, a_comp_cor_102, a_comp_cor_103, a_comp_cor_104, a_comp_cor_105, a_comp_cor_106, a_comp_cor_107, a_comp_cor_108, a_comp_cor_109, a_comp_cor_110, a_comp_cor_111, a_comp_cor_112, a_comp_cor_113, a_comp_cor_114, a_comp_cor_115, a_comp_cor_116, a_comp_cor_117, a_comp_cor_118, a_comp_cor_119, a_comp_cor_120, a_comp_cor_121, a_comp_cor_122, a_comp_cor_123, a_comp_cor_124, a_comp_cor_125, a_comp_cor_126, a_comp_cor_127, a_comp_cor_128, a_comp_cor_129, a_comp_cor_130, a_comp_cor_131, a_comp_cor_132, a_comp_cor_133, a_comp_cor_134, a_comp_cor_135, a_comp_cor_136, a_comp_cor_137, a_comp_cor_138, a_comp_cor_139, a_comp_cor_140, a_comp_cor_141, a_comp_cor_142, a_comp_cor_143, cosine00, cosine01, cosine02, cosine03, trans_x, trans_x_derivative1, trans_x_power2, trans_x_derivative1_power2, trans_y, trans_y_derivative1, trans_y_derivative1_power2, trans_y_power2, trans_z, trans_z_derivative1, trans_z_power2, trans_z_derivative1_power2, rot_x, rot_x_derivative1, rot_x_derivative1_power2, rot_x_power2, rot_y, rot_y_derivative1, rot_y_power2, rot_y_derivative1_power2, rot_z, rot_z_derivative1, rot_z_derivative1_power2, rot_z_power2, motion_outlier00, motion_outlier01</li>
+			<li>Registration: FreeSurfer <code>bbregister</code> (boundary-based registration, BBR) - 6 dof</li>
+			<li>Confounds collected: csf, csf_derivative1, csf_power2, csf_derivative1_power2, white_matter, white_matter_derivative1, white_matter_derivative1_power2, white_matter_power2, global_signal, global_signal_derivative1, global_signal_power2, global_signal_derivative1_power2, std_dvars, dvars, framewise_displacement, t_comp_cor_00, t_comp_cor_01, t_comp_cor_02, t_comp_cor_03, t_comp_cor_04, t_comp_cor_05, a_comp_cor_00, a_comp_cor_01, a_comp_cor_02, a_comp_cor_03, a_comp_cor_04, a_comp_cor_05, a_comp_cor_06, a_comp_cor_07, a_comp_cor_08, a_comp_cor_09, a_comp_cor_10, a_comp_cor_11, a_comp_cor_12, a_comp_cor_13, a_comp_cor_14, a_comp_cor_15, a_comp_cor_16, a_comp_cor_17, a_comp_cor_18, a_comp_cor_19, a_comp_cor_20, a_comp_cor_21, a_comp_cor_22, a_comp_cor_23, a_comp_cor_24, a_comp_cor_25, a_comp_cor_26, a_comp_cor_27, a_comp_cor_28, a_comp_cor_29, a_comp_cor_30, a_comp_cor_31, a_comp_cor_32, a_comp_cor_33, a_comp_cor_34, a_comp_cor_35, a_comp_cor_36, a_comp_cor_37, a_comp_cor_38, a_comp_cor_39, a_comp_cor_40, a_comp_cor_41, a_comp_cor_42, a_comp_cor_43, a_comp_cor_44, a_comp_cor_45, a_comp_cor_46, a_comp_cor_47, a_comp_cor_48, a_comp_cor_49, a_comp_cor_50, a_comp_cor_51, a_comp_cor_52, a_comp_cor_53, a_comp_cor_54, a_comp_cor_55, a_comp_cor_56, a_comp_cor_57, a_comp_cor_58, a_comp_cor_59, a_comp_cor_60, a_comp_cor_61, a_comp_cor_62, a_comp_cor_63, a_comp_cor_64, a_comp_cor_65, a_comp_cor_66, a_comp_cor_67, a_comp_cor_68, a_comp_cor_69, a_comp_cor_70, a_comp_cor_71, a_comp_cor_72, a_comp_cor_73, a_comp_cor_74, a_comp_cor_75, a_comp_cor_76, a_comp_cor_77, a_comp_cor_78, a_comp_cor_79, a_comp_cor_80, a_comp_cor_81, a_comp_cor_82, a_comp_cor_83, a_comp_cor_84, a_comp_cor_85, a_comp_cor_86, a_comp_cor_87, a_comp_cor_88, a_comp_cor_89, a_comp_cor_90, a_comp_cor_91, a_comp_cor_92, a_comp_cor_93, a_comp_cor_94, a_comp_cor_95, a_comp_cor_96, a_comp_cor_97, a_comp_cor_98, a_comp_cor_99, a_comp_cor_100, a_comp_cor_101, a_comp_cor_102, a_comp_cor_103, a_comp_cor_104, a_comp_cor_105, a_comp_cor_106, a_comp_cor_107, a_comp_cor_108, a_comp_cor_109, a_comp_cor_110, a_comp_cor_111, a_comp_cor_112, a_comp_cor_113, a_comp_cor_114, a_comp_cor_115, a_comp_cor_116, a_comp_cor_117, a_comp_cor_118, a_comp_cor_119, a_comp_cor_120, a_comp_cor_121, a_comp_cor_122, a_comp_cor_123, a_comp_cor_124, a_comp_cor_125, a_comp_cor_126, a_comp_cor_127, a_comp_cor_128, a_comp_cor_129, a_comp_cor_130, a_comp_cor_131, a_comp_cor_132, cosine00, cosine01, cosine02, cosine03, trans_x, trans_x_derivative1, trans_x_derivative1_power2, trans_x_power2, trans_y, trans_y_derivative1, trans_y_power2, trans_y_derivative1_power2, trans_z, trans_z_derivative1, trans_z_power2, trans_z_derivative1_power2, rot_x, rot_x_derivative1, rot_x_derivative1_power2, rot_x_power2, rot_y, rot_y_derivative1, rot_y_derivative1_power2, rot_y_power2, rot_z, rot_z_derivative1, rot_z_power2, rot_z_derivative1_power2, motion_outlier00, motion_outlier01</li>
 			<li>Non-steady-state volumes: 0</li>
 		</ul>
         </div>
@@ -204,12 +215,12 @@ confound regression.
 			    The difference in translation is 0.31.
 			    </p>
         </div>
-        <div id="datatype-func_desc-flirtbbr_run-2_suffix-bold_task-theoryofmindwithmanualresponse">
-<h3 class="run-title">Alignment of functional and anatomical MRI data (surface driven)</h3><p class="elem-caption">FSL <code>flirt</code> was used to generate transformations from EPI-space to T1w-space - The white matter mask calculated with FSL <code>fast</code> (brain tissue segmentation) was used for BBR. Note that Nearest Neighbor interpolation is used in the reportlets in order to highlight potential spin-history and other artifacts, whereas final images are resampled using Lanczos interpolation.</p>                    <object class="svg-reportlet" type="image/svg+xml" data="./sub-32/figures/sub-32_task-theoryofmindwithmanualresponse_run-2_desc-flirtbbr_bold.svg">
-Problem loading figure sub-32/figures/sub-32_task-theoryofmindwithmanualresponse_run-2_desc-flirtbbr_bold.svg. If the link below works, please try reloading the report in your browser.</object>
+        <div id="datatype-func_desc-bbregister_run-2_suffix-bold_task-theoryofmindwithmanualresponse">
+<h3 class="run-title">Alignment of functional and anatomical MRI data (surface driven)</h3><p class="elem-caption"><code>bbregister</code> was used to generate transformations from EPI-space to T1w-space. Note that Nearest Neighbor interpolation is used in the reportlets in order to highlight potential spin-history and other artifacts, whereas final images are resampled using Lanczos interpolation.</p>                    <object class="svg-reportlet" type="image/svg+xml" data="./sub-32/figures/sub-32_task-theoryofmindwithmanualresponse_run-2_desc-bbregister_bold.svg">
+Problem loading figure sub-32/figures/sub-32_task-theoryofmindwithmanualresponse_run-2_desc-bbregister_bold.svg. If the link below works, please try reloading the report in your browser.</object>
 </div>
 <div class="elem-filename">
-    Get figure file: <a href="./sub-32/figures/sub-32_task-theoryofmindwithmanualresponse_run-2_desc-flirtbbr_bold.svg" target="_blank">sub-32/figures/sub-32_task-theoryofmindwithmanualresponse_run-2_desc-flirtbbr_bold.svg</a>
+    Get figure file: <a href="./sub-32/figures/sub-32_task-theoryofmindwithmanualresponse_run-2_desc-bbregister_bold.svg" target="_blank">sub-32/figures/sub-32_task-theoryofmindwithmanualresponse_run-2_desc-bbregister_bold.svg</a>
 </div>
 
         </div>
@@ -256,9 +267,9 @@ confound regression.
     <h1 class="sub-report-title">About</h1>
         <div id="datatype-anat_desc-about_suffix-T1w">
                     <ul>
-		<li>fMRIPrep version: 1.5.1</li>
-		<li>fMRIPrep command: <code>/usr/local/miniconda/bin/fmriprep /well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/data/raw/ds000109_R2.0.1 /well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/data/processed/ds109 participant --participant-label 32 --ignore slicetiming --fs-license-file /well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/license.txt --fs-no-reconall -w /well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/data/processed/ds109/ds109_sub-32_work --mem-mb 13000 --low-mem --resource-monitor --nthreads 4 -vvv</code></li>
-		<li>Date preprocessed: 2019-12-03 10:58:53 +0000</li>
+		<li>fMRIPrep version: 20.0.2</li>
+		<li>fMRIPrep command: <code>/usr/local/miniconda/bin/fmriprep /well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/data/raw/ds000109_R2.0.1 /well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/data/processed/ds109 participant --participant-label 32 --ignore slicetiming --fs-license-file /well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/license.txt -w /well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/data/processed/ds109/ds109_sub-32_work --mem-mb 15000 --low-mem --resource-monitor --nthreads 4 -vvv</code></li>
+		<li>Date preprocessed: 2020-03-19 11:36:30 +0000</li>
 	</ul>
 </div>
         </div>
@@ -280,16 +291,16 @@ confound regression.
         </li>
     </ul>
     <div class="tab-content" id="myTabContent">
-      <div class="tab-pane fade active show" id="HTML" role="tabpanel" aria-labelledby="HTML-tab"><div class="boiler-html"><p>Results included in this manuscript come from preprocessing performed using <em>fMRIPrep</em> 1.5.1 (<span class="citation" data-cites="fmriprep1">Esteban, Markiewicz, et al. (2018)</span>; <span class="citation" data-cites="fmriprep2">Esteban, Blair, et al. (2018)</span>; RRID:SCR_016216), which is based on <em>Nipype</em> 1.3.1 (<span class="citation" data-cites="nipype1">Gorgolewski et al. (2011)</span>; <span class="citation" data-cites="nipype2">Gorgolewski et al. (2018)</span>; RRID:SCR_002502).</p>
+      <div class="tab-pane fade active show" id="HTML" role="tabpanel" aria-labelledby="HTML-tab"><div class="boiler-html"><p>Results included in this manuscript come from preprocessing performed using <em>fMRIPrep</em> 20.0.2 (<span class="citation" data-cites="fmriprep1">Esteban, Markiewicz, et al. (2018)</span>; <span class="citation" data-cites="fmriprep2">Esteban, Blair, et al. (2018)</span>; RRID:SCR_016216), which is based on <em>Nipype</em> 1.4.2 (<span class="citation" data-cites="nipype1">Gorgolewski et al. (2011)</span>; <span class="citation" data-cites="nipype2">Gorgolewski et al. (2018)</span>; RRID:SCR_002502).</p>
 <dl>
 <dt>Anatomical data preprocessing</dt>
-<dd><p>The T1-weighted (T1w) image was corrected for intensity non-uniformity (INU) with <code>N4BiasFieldCorrection</code> <span class="citation" data-cites="n4">(Tustison et al. 2010)</span>, distributed with ANTs 2.2.0 <span class="citation" data-cites="ants">(Avants et al. 2008, RRID:SCR_004757)</span>, and used as T1w-reference throughout the workflow. The T1w-reference was then skull-stripped with a <em>Nipype</em> implementation of the <code>antsBrainExtraction.sh</code> workflow (from ANTs), using OASIS30ANTs as target template. Brain tissue segmentation of cerebrospinal fluid (CSF), white-matter (WM) and gray-matter (GM) was performed on the brain-extracted T1w using <code>fast</code> <span class="citation" data-cites="fsl_fast">(FSL 5.0.9, RRID:SCR_002823, Zhang, Brady, and Smith 2001)</span>. Volume-based spatial normalization to one standard space (MNI152NLin2009cAsym) was performed through nonlinear registration with <code>antsRegistration</code> (ANTs 2.2.0), using brain-extracted versions of both T1w reference and the T1w template. The following template was selected for spatial normalization: <em>ICBM 152 Nonlinear Asymmetrical template version 2009c</em> [<span class="citation" data-cites="mni152nlin2009casym">Fonov et al. (2009)</span>, RRID:SCR_008796; TemplateFlow ID: MNI152NLin2009cAsym].</p>
+<dd><p>The T1-weighted (T1w) image was corrected for intensity non-uniformity (INU) with <code>N4BiasFieldCorrection</code> <span class="citation" data-cites="n4">(Tustison et al. 2010)</span>, distributed with ANTs 2.2.0 <span class="citation" data-cites="ants">(Avants et al. 2008, RRID:SCR_004757)</span>, and used as T1w-reference throughout the workflow. The T1w-reference was then skull-stripped with a <em>Nipype</em> implementation of the <code>antsBrainExtraction.sh</code> workflow (from ANTs), using OASIS30ANTs as target template. Brain tissue segmentation of cerebrospinal fluid (CSF), white-matter (WM) and gray-matter (GM) was performed on the brain-extracted T1w using <code>fast</code> <span class="citation" data-cites="fsl_fast">(FSL 5.0.9, RRID:SCR_002823, Zhang, Brady, and Smith 2001)</span>. Brain surfaces were reconstructed using <code>recon-all</code> <span class="citation" data-cites="fs_reconall">(FreeSurfer 6.0.1, RRID:SCR_001847, Dale, Fischl, and Sereno 1999)</span>, and the brain mask estimated previously was refined with a custom variation of the method to reconcile ANTs-derived and FreeSurfer-derived segmentations of the cortical gray-matter of Mindboggle <span class="citation" data-cites="mindboggle">(RRID:SCR_002438, Klein et al. 2017)</span>. Volume-based spatial normalization to one standard space (MNI152NLin2009cAsym) was performed through nonlinear registration with <code>antsRegistration</code> (ANTs 2.2.0), using brain-extracted versions of both T1w reference and the T1w template. The following template was selected for spatial normalization: <em>ICBM 152 Nonlinear Asymmetrical template version 2009c</em> [<span class="citation" data-cites="mni152nlin2009casym">Fonov et al. (2009)</span>, RRID:SCR_008796; TemplateFlow ID: MNI152NLin2009cAsym],</p>
 </dd>
 <dt>Functional data preprocessing</dt>
-<dd><p>For each of the 2 BOLD runs found per subject (across all tasks and sessions), the following preprocessing was performed. First, a reference volume and its skull-stripped version were generated using a custom methodology of <em>fMRIPrep</em>. The BOLD reference was then co-registered to the T1w reference using <code>flirt</code> <span class="citation" data-cites="flirt">(FSL 5.0.9, Jenkinson and Smith 2001)</span> with the boundary-based registration <span class="citation" data-cites="bbr">(Greve and Fischl 2009)</span> cost-function. Co-registration was configured with nine degrees of freedom to account for distortions remaining in the BOLD reference. Head-motion parameters with respect to the BOLD reference (transformation matrices, and six corresponding rotation and translation parameters) are estimated before any spatiotemporal filtering using <code>mcflirt</code> <span class="citation" data-cites="mcflirt">(FSL 5.0.9, Jenkinson et al. 2002)</span>. The BOLD time-series (including slice-timing correction when applied) were resampled onto their original, native space by applying the transforms to correct for head-motion. These resampled BOLD time-series will be referred to as <em>preprocessed BOLD in original space</em>, or just <em>preprocessed BOLD</em>. The BOLD time-series were resampled into standard space, generating a <em>preprocessed BOLD run in [‘MNI152NLin2009cAsym’] space</em>. First, a reference volume and its skull-stripped version were generated using a custom methodology of <em>fMRIPrep</em>. Several confounding time-series were calculated based on the <em>preprocessed BOLD</em>: framewise displacement (FD), DVARS and three region-wise global signals. FD and DVARS are calculated for each functional run, both using their implementations in <em>Nipype</em> <span class="citation" data-cites="power_fd_dvars">(following the definitions by Power et al. 2014)</span>. The three global signals are extracted within the CSF, the WM, and the whole-brain masks. Additionally, a set of physiological regressors were extracted to allow for component-based noise correction <span class="citation" data-cites="compcor">(<em>CompCor</em>, Behzadi et al. 2007)</span>. Principal components are estimated after high-pass filtering the <em>preprocessed BOLD</em> time-series (using a discrete cosine filter with 128s cut-off) for the two <em>CompCor</em> variants: temporal (tCompCor) and anatomical (aCompCor). tCompCor components are then calculated from the top 5% variable voxels within a mask covering the subcortical regions. This subcortical mask is obtained by heavily eroding the brain mask, which ensures it does not include cortical GM regions. For aCompCor, components are calculated within the intersection of the aforementioned mask and the union of CSF and WM masks calculated in T1w space, after their projection to the native space of each functional run (using the inverse BOLD-to-T1w transformation). Components are also calculated separately within the WM and CSF masks. For each CompCor decomposition, the <em>k</em> components with the largest singular values are retained, such that the retained components’ time series are sufficient to explain 50 percent of variance across the nuisance mask (CSF, WM, combined, or temporal). The remaining components are dropped from consideration. The head-motion estimates calculated in the correction step were also placed within the corresponding confounds file. The confound time series derived from head motion estimates and global signals were expanded with the inclusion of temporal derivatives and quadratic terms for each <span class="citation" data-cites="confounds_satterthwaite_2013">(Satterthwaite et al. 2013)</span>. Frames that exceeded a threshold of 0.5 mm FD or 1.5 standardised DVARS were annotated as motion outliers. All resamplings can be performed with <em>a single interpolation step</em> by composing all the pertinent transformations (i.e. head-motion transform matrices, susceptibility distortion correction when available, and co-registrations to anatomical and output spaces). Gridded (volumetric) resamplings were performed using <code>antsApplyTransforms</code> (ANTs), configured with Lanczos interpolation to minimize the smoothing effects of other kernels <span class="citation" data-cites="lanczos">(Lanczos 1964)</span>. Non-gridded (surface) resamplings were performed using <code>mri_vol2surf</code> (FreeSurfer).</p>
+<dd><p>For each of the 2 BOLD runs found per subject (across all tasks and sessions), the following preprocessing was performed. First, a reference volume and its skull-stripped version were generated using a custom methodology of <em>fMRIPrep</em>. Susceptibility distortion correction (SDC) was omitted. The BOLD reference was then co-registered to the T1w reference using <code>bbregister</code> (FreeSurfer) which implements boundary-based registration <span class="citation" data-cites="bbr">(Greve and Fischl 2009)</span>. Co-registration was configured with six degrees of freedom. Head-motion parameters with respect to the BOLD reference (transformation matrices, and six corresponding rotation and translation parameters) are estimated before any spatiotemporal filtering using <code>mcflirt</code> <span class="citation" data-cites="mcflirt">(FSL 5.0.9, Jenkinson et al. 2002)</span>. The BOLD time-series (including slice-timing correction when applied) were resampled onto their original, native space by applying the transforms to correct for head-motion. These resampled BOLD time-series will be referred to as <em>preprocessed BOLD in original space</em>, or just <em>preprocessed BOLD</em>. The BOLD time-series were resampled into standard space, generating a <em>preprocessed BOLD run in MNI152NLin2009cAsym space</em>. First, a reference volume and its skull-stripped version were generated using a custom methodology of <em>fMRIPrep</em>. Several confounding time-series were calculated based on the <em>preprocessed BOLD</em>: framewise displacement (FD), DVARS and three region-wise global signals. FD and DVARS are calculated for each functional run, both using their implementations in <em>Nipype</em> <span class="citation" data-cites="power_fd_dvars">(following the definitions by Power et al. 2014)</span>. The three global signals are extracted within the CSF, the WM, and the whole-brain masks. Additionally, a set of physiological regressors were extracted to allow for component-based noise correction <span class="citation" data-cites="compcor">(<em>CompCor</em>, Behzadi et al. 2007)</span>. Principal components are estimated after high-pass filtering the <em>preprocessed BOLD</em> time-series (using a discrete cosine filter with 128s cut-off) for the two <em>CompCor</em> variants: temporal (tCompCor) and anatomical (aCompCor). tCompCor components are then calculated from the top 5% variable voxels within a mask covering the subcortical regions. This subcortical mask is obtained by heavily eroding the brain mask, which ensures it does not include cortical GM regions. For aCompCor, components are calculated within the intersection of the aforementioned mask and the union of CSF and WM masks calculated in T1w space, after their projection to the native space of each functional run (using the inverse BOLD-to-T1w transformation). Components are also calculated separately within the WM and CSF masks. For each CompCor decomposition, the <em>k</em> components with the largest singular values are retained, such that the retained components’ time series are sufficient to explain 50 percent of variance across the nuisance mask (CSF, WM, combined, or temporal). The remaining components are dropped from consideration. The head-motion estimates calculated in the correction step were also placed within the corresponding confounds file. The confound time series derived from head motion estimates and global signals were expanded with the inclusion of temporal derivatives and quadratic terms for each <span class="citation" data-cites="confounds_satterthwaite_2013">(Satterthwaite et al. 2013)</span>. Frames that exceeded a threshold of 0.5 mm FD or 1.5 standardised DVARS were annotated as motion outliers. All resamplings can be performed with <em>a single interpolation step</em> by composing all the pertinent transformations (i.e. head-motion transform matrices, susceptibility distortion correction when available, and co-registrations to anatomical and output spaces). Gridded (volumetric) resamplings were performed using <code>antsApplyTransforms</code> (ANTs), configured with Lanczos interpolation to minimize the smoothing effects of other kernels <span class="citation" data-cites="lanczos">(Lanczos 1964)</span>. Non-gridded (surface) resamplings were performed using <code>mri_vol2surf</code> (FreeSurfer).</p>
 </dd>
 </dl>
-<p>Many internal operations of <em>fMRIPrep</em> use <em>Nilearn</em> 0.5.2 <span class="citation" data-cites="nilearn">(Abraham et al. 2014, RRID:SCR_001362)</span>, mostly within the functional processing workflow. For more details of the pipeline, see <a href="https://fmriprep.readthedocs.io/en/latest/workflows.html" title="FMRIPrep&#39;s documentation">the section corresponding to workflows in <em>fMRIPrep</em>’s documentation</a>.</p>
+<p>Many internal operations of <em>fMRIPrep</em> use <em>Nilearn</em> 0.6.2 <span class="citation" data-cites="nilearn">(Abraham et al. 2014, RRID:SCR_001362)</span>, mostly within the functional processing workflow. For more details of the pipeline, see <a href="https://fmriprep.readthedocs.io/en/latest/workflows.html" title="FMRIPrep&#39;s documentation">the section corresponding to workflows in <em>fMRIPrep</em>’s documentation</a>.</p>
 <h3 id="copyright-waiver">Copyright Waiver</h3>
 <p>The above boilerplate text was automatically generated by fMRIPrep with the express intention that users should copy and paste this text into their manuscripts <em>unchanged</em>. It is released under the <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a> license.</p>
 <h3 id="references" class="unnumbered">References</h3>
@@ -302,6 +313,9 @@ confound regression.
 </div>
 <div id="ref-compcor">
 <p>Behzadi, Yashar, Khaled Restom, Joy Liau, and Thomas T. Liu. 2007. “A Component Based Noise Correction Method (CompCor) for BOLD and Perfusion Based fMRI.” <em>NeuroImage</em> 37 (1): 90–101. <a href="https://doi.org/10.1016/j.neuroimage.2007.04.042" class="uri">https://doi.org/10.1016/j.neuroimage.2007.04.042</a>.</p>
+</div>
+<div id="ref-fs_reconall">
+<p>Dale, Anders M., Bruce Fischl, and Martin I. Sereno. 1999. “Cortical Surface-Based Analysis: I. Segmentation and Surface Reconstruction.” <em>NeuroImage</em> 9 (2): 179–94. <a href="https://doi.org/10.1006/nimg.1998.0395" class="uri">https://doi.org/10.1006/nimg.1998.0395</a>.</p>
 </div>
 <div id="ref-fmriprep2">
 <p>Esteban, Oscar, Ross Blair, Christopher J. Markiewicz, Shoshana L. Berleant, Craig Moodie, Feilong Ma, Ayse Ilkay Isik, et al. 2018. “FMRIPrep.” <em>Software</em>. Zenodo. <a href="https://doi.org/10.5281/zenodo.852659" class="uri">https://doi.org/10.5281/zenodo.852659</a>.</p>
@@ -324,8 +338,8 @@ confound regression.
 <div id="ref-mcflirt">
 <p>Jenkinson, Mark, Peter Bannister, Michael Brady, and Stephen Smith. 2002. “Improved Optimization for the Robust and Accurate Linear Registration and Motion Correction of Brain Images.” <em>NeuroImage</em> 17 (2): 825–41. <a href="https://doi.org/10.1006/nimg.2002.1132" class="uri">https://doi.org/10.1006/nimg.2002.1132</a>.</p>
 </div>
-<div id="ref-flirt">
-<p>Jenkinson, Mark, and Stephen Smith. 2001. “A Global Optimisation Method for Robust Affine Registration of Brain Images.” <em>Medical Image Analysis</em> 5 (2): 143–56. <a href="https://doi.org/10.1016/S1361-8415(01)00036-6" class="uri">https://doi.org/10.1016/S1361-8415(01)00036-6</a>.</p>
+<div id="ref-mindboggle">
+<p>Klein, Arno, Satrajit S. Ghosh, Forrest S. Bao, Joachim Giard, Yrjö Häme, Eliezer Stavsky, Noah Lee, et al. 2017. “Mindboggling Morphometry of Human Brains.” <em>PLOS Computational Biology</em> 13 (2): e1005350. <a href="https://doi.org/10.1371/journal.pcbi.1005350" class="uri">https://doi.org/10.1371/journal.pcbi.1005350</a>.</p>
 </div>
 <div id="ref-lanczos">
 <p>Lanczos, C. 1964. “Evaluation of Noisy Data.” <em>Journal of the Society for Industrial and Applied Mathematics Series B Numerical Analysis</em> 1 (1): 76–85. <a href="https://doi.org/10.1137/0701007" class="uri">https://doi.org/10.1137/0701007</a>.</p>
@@ -345,9 +359,9 @@ confound regression.
 </div></div></div>
       <div class="tab-pane fade " id="Markdown" role="tabpanel" aria-labelledby="Markdown-tab"><pre>
 Results included in this manuscript come from preprocessing
-performed using *fMRIPrep* 1.5.1
+performed using *fMRIPrep* 20.0.2
 (@fmriprep1; @fmriprep2; RRID:SCR_016216),
-which is based on *Nipype* 1.3.1
+which is based on *Nipype* 1.4.2
 (@nipype1; @nipype2; RRID:SCR_002502).
 
 Anatomical data preprocessing
@@ -361,11 +375,16 @@ Brain tissue segmentation of cerebrospinal fluid (CSF),
 white-matter (WM) and gray-matter (GM) was performed on
 the brain-extracted T1w using `fast` [FSL 5.0.9, RRID:SCR_002823,
 @fsl_fast].
+Brain surfaces were reconstructed using `recon-all` [FreeSurfer 6.0.1,
+RRID:SCR_001847, @fs_reconall], and the brain mask estimated
+previously was refined with a custom variation of the method to reconcile
+ANTs-derived and FreeSurfer-derived segmentations of the cortical
+gray-matter of Mindboggle [RRID:SCR_002438, @mindboggle].
 Volume-based spatial normalization to one standard space (MNI152NLin2009cAsym) was performed through
 nonlinear registration with `antsRegistration` (ANTs 2.2.0),
 using brain-extracted versions of both T1w reference and the T1w template.
 The following template was selected for spatial normalization:
-*ICBM 152 Nonlinear Asymmetrical template version 2009c* [@mni152nlin2009casym, RRID:SCR_008796; TemplateFlow ID: MNI152NLin2009cAsym].
+*ICBM 152 Nonlinear Asymmetrical template version 2009c* [@mni152nlin2009casym, RRID:SCR_008796; TemplateFlow ID: MNI152NLin2009cAsym], 
 
 Functional data preprocessing
 
@@ -373,11 +392,10 @@ Functional data preprocessing
 tasks and sessions), the following preprocessing was performed.
 First, a reference volume and its skull-stripped version were generated
 using a custom methodology of *fMRIPrep*.
+Susceptibility distortion correction (SDC) was omitted.
 The BOLD reference was then co-registered to the T1w reference using
-`flirt` [FSL 5.0.9, @flirt] with the boundary-based registration [@bbr]
-cost-function.
-Co-registration was configured with nine degrees of freedom to account
-for distortions remaining in the BOLD reference.
+`bbregister` (FreeSurfer) which implements boundary-based registration [@bbr].
+Co-registration was configured with six degrees of freedom.
 Head-motion parameters with respect to the BOLD reference
 (transformation matrices, and six corresponding rotation and translation
 parameters) are estimated before any spatiotemporal filtering using
@@ -388,7 +406,7 @@ the transforms to correct for head-motion.
 These resampled BOLD time-series will be referred to as *preprocessed
 BOLD in original space*, or just *preprocessed BOLD*.
 The BOLD time-series were resampled into standard space,
-generating a *preprocessed BOLD run in ['MNI152NLin2009cAsym'] space*.
+generating a *preprocessed BOLD run in MNI152NLin2009cAsym space*.
 First, a reference volume and its skull-stripped version were generated
 using a custom methodology of *fMRIPrep*.
 Several confounding time-series were calculated based on the
@@ -437,7 +455,7 @@ Non-gridded (surface) resamplings were performed using `mri_vol2surf`
 
 
 Many internal operations of *fMRIPrep* use
-*Nilearn* 0.5.2 [@nilearn, RRID:SCR_001362],
+*Nilearn* 0.6.2 [@nilearn, RRID:SCR_001362],
 mostly within the functional processing workflow.
 For more details of the pipeline, see [the section corresponding
 to workflows in *fMRIPrep*'s documentation](https://fmriprep.readthedocs.io/en/latest/workflows.html "FMRIPrep's documentation").
@@ -455,8 +473,8 @@ It is released under the [CC0](https://creativecommons.org/publicdomain/zero/1.0
 </pre>
 </div>
       <div class="tab-pane fade " id="LaTeX" role="tabpanel" aria-labelledby="LaTeX-tab"><pre>Results included in this manuscript come from preprocessing performed
-using \emph{fMRIPrep} 1.5.1 (\citet{fmriprep1}; \citet{fmriprep2};
-RRID:SCR\_016216), which is based on \emph{Nipype} 1.3.1
+using \emph{fMRIPrep} 20.0.2 (\citet{fmriprep1}; \citet{fmriprep2};
+RRID:SCR\_016216), which is based on \emph{Nipype} 1.4.2
 (\citet{nipype1}; \citet{nipype2}; RRID:SCR\_002502).
 
 \begin{description}
@@ -469,44 +487,49 @@ a \emph{Nipype} implementation of the \texttt{antsBrainExtraction.sh}
 workflow (from ANTs), using OASIS30ANTs as target template. Brain tissue
 segmentation of cerebrospinal fluid (CSF), white-matter (WM) and
 gray-matter (GM) was performed on the brain-extracted T1w using
-\texttt{fast} \citep[FSL 5.0.9, RRID:SCR\_002823,][]{fsl_fast}.
-Volume-based spatial normalization to one standard space
-(MNI152NLin2009cAsym) was performed through nonlinear registration with
-\texttt{antsRegistration} (ANTs 2.2.0), using brain-extracted versions
-of both T1w reference and the T1w template. The following template was
-selected for spatial normalization: \emph{ICBM 152 Nonlinear
-Asymmetrical template version 2009c} {[}\citet{mni152nlin2009casym},
-RRID:SCR\_008796; TemplateFlow ID: MNI152NLin2009cAsym{]}.
+\texttt{fast} \citep[FSL 5.0.9, RRID:SCR\_002823,][]{fsl_fast}. Brain
+surfaces were reconstructed using \texttt{recon-all} \citep[FreeSurfer
+6.0.1, RRID:SCR\_001847,][]{fs_reconall}, and the brain mask estimated
+previously was refined with a custom variation of the method to
+reconcile ANTs-derived and FreeSurfer-derived segmentations of the
+cortical gray-matter of Mindboggle
+\citep[RRID:SCR\_002438,][]{mindboggle}. Volume-based spatial
+normalization to one standard space (MNI152NLin2009cAsym) was performed
+through nonlinear registration with \texttt{antsRegistration} (ANTs
+2.2.0), using brain-extracted versions of both T1w reference and the T1w
+template. The following template was selected for spatial normalization:
+\emph{ICBM 152 Nonlinear Asymmetrical template version 2009c}
+{[}\citet{mni152nlin2009casym}, RRID:SCR\_008796; TemplateFlow ID:
+MNI152NLin2009cAsym{]},
 \item[Functional data preprocessing]
 For each of the 2 BOLD runs found per subject (across all tasks and
 sessions), the following preprocessing was performed. First, a reference
 volume and its skull-stripped version were generated using a custom
-methodology of \emph{fMRIPrep}. The BOLD reference was then
-co-registered to the T1w reference using \texttt{flirt} \citep[FSL
-5.0.9,][]{flirt} with the boundary-based registration \citep{bbr}
-cost-function. Co-registration was configured with nine degrees of
-freedom to account for distortions remaining in the BOLD reference.
-Head-motion parameters with respect to the BOLD reference
-(transformation matrices, and six corresponding rotation and translation
-parameters) are estimated before any spatiotemporal filtering using
-\texttt{mcflirt} \citep[FSL 5.0.9,][]{mcflirt}. The BOLD time-series
-(including slice-timing correction when applied) were resampled onto
-their original, native space by applying the transforms to correct for
-head-motion. These resampled BOLD time-series will be referred to as
-\emph{preprocessed BOLD in original space}, or just \emph{preprocessed
-BOLD}. The BOLD time-series were resampled into standard space,
-generating a \emph{preprocessed BOLD run in {[}`MNI152NLin2009cAsym'{]}
-space}. First, a reference volume and its skull-stripped version were
-generated using a custom methodology of \emph{fMRIPrep}. Several
-confounding time-series were calculated based on the \emph{preprocessed
-BOLD}: framewise displacement (FD), DVARS and three region-wise global
-signals. FD and DVARS are calculated for each functional run, both using
-their implementations in \emph{Nipype} \citep[following the definitions
-by][]{power_fd_dvars}. The three global signals are extracted within the
-CSF, the WM, and the whole-brain masks. Additionally, a set of
-physiological regressors were extracted to allow for component-based
-noise correction \citep[\emph{CompCor},][]{compcor}. Principal
-components are estimated after high-pass filtering the
+methodology of \emph{fMRIPrep}. Susceptibility distortion correction
+(SDC) was omitted. The BOLD reference was then co-registered to the T1w
+reference using \texttt{bbregister} (FreeSurfer) which implements
+boundary-based registration \citep{bbr}. Co-registration was configured
+with six degrees of freedom. Head-motion parameters with respect to the
+BOLD reference (transformation matrices, and six corresponding rotation
+and translation parameters) are estimated before any spatiotemporal
+filtering using \texttt{mcflirt} \citep[FSL 5.0.9,][]{mcflirt}. The BOLD
+time-series (including slice-timing correction when applied) were
+resampled onto their original, native space by applying the transforms
+to correct for head-motion. These resampled BOLD time-series will be
+referred to as \emph{preprocessed BOLD in original space}, or just
+\emph{preprocessed BOLD}. The BOLD time-series were resampled into
+standard space, generating a \emph{preprocessed BOLD run in
+MNI152NLin2009cAsym space}. First, a reference volume and its
+skull-stripped version were generated using a custom methodology of
+\emph{fMRIPrep}. Several confounding time-series were calculated based
+on the \emph{preprocessed BOLD}: framewise displacement (FD), DVARS and
+three region-wise global signals. FD and DVARS are calculated for each
+functional run, both using their implementations in \emph{Nipype}
+\citep[following the definitions by][]{power_fd_dvars}. The three global
+signals are extracted within the CSF, the WM, and the whole-brain masks.
+Additionally, a set of physiological regressors were extracted to allow
+for component-based noise correction \citep[\emph{CompCor},][]{compcor}.
+Principal components are estimated after high-pass filtering the
 \emph{preprocessed BOLD} time-series (using a discrete cosine filter
 with 128s cut-off) for the two \emph{CompCor} variants: temporal
 (tCompCor) and anatomical (aCompCor). tCompCor components are then
@@ -539,7 +562,7 @@ interpolation to minimize the smoothing effects of other kernels
 \texttt{mri\_vol2surf} (FreeSurfer).
 \end{description}
 
-Many internal operations of \emph{fMRIPrep} use \emph{Nilearn} 0.5.2
+Many internal operations of \emph{fMRIPrep} use \emph{Nilearn} 0.6.2
 \citep[RRID:SCR\_001362]{nilearn}, mostly within the functional
 processing workflow. For more details of the pipeline, see
 \href{https://fmriprep.readthedocs.io/en/latest/workflows.html}{the
@@ -905,9 +928,7 @@ their manuscripts \emph{unchanged}. It is released under the
 
 <div id="errors">
     <h1 class="sub-report-title">Errors</h1>
-    <ul>
-        <li>No errors to report!</li>
-    </ul>
+    <p>No errors to report!</p>
 </div>
 
 
