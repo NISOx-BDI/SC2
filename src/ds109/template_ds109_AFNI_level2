@@ -1,7 +1,7 @@
 cd $level2_dir
 
 # Group analysis with weighted least squares
-singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image $AFNI_bin/3dMEMA -prefix 3dMEMA_result.nii.gz       \
+3dMEMA -prefix 3dMEMA_result.nii.gz       \
           -set controls                   \
              01 $level1_dir/sub-01/sub01.results/stats.sub01_REML+tlrc['false_belief_vs_false_photo#0_Coef'] $level1_dir/sub-01/sub01.results/stats.sub01_REML+tlrc['false_belief_vs_false_photo#0_Tstat'] \
              02 $level1_dir/sub-02/sub02.results/stats.sub02_REML+tlrc['false_belief_vs_false_photo#0_Coef'] $level1_dir/sub-02/sub02.results/stats.sub02_REML+tlrc['false_belief_vs_false_photo#0_Tstat'] \
@@ -27,7 +27,7 @@ singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image $AFNI_bin/3
 	-missing_data 0
 	
 # Create a group mask
-singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image $AFNI_bin/3dmask_tool                                                 \
+3dmask_tool                                                 \
     -prefix mask.nii.gz                                     \
     -input `ls $level1_dir/sub-*/sub*/mask_epi_anat.*.HEAD` \
     -frac 1.0
@@ -37,32 +37,32 @@ grep -h "err_reml ACF" $level1_dir/sub-*/sub*/blur_est*   \
     | cut -d\  -f1-3                                   	  \
     > group_ACF_ests.1D
 
-blur_est=`singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image $AFNI_bin/3dTstat -mean -prefix - group_ACF_ests.1D\'` 
+blur_est=`3dTstat -mean -prefix - group_ACF_ests.1D\'` 
 echo "++ The group average ACF params are: $$blur_est"
 
-# Simulations for FWE corrected cluster-size inference
-singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image $AFNI_bin/3dClustSim                                       \
+ Simulations for FWE corrected cluster-size inference
+3dClustSim                                       \
     -both                                        \
     -mask   mask.nii.gz                          \
     -acf    $$blur_est                            \
     -prefix ClustSim 
 
 # Obtaining cluster extent threshold from the ClustSim.*.1D table
-clust_thrvol=`singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image $AFNI_bin/1d_tool.py -verb 0                                 \
+clust_thrvol=`1d_tool.py -verb 0                                 \
                         -infile ClustSim.NN1_1sided.1D           \
                         -csim_pthr   0.005                        \
                         -csim_alpha "0.05"`
 echo "++ The final cluster volume threshold is: $$clust_thrvol"
 
 # Obtaining cluster-forming threshold
-voxstat_thr=`singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image $AFNI_bin/p2dsetstat -quiet                                   \
+voxstat_thr=`p2dsetstat -quiet                                   \
                     -pval 0.005                                   \
                     "-1sided"                                    \
                     -inset 3dMEMA_result.nii.gz'[controls:t]'`
 echo "++ The voxelwise stat value threshold is: $$voxstat_thr"
 
 # Masking t-stat
-singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image $AFNI_bin/3dcalc                                                 \
+3dcalc                                          	      \
     -a 3dMEMA_result.nii.gz		                      \
     -b mask.nii.gz                              	      \
     -expr 'a*b'                                               \
@@ -70,14 +70,14 @@ singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image $AFNI_bin/3
 
 # Obtaining thresholded results
 # Positive clusters
-singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image $AFNI_bin/3dclust                                                           \
+3dclust                                                           \
     -1Dformat -nosum -1tindex 1 -1dindex 0                        \
     -2thresh -1e+09 $$voxstat_thr  -dxyz=1                         \
     -savemask Positive_clust_mask.nii.gz                          \
     1.01 $${clust_thrvol} 3dMEMA_result_t_stat_masked_4d.nii.gz
 
 # Binarizing
-singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image $AFNI_bin/3dcalc \
+3dcalc \
     -a Positive_clust_mask.nii.gz                                      \
     -b 3dMEMA_result.nii.gz'[1]'                                       \
     -expr "step(a)*b"                                                  \
@@ -85,14 +85,14 @@ singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image $AFNI_bin/3
     -float
 
 # Negative clusters
-singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image $AFNI_bin/3dclust                                                           \
+3dclust                                                           \
     -1Dformat -nosum -1tindex 1 -1dindex 0                        \
     -2thresh -$$voxstat_thr 1e+09 -dxyz=1                          \
     -savemask Negative_clust_mask.nii.gz                          \
     1.01 $${clust_thrvol} 3dMEMA_result_t_stat_masked_4d.nii.gz
 
 # Binarizing
-singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image $AFNI_bin/3dcalc \
+3dcalc \
     -a Negative_clust_mask.nii.gz                                      \
     -b 3dMEMA_result.nii.gz'[1]'                                       \
     -expr "-step(a)*b"                                                 \
@@ -101,6 +101,6 @@ singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image $AFNI_bin/3
 
 
 # Obtain 3d volumes from 4d volume to upload to Neurovault
-  singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image $AFNI_bin/3dTcat -prefix 3dMEMA_result_t_stat_masked.nii.gz 3dMEMA_result_t_stat_masked_4d.nii.gz'[1]'
-  singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image $AFNI_bin/3dTcat -prefix 3dMEMA_result_B.nii.gz 3dMEMA_result.nii.gz'[0]'
-  singularity exec --cleanenv -B $home_dir $AFNI_SPM_singularity_image $AFNI_bin/3dTcat -prefix 3dMEMA_result_t_stat.nii.gz 3dMEMA_result.nii.gz'[1]'
+  3dTcat -prefix 3dMEMA_result_t_stat_masked.nii.gz 3dMEMA_result_t_stat_masked_4d.nii.gz'[1]'
+  3dTcat -prefix 3dMEMA_result_B.nii.gz 3dMEMA_result.nii.gz'[0]'
+  3dTcat -prefix 3dMEMA_result_t_stat.nii.gz 3dMEMA_result.nii.gz'[1]'
