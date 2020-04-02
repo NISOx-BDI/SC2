@@ -225,7 +225,7 @@ def run_group_level_analysis(level1_dir, level2_dir, grp_level_template, home_di
     print(cmd)
     check_call(cmd, shell=True)
 
-def run_permutation_test(level1_dir, perm_dir, perm_template):
+def run_permutation_test(level1_dir, perm_dir, perm_template, home_dir, AFNI_SPM_singularity_image, AFNI_bin):
 
     scripts_dir = os.path.join(level1_dir, os.pardir, 'SCRIPTS')
 
@@ -239,6 +239,7 @@ def run_permutation_test(level1_dir, perm_dir, perm_template):
     values = dict()
     values["perm_dir"] = perm_dir
     values["level1_dir"] = level1_dir
+    values["AFNI_bin"] = AFNI_bin
 
     with open(perm_template) as f:
         tpm = f.read()
@@ -254,7 +255,7 @@ def run_permutation_test(level1_dir, perm_dir, perm_template):
     st = os.stat(group_script_file)
     os.chmod(group_script_file, st.st_mode | stat.S_IEXEC)
 
-    cmd = os.path.join('.', group_script_file)
+    cmd = os.path.join('singularity exec --cleanenv -B ' + home_dir + ' ' + AFNI_SPM_singularity_image + ' ' + group_script_file)
     print(cmd)
     check_call(cmd, shell=True)
 

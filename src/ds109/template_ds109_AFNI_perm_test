@@ -1,13 +1,13 @@
 cd $perm_dir
 
 # Create a group mask
-3dmask_tool                                                 \
+$AFNI_bin/3dmask_tool                                                 \
     -prefix mask.nii.gz                                     \
     -input `ls $level1_dir/sub-*/sub*/mask_epi_anat.*.HEAD` \
     -frac 1.0
 
 # t-test analysis
-3dttest++ 					       \
+$AFNI_bin/3dttest++ 					       \
     -Clustsim 1 				       \
     -prefix perm_ttest++_Clustsim_result.nii.gz        \
     -prefix_clustsim Clustsim			       \
@@ -36,21 +36,21 @@ cd $perm_dir
              21 "$level1_dir/sub-48/sub48.results/stats.sub48_REML+tlrc.HEAD[14]" 
 
 # This can be used to obtain cluster extent threshold from the ClustSim.*.1D table for AFNI versions > 18.2.04
-#clust_thrvol=`1d_tool.py -verb 0                                       \
-#                        -infile Clustsim.CSimA.NN1_1sided.1D           \
-#                        -csim_pthr   0.01                              \
-#                        -csim_alpha "0.05"`
-#echo "++ The final cluster volume threshold is: $$clust_thrvol"
+clust_thrvol=`$AFNI_bin/1d_tool.py -verb 0                                       \
+                        -infile Clustsim.CSimA.NN1_1sided.1D           \
+                        -csim_pthr   0.01                              \
+                        -csim_alpha "0.05"`
+echo "++ The final cluster volume threshold is: $$clust_thrvol"
 
 # Obtaining cluster-forming threshold
-voxstat_thr=`p2dsetstat -quiet                                   \
+voxstat_thr=`$AFNI_bin/p2dsetstat -quiet                                   \
                     -pval 0.005                                   \
                     "-1sided"                                    \
                     -inset perm_ttest++_Clustsim_result.nii.gz'[setA_Zscr]'`
 echo "++ The voxelwise stat value threshold is: $$voxstat_thr"
 
 # Masking t-stat
-3dcalc                                          \
+$AFNI_bin/3dcalc                                          \
     -a perm_ttest++_Clustsim_result.nii.gz      \
     -b mask.nii.gz                              \
     -expr 'a*b'                                 \
@@ -58,14 +58,14 @@ echo "++ The voxelwise stat value threshold is: $$voxstat_thr"
 
 # Obtaining thresholded results
 # Positive clusters
-3dclust                                                                \
+$AFNI_bin/3dclust                                                                \
     -1Dformat -nosum -1tindex 1 -1dindex 0                             \
     -2thresh -1e+09 $$voxstat_thr  -dxyz=1                             \
     -savemask perm_Positive_clust_mask.nii.gz                          \
     1.01 892 perm_ttest++_Clustsim_result_t_stat_masked_4d.nii.gz
 
 # Binarizing
-3dcalc \
+$AFNI_bin/3dcalc \
     -a perm_Positive_clust_mask.nii.gz                                      \
     -b perm_ttest++_Clustsim_result.nii.gz'[1]'                             \
     -expr "step(a)*b"                                                       \
@@ -73,14 +73,14 @@ echo "++ The voxelwise stat value threshold is: $$voxstat_thr"
     -float
 
 # Negative clusters
-3dclust                                                                \
+$AFNI_bin/3dclust                                                                \
     -1Dformat -nosum -1tindex 1 -1dindex 0                             \
     -2thresh -$$voxstat_thr 1e+09 -dxyz=1                              \
     -savemask perm_Negative_clust_mask.nii.gz                          \
     1.01 892 perm_ttest++_Clustsim_result_t_stat_masked_4d.nii.gz
 
 # Binarizing
-3dcalc \
+$AFNI_bin/3dcalc \
     -a perm_Negative_clust_mask.nii.gz                                      \
     -b perm_ttest++_Clustsim_result.nii.gz'[1]'                             \
     -expr "-step(a)*b"                                                      \
@@ -88,5 +88,5 @@ echo "++ The voxelwise stat value threshold is: $$voxstat_thr"
     -float
 
 # Obtain 3d volumes from 4d volume to upload to Neurovault
-3dTcat -prefix perm_ttest++_Clustsim_result_t_stat.nii.gz perm_ttest++_Clustsim_result.nii.gz'[1]'
-3dTcat -prefix perm_ttest++_Clustsim_result_t_stat_masked.nii.gz perm_ttest++_Clustsim_result_t_stat_masked_4d.nii.gz'[1]'
+$AFNI_bin/3dTcat -prefix perm_ttest++_Clustsim_result_t_stat.nii.gz perm_ttest++_Clustsim_result.nii.gz'[1]'
+$AFNI_bin/3dTcat -prefix perm_ttest++_Clustsim_result_t_stat_masked.nii.gz perm_ttest++_Clustsim_result_t_stat_masked_4d.nii.gz'[1]'
