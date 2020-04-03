@@ -46,12 +46,12 @@ echo "++ The final cluster volume threshold is: $$clust_thrvol"
 voxstat_thr=2.57583
 echo "++ The voxelwise stat value threshold is: $$voxstat_thr"
 
-# Masking t-stat
+# Masking z-stat
 $AFNI_bin/3dcalc                                          \
     -a perm_ttest++_Clustsim_result.nii.gz      \
     -b mask.nii.gz                              \
     -expr 'a*b'                                 \
-    -prefix perm_ttest++_Clustsim_result_t_stat_masked_4d.nii.gz 
+    -prefix perm_ttest++_Clustsim_result_z_stat_masked_4d.nii.gz 
 
 # Obtaining thresholded results
 # Positive clusters
@@ -59,14 +59,14 @@ $AFNI_bin/3dclust                                                               
     -1Dformat -nosum -1tindex 1 -1dindex 0                             \
     -2thresh -1e+09 $$voxstat_thr  -dxyz=1                             \
     -savemask perm_Positive_clust_mask.nii.gz                          \
-    1.01 $$clust_thrvol perm_ttest++_Clustsim_result_t_stat_masked_4d.nii.gz
+    1.01 $$clust_thrvol perm_ttest++_Clustsim_result_z_stat_masked_4d.nii.gz
 
 # Binarizing
 $AFNI_bin/3dcalc \
     -a perm_Positive_clust_mask.nii.gz                                      \
     -b perm_ttest++_Clustsim_result.nii.gz'[1]'                             \
     -expr "step(a)*b"                                                       \
-    -prefix perm_Positive_clustered_t_stat.nii.gz                           \
+    -prefix perm_Positive_clustered_z_stat.nii.gz                           \
     -float
 
 # Negative clusters
@@ -74,16 +74,16 @@ $AFNI_bin/3dclust                                                               
     -1Dformat -nosum -1tindex 1 -1dindex 0                             \
     -2thresh -$$voxstat_thr 1e+09 -dxyz=1                              \
     -savemask perm_Negative_clust_mask.nii.gz                          \
-    1.01 $$clust_thrvol perm_ttest++_Clustsim_result_t_stat_masked_4d.nii.gz
+    1.01 $$clust_thrvol perm_ttest++_Clustsim_result_z_stat_masked_4d.nii.gz
 
 # Binarizing
 $AFNI_bin/3dcalc \
     -a perm_Negative_clust_mask.nii.gz                                      \
     -b perm_ttest++_Clustsim_result.nii.gz'[1]'                             \
     -expr "-step(a)*b"                                                      \
-    -prefix perm_Negative_clustered_t_stat.nii.gz                           \
+    -prefix perm_Negative_clustered_z_stat.nii.gz                           \
     -float
 
 # Obtain 3d volumes from 4d volume to upload to Neurovault
-$AFNI_bin/3dTcat -prefix perm_ttest++_Clustsim_result_t_stat.nii.gz perm_ttest++_Clustsim_result.nii.gz'[1]'
-$AFNI_bin/3dTcat -prefix perm_ttest++_Clustsim_result_t_stat_masked.nii.gz perm_ttest++_Clustsim_result_t_stat_masked_4d.nii.gz'[1]'
+$AFNI_bin/3dTcat -prefix perm_ttest++_Clustsim_result_z_stat.nii.gz perm_ttest++_Clustsim_result.nii.gz'[1]'
+$AFNI_bin/3dTcat -prefix perm_ttest++_Clustsim_result_z_stat_masked.nii.gz perm_ttest++_Clustsim_result_z_stat_masked_4d.nii.gz'[1]'
