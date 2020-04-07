@@ -1,5 +1,5 @@
 # run afni_proc.py to create a single subject processing script
-singularity exec --cleanenv -B /well/nichols/users/bas627/BIDS_Data/RESULTS/SC2 /apps/singularity/fsl-afni-spm12-conda.sif /opt/afni-latest/afni_proc.py -subj_id sub21 \
+singularity exec --cleanenv -B /well/nichols/users/bas627/BIDS_Data/RESULTS/SC2 /apps/singularity/afni-r-python3-2020-03-26-v1.sif /opt/afni-latest/afni_proc.py -subj_id sub21 \
         -script proc.sub21 -scr_overwrite                                    \
         -blocks blur mask scale regress                                        \
         -script proc.sub21 -scr_overwrite                                    \
@@ -28,7 +28,7 @@ singularity exec --cleanenv -B /well/nichols/users/bas627/BIDS_Data/RESULTS/SC2 
             'SPMG1(10)' 'SPMG1(6)' 'SPMG1(10)' 'SPMG1(6)'                      \
             'NONE' 'NONE' 'NONE' 'NONE' 'NONE' 'NONE'                          \
         -regress_stim_types                                                    \
-            AM1 AM1 AM1 AM1 file file file file file file                      \
+            times times times times file file file file file file              \
     -regress_3dD_stop                                                          \
     -regress_reml_exec                                                         \
         -regress_opts_3dD                                                      \
