@@ -89,3 +89,5 @@ echo "++ The voxelwise stat value threshold is: $voxstat_thr"
     -expr "-step(a)*b"                                                      \
     -prefix perm_Negative_clustered_t_stat.nii.gz                           \
     -float
+
+/opt/afni-latest/3dTcat -prefix perm_ttest++_Clustsim_result_z_stat_masked.nii.gz perm_ttest++_Clustsim_result_z_stat_masked_4d.nii.gz'[1]'
