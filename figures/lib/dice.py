@@ -9,109 +9,116 @@ import os
 import warnings
 
 def sorrenson_dice(data1_file, data2_file, reslice=True):
-    # Load nifti images
-    data1_img = nib.load(data1_file)
-    data2_img = nib.load(data2_file)
+    if (data1_file is None) and (data2_file is not None):
+        dices=(0,0,100)
+    elif (data1_file is not None) and (data2_file is None):
+        dices=(0,100,0)
+    elif (data1_file is None) and (data2_file is None):
+        dices=(0,0,0)
+    else:
+        # Load nifti images
+        data1_img = nib.load(data1_file)
+        data2_img = nib.load(data2_file)
 
-    # Load data from images
-    data2 = data2_img.get_data()
-    data1 = data1_img.get_data()
-
-    # Get asbolute values (positive and negative blobs are of interest)
-    data2 = np.absolute(data2)
-    data1 = np.absolute(data1)
-
-    if reslice:
-        # Resample data1 on data2 using nearest nneighbours
-        data1_resl_img = resample_from_to(data1_img, data2_img, order=0)
         # Load data from images
-        data1_res = data1_resl_img.get_data()
-        data1_res = np.absolute(data1_res)
-            
-        # Resample data2 on data1 using nearest nneighbours
-        data2_resl_img = resample_from_to(data2_img, data1_img, order=0)        
-        data2_res = data2_resl_img.get_data()
-        data2_res = np.absolute(data2_res)
+        data2 = data2_img.get_data()
+        data1 = data1_img.get_data()
 
-    # Masking (compute Dice using intersection of both masks)
-    if reslice:
-        background_1 = np.logical_or(np.isnan(data1), np.isnan(data2_res))
-        background_2 = np.logical_or(np.isnan(data1_res), np.isnan(data2))
+        # Get asbolute values (positive and negative blobs are of interest)
+        data2 = np.absolute(data2)
+        data1 = np.absolute(data1)
 
-        data1 = np.nan_to_num(data1)
-        data1_res = np.nan_to_num(data1_res)
-        data2 = np.nan_to_num(data2)
-        data2_res = np.nan_to_num(data2_res)
+        if reslice:
+            # Resample data1 on data2 using nearest nneighbours
+            data1_resl_img = resample_from_to(data1_img, data2_img, order=0)
+            # Load data from images
+            data1_res = data1_resl_img.get_data()
+            data1_res = np.absolute(data1_res)
 
-        num_activated_1 = np.sum(data1 > 0)
-        num_activated_res_1 = np.sum(data1_res>0)
-        num_activated_2 = np.sum(data2>0)
-        num_activated_res_2 = np.sum(data2_res>0)
+            # Resample data2 on data1 using nearest nneighbours
+            data2_resl_img = resample_from_to(data2_img, data1_img, order=0)        
+            data2_res = data2_resl_img.get_data()
+            data2_res = np.absolute(data2_res)
 
-        dark_dice_1 = np.zeros(2)
-        if num_activated_1 != 0:
-            dark_dice_1[0] = np.sum(data1[background_1]>0).astype(float)/num_activated_1*100
-        if num_activated_res_1 != 0:
-            dark_dice_1[1] = np.sum(data1_res[background_2]>0).astype(float)/num_activated_res_1*100
+        # Masking (compute Dice using intersection of both masks)
+        if reslice:
+            background_1 = np.logical_or(np.isnan(data1), np.isnan(data2_res))
+            background_2 = np.logical_or(np.isnan(data1_res), np.isnan(data2))
 
-        dark_dice_2 = np.zeros(2)
-        if num_activated_2 != 0:
-            dark_dice_2[0] = np.sum(data2[background_2]>0).astype(float)/num_activated_2*100
-        if num_activated_res_2 != 0:
-            dark_dice_2[1] = np.sum(data2_res[background_1]>0).astype(float)/num_activated_res_2*100
+            data1 = np.nan_to_num(data1)
+            data1_res = np.nan_to_num(data1_res)
+            data2 = np.nan_to_num(data2)
+            data2_res = np.nan_to_num(data2_res)
 
-        data1[background_1] = 0
-        data2_res[background_1] = 0
+            num_activated_1 = np.sum(data1 > 0)
+            num_activated_res_1 = np.sum(data1_res>0)
+            num_activated_2 = np.sum(data2>0)
+            num_activated_res_2 = np.sum(data2_res>0)
 
-        data1_res[background_2] = 0
-        data2[background_2] = 0
-    else:
-        background = np.logical_or(np.isnan(data1), np.isnan(data2))
+            dark_dice_1 = np.zeros(2)
+            if num_activated_1 != 0:
+                dark_dice_1[0] = np.sum(data1[background_1]>0).astype(float)/num_activated_1*100
+            if num_activated_res_1 != 0:
+                dark_dice_1[1] = np.sum(data1_res[background_2]>0).astype(float)/num_activated_res_1*100
 
-        data1 = np.nan_to_num(data1)
-        data2 = np.nan_to_num(data2)
+            dark_dice_2 = np.zeros(2)
+            if num_activated_2 != 0:
+                dark_dice_2[0] = np.sum(data2[background_2]>0).astype(float)/num_activated_2*100
+            if num_activated_res_2 != 0:
+                dark_dice_2[1] = np.sum(data2_res[background_1]>0).astype(float)/num_activated_res_2*100
 
-        num_activated_1 = np.sum(data1 > 0)
-        num_activated_2 = np.sum(data2>0)
+            data1[background_1] = 0
+            data2_res[background_1] = 0
 
-        dark_dice = np.zeros(2)
-        if num_activated_1 !=0:
-            dark_dice[0] = np.sum(data1[background]>0).astype(float)/num_activated_1*100
+            data1_res[background_2] = 0
+            data2[background_2] = 0
+        else:
+            background = np.logical_or(np.isnan(data1), np.isnan(data2))
 
-        if num_activated_2 !=0:
-            dark_dice[1] = np.sum(data2[background]>0).astype(float)/num_activated_2*100
+            data1 = np.nan_to_num(data1)
+            data2 = np.nan_to_num(data2)
 
-        data1[background] = 0
-        data2[background] = 0
+            num_activated_1 = np.sum(data1 > 0)
+            num_activated_2 = np.sum(data2>0)
 
-    # Vectorize
-    data1 = np.reshape(data1, -1)
-    data2 = np.reshape(data2, -1)
-    if reslice:
-        data1_res = np.reshape(data1_res, -1)
-        data2_res = np.reshape(data2_res, -1)
+            dark_dice = np.zeros(2)
+            if num_activated_1 !=0:
+                dark_dice[0] = np.sum(data1[background]>0).astype(float)/num_activated_1*100
 
-    if reslice:
-        dice_res_1 = 1-scipy.spatial.distance.dice(data1_res>0, data2>0)
-        dice_res_2 = 1-scipy.spatial.distance.dice(data1>0, data2_res>0)
+            if num_activated_2 !=0:
+                dark_dice[1] = np.sum(data2[background]>0).astype(float)/num_activated_2*100
 
-        if not np.isclose(dice_res_1, dice_res_2, atol=0.01):
-            warnings.warn("Resliced 1/2 and 2/1 dices are not close")
+            data1[background] = 0
+            data2[background] = 0
 
-        if not np.isclose(dark_dice_1[0], dark_dice_1[1], atol=0.01):
-            warnings.warn("Resliced 1/2 and 2/1 dark dices 1 are not close")
+        # Vectorize
+        data1 = np.reshape(data1, -1)
+        data2 = np.reshape(data2, -1)
+        if reslice:
+            data1_res = np.reshape(data1_res, -1)
+            data2_res = np.reshape(data2_res, -1)
 
-        if not np.isclose(dark_dice_2[0], dark_dice_2[1], atol=0.01):
-            warnings.warn("Resliced 1/2 and 2/1 dark dices 2 are not close")
+        if reslice:
+            dice_res_1 = 1-scipy.spatial.distance.dice(data1_res>0, data2>0)
+            dice_res_2 = 1-scipy.spatial.distance.dice(data1>0, data2_res>0)
 
-        dices = (dice_res_1, dark_dice_1[1], dark_dice_2[1])
-    else:
-        dices = (1-scipy.spatial.distance.dice(data1>0, data2>0), dark_dice[0], dark_dice[1])
+            if not np.isclose(dice_res_1, dice_res_2, atol=0.01):
+                warnings.warn("Resliced 1/2 and 2/1 dices are not close")
+
+            if not np.isclose(dark_dice_1[0], dark_dice_1[1], atol=0.01):
+                warnings.warn("Resliced 1/2 and 2/1 dark dices 1 are not close")
+
+            if not np.isclose(dark_dice_2[0], dark_dice_2[1], atol=0.01):
+                warnings.warn("Resliced 1/2 and 2/1 dark dices 2 are not close")
+
+            dices = (dice_res_1, dark_dice_1[1], dark_dice_2[1])
+        else:
+            dices = (1-scipy.spatial.distance.dice(data1>0, data2>0), dark_dice[0], dark_dice[1])
     
     return dices
 
 
-def ds109_dice_matrix(df, filename=None):
+def ds109_dice_matrix(df, filename=None, comparison=False):
     mask = np.tri(df.shape[0], k=0)
     mask = 1-mask
     dfmsk = np.ma.array(df[:,:,0], mask=mask)
@@ -136,12 +143,15 @@ def ds109_dice_matrix(df, filename=None):
                 if round(z) > 0:
                     ax1.text(j+offset, i+.3, '{:0.0f}%'.format(z), ha='center',
                              va='center',
-                             bbox=dict(boxstyle='round', facecolor='grey',
+                             bbox=dict(boxstyle='round', facecolor='silver',
                              edgecolor='0.3'))
 
 
     plt.title('Positive Activation Dice Coefficients', fontsize=15)
-    labels=['','AFNI','FSL','SPM','AFNI perm','FSL perm','SPM perm']
+    if comparison==False:
+        labels=['','AFNI','FSL','SPM','AFNI perm','FSL perm','SPM perm']
+    else:
+        labels=['','AFNI','FSL','SPM','AFNI old', 'FSL old', 'SPM old']
     ax1.set_xticklabels(labels,fontsize=12)
     ax1.set_yticklabels(labels,fontsize=12)
     # Add colorbar, make sure to specify tick locations to match desired ticklabels
@@ -157,7 +167,7 @@ def ds109_dice_matrix(df, filename=None):
     plt.show()
 
 
-def negative_dice_matrix(df, filename=None):
+def negative_dice_matrix(df, filename=None, comparison=False):
     mask = np.tri(df.shape[0], k=0)
     mask = 1-mask
     dfmsk = np.ma.array(df[:,:,0], mask=mask)
@@ -181,11 +191,14 @@ def negative_dice_matrix(df, filename=None):
                 if round(z) > 0:
                     ax1.text(j+offset, i+.3, '{:0.0f}%'.format(z), ha='center',
                              va='center',
-                             bbox=dict(boxstyle='round', facecolor='grey',
+                             bbox=dict(boxstyle='round', facecolor='silver',
                              edgecolor='0.3'))
 
     plt.title('Negative Activation Dice Coefficients', fontsize=15)
-    labels=['','AFNI','FSL','SPM','AFNI perm','FSL perm','SPM perm']
+    if comparison==False:
+        labels=['','AFNI','FSL','SPM','AFNI perm','FSL perm','SPM perm']
+    else:
+        labels=['','AFNI','','FSL','','AFNI old','','FSL old']
     ax1.set_xticklabels(labels,fontsize=12)
     ax1.set_yticklabels(labels,fontsize=12)
     # Add colorbar, make sure to specify tick locations to match desired ticklabels
@@ -200,7 +213,7 @@ def negative_dice_matrix(df, filename=None):
 
     plt.show()
 
-def ds109_neg_dice_matrix(df, filename=None):
+def ds109_neg_dice_matrix(df, filename=None, comparison=False):
     mask = np.tri(df.shape[0], k=0)
     mask = 1-mask
     dfmsk = np.ma.array(df[:, :, 0], mask=mask)
@@ -224,12 +237,16 @@ def ds109_neg_dice_matrix(df, filename=None):
                 if round(z) > 0:
                     ax1.text(j+offset, i+.3, '{:0.0f}%'.format(z), ha='center',
                              va='center',
-                             bbox=dict(boxstyle='round', facecolor='grey',
+                             bbox=dict(boxstyle='round', facecolor='silver',
                              edgecolor='0.3'))
 
     plt.title('Negative Activation Dice Coefficients', fontsize=15)
-    xlabels=['','AFNI', '', 'FSL']
-    ylabels=['','','AFNI','','','','FSL','','']
+    if comparison==False:
+        xlabels=['','AFNI', '', 'FSL']
+        ylabels=['','','AFNI','','','','FSL','','']
+    else:
+        xlabels=['','FSL', '', 'FSL old']
+        ylabels=['','','FSL','','','','FSL old','','']        
     ax1.set_xticklabels(xlabels,fontsize=12)
     ax1.set_yticklabels(ylabels,fontsize=12)
     # Add colorbar, make sure to specify tick locations to match desired ticklabels
@@ -243,8 +260,7 @@ def ds109_neg_dice_matrix(df, filename=None):
         plt.savefig(os.path.join('img', filename))
 
     plt.show()
-
-
+    
 def ds120_dice_matrix(df, filename=None):
     mask = np.tri(df.shape[0], k=0)
     mask = 1-mask
@@ -269,7 +285,7 @@ def ds120_dice_matrix(df, filename=None):
                 if round(z) > 0:
                     ax1.text(j+offset, i+.3, '{:0.0f}%'.format(z), ha='center',
                              va='center',
-                             bbox=dict(boxstyle='round', facecolor='grey',
+                             bbox=dict(boxstyle='round', facecolor='silver',
                              edgecolor='0.3'))
 
     plt.title('Positive Activation Dice Coefficients', fontsize=15)
@@ -582,6 +598,255 @@ def dice(afni_exc_set_file, spm_exc_set_file,
                 ds109_neg_dice_coefficients[:, 1, i] = [afni_res_fsl_neg_dice[i], 1]
 
             ds109_neg_dice_matrix(ds109_neg_dice_coefficients, 'Fig_' + study + '_Dice.png')
+            
+    else:
+        ds120_dice_coefficients = np.zeros([2, 2, 3])
+
+        for i in range(0, 3):
+            ds120_dice_coefficients[:, 0, i] = [1, afni_res_spm_pos_dice[i]]
+            ds120_dice_coefficients[:, 1, i] = [afni_res_spm_pos_dice[i], 1]
+
+        ds120_dice_matrix(ds120_dice_coefficients, 'Fig_' + study + '_Dice.png')
+        
+def dice_old_comparison(afni_pos_exc=None, old_afni_pos_exc=None,
+         afni_neg_exc=None, old_afni_neg_exc=None, fsl_pos_exc=None, old_fsl_pos_exc=None,
+         fsl_neg_exc=None, old_fsl_neg_exc=None, spm_pos_exc=None, old_spm_pos_exc=None,
+         spm_neg_exc=None, old_spm_neg_exc=None, afni_stat_file=None, old_afni_stat_file=None,
+         fsl_stat_file=None, old_fsl_stat_file=None, spm_stat_file=None, old_spm_stat_file=None, study=""
+         ):
+    
+    if afni_pos_exc is not None:
+        afni_pos_exc = mask_using_nan(afni_pos_exc, afni_stat_file)
+    if old_afni_pos_exc is not None:
+        old_afni_pos_exc = mask_using_nan(old_afni_pos_exc, old_afni_stat_file)
+    if afni_neg_exc is not None:
+        afni_neg_exc = mask_using_nan(afni_neg_exc, afni_stat_file)
+    if old_afni_neg_exc is not None:
+        old_afni_neg_exc = mask_using_nan(old_afni_neg_exc, old_afni_stat_file)
+    if fsl_pos_exc is not None:
+        fsl_pos_exc = mask_using_nan(fsl_pos_exc, fsl_stat_file)
+    if old_fsl_pos_exc is not None:
+        old_fsl_pos_exc = mask_using_nan(old_fsl_pos_exc, old_fsl_stat_file)
+    if fsl_neg_exc is not None:
+        fsl_neg_exc = mask_using_nan(fsl_neg_exc, fsl_stat_file)
+    if old_fsl_neg_exc is not None:
+        old_fsl_neg_exc = mask_using_nan(old_fsl_neg_exc, old_fsl_stat_file)
+    if spm_pos_exc is not None:
+        spm_pos_exc = mask_using_nan(spm_pos_exc, spm_stat_file)
+    if old_spm_pos_exc is not None:
+        old_spm_pos_exc = mask_using_nan(old_spm_pos_exc, old_spm_stat_file)
+    if spm_neg_exc is not None:
+        spm_neg_exc = mask_using_nan(spm_neg_exc, spm_stat_file)
+    if old_spm_neg_exc is not None:
+        old_spm_neg_exc = mask_using_nan(old_spm_neg_exc, old_spm_stat_file)
+
+    # *** Obtain Dice coefficient for each combination of images
+    # Positive Dice coefficients
+    ## Comparisons between new analyses
+    if (afni_pos_exc is not None) or (fsl_pos_exc is not None):
+        afni_fsl_pos_dice = sorrenson_dice(fsl_pos_exc, afni_pos_exc)
+    if (afni_pos_exc is not None) or (spm_pos_exc is not None):
+        afni_spm_pos_dice = sorrenson_dice(spm_pos_exc, afni_pos_exc)
+    if (fsl_pos_exc is not None) or (spm_pos_exc is not None):
+        fsl_spm_pos_dice = sorrenson_dice(spm_pos_exc, fsl_pos_exc)
+    
+    ## Comparisons between old analyses
+    if (old_afni_pos_exc is not None) or (old_fsl_pos_exc is not None):
+        old_afni_old_fsl_pos_dice = sorrenson_dice(old_fsl_pos_exc, old_afni_pos_exc)
+    if (old_afni_pos_exc is not None) or (old_spm_pos_exc is not None):
+        old_afni_old_spm_pos_dice = sorrenson_dice(old_spm_pos_exc, old_afni_pos_exc)
+    if (old_fsl_pos_exc is not None) or (old_spm_pos_exc is not None):
+        old_fsl_old_spm_pos_dice = sorrenson_dice(old_spm_pos_exc, old_fsl_pos_exc)
+        
+    ## Comparisons between old and new analyses
+    if (afni_pos_exc is not None) or (old_afni_pos_exc is not None):
+        afni_old_afni_pos_dice = sorrenson_dice(old_afni_pos_exc, afni_pos_exc)
+    if (afni_pos_exc is not None) or (old_spm_pos_exc is not None):
+        afni_old_spm_pos_dice = sorrenson_dice(old_spm_pos_exc, afni_pos_exc)
+    if (afni_pos_exc is not None) or (old_fsl_pos_exc is not None):
+        afni_old_fsl_pos_dice = sorrenson_dice(old_fsl_pos_exc, afni_pos_exc) 
+        
+    if (fsl_pos_exc is not None) or (old_afni_pos_exc is not None):
+        fsl_old_afni_pos_dice = sorrenson_dice(old_afni_pos_exc, fsl_pos_exc)
+    if (fsl_pos_exc is not None) or (old_spm_pos_exc is not None):
+        fsl_old_spm_pos_dice = sorrenson_dice(old_spm_pos_exc, fsl_pos_exc)
+    if (fsl_pos_exc is not None) or (old_fsl_pos_exc is not None):
+        fsl_old_fsl_pos_dice = sorrenson_dice(old_fsl_pos_exc, fsl_pos_exc) 
+        
+    if (spm_pos_exc is not None) or (old_afni_pos_exc is not None):
+        spm_old_afni_pos_dice = sorrenson_dice(old_afni_pos_exc, spm_pos_exc)
+    if (spm_pos_exc is not None) or (old_spm_pos_exc is not None):
+        spm_old_spm_pos_dice = sorrenson_dice(old_spm_pos_exc, spm_pos_exc)
+    if (spm_pos_exc is not None) or (old_fsl_pos_exc is not None):
+        spm_old_fsl_pos_dice = sorrenson_dice(old_fsl_pos_exc, spm_pos_exc) 
+
+    # Negative Dice coefficients
+    ## Comparisons between new analyses
+    if (afni_neg_exc is not None) or (fsl_neg_exc is not None):
+        afni_fsl_neg_dice = sorrenson_dice(fsl_neg_exc, afni_neg_exc)
+    if (afni_neg_exc is not None) or (spm_neg_exc is not None):
+        afni_spm_neg_dice = sorrenson_dice(spm_neg_exc, afni_neg_exc)
+    if (fsl_neg_exc is not None) or (spm_neg_exc is not None):
+        fsl_spm_neg_dice = sorrenson_dice(spm_neg_exc, fsl_neg_exc)
+    
+    ## Comparisons between old analyses
+    if (old_afni_neg_exc is not None) or (old_fsl_neg_exc is not None):
+        old_afni_old_fsl_neg_dice = sorrenson_dice(old_fsl_neg_exc, old_afni_neg_exc)
+    if (old_afni_neg_exc is not None) or (old_spm_neg_exc is not None):
+        old_afni_old_spm_neg_dice = sorrenson_dice(old_spm_neg_exc, old_afni_neg_exc)
+    if (old_fsl_neg_exc is not None) or (old_spm_neg_exc is not None):
+        old_fsl_old_spm_neg_dice = sorrenson_dice(old_spm_neg_exc, old_fsl_neg_exc)
+        
+    ## Comparisons between old and new analyses
+    if (afni_neg_exc is not None) or (old_afni_neg_exc is not None):
+        afni_old_afni_neg_dice = sorrenson_dice(old_afni_neg_exc, afni_neg_exc)
+    if (afni_neg_exc is not None) or (old_spm_neg_exc is not None):
+        afni_old_spm_neg_dice = sorrenson_dice(old_spm_neg_exc, afni_neg_exc)
+    if (afni_neg_exc is not None) or (old_fsl_neg_exc is not None):
+        afni_old_fsl_neg_dice = sorrenson_dice(old_fsl_neg_exc, afni_neg_exc) 
+        
+    if (fsl_neg_exc is not None) or (old_afni_neg_exc is not None):
+        fsl_old_afni_neg_dice = sorrenson_dice(old_afni_neg_exc, fsl_neg_exc)
+    if (fsl_neg_exc is not None) or (old_spm_neg_exc is not None):
+        fsl_old_spm_neg_dice = sorrenson_dice(old_spm_neg_exc, fsl_neg_exc)
+    if (fsl_neg_exc is not None) or (old_fsl_neg_exc is not None):
+        fsl_old_fsl_neg_dice = sorrenson_dice(old_fsl_neg_exc, fsl_neg_exc) 
+        
+    if (spm_neg_exc is not None) or (old_afni_neg_exc is not None):
+        spm_old_afni_neg_dice = sorrenson_dice(old_afni_neg_exc, spm_neg_exc)
+    if (spm_neg_exc is not None) or (old_spm_neg_exc is not None):
+        spm_old_spm_neg_dice = sorrenson_dice(old_spm_neg_exc, spm_neg_exc)
+    if (spm_neg_exc is not None) or (old_fsl_neg_exc is not None):
+        spm_old_fsl_neg_dice = sorrenson_dice(old_fsl_neg_exc, spm_neg_exc)
+        
+    # Creating a table of the Dice coefficients
+    if fsl_pos_exc is not None:
+        dice_coefficients = np.zeros([6, 6, 3])
+
+        for i in range(0, 3):
+            dice_coefficients[:, 0, i] = [
+                1,
+                afni_fsl_pos_dice[i],
+                afni_spm_pos_dice[i],
+                afni_old_afni_pos_dice[i],
+                afni_old_fsl_pos_dice[i],
+                afni_old_spm_pos_dice[i]
+                ]
+            dice_coefficients[:, 1, i] = [
+                afni_fsl_pos_dice[i],
+                1,
+                fsl_spm_pos_dice[i],
+                fsl_old_afni_pos_dice[i],
+                fsl_old_fsl_pos_dice[i],
+                fsl_old_spm_pos_dice[i]
+                ]
+            dice_coefficients[:, 2, i] = [
+                afni_spm_pos_dice[i],
+                fsl_spm_pos_dice[i],
+                1,
+                spm_old_afni_pos_dice[i],
+                spm_old_fsl_pos_dice[i],
+                spm_old_spm_pos_dice[i]
+                ]
+            dice_coefficients[:, 3, i] = [
+                afni_old_afni_pos_dice[i],
+                fsl_old_afni_pos_dice[i],
+                spm_old_afni_pos_dice[i],
+                1,
+                old_afni_old_fsl_pos_dice[i],
+                old_afni_old_spm_pos_dice[i]
+                ]
+            dice_coefficients[:, 4, i] = [
+                afni_old_fsl_pos_dice[i],
+                fsl_old_fsl_pos_dice[i],
+                spm_old_fsl_pos_dice[i],
+                old_afni_old_fsl_pos_dice[i],
+                1,
+                old_fsl_old_spm_pos_dice[i]
+                ]
+            dice_coefficients[:, 5, i] = [
+                afni_old_spm_pos_dice[i],
+                fsl_old_spm_pos_dice[i],
+                spm_old_spm_pos_dice[i],
+                old_afni_old_spm_pos_dice[i],
+                old_fsl_old_spm_pos_dice[i],
+                1
+                ]
+
+        ds109_dice_matrix(dice_coefficients, 'Fig_' + study + '_Comparison_Dice.png', comparison=True)
+
+        if spm_neg_exc is not None:
+            negative_dice_coefficients = np.zeros([6, 6, 3])
+
+            for i in range(0, 3):
+                negative_dice_coefficients[:, 0, i] = [
+                    1,
+                    afni_fsl_neg_dice[i],
+                    afni_spm_neg_dice[i],
+                    afni_old_afni_neg_dice[i],
+                    afni_old_fsl_neg_dice[i],
+                    afni_old_spm_neg_dice[i]
+                    ]
+                negative_dice_coefficients[:, 1, i] = [
+                    afni_fsl_neg_dice[i],
+                    1,
+                    fsl_spm_neg_dice[i],
+                    fsl_old_afni_neg_dice[i],
+                    fsl_old_fsl_neg_dice[i],
+                    fsl_old_spm_neg_dice[i]
+                    ]
+                negative_dice_coefficients[:, 2, i] = [
+                    afni_spm_neg_dice[i],
+                    fsl_spm_neg_dice[i],
+                    1,
+                    spm_old_afni_neg_dice[i],
+                    spm_old_fsl_neg_dice[i],
+                    spm_old_spm_neg_dice[i]
+                    ]
+                negative_dice_coefficients[:, 3, i] = [
+                    afni_old_afni_neg_dice[i],
+                    fsl_old_afni_neg_dice[i],
+                    spm_old_afni_neg_dice[i],
+                    1,
+                    old_afni_old_fsl_neg_dice[i],
+                    old_afni_old_spm_neg_dice[i]
+                    ]
+                negative_dice_coefficients[:, 4, i] = [
+                    afni_old_fsl_neg_dice[i],
+                    fsl_old_fsl_neg_dice[i],
+                    spm_old_fsl_neg_dice[i],
+                    old_afni_old_fsl_neg_dice[i],
+                    1,
+                    old_fsl_old_spm_neg_dice[i]
+                    ]
+                negative_dice_coefficients[:, 5, i] = [
+                    afni_old_spm_neg_dice[i],
+                    fsl_old_spm_neg_dice[i],
+                    spm_old_spm_neg_dice[i],
+                    old_afni_old_spm_neg_dice[i],
+                    old_fsl_old_spm_neg_dice[i],
+                    1
+                    ]
+                negative_dice_matrix(negative_dice_coefficients, 'Fig_' + study + '_Comparison_neg_Dice.png')
+        elif fsl_neg_exc is not None:
+            if afni_neg_exc is not None:
+                ds109_neg_dice_coefficients = np.zeros([4, 4, 3])
+
+                for i in range(0, 3):
+                    ds109_neg_dice_coefficients[:, 0, i] = [1, afni_fsl_neg_dice[i], afni_old_afni_neg_dice[i], afni_old_fsl_neg_dice [i]]
+                    ds109_neg_dice_coefficients[:, 1, i] = [afni_fsl_neg_dice[i], 1, fsl_old_afni_neg_dice[i], fsl_old_fsl_neg_dice [i]]
+                    ds109_neg_dice_coefficients[:, 2, i] = [afni_old_afni_neg_dice[i], fsl_old_afni_neg_dice[i], 1, old_afni_old_fsl_neg_dice [i]]
+                    ds109_neg_dice_coefficients[:, 3, i] = [afni_old_fsl_neg_dice[i], fsl_old_fsl_neg_dice[i], old_afni_old_fsl_neg_dice[i], 1]
+
+                negative_dice_matrix(ds109_neg_dice_coefficients, 'Fig_' + study + '_Comparison_neg_Dice.png', comparison=True)
+            else:
+                ds109_perm_neg_dice_coefficients = np.zeros([2, 2, 3])
+                
+                for i in range(0, 3):
+                    ds109_perm_neg_dice_coefficients[:, 0, i] = [1, fsl_old_fsl_neg_dice[i]]
+                    ds109_perm_neg_dice_coefficients[:, 1, i] = [fsl_old_fsl_neg_dice[i], 1]
+
+                ds109_neg_dice_matrix(ds109_perm_neg_dice_coefficients, 'Fig_' + study + '_Comparison_perm_neg_Dice.png', comparison=True)
             
     else:
         ds120_dice_coefficients = np.zeros([2, 2, 3])
