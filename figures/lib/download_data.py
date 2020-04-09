@@ -118,7 +118,6 @@ def download_data(nv_collection, study, output_dir):
             ('perm_ttest++_Clustsim_result_t_stat_masked.nii.gz', 'afni_perm.nii.gz'),
             ('perm_ttest++_Clustsim_result_z_stat_masked.nii.gz', 'afni_perm_z.nii.gz'),
             ('perm_Positive_clustered_t_stat.nii.gz', 'afni_perm_exc_set_pos.nii.gz'),
-            ('mask.nii.gz', 'afni_perm_mask.nii.gz'),
             ('OneSampT_tstat1.nii.gz', 'fsl_perm.nii.gz'),
             ('05FWECorrected_OneSampT_pos_exc_set.nii.gz', 'fsl_perm_exc_set_pos.nii.gz'),
             ('05FWECorrected_OneSampT_neg_exc_set.nii.gz', 'fsl_perm_exc_set_neg.nii.gz'),

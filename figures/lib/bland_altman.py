@@ -512,3 +512,108 @@ def bland_altman_bold(Title, afni_bold_file, spm_bold_file, AFNI_SPM_title,
 
 
         plt.show()
+        
+def bland_altman_old_comparison(Title, afni_stat_file, spm_stat_file, afni_old_stat_file, spm_old_stat_file, AFNI_title=None,
+                 FSL_title=None, SPM_title=None, fsl_stat_file=None, fsl_old_stat_file=None,
+                 num_subjects=None, study=''):
+
+    if num_subjects is not None:
+        afni_stat_file = z_to_t(
+            afni_stat_file,
+            afni_stat_file.replace('.nii.gz', '_t.nii.gz'),
+            num_subjects)
+        afni_old_stat_file = z_to_t(
+            afni_old_stat_file,
+            afni_old_stat_file.replace('.nii.gz', '_t.nii.gz'),
+            num_subjects)
+        
+
+    plt.style.use('seaborn-colorblind')
+    
+    # Create Bland-Altman plots
+    # AFNI B-A plots
+    f = plt.figure(figsize=(13, 5))
+
+    gs0 = gridspec.GridSpec(1, 2)
+
+    gs00 = gridspec.GridSpecFromSubplotSpec(
+        5, 6, subplot_spec=gs0[0], hspace=0.50, wspace=1.3)
+
+    x_label = ' of T-statistics'
+    y_label = ' of T-statistics (AFNI - AFNI old)'
+    lims=(-10,10,-8,8)
+
+    bland_altman_plot(f, gs00, afni_stat_file, afni_old_stat_file,
+                      AFNI_title, x_label,
+                      y_label, False,
+                      'Fig_' + study + '_BA_AFNI_AFNI_OLD.png', lims=lims)
+
+    gs01 = gridspec.GridSpecFromSubplotSpec(
+        5, 6, subplot_spec=gs0[1], hspace=0.50, wspace=1.3)
+
+    bland_altman_plot(f, gs01, afni_stat_file, afni_old_stat_file,
+                      'AFNI old reslice on AFNI Bland-Altman',
+                      ' of T-statistics',
+                      ' of T-statistics (AFNI - AFNI old)')
+
+    f.suptitle(Title, fontsize=20, x=0.47, y=1.00)
+
+    plt.show()
+    
+    if fsl_stat_file is not None:
+    # FSL B-A plot
+        f = plt.figure(figsize=(13, 5))
+
+        gs0 = gridspec.GridSpec(1, 2)
+
+        gs00 = gridspec.GridSpecFromSubplotSpec(
+            5, 6, subplot_spec=gs0[0], hspace=0.50, wspace=1.3)
+
+        x_label = ' of T-statistics'
+        y_label = ' of T-statistics (FSL - FSL old)'
+        lims=(-10,10,-8,8)
+
+        bland_altman_plot(f, gs00, fsl_stat_file, fsl_old_stat_file,
+                          FSL_title,
+                          x_label,
+                          y_label, False,
+                          'Fig_' + study + '_BA_FSL_FSL_OLD.png',
+                          lims=lims)
+
+        gs01 = gridspec.GridSpecFromSubplotSpec(
+            5, 6, subplot_spec=gs0[1], hspace=0.50, wspace=1.3)
+
+        bland_altman_plot(f, gs01, fsl_stat_file, fsl_old_stat_file,
+                          'FSL old reslice on Bland-Altman',
+                          x_label,
+                          y_label,
+                          lims=lims)
+
+        plt.show()
+
+    # SPM B-A plot
+    f = plt.figure(figsize=(13, 5))
+
+    gs0 = gridspec.GridSpec(1, 2)
+
+    gs00 = gridspec.GridSpecFromSubplotSpec(
+        5, 6, subplot_spec=gs0[0], hspace=0.50, wspace=1.3)
+
+    x_label = ' of T-statistics'
+    y_label = ' of T-statistics (SPM - SPM_OLD)'
+    lims=(-10,10,-8,8)
+
+    bland_altman_plot(f, gs00, spm_stat_file, spm_old_stat_file,
+                      SPM_title, x_label,
+                      y_label, False,
+                      'Fig_' + study + '_BA_SPM_SPM_OLD.png', lims=lims)
+
+    gs01 = gridspec.GridSpecFromSubplotSpec(
+        5, 6, subplot_spec=gs0[1], hspace=0.50, wspace=1.3)
+
+    bland_altman_plot(f, gs01, spm_stat_file, spm_old_stat_file,
+                      'SPM old reslice on SPM Bland-Altman',
+                      ' of T-statistics',
+                      ' of T-statistics (SPM - SPM old)')
+
+    plt.show()
