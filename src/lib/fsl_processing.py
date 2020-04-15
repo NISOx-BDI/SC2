@@ -196,6 +196,8 @@ def run_run_level_analyses(fmriprep_dir, run_level_fsf, level1_dir, cond_files):
 
             motion_regressor_tsv = os.path.join(motion_regressor_dir, sub + '_' + run + '_motion_regressors.txt')
 
+            fmriprep_mask = os.path.join(fmriprep_dir, 'func', sub + '*' + run + '*_desc-brain_mask.nii.gz')
+
             # Retreive inputs required to fill-in the design.fsf template:
             #   - amri: Path to the anatomical image (this subject)
             #   - fmri: Path to the functional image (this run)
