@@ -206,7 +206,7 @@ def run_run_level_analyses(fmriprep_dir, run_level_fsf, level1_dir, cond_files):
             #   - onsets_xx: Path to onset file for condition 'xx'
             #   - motion_regressors: Path to .tsv containing the motion regressors outputted by fmriprep
             values = {'fmri': fmri, 'out_dir': out_dir,
-                      'FSLDIR': os.environ['FSLDIR'], 'motion_regressors': motion_regressor_tsv}
+                      'FSLDIR': os.environ['FSLDIR'], 'motion_regressors': motion_regressor_tsv, 'fmriprep_mask': fmriprep_mask}
             for i, cond_file in enumerate(cond_files[sub_run]):
                 values['onsets_' + str(i+1)] = cond_file
         
