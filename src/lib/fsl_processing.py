@@ -196,7 +196,7 @@ def run_run_level_analyses(fmriprep_dir, run_level_fsf, level1_dir, cond_files):
 
             motion_regressor_tsv = os.path.join(motion_regressor_dir, sub + '_' + run + '_motion_regressors.txt')
 
-            fmriprep_mask = os.path.join(fmriprep_dir, 'func', sub + '*' + run + '*_desc-brain_mask.nii.gz')
+            fmriprep_mask = glob.glob(os.path.join(fmriprep_dir, 'func', sub + '*' + run + '*_desc-brain_mask.nii.gz'))
 
             # Retreive inputs required to fill-in the design.fsf template:
             #   - amri: Path to the anatomical image (this subject)
@@ -206,7 +206,7 @@ def run_run_level_analyses(fmriprep_dir, run_level_fsf, level1_dir, cond_files):
             #   - onsets_xx: Path to onset file for condition 'xx'
             #   - motion_regressors: Path to .tsv containing the motion regressors outputted by fmriprep
             values = {'fmri': fmri, 'out_dir': out_dir,
-                      'FSLDIR': os.environ['FSLDIR'], 'motion_regressors': motion_regressor_tsv, 'fmriprep_mask': fmriprep_mask}
+                      'FSLDIR': os.environ['FSLDIR'], 'motion_regressors': motion_regressor_tsv, 'fmriprep_mask': fmriprep_mask[0]}
             for i, cond_file in enumerate(cond_files[sub_run]):
                 values['onsets_' + str(i+1)] = cond_file
         
