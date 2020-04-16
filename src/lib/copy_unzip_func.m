@@ -27,7 +27,7 @@ function copy_unzip_func(fmriprep_dir, spm_dir)
             matlabbatch{end+1}.cfg_basicio.file_dir.file_ops.file_move.files = {mask_files{k}};
             matlabbatch{end}.cfg_basicio.file_dir.file_ops.file_move.action.copyto = {func_dir};
             func_files{r} = spm_file(mask_files{k}, 'path', func_dir);
-            matlabbatch{end+1}.cfg_basicio.file_dir.file_ops.cfg_gunzip_files.files(1) = func_files(k);
+            matlabbatch{end+1}.cfg_basicio.file_dir.file_ops.cfg_gunzip_files.files(1) = mask_files(k);
             matlabbatch{end}.cfg_basicio.file_dir.file_ops.cfg_gunzip_files.outdir = {func_dir};
             matlabbatch{end}.cfg_basicio.file_dir.file_ops.cfg_gunzip_files.keep = false;  
         end
