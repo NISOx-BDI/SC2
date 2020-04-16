@@ -16,12 +16,17 @@ function run_subject_level_analyses(fmriprep_dir, sub_template, level1_dir, num_
     sub_dirs = cellstr(spm_select('FPList',fmriprep_dir, 'dir','sub-*'));   
     
     for i = 1:numel(sub_dirs)
-        clear FUNC_RUN_* ONSETS_RUN_* MOTION_REGRESSORS_RUN_* OUT_DIR matlabbatch
+        clear FUNC_RUN_* ONSETS_RUN_* MOTION_REGRESSORS_RUN_* OUT_DIR FUNC_DIR FMRIPREP_MASKS INTERSECTION_MASK matlabbatch
         
         [~,sub,~] = fileparts(sub_dirs{i});
         OUT_DIR = fullfile(level1_dir, sub);
         sub = ['^' sub];
         
+        % Creating the subjects intersection mask from the fMRIPREP run-level masks
+        FUNC_DIR = func_dir;
+        FMRIPREP_MASKS = cellstr(spm_select('List', sub_dirs{i}, 'func', [sub '.*-brain_mask.nii.gz']));
+        INTERSECTION_MASK = [strrep(sub,'^','') '_functional_mask.nii'];
+
         % If subject did not complete from a previous attempt, removes all results files and runs again
         if ~exist(fullfile(OUT_DIR,'spmT_0001.nii'))
             
