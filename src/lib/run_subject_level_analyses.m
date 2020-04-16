@@ -24,7 +24,8 @@ function run_subject_level_analyses(fmriprep_dir, sub_template, level1_dir, num_
         
         % Creating the subjects intersection mask from the fMRIPREP run-level masks
         FUNC_DIR = func_dir;
-        FMRIPREP_MASKS = cellstr(spm_select('List', sub_dirs{i}, 'func', [sub '.*-brain_mask.nii.gz']));
+        fmriprep_mask_dir = fullfile(sub_dirs{i},'func')
+        FMRIPREP_MASKS = cellstr(spm_select('List', fmriprep_mask_dir, [sub '.*-brain_mask.nii.gz']));
         INTERSECTION_MASK = [strrep(sub,'^','') '_functional_mask.nii'];
 
         % If subject did not complete from a previous attempt, removes all results files and runs again
