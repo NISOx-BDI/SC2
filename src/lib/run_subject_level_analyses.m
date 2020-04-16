@@ -7,7 +7,8 @@ function run_subject_level_analyses(fmriprep_dir, sub_template, level1_dir, num_
     onsets_dir = fullfile(level1_dir, '..', 'ONSETS');
     motion_regressors_dir = fullfile(level1_dir, '..', 'MOTION_REGRESSORS');
     func_dir = fullfile(level1_dir, '..', 'FUNCTIONAL');
-    scripts_dir = fullfile(level1_dir, '..', 'SCRIPTS'); 
+    scripts_dir = fullfile(level1_dir, '..', 'SCRIPTS');
+    FUNC_DIR = func_dir; 
 
     if ~isdir(scripts_dir)
         mkdir(scripts_dir)
@@ -16,15 +17,14 @@ function run_subject_level_analyses(fmriprep_dir, sub_template, level1_dir, num_
     sub_dirs = cellstr(spm_select('FPList',fmriprep_dir, 'dir','sub-*'));   
     
     for i = 1:numel(sub_dirs)
-        clear FUNC_RUN_* ONSETS_RUN_* MOTION_REGRESSORS_RUN_* OUT_DIR FUNC_DIR FMRIPREP_MASKS INTERSECTION_MASK matlabbatch
+        clear FUNC_RUN_* ONSETS_RUN_* MOTION_REGRESSORS_RUN_* OUT_DIR FMRIPREP_MASKS INTERSECTION_MASK matlabbatch
         
         [~,sub,~] = fileparts(sub_dirs{i});
         OUT_DIR = fullfile(level1_dir, sub);
         sub = ['^' sub];
         
         % Creating the subjects intersection mask from the fMRIPREP run-level masks
-        FUNC_DIR = func_dir;
-        fmriprep_mask_dir = fullfile(sub_dirs{i},'func')
+        fmriprep_mask_dir = fullfile(sub_dirs{i},'func');
         FMRIPREP_MASKS = cellstr(spm_select('List', func_dir, [sub '.*-brain_mask.nii']));
         INTERSECTION_MASK = [strrep(sub,'^','') '_functional_mask.nii'];
 
