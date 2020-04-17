@@ -226,7 +226,7 @@ def run_group_level_analysis(level1_dir, level2_dir, grp_level_template, home_di
     print(cmd)
     check_call(cmd, shell=True)
 
-def run_permutation_test(level1_dir, perm_dir, perm_template, home_dir, AFNI_SPM_singularity_image, AFNI_bin):
+def run_permutation_test(level1_dir, perm_dir, perm_template, home_dir, AFNI_SPM_singularity_image, AFNI_bin, fmriprep_dir):
 
     scripts_dir = os.path.join(level1_dir, os.pardir, 'SCRIPTS')
 
@@ -241,6 +241,7 @@ def run_permutation_test(level1_dir, perm_dir, perm_template, home_dir, AFNI_SPM
     values["perm_dir"] = perm_dir
     values["level1_dir"] = level1_dir
     values["AFNI_bin"] = AFNI_bin
+    values["fmriprep_dir"] = fmriprep_dir
 
     with open(perm_template) as f:
         tpm = f.read()
