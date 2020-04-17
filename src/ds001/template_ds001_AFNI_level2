@@ -50,10 +50,7 @@ clust_thrvol=`$AFNI_bin/1d_tool.py -verb 0                                 \
 echo "++ The final cluster volume threshold is: $$clust_thrvol"
 
 # Obtaining cluster-forming threshold
-voxstat_thr=`$AFNI_bin/p2dsetstat -quiet                                   \
-                    -pval 0.01                                   \
-                    "-1sided"                                    \
-                    -inset 3dMEMA_result.nii.gz'[controls:t]'`
+voxstat_thr=2.60248
 echo "++ The voxelwise stat value threshold is: $$voxstat_thr"
 
 # Masking t-stat
