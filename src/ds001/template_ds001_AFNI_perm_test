@@ -37,10 +37,7 @@ clust_thrvol=`$AFNI_bin/1d_tool.py -verb 0                                      
 #echo "++ The final cluster volume threshold is: $$clust_thrvol"
 
 # Obtaining cluster-forming threshold
-voxstat_thr=`p2dsetstat -quiet                                   \
-                    -pval 0.01                                   \
-                    "-1sided"                                    \
-                    -inset perm_ttest++_Clustsim_result.nii.gz'[setA_Zscr]'`
+voxstat_thr=2.32635
 echo "++ The voxelwise stat value threshold is: $$voxstat_thr"
 
 # Masking z-stat
