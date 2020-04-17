@@ -6,7 +6,6 @@ $AFNI_bin/3dMEMA -prefix 3dMEMA_result.nii.gz       \
              01 $level1_dir/sub-01/sub01.results/stats.sub01_REML+tlrc['pumps_demean_vs_ctrl_demean#0_Coef'] $level1_dir/sub-01/sub01.results/stats.sub01_REML+tlrc['pumps_demean_vs_ctrl_demean#0_Tstat'] \
              02 $level1_dir/sub-02/sub02.results/stats.sub02_REML+tlrc['pumps_demean_vs_ctrl_demean#0_Coef'] $level1_dir/sub-02/sub02.results/stats.sub02_REML+tlrc['pumps_demean_vs_ctrl_demean#0_Tstat'] \
              03 $level1_dir/sub-03/sub03.results/stats.sub03_REML+tlrc['pumps_demean_vs_ctrl_demean#0_Coef'] $level1_dir/sub-03/sub03.results/stats.sub03_REML+tlrc['pumps_demean_vs_ctrl_demean#0_Tstat'] \
-             04 $level1_dir/sub-04/sub04.results/stats.sub04_REML+tlrc['pumps_demean_vs_ctrl_demean#0_Coef'] $level1_dir/sub-04/sub04.results/stats.sub04_REML+tlrc['pumps_demean_vs_ctrl_demean#0_Tstat'] \
              05 $level1_dir/sub-05/sub05.results/stats.sub05_REML+tlrc['pumps_demean_vs_ctrl_demean#0_Coef'] $level1_dir/sub-05/sub05.results/stats.sub05_REML+tlrc['pumps_demean_vs_ctrl_demean#0_Tstat'] \
              06 $level1_dir/sub-06/sub06.results/stats.sub06_REML+tlrc['pumps_demean_vs_ctrl_demean#0_Coef'] $level1_dir/sub-06/sub06.results/stats.sub06_REML+tlrc['pumps_demean_vs_ctrl_demean#0_Tstat'] \
              07 $level1_dir/sub-07/sub07.results/stats.sub07_REML+tlrc['pumps_demean_vs_ctrl_demean#0_Coef'] $level1_dir/sub-07/sub07.results/stats.sub07_REML+tlrc['pumps_demean_vs_ctrl_demean#0_Tstat'] \
