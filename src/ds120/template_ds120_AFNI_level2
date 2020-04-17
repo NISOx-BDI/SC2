@@ -281,7 +281,7 @@ $AFNI_bin/3dMVM -prefix Group.nii.gz -jobs 4   \
 # Create a group mask
 $AFNI_bin/3dmask_tool                                                 \
     -prefix mask.nii.gz                                     \
-    -input `ls $level1_dir/sub-*/sub*/mask_epi_anat.*.HEAD` \
+    -input `ls $fmriprep_dir/sub-*/func/*brain_mask.nii.gz` \
     -frac 1.0
 
 # Obtaining the three group-level ACF parameters by averaging the subject-level ACF parameters in the blur_est.sub_xx.1D files
