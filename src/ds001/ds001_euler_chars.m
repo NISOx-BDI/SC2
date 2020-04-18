@@ -1,5 +1,5 @@
 base_dir = '/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/';
-study = 'ds109';
+study = 'ds001';
 
 if ~exist('euler_chars', 'file')
     addpath(fullfile(base_dir, 'src', 'lib'))
@@ -23,4 +23,3 @@ mask_array  = {spm_mask,      fsl_mask,      afni_mask,      spm_mask,      fsl_
 for i=1:length(euler_array)
 	euler_chars(euler_array{i}, mask_array{i});
 end
-
