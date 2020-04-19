@@ -587,10 +587,16 @@ def bland_altman_old_comparison(Title, afni_stat_file, spm_stat_file, afni_old_s
             afni_stat_file,
             afni_stat_file.replace('.nii.gz', '_t.nii.gz'),
             num_subjects)
-        afni_old_stat_file = z_to_t(
-            afni_old_stat_file,
-            afni_old_stat_file.replace('.nii.gz', '_t.nii.gz'),
-            num_subjects)
+        if num_subjects == 15:
+            afni_old_stat_file = z_to_t(
+                afni_old_stat_file,
+                afni_old_stat_file.replace('.nii.gz', '_t.nii.gz'),
+                num_subjects+1)
+        else:
+            afni_old_stat_file = z_to_t(
+                afni_old_stat_file,
+                afni_old_stat_file.replace('.nii.gz', '_t.nii.gz'),
+                num_subjects)
         
 
     plt.style.use('seaborn-colorblind')

@@ -167,7 +167,7 @@ def ds109_dice_matrix(df, filename=None, comparison=False):
     plt.show()
 
 
-def negative_dice_matrix(df, filename=None, comparison=False):
+def negative_dice_matrix(df, filename=None, comparison=False, ds109_flag=False):
     mask = np.tri(df.shape[0], k=0)
     mask = 1-mask
     dfmsk = np.ma.array(df[:,:,0], mask=mask)
@@ -197,8 +197,10 @@ def negative_dice_matrix(df, filename=None, comparison=False):
     plt.title('Negative Activation Dice Coefficients', fontsize=15)
     if comparison==False:
         labels=['','AFNI','FSL','SPM','AFNI perm','FSL perm','SPM perm']
-    else:
+    elif ds109_flag ==True:
         labels=['','AFNI','','FSL','','AFNI old','','FSL old']
+    else:
+        labels=['','AFNI','FSL','SPM','AFNI old','FSL old','SPM old']
     ax1.set_xticklabels(labels,fontsize=12)
     ax1.set_yticklabels(labels,fontsize=12)
     # Add colorbar, make sure to specify tick locations to match desired ticklabels
@@ -775,79 +777,79 @@ def dice_old_comparison(afni_pos_exc=None, old_afni_pos_exc=None,
 
         ds109_dice_matrix(dice_coefficients, 'Fig_' + study + '_Comparison_Dice.png', comparison=True)
 
-        if spm_neg_exc is not None:
-            negative_dice_coefficients = np.zeros([6, 6, 3])
+    if spm_neg_exc is not None:
+        negative_dice_coefficients = np.zeros([6, 6, 3])
+
+        for i in range(0, 3):
+            negative_dice_coefficients[:, 0, i] = [
+                1,
+                afni_fsl_neg_dice[i],
+                afni_spm_neg_dice[i],
+                afni_old_afni_neg_dice[i],
+                afni_old_fsl_neg_dice[i],
+                afni_old_spm_neg_dice[i]
+                ]
+            negative_dice_coefficients[:, 1, i] = [
+                afni_fsl_neg_dice[i],
+                1,
+                fsl_spm_neg_dice[i],
+                fsl_old_afni_neg_dice[i],
+                fsl_old_fsl_neg_dice[i],
+                fsl_old_spm_neg_dice[i]
+                ]
+            negative_dice_coefficients[:, 2, i] = [
+                afni_spm_neg_dice[i],
+                fsl_spm_neg_dice[i],
+                1,
+                spm_old_afni_neg_dice[i],
+                spm_old_fsl_neg_dice[i],
+                spm_old_spm_neg_dice[i]
+                ]
+            negative_dice_coefficients[:, 3, i] = [
+                afni_old_afni_neg_dice[i],
+                fsl_old_afni_neg_dice[i],
+                spm_old_afni_neg_dice[i],
+                1,
+                old_afni_old_fsl_neg_dice[i],
+                old_afni_old_spm_neg_dice[i]
+                ]
+            negative_dice_coefficients[:, 4, i] = [
+                afni_old_fsl_neg_dice[i],
+                fsl_old_fsl_neg_dice[i],
+                spm_old_fsl_neg_dice[i],
+                old_afni_old_fsl_neg_dice[i],
+                1,
+                old_fsl_old_spm_neg_dice[i]
+                ]
+            negative_dice_coefficients[:, 5, i] = [
+                afni_old_spm_neg_dice[i],
+                fsl_old_spm_neg_dice[i],
+                spm_old_spm_neg_dice[i],
+                old_afni_old_spm_neg_dice[i],
+                old_fsl_old_spm_neg_dice[i],
+                1
+                ]
+        negative_dice_matrix(negative_dice_coefficients, 'Fig_' + study + '_Comparison_neg_Dice.png', comparison=True, ds109_flag=False)
+    elif fsl_neg_exc is not None:
+        if afni_neg_exc is not None:
+            ds109_neg_dice_coefficients = np.zeros([4, 4, 3])
 
             for i in range(0, 3):
-                negative_dice_coefficients[:, 0, i] = [
-                    1,
-                    afni_fsl_neg_dice[i],
-                    afni_spm_neg_dice[i],
-                    afni_old_afni_neg_dice[i],
-                    afni_old_fsl_neg_dice[i],
-                    afni_old_spm_neg_dice[i]
-                    ]
-                negative_dice_coefficients[:, 1, i] = [
-                    afni_fsl_neg_dice[i],
-                    1,
-                    fsl_spm_neg_dice[i],
-                    fsl_old_afni_neg_dice[i],
-                    fsl_old_fsl_neg_dice[i],
-                    fsl_old_spm_neg_dice[i]
-                    ]
-                negative_dice_coefficients[:, 2, i] = [
-                    afni_spm_neg_dice[i],
-                    fsl_spm_neg_dice[i],
-                    1,
-                    spm_old_afni_neg_dice[i],
-                    spm_old_fsl_neg_dice[i],
-                    spm_old_spm_neg_dice[i]
-                    ]
-                negative_dice_coefficients[:, 3, i] = [
-                    afni_old_afni_neg_dice[i],
-                    fsl_old_afni_neg_dice[i],
-                    spm_old_afni_neg_dice[i],
-                    1,
-                    old_afni_old_fsl_neg_dice[i],
-                    old_afni_old_spm_neg_dice[i]
-                    ]
-                negative_dice_coefficients[:, 4, i] = [
-                    afni_old_fsl_neg_dice[i],
-                    fsl_old_fsl_neg_dice[i],
-                    spm_old_fsl_neg_dice[i],
-                    old_afni_old_fsl_neg_dice[i],
-                    1,
-                    old_fsl_old_spm_neg_dice[i]
-                    ]
-                negative_dice_coefficients[:, 5, i] = [
-                    afni_old_spm_neg_dice[i],
-                    fsl_old_spm_neg_dice[i],
-                    spm_old_spm_neg_dice[i],
-                    old_afni_old_spm_neg_dice[i],
-                    old_fsl_old_spm_neg_dice[i],
-                    1
-                    ]
-                negative_dice_matrix(negative_dice_coefficients, 'Fig_' + study + '_Comparison_neg_Dice.png')
-        elif fsl_neg_exc is not None:
-            if afni_neg_exc is not None:
-                ds109_neg_dice_coefficients = np.zeros([4, 4, 3])
+                ds109_neg_dice_coefficients[:, 0, i] = [1, afni_fsl_neg_dice[i], afni_old_afni_neg_dice[i], afni_old_fsl_neg_dice [i]]
+                ds109_neg_dice_coefficients[:, 1, i] = [afni_fsl_neg_dice[i], 1, fsl_old_afni_neg_dice[i], fsl_old_fsl_neg_dice [i]]
+                ds109_neg_dice_coefficients[:, 2, i] = [afni_old_afni_neg_dice[i], fsl_old_afni_neg_dice[i], 1, old_afni_old_fsl_neg_dice [i]]
+                ds109_neg_dice_coefficients[:, 3, i] = [afni_old_fsl_neg_dice[i], fsl_old_fsl_neg_dice[i], old_afni_old_fsl_neg_dice[i], 1]
 
-                for i in range(0, 3):
-                    ds109_neg_dice_coefficients[:, 0, i] = [1, afni_fsl_neg_dice[i], afni_old_afni_neg_dice[i], afni_old_fsl_neg_dice [i]]
-                    ds109_neg_dice_coefficients[:, 1, i] = [afni_fsl_neg_dice[i], 1, fsl_old_afni_neg_dice[i], fsl_old_fsl_neg_dice [i]]
-                    ds109_neg_dice_coefficients[:, 2, i] = [afni_old_afni_neg_dice[i], fsl_old_afni_neg_dice[i], 1, old_afni_old_fsl_neg_dice [i]]
-                    ds109_neg_dice_coefficients[:, 3, i] = [afni_old_fsl_neg_dice[i], fsl_old_fsl_neg_dice[i], old_afni_old_fsl_neg_dice[i], 1]
+            negative_dice_matrix(ds109_neg_dice_coefficients, 'Fig_' + study + '_Comparison_neg_Dice.png', comparison=True, ds109_flag=True)
+        else:
+            ds109_perm_neg_dice_coefficients = np.zeros([2, 2, 3])
 
-                negative_dice_matrix(ds109_neg_dice_coefficients, 'Fig_' + study + '_Comparison_neg_Dice.png', comparison=True)
-            else:
-                ds109_perm_neg_dice_coefficients = np.zeros([2, 2, 3])
-                
-                for i in range(0, 3):
-                    ds109_perm_neg_dice_coefficients[:, 0, i] = [1, fsl_old_fsl_neg_dice[i]]
-                    ds109_perm_neg_dice_coefficients[:, 1, i] = [fsl_old_fsl_neg_dice[i], 1]
+            for i in range(0, 3):
+                ds109_perm_neg_dice_coefficients[:, 0, i] = [1, fsl_old_fsl_neg_dice[i]]
+                ds109_perm_neg_dice_coefficients[:, 1, i] = [fsl_old_fsl_neg_dice[i], 1]
 
-                ds109_neg_dice_matrix(ds109_perm_neg_dice_coefficients, 'Fig_' + study + '_Comparison_perm_neg_Dice.png', comparison=True)
-            
+            ds109_neg_dice_matrix(ds109_perm_neg_dice_coefficients, 'Fig_' + study + '_Comparison_perm_neg_Dice.png', comparison=True)
+
     else:
         ds120_dice_coefficients = np.zeros([2, 2, 3])
 
