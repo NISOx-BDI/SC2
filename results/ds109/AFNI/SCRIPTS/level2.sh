@@ -29,7 +29,7 @@ cd /well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/AFNI/LEVEL2/gr
 # Create a group mask
 /opt/afni-latest/3dmask_tool                                                 \
     -prefix mask.nii.gz                                     \
-    -input `ls /well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/AFNI/LEVEL1/sub-*/sub*/mask_epi_anat.*.HEAD` \
+    -input `ls /well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/data/processed/ds109/fmriprep/sub-*/func/*brain_mask.nii.gz` \
     -frac 1.0
 
 # Obtaining the three group-level ACF parameters by averaging the subject-level ACF parameters in the blur_est.sub_xx.1D files
@@ -40,7 +40,7 @@ grep -h "err_reml ACF" /well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/
 blur_est=`/opt/afni-latest/3dTstat -mean -prefix - group_ACF_ests.1D\'` 
 echo "++ The group average ACF params are: $blur_est"
 
- Simulations for FWE corrected cluster-size inference
+# Simulations for FWE corrected cluster-size inference
 /opt/afni-latest/3dClustSim                                       \
     -both                                        \
     -mask   mask.nii.gz                          \

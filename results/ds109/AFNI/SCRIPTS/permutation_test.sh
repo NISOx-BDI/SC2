@@ -3,7 +3,7 @@ cd /well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/AFNI/LEVEL2/pe
 # Create a group mask
 /opt/afni-latest/3dmask_tool                                                 \
     -prefix mask.nii.gz                                     \
-    -input `ls /well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/AFNI/LEVEL1/sub-*/sub*/mask_epi_anat.*.HEAD` \
+    -input `ls /well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/data/processed/ds109/fmriprep/sub-*/func/*brain_mask.nii.gz` \
     -frac 1.0
 
 # t-test analysis, note because we use -Clustsim the result is converted to a z-stat

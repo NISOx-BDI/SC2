@@ -2,8 +2,6 @@
 singularity exec --cleanenv -B /well/nichols/users/bas627/BIDS_Data/RESULTS/SC2 /apps/singularity/afni-r-python3-2020-03-26-v1.sif /opt/afni-latest/afni_proc.py -subj_id sub18 \
         -script proc.sub18 -scr_overwrite                                    \
         -blocks blur mask scale regress                                        \
-        -script proc.sub18 -scr_overwrite                                    \
-        -blocks tshift align tlrc volreg blur mask scale regress               \
         -copy_anat /well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/data/processed/ds109/fmriprep/sub-18/anat/sub-18_space-MNI152NLin2009cAsym_desc-preproc_T1w.nii.gz \
 		-anat_has_skull no \
         -dsets                                                                 \
