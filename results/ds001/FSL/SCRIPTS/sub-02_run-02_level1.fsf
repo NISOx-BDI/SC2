@@ -56,7 +56,7 @@ set fmri(inputtype) 2
 set fmri(filtering_yn) 1
 
 # Brain/background threshold, %
-set fmri(brain_thresh) 10
+set fmri(brain_thresh) 0
 
 # Critical z for design efficiency calculation
 set fmri(critical_z) 5.3
@@ -1189,7 +1189,7 @@ set fmri(conmask1_1) 0
 # Now options that don't appear in the GUI
 
 # Alternative (to BETting) mask image
-set fmri(alternative_mask) ""
+set fmri(alternative_mask) "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/data/processed/ds001/fmriprep/sub-02/func/sub-02_task-balloonanalogrisktask_run-02_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz"
 
 # Initial structural space registration initialisation transform
 set fmri(init_initial_highres) ""
