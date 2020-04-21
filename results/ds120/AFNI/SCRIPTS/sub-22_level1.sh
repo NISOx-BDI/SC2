@@ -1,5 +1,5 @@
 # run afni_proc.py to create a single subject processing script
-singularity exec --cleanenv -B /well/nichols/users/bas627/BIDS_Data/RESULTS/SC2 /apps/singularity/fsl-afni-spm12-conda.sif /opt/afni-latest/afni_proc.py -subj_id sub22 \
+singularity exec --cleanenv -B /well/nichols/users/bas627/BIDS_Data/RESULTS/SC2 /apps/singularity/afni-r-python3-2020-03-26-v1.sif /opt/afni-latest/afni_proc.py -subj_id sub22 \
         -script proc.sub22 -scr_overwrite                                    \
         -blocks tshift blur mask scale regress               \
         -copy_anat /well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/data/processed/ds120/fmriprep/sub-22/anat/sub-22_space-MNI152NLin2009cAsym_desc-preproc_T1w.nii.gz                                 \
