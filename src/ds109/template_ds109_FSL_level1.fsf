@@ -56,7 +56,7 @@ set fmri(inputtype) 2
 set fmri(filtering_yn) 1
 
 # Brain/background threshold, %
-set fmri(brain_thresh) 0
+set fmri(brain_thresh) 0.01
 
 # Critical z for design efficiency calculation
 set fmri(critical_z) 5.3
@@ -172,7 +172,7 @@ set fmri(constcol) 0
 set fmri(poststats_yn) 1
 
 # Pre-threshold masking?
-set fmri(threshmask) "$fmriprep_mask"
+set fmri(threshmask) ""
 
 # Thresholding
 # 0 : None
