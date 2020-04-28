@@ -17,8 +17,8 @@ function extract_design_columns(level1_dir, design_dir)
         fmri_files = cellstr(spm_select('List', func_dir, [sub '.*\-preproc_bold.nii']));
         nruns = length(fmri_files);
 
-        % Obtaining the number of run-level regressors in the design matrix for the subject
-        nregressors = (length(SPM.SPM.xX.name) - nruns)/nruns;
+        % Obtaining the number of run-level regressors (excluding the 6 motion regressors) in the design matrix for the subject
+        nregressors = ((length(SPM.SPM.xX.name) - nruns)/nruns) - 6;
 
         % Obtaining the number of time-points in each run
         ntimepoints = size(SPM.SPM.xX.X, 1)/nruns;
