@@ -548,7 +548,7 @@ def run_run_level_spm_design(fmriprep_dir, run_level_fsf, level1_dir, spm_design
             values = {'fmri': fmri, 'out_dir': out_dir,
                       'FSLDIR': os.environ['FSLDIR'], 'motion_regressors': motion_regressor_tsv, 'fmriprep_mask': fmriprep_mask[0]}
 
-            cond_files = sorted(glog.glob(os.path.join(spm_design_dir, sub_run '*.txt')))
+            cond_files = sorted(glog.glob(os.path.join(spm_design_dir, sub_run + '*.txt')))
             for i, cond_file in enumerate(cond_files):
                 values['spm_onsets_' + str(i+1)] = cond_file
         
