@@ -26,7 +26,7 @@ function extract_design_columns(level1_dir, design_dir)
         % For each run, extract all the run-level regressors in the design matrix to a text file 
         for r = 1:nruns
             for q = 1:nregressors
-                column = SPM.SPM.xX.X((1+ntimepoints*(r-1)):298*r,q+nregressors*(r-1));
+                column = SPM.SPM.xX.X((1+ntimepoints*(r-1)):ntimepoints*r,q+nregressors*(r-1));
                 % writing the column to a text file
                 output_filename = fullfile(design_dir, [strrep(sub,'^','') '_run_' sprintf('%02d',r) '_regressor_' sprintf('%02d', q) '.txt']);
                 fid = fopen(output_filename,'w');
