@@ -35,5 +35,17 @@ function extract_design_columns(level1_dir, design_dir)
                 fclose(fid);
             end
         end
+
+        % Also extract SPM's drift basis, which is the same for all subjects and runs
+        if i == 1
+            for t = 1:9
+                column = SPM.SPM.xX.K.X0(:,t);
+                % writing the column to a text file
+                output_filename = fullfile(design_dir, ['spm_drift_basis_' sprintf('%02d', t) '.txt']);
+                fid = fopen(output_filename,'w');
+                fprintf(fid,'%07.6f\n',column);
+                fclose(fid);
+            end
+        end
     end
 end
