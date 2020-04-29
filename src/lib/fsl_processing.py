@@ -643,7 +643,7 @@ def run_run_level_spm_drift(fmriprep_dir, run_level_fsf, level1_dir, spm_design_
                 t = string.Template(tpm)
                 run_fsf = t.substitute(values)
 
-            run_fsf_file = os.path.join(scripts_dir, sub_run + '_level1_spm_design.fsf')
+            run_fsf_file = os.path.join(scripts_dir, sub_run + '_level1_spm_drift.fsf')
             with open(run_fsf_file, "w") as f:
                 f.write(run_fsf)
 
