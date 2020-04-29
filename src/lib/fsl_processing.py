@@ -633,7 +633,7 @@ def run_run_level_spm_drift(fmriprep_dir, run_level_fsf, level1_dir, spm_design_
             for i, cond_file in enumerate(cond_files):
                 values['spm_onsets_' + str(i+1)] = cond_file
 
-            spm_drift_files = sorted(glob.glob(os.path.join('spm_drift*.txt')))
+            spm_drift_files = sorted(glob.glob(os.path.join(spm_design_dir,'spm_drift*.txt')))
             for j, drift_file in enumerate(spm_drift_files):
                 vales['spm_drift_' + str(j+1)] = drift_file
         
