@@ -38,8 +38,9 @@ function extract_design_columns(level1_dir, design_dir)
     end
 
     % Finally, extract SPM's drift basis, which is the same for all subjects and runs
+    drift_matrix = SPM.SPM.xX.K.X0;
     for t = 1:9
-        column = SPM.SPM.xX.K.X0(:,t);
+        column = drift_matrix(:,t);
         % writing the column to a text file
         output_filename = fullfile(design_dir, ['spm_drift_basis_' sprintf('%02d', t) '.txt']);
         fid = fopen(output_filename,'w');
