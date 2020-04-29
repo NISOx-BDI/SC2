@@ -226,7 +226,7 @@ def run_run_level_analyses(fmriprep_dir, run_level_fsf, level1_dir, cond_files):
             check_call(cmd, shell=True)
 
 
-def run_subject_level_analyses(level1_dir, sub_level_fsf, level2_dir):
+def run_subject_level_analyses(level1_dir, sub_level_fsf, level2_dir, *args):
 
     scripts_dir = os.path.join(level2_dir, os.pardir, 'SCRIPTS')
 
@@ -269,7 +269,12 @@ def run_subject_level_analyses(level1_dir, sub_level_fsf, level2_dir):
             t = string.Template(tpm)
             sub_fsf = t.substitute(values)
 
-        sub_fsf_file = os.path.join(scripts_dir, sub + '_level2.fsf')
+        if args:
+            end_of_file_name = args[0]
+            sub_fsf_file = os.path.join(scripts_dir, sub + '_level2_' + end_of_file_name + '.fsf')
+        else:
+            sub_fsf_file = os.path.join(scripts_dir, sub + '_level2.fsf')
+
         with open(sub_fsf_file, "w") as f:
             f.write(sub_fsf)
 
@@ -280,7 +285,7 @@ def run_subject_level_analyses(level1_dir, sub_level_fsf, level2_dir):
 
 
 def run_group_level_analysis(level2_dir, group_level_fsf, level3_dir,
-                             contrast_id):
+                             contrast_id, *args):
 
     scripts_dir = os.path.join(level2_dir, os.pardir, 'SCRIPTS')
 
@@ -310,7 +315,12 @@ def run_group_level_analysis(level2_dir, group_level_fsf, level3_dir,
         t = string.Template(tpm)
         sub_fsf = t.substitute(values)
 
-    group_fsf_file = os.path.join(scripts_dir, 'level3.fsf')
+    if args:
+        end_of_file_name = args[0]
+        group_fsf_file = os.path.join(scripts_dir, 'level3_' + end_of_file_name + '.fsf')
+    else:
+        group_fsf_file = os.path.join(scripts_dir, 'level3.fsf')
+    
     with open(group_fsf_file, "w") as f:
         f.write(sub_fsf)
 
