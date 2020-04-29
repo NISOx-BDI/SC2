@@ -581,3 +581,74 @@ def run_run_level_spm_design(fmriprep_dir, run_level_fsf, level1_dir, spm_design
             print(cmd)
             check_call(cmd, shell=True)
 
+def run_run_level_spm_drift(fmriprep_dir, run_level_fsf, level1_dir, spm_design_dir):
+    """
+    Run a GLM for each fMRI run of each subject
+    """
+    if not os.path.isdir(level1_dir):
+        os.mkdir(level1_dir)
+
+    scripts_dir = os.path.join(level1_dir, os.pardir, 'SCRIPTS')
+
+    if not os.path.isdir(scripts_dir):
+        os.mkdir(scripts_dir)
+
+    # All fmriprep subject-level directories
+    fmriprep_dirs = glob.glob(os.path.join(fmriprep_dir, 'sub-??'))
+
+    # Directory containing motion regressor .tsv files for all subjects
+    motion_regressor_dir = os.path.join(level1_dir, os.pardir, 'MOTION_REGRESSORS')
+    
+    # For each subject
+    for fmriprep_dir in fmriprep_dirs:
+        subreg = re.search('sub-\d+', fmriprep_dir)
+        sub = subreg.group(0)
+        
+        # All fMRI files for this subject
+        fmri_files = glob.glob(os.path.join(fmriprep_dir, 'func', '*-preproc_bold.nii.gz'))
+        
+        # For each run
+        for fmri in fmri_files:
+            runreg = re.search('run-\d+', fmri)
+            run = runreg.group(0)
+            sub_run = sub + '_' + run
+
+            out_dir = os.path.join(level1_dir, sub, run)
+
+            motion_regressor_tsv = os.path.join(motion_regressor_dir, sub + '_' + run + '_motion_regressors.txt')
+
+            fmriprep_mask = glob.glob(os.path.join(fmriprep_dir, 'func', sub + '*' + run + '*_desc-brain_mask.nii.gz'))
+
+            # Retreive inputs required to fill-in the design.fsf template:
+            #   - amri: Path to the anatomical image (this subject)
+            #   - fmri: Path to the functional image (this run)
+            #   - outdir: Path to output feat directory
+            #   - FSLDIR: Path to FSL (retreive from env variable FSLDIR)
+            #   - onsets_xx: Path to onset file for condition 'xx'
+            #   - motion_regressors: Path to .tsv containing the motion regressors outputted by fmriprep
+            values = {'fmri': fmri, 'out_dir': out_dir,
+                      'FSLDIR': os.environ['FSLDIR'], 'motion_regressors': motion_regressor_tsv, 'fmriprep_mask': fmriprep_mask[0]}
+
+            cond_files = sorted(glob.glob(os.path.join(spm_design_dir, sub_run + '*.txt')))
+            for i, cond_file in enumerate(cond_files):
+                values['spm_onsets_' + str(i+1)] = cond_file
+
+            spm_drift_files = sorted(glob.glob(os.path.join('spm_drift*.txt')))
+            for j, drift_file in enumerate(spm_drift_files):
+                vales['spm_drift_' + str(j+1)] = drift_file
+        
+            # Fill-in the template run-level design.fsf
+            with open(run_level_fsf) as f:
+                tpm = f.read()
+                t = string.Template(tpm)
+                run_fsf = t.substitute(values)
+
+            run_fsf_file = os.path.join(scripts_dir, sub_run + '_level1_spm_design.fsf')
+            with open(run_fsf_file, "w") as f:
+                f.write(run_fsf)
+
+            # Run feat
+            cmd = "feat " + run_fsf_file
+            print(cmd)
+            check_call(cmd, shell=True)
+
