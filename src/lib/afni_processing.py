@@ -534,7 +534,6 @@ def extract_design_columns(level1_dir, design_dir):
 
     sub_dirs = glob.glob(os.path.join(level1_dir, 'sub-*'))
 
-
     # Copying each subjects X.xmat.1D file to the design_dir and removing all the comment lines so the file only contains the X-matrix
     for sub_dir in sub_dirs:
         subreg_dash = re.search('sub-\d+', sub_dir)
@@ -547,10 +546,10 @@ def extract_design_columns(level1_dir, design_dir):
         design_file = glob.glob(os.path.join(results_dir, 'X.xmat.1D'))
         output_filename = os.path.join(design_dir, sub_dash + '_design_matrix.txt')
 
-        cmd = os.path.join('grep -v '^#' ' + design_file + ' > ' + output_filename)
+        cmd = os.path.join('grep -v \'^#\' ' + design_file + ' > ' + output_filename)
         print(cmd)
         check_call(cmd, shell=True)
-    
+
 
 
 
