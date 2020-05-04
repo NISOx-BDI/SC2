@@ -525,3 +525,31 @@ def create_confound_files(fmriprep_dir, confounds_dir, *args):
         rot_z_data = combined_regressor_data[["rot_z"]]
         rot_z_data.to_csv(os.path.join(confounds_dir, sub + '_' + 'combined_rot_z.1d'), index=None, sep='\t', header=False)
 
+def exptract_design_columns(level1_dir, design_dir):
+    """
+    For each sucject, exports each column of the run-level design matrix to a text-file so that the design can be inputted into FSL FEAT
+    """
+    if not os.path.isdir(design_dir):
+        os.mkdir(design_dir)
+
+    sub_dirs = glob.glob(os.path.join(level1_dir, 'sub-*'))
+
+
+    # Copying each subjects X.xmat.1D file to the design_dir and removing all the comment lines so the file only contains the X-matrix
+    for sub_dir in sub_dirs:
+        subreg_dash = re.search('sub-\d+', sub_dir)
+        sub_dash = subreg_dash.group(0)
+
+        results_dir = glob.glob(os.path.join(sub_dir, 'sub??.results'))[0]
+        subreg = re.search('sub\d+', results_dir)
+        sub = subreg.group(0)
+
+        design_file = glob.glob(os.path.join(results_dir, 'X.xmat.1D'))
+        output_filename = os.path.join(design_dir, sub + '_design_matrix.txt')
+
+        cmd = os.path.join('grep -v '^#' ' + design_file + ' > ' + output_filename)
+        print(cmd)
+        check_call(cmd, shell=True)
+
+
+
