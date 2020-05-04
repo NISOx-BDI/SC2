@@ -525,7 +525,7 @@ def create_confound_files(fmriprep_dir, confounds_dir, *args):
         rot_z_data = combined_regressor_data[["rot_z"]]
         rot_z_data.to_csv(os.path.join(confounds_dir, sub + '_' + 'combined_rot_z.1d'), index=None, sep='\t', header=False)
 
-def exptract_design_columns(level1_dir, design_dir):
+def extract_design_columns(level1_dir, design_dir):
     """
     For each sucject, exports each column of the run-level design matrix to a text-file so that the design can be inputted into FSL FEAT
     """
