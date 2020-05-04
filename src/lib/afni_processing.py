@@ -566,14 +566,14 @@ def extract_design_columns(level1_dir, design_dir):
         ndrift_basis = int(ndrift_basis)
 
         # For each run, extract all the run-level regressors in the design matrix to a text file
-        for r in range(1,nruns):
-            for q in range(1,nregressors):
+        for r in range(1,nruns+1):
+            for q in range(1,nregressors+1):
                 regressor_run_data = df.iloc[ntimepoints*(r-1):ntimepoints*r, q + ndrift_basis*nruns]
                 out_name = os.path.join(design_dir, sub_dash + '_run-' + format(r,'02') + '_regressor_' + format(q,'02') + '.txt')
                 regressor_run_data.to_csv(out_name, index=None, header=False)
 
     # Finally, get the drift basis 
-    for t in range(1,ndrift_basis):
+    for t in range(1,ndrift_basis+1):
         drift_basis_data = df.iloc[0:ntimepoints, t]
         out_name = os.path.join(design_dir, 'afni_drift_basis_' + format(t,'02') + '.txt')
         drift_basis_data.to_csv(out_name, index=None, header=False)
