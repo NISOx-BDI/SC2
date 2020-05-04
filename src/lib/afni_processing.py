@@ -562,7 +562,7 @@ def extract_design_columns(level1_dir, design_dir):
         ntimepoints = df[1].sum()
         nruns = len(df)/ntimepoints
         nruns = int(nruns)
-        ndrift_basis = (len(df.columns) - 7 - nregressors)/3
+        ndrift_basis = (len(df.columns) - 7 - nregressors)/nruns
         ndrift_basis = int(ndrift_basis)
 
         # For each run, extract all the run-level regressors in the design matrix to a text file
