@@ -575,7 +575,7 @@ def extract_design_columns(level1_dir, design_dir):
     # Finally, get the drift basis 
     for t in range(1,ndrift_basis):
         drift_basis_data = df.iloc[0:ntimepoints, t]
-        out_name = os.path.join(design_dir, ['afni_drift_basis_' + format(t,'02') + '.txt'])
+        out_name = os.path.join(design_dir, 'afni_drift_basis_' + format(t,'02') + '.txt')
         drift_basis_data.to_csv(out_name, index=None, header=False)
 
 
