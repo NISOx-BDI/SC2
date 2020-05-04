@@ -534,8 +534,13 @@ def extract_design_columns(level1_dir, design_dir):
 
     sub_dirs = glob.glob(os.path.join(level1_dir, 'sub-*'))
 
-    # Copying each subjects X.xmat.1D file to the design_dir and removing all the comment lines so the file only contains the X-matrix
+    # Getting the number of condition regressors from the onset dir
+    onsets_dir = os.path.join(level1_dir, os.pardir, 'ONSETS')
+    sub_regressors = glob.glob(os.path.join(onsets_dir,'sub-01*.1d'))
+    nregressors = len(sub_regressors)
+
     for sub_dir in sub_dirs:
+        # Copying each subjects X.xmat.1D file to the design_dir and removing all the comment lines so the file only contains the X-matrix
         subreg_dash = re.search('sub-\d+', sub_dir)
         sub_dash = subreg_dash.group(0)
 
@@ -549,6 +554,31 @@ def extract_design_columns(level1_dir, design_dir):
         cmd = os.path.join('grep -v \'^#\' ' + design_file + ' > ' + output_filename)
         print(cmd)
         check_call(cmd, shell=True)
+
+        # Load the design matrix up as dataframe (note, the first column (i.e. column [0]) are NaNs)
+        design_matrix_data = pd.read_csv(output_filename, sep=" ", header=None)
+        df = pd.DataFrame(design_matrix_data)
+
+        ntimepoints = df[1].sum()
+        nruns = len(df)/ntimepoints
+        ndrift_basis = (len(df.columns) - 7 - nregressors)/3
+        ndrift_basis = int(ndrift_basis)
+
+        # For each run, extract all the run-level regressors in the design matrix to a text file
+        for r in range(1,nruns):
+            for q in range(1,nregressors):
+                regressor_run_data = df.iloc[ntimepoints*(r-1):ntimepoints*r, q + ndrift_basis*nruns]
+                out_name = os.path.join(design_dir, sub_dash + '_run-' + format(r,'02') + '_regressor_' + format(q,'02') + '.txt')
+                regressor_run_data.to_csv(out_name, index=None, header=False)
+
+    # Finally, get the drift basis 
+    for t in range(1,ndrift_basis)
+        drift_basis_data = df.iloc[0:ntimepoints, t]
+        out_name = os.path.join(design_dir, ['afni_drift_basis_' format(t,'02') '.txt'])
+        drift_basis_data.to_csv(out_name, index=None, header=False)
+
+
+
 
 
 
