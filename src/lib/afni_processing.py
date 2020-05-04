@@ -543,7 +543,7 @@ def extract_design_columns(level1_dir, design_dir):
         subreg = re.search('sub\d+', results_dir)
         sub = subreg.group(0)
 
-        design_file = glob.glob(os.path.join(results_dir, 'X.xmat.1D'))
+        design_file = os.path.join(results_dir, 'X.xmat.1D')
         output_filename = os.path.join(design_dir, sub_dash + '_design_matrix.txt')
 
         cmd = os.path.join('grep -v \'^#\' ' + design_file + ' > ' + output_filename)
