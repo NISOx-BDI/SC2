@@ -518,6 +518,13 @@ def run_run_level_spm_design(fmriprep_dir, run_level_fsf, level1_dir, spm_design
     """
     Run a GLM for each fMRI run of each subject
     """
+
+    # If 'afni' is included in the function as an optional argument, we are using AFNI's design instead of SPM
+    if args:
+        software_package = args[0]
+    else:
+        software_package = 'spm'
+
     if not os.path.isdir(level1_dir):
         os.mkdir(level1_dir)
 
@@ -564,24 +571,15 @@ def run_run_level_spm_design(fmriprep_dir, run_level_fsf, level1_dir, spm_design
 
             cond_files = sorted(glob.glob(os.path.join(spm_design_dir, sub_run + '*.txt')))
 
-            # If 'afni' is included as optional argument, we are using AFNI's design instead of SPM
-            if args: 
-                for i, cond_file in enumerate(cond_files):
-                    values['afni_onsets_' + str(i+1)] = cond_file
-            else:
-                for i, cond_file in enumerate(cond_files):
-                    values['spm_onsets_' + str(i+1)] = cond_file
+            for i, cond_file in enumerate(cond_files):
+                values[software_package + '_onsets_' + str(i+1)] = cond_file
+
         
             # Fill-in the template run-level design.fsf
             with open(run_level_fsf) as f:
                 tpm = f.read()
                 t = string.Template(tpm)
                 run_fsf = t.substitute(values)
-
-            if args:
-                software_package = args[0]
-            else:
-                software_package = 'spm'
 
             run_fsf_file = os.path.join(scripts_dir, sub_run + '_level1_' + software_package + '_design.fsf')
             with open(run_fsf_file, "w") as f:
@@ -592,10 +590,17 @@ def run_run_level_spm_design(fmriprep_dir, run_level_fsf, level1_dir, spm_design
             print(cmd)
             check_call(cmd, shell=True)
 
-def run_run_level_spm_drift(fmriprep_dir, run_level_fsf, level1_dir, spm_design_dir):
+def run_run_level_spm_drift(fmriprep_dir, run_level_fsf, level1_dir, spm_design_dir, *args):
     """
     Run a GLM for each fMRI run of each subject
     """
+
+    # If 'afni' is included in the function as an optional argument, we are using AFNI's design and drift instead of SPM
+    if args:
+        software_package = args[0]
+    else:
+        software_package = 'spm'
+
     if not os.path.isdir(level1_dir):
         os.mkdir(level1_dir)
 
@@ -642,11 +647,11 @@ def run_run_level_spm_drift(fmriprep_dir, run_level_fsf, level1_dir, spm_design_
 
             cond_files = sorted(glob.glob(os.path.join(spm_design_dir, sub_run + '*.txt')))
             for i, cond_file in enumerate(cond_files):
-                values['spm_onsets_' + str(i+1)] = cond_file
+                values[software_package + '_onsets_' + str(i+1)] = cond_file
 
             spm_drift_files = sorted(glob.glob(os.path.join(spm_design_dir,'spm_drift*.txt')))
             for j, drift_file in enumerate(spm_drift_files):
-                values['spm_drift_' + str(j+1)] = drift_file
+                values[software_package + '_drift_' + str(j+1)] = drift_file
         
             # Fill-in the template run-level design.fsf
             with open(run_level_fsf) as f:
@@ -654,7 +659,7 @@ def run_run_level_spm_drift(fmriprep_dir, run_level_fsf, level1_dir, spm_design_
                 t = string.Template(tpm)
                 run_fsf = t.substitute(values)
 
-            run_fsf_file = os.path.join(scripts_dir, sub_run + '_level1_spm_drift.fsf')
+            run_fsf_file = os.path.join(scripts_dir, sub_run + '_level1_' + software_package + '_drift.fsf')
             with open(run_fsf_file, "w") as f:
                 f.write(run_fsf)
 
