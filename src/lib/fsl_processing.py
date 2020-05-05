@@ -514,7 +514,7 @@ def create_confound_files(fmriprep_dir, confounds_dir, *args):
             df_motion = df_motion.iloc[removed_TRs:]
             df_motion.to_csv(os.path.join(confounds_dir, sub + '_' + run + '_motion_regressors.txt'), index=None, sep='\t')
 
-def run_run_level_spm_design(fmriprep_dir, run_level_fsf, level1_dir, spm_design_dir):
+def run_run_level_spm_design(fmriprep_dir, run_level_fsf, level1_dir, spm_design_dir, *args):
     """
     Run a GLM for each fMRI run of each subject
     """
@@ -563,8 +563,14 @@ def run_run_level_spm_design(fmriprep_dir, run_level_fsf, level1_dir, spm_design
                       'FSLDIR': os.environ['FSLDIR'], 'motion_regressors': motion_regressor_tsv, 'fmriprep_mask': fmriprep_mask[0]}
 
             cond_files = sorted(glob.glob(os.path.join(spm_design_dir, sub_run + '*.txt')))
-            for i, cond_file in enumerate(cond_files):
-                values['spm_onsets_' + str(i+1)] = cond_file
+
+            # If 'afni' is included as optional argument, we are using AFNI's design instead of SPM
+            if args: 
+                for i, cond_file in enumerate(cond_files):
+                    values['afni_onsets_' + str(i+1)] = cond_file
+            else:
+                for i, cond_file in enumerate(cond_files):
+                    values['spm_onsets_' + str(i+1)] = cond_file
         
             # Fill-in the template run-level design.fsf
             with open(run_level_fsf) as f:
@@ -572,7 +578,12 @@ def run_run_level_spm_design(fmriprep_dir, run_level_fsf, level1_dir, spm_design
                 t = string.Template(tpm)
                 run_fsf = t.substitute(values)
 
-            run_fsf_file = os.path.join(scripts_dir, sub_run + '_level1_spm_design.fsf')
+            if args:
+                software_package = args[0]
+            else:
+                software_package = 'spm'
+
+            run_fsf_file = os.path.join(scripts_dir, sub_run + '_level1_' + software_package + '_design.fsf')
             with open(run_fsf_file, "w") as f:
                 f.write(run_fsf)
 
