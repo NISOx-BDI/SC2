@@ -444,44 +444,6 @@ def dice(afni_exc_set_file, spm_exc_set_file,
          fsl_perm_res_spm_neg_dice, fsl_perm_res_spm_neg_dice] = np.zeros(12)
         
     # *** Printing results
-    if fsl_exc_set_file is not None:
-        print "AFNI/FSL positive activation dice coefficient = %.6f, %.0f, %.0f" % afni_res_fsl_pos_dice
-    print "AFNI/SPM positive activation dice coefficient = %.6f, %.0f, %.0f" % afni_res_spm_pos_dice
-    if fsl_exc_set_file is not None:
-        print "FSL/SPM positive activation dice coefficient = %.6f, %.0f, %.0f" % fsl_res_spm_pos_dice
-        print "Permutation test AFNI/SPM positive activation dice coefficient = %.6f, %.0f, %.0f" % afni_res_spm_pos_dice_perm
-        print "Permutation test AFNI/FSL positive activation dice coefficient = %.6f, %.0f, %.0f" % afni_res_fsl_pos_dice_perm
-        print "Permutation test FSL/SPM positive activation dice coefficient = %.6f, %.0f, %.0f" % fsl_res_spm_pos_dice_perm
-        print "AFNI classical inference/permutation test positive activation dice coefficient = %.6f, %.0f, %.0f" % afni_rep_perm_pos_dice
-        print "FSL classical inference/permutation test positive activation dice coefficient = %.6f, %.0f, %.0f" % fsl_rep_perm_pos_dice
-        print "SPM classical inference/permutation test positive activation dice coefficient = %.6f, %.0f, %.0f" % spm_rep_perm_pos_dice
-        print "AFNI parametric/FSL permutation positive activation dice coefficient = %.6f, %.0f, %.0f" % afni_fsl_perm_res_pos_dice
-        print "AFNI parametric/SPM permutation positive activation dice coefficient = %.6f, %.0f, %.0f" % afni_spm_perm_res_pos_dice
-        print "FSL parametric/AFNI permutation positive activation dice coefficient = %.6f, %.0f, %.0f" % afni_perm_res_fsl_pos_dice
-        print "FSL parametric/SPM permutation positive activation dice coefficient = %.6f, %.0f, %.0f" % fsl_spm_perm_res_pos_dice
-        print "SPM parametric/AFNI permutation positive activation dice coefficient = %.6f, %.0f, %.0f" % afni_perm_res_spm_pos_dice
-        print "SPM parametric/FSL permutation positive activation dice coefficient = %.6f, %.0f, %.0f" % fsl_perm_res_spm_pos_dice
- 
-    if spm_perm_neg_exc is not None:
-        print "AFNI/FSL negative activation dice coefficient = %.6f, %.0f, %.0f" % afni_res_fsl_neg_dice
-        print "AFNI/SPM negative activation dice coefficient = %.6f, %.0f, %.0f" % afni_res_spm_neg_dice
-        print "FSL/SPM negative activation dice coefficient = %.6f, %.0f, %.0f" % fsl_res_spm_neg_dice
-        print "Permutation test AFNI/SPM negative activation dice coefficient = %.6f, %.0f, %.0f" % afni_res_spm_neg_dice_perm
-        print "Permutation test AFNI/FSL negative activation dice coefficient = %.6f, %.0f, %.0f" % afni_res_fsl_neg_dice_perm
-        print "Permutation test FSL/SPM negative activation dice coefficient = %.6f, %.0f, %.0f" % fsl_res_spm_neg_dice_perm
-        print "AFNI classical inference/permutation test negative activation dice coefficient = %.6f, %.0f, %.0f" % afni_rep_perm_neg_dice
-        print "FSL classical inference/permutation test negative activation dice coefficient = %.6f, %.0f, %.0f" % fsl_rep_perm_neg_dice
-        print "SPM classical inference/permutation test negative activation dice coefficient = %.6f, %.0f, %.0f" % spm_rep_perm_neg_dice    
-        print "AFNI parametric/FSL permutation negative activivation dice coefficient = %.6f, %.0f, %.0f" % afni_fsl_perm_res_neg_dice
-        print "AFNI parametric/SPM permutation negative activivation dice coefficient = %.6f, %.0f, %.0f" % afni_spm_perm_res_neg_dice
-        print "FSL parametric/AFNI permutation negative activivation dice coefficient = %.6f, %.0f, %.0f" % afni_perm_res_fsl_neg_dice
-        print "FSL parametric/SPM permutation negative activivation dice coefficient = %.6f, %.0f, %.0f" % fsl_spm_perm_res_neg_dice
-        print "SPM parametric/AFNI permutation negative activivation dice coefficient = %.6f, %.0f, %.0f" % afni_perm_res_spm_neg_dice
-        print "SPM parametric/FSL permutation negative activivation dice coefficient = %.6f, %.0f, %.0f" % fsl_perm_res_spm_neg_dice
-    
-    elif fsl_exc_set_file_neg is not None:
-        print "AFNI/FSL negative activation dice coefficient = %.6f, %.0f, %.0f" % afni_res_fsl_neg_dice
-
     # Creating a table of the Dice coefficients
     if fsl_exc_set_file is not None:
         dice_coefficients = np.zeros([6, 6, 3])

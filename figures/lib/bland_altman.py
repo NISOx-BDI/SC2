@@ -126,8 +126,10 @@ def bland_altman_values(data1_file, data2_file, reslice_on_2=True,
 
     md = np.mean(diff)                   # Mean of the difference
     sd = np.std(diff, axis=0)            # Standard deviation of the difference
+    
+    corr = stats.pearsonr(data1,data2)[0]
 
-    return mean, diff, md, sd
+    return mean, diff, md, sd, corr
 
 def z_to_t(z_stat_file, t_stat_file, N):
     # Convert AFNI permutation Z-stat back to T-stat
@@ -151,7 +153,7 @@ def z_to_t(z_stat_file, t_stat_file, N):
 def bland_altman_plot(f, gs, stat_file_1, stat_file_2, title, x_lab, y_lab,
                       reslice_on_2=True, filename=None, lims=(-10,10,-8,8)):
     ax1 = f.add_subplot(gs[:-1, 1:5])
-    mean, diff, md, sd = bland_altman_values(
+    mean, diff, md, sd, corr = bland_altman_values(
         stat_file_1, stat_file_2, reslice_on_2)
     hb = ax1.hexbin(mean, diff, bins='log', cmap='viridis', gridsize=50, extent=lims)
     ax1.axis(lims)
@@ -178,7 +180,8 @@ def bland_altman_plot(f, gs, stat_file_1, stat_file_2, title, x_lab, y_lab,
 
     if filename is not None:
         plt.savefig(os.path.join('img', filename))
-
+        
+    return md, sd, corr
 
 def bland_altman(Title, afni_stat_file, spm_stat_file, AFNI_SPM_title,
                  AFNI_FSL_title=None, FSL_SPM_title=None, fsl_stat_file=None,
@@ -210,7 +213,7 @@ def bland_altman(Title, afni_stat_file, spm_stat_file, AFNI_SPM_title,
             y_label = ' of T-statistics (AFNI - FSL)'
             lims=(-10,10,-8,8)
 
-        bland_altman_plot(f, gs00, afni_stat_file, fsl_stat_file,
+        md, sd, corr = bland_altman_plot(f, gs00, afni_stat_file, fsl_stat_file,
                           AFNI_FSL_title, x_label,
                           y_label, False,
                           'Fig_' + study + '_BA_AFNI_FSL.png', lims=lims)
@@ -226,6 +229,8 @@ def bland_altman(Title, afni_stat_file, spm_stat_file, AFNI_SPM_title,
         f.suptitle(Title, fontsize=20, x=0.47, y=1.00)
 
         plt.show()
+        
+        print "Mean = ",md,", Standard Devation = ",sd,", Correlation Coefficient = ",corr
 
     # AFNI/SPM B-A plots
     f = plt.figure(figsize=(13, 5))
@@ -256,7 +261,7 @@ def bland_altman(Title, afni_stat_file, spm_stat_file, AFNI_SPM_title,
         y_label = ' of T-statistics (AFNI - SPM)'
         lims=(-10,10,-8,8)
 
-    bland_altman_plot(f, gs00, afni_stat_file, spm_stat_file,
+    md, sd, corr = bland_altman_plot(f, gs00, afni_stat_file, spm_stat_file,
                       AFNI_SPM_title,
                       x_label,
                       y_label, False,
@@ -274,6 +279,8 @@ def bland_altman(Title, afni_stat_file, spm_stat_file, AFNI_SPM_title,
 
     plt.show()
 
+    print "Mean = ",md,", Standard Devation = ",sd,", Correlation Coefficient = ",corr
+    
     # FSL/SPM B-A plots
     if fsl_stat_file is not None:
         f = plt.figure(figsize=(13, 5))
@@ -292,7 +299,7 @@ def bland_altman(Title, afni_stat_file, spm_stat_file, AFNI_SPM_title,
             y_label = ' of T-statistics (FSL - SPM)'
             lims=(-10,10,-8,8)
 
-        bland_altman_plot(f, gs00, fsl_stat_file, spm_stat_file,
+        md, sd, corr = bland_altman_plot(f, gs00, fsl_stat_file, spm_stat_file,
                           FSL_SPM_title,
                           x_label,
                           y_label,
@@ -310,8 +317,8 @@ def bland_altman(Title, afni_stat_file, spm_stat_file, AFNI_SPM_title,
                           )
 
         plt.show()
-
-
+        print "Mean = ",md,", Standard Devation = ",sd,", Correlation Coefficient = ",corr
+        
 def bland_altman_intra(Title, afni_stat_file, afni_perm_file,
                        fsl_stat_file, fsl_perm_file,
                        spm_stat_file, spm_perm_file, num_subjects=None,
@@ -332,12 +339,15 @@ def bland_altman_intra(Title, afni_stat_file, afni_perm_file,
     gs00 = gridspec.GridSpecFromSubplotSpec(
         5, 6, subplot_spec=gs0[0], hspace=0.50, wspace=1.3)
 
-    bland_altman_plot(f1, gs00, afni_stat_file, afni_perm_file,
+    md, sd, corr = bland_altman_plot(f1, gs00, afni_stat_file, afni_perm_file,
                       'AFNI Para - Perm',
                       ' of T-statistics',
                       ' of T-statistics (Para - Perm)',
                       filename='Fig_' + study + '_BA_AFNI.png'
                       )
+    
+    plt.show()
+    print "Mean = ",md,", Standard Devation = ",sd,", Correlation Coefficient = ",corr
 
     # FSL Parametric/FSL Permutation Bland-Altman
     f = plt.figure(figsize=(13, 5))
@@ -348,12 +358,15 @@ def bland_altman_intra(Title, afni_stat_file, afni_perm_file,
     gs01 = gridspec.GridSpecFromSubplotSpec(
         5, 6, subplot_spec=gs0[0], hspace=0.50, wspace=1.3)
 
-    bland_altman_plot(f, gs01, fsl_stat_file, fsl_perm_file,
+    md, sd, corr = bland_altman_plot(f, gs01, fsl_stat_file, fsl_perm_file,
                       'FSL Para - Perm',
                       ' of T-statistics',
                       ' of T-statistics (Para - Perm)',
                       filename='Fig_' + study + '_BA_FSL.png'
                       )
+    
+    plt.show()
+    print "Mean = ",md,", Standard Devation = ",sd,", Correlation Coefficient = ",corr
 
     # SPM Parametric/SPM Permutation Bland-Altman
     f = plt.figure(figsize=(13, 5))
@@ -363,7 +376,7 @@ def bland_altman_intra(Title, afni_stat_file, afni_perm_file,
     gs02 = gridspec.GridSpecFromSubplotSpec(
         5, 6, subplot_spec=gs0[0], hspace=0.50, wspace=1.3)
 
-    bland_altman_plot(
+    md, sd, corr = bland_altman_plot(
         f, gs02, spm_stat_file, spm_perm_file,
         'SPM Para - Perm',
         ' of T-statistics',
@@ -378,6 +391,7 @@ def bland_altman_intra(Title, afni_stat_file, afni_perm_file,
     f1.suptitle(Title, fontsize=20, x=0.47, y=1.00)
 
     plt.show()
+    print "Mean = ",md,", Standard Devation = ",sd,", Correlation Coefficient = ",corr
     
 def scatter_values(data1_file, data2_file, reslice_on_2=True,
                         *args, **kwargs):
@@ -614,7 +628,7 @@ def bland_altman_old_comparison(Title, afni_stat_file, spm_stat_file, afni_old_s
     y_label = ' of T-statistics (AFNI - AFNI old)'
     lims=(-10,10,-8,8)
 
-    bland_altman_plot(f, gs00, afni_stat_file, afni_old_stat_file,
+    md, sd, corr = bland_altman_plot(f, gs00, afni_stat_file, afni_old_stat_file,
                       AFNI_title, x_label,
                       y_label, False,
                       'Fig_' + study + '_BA_AFNI_AFNI_OLD.png', lims=lims)
@@ -630,6 +644,7 @@ def bland_altman_old_comparison(Title, afni_stat_file, spm_stat_file, afni_old_s
     f.suptitle(Title, fontsize=20, x=0.47, y=1.00)
 
     plt.show()
+    print "Mean = ",md,", Standard Devation = ",sd,", Correlation Coefficient = ",corr
     
     if fsl_stat_file is not None:
     # FSL B-A plot
@@ -644,7 +659,7 @@ def bland_altman_old_comparison(Title, afni_stat_file, spm_stat_file, afni_old_s
         y_label = ' of T-statistics (FSL - FSL old)'
         lims=(-10,10,-8,8)
 
-        bland_altman_plot(f, gs00, fsl_stat_file, fsl_old_stat_file,
+        md, sd, corr = bland_altman_plot(f, gs00, fsl_stat_file, fsl_old_stat_file,
                           FSL_title,
                           x_label,
                           y_label, False,
@@ -661,6 +676,7 @@ def bland_altman_old_comparison(Title, afni_stat_file, spm_stat_file, afni_old_s
                           lims=lims)
 
         plt.show()
+        print "Mean = ",md,", Standard Devation = ",sd,", Correlation Coefficient = ",corr
 
     # SPM B-A plot
     f = plt.figure(figsize=(13, 5))
@@ -674,7 +690,7 @@ def bland_altman_old_comparison(Title, afni_stat_file, spm_stat_file, afni_old_s
     y_label = ' of T-statistics (SPM - SPM_OLD)'
     lims=(-10,10,-8,8)
 
-    bland_altman_plot(f, gs00, spm_stat_file, spm_old_stat_file,
+    md, sd, corr = bland_altman_plot(f, gs00, spm_stat_file, spm_old_stat_file,
                       SPM_title, x_label,
                       y_label, False,
                       'Fig_' + study + '_BA_SPM_SPM_OLD.png', lims=lims)
@@ -688,3 +704,4 @@ def bland_altman_old_comparison(Title, afni_stat_file, spm_stat_file, afni_old_s
                       ' of T-statistics (SPM - SPM old)')
 
     plt.show()
+    print "Mean = ",md,", Standard Devation = ",sd,", Correlation Coefficient = ",corr

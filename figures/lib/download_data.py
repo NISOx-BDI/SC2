@@ -122,7 +122,14 @@ def download_data(nv_collection, study, output_dir):
             ('05FWECorrected_OneSampT_pos_exc_set.nii.gz', 'fsl_perm_exc_set_pos.nii.gz'),
             ('05FWECorrected_OneSampT_neg_exc_set.nii.gz', 'fsl_perm_exc_set_neg.nii.gz'),
             ('snpmT%2B.nii.gz', 'spm_perm.nii.gz'),
-            ('SnPM_pos_filtered.nii.gz', 'spm_perm_exc_set_pos.nii.gz')
+            ('SnPM_pos_filtered.nii.gz', 'spm_perm_exc_set_pos.nii.gz'),
+            # AFNI/SPM design in FSL permutation results
+            ('OneSampT_tstat1_1.nii.gz', 'afni_design_perm.nii.gz'),
+            ('05FWECorrected_OneSampT_pos_exc_set_1.nii.gz', 'afni_design_perm_exc_set_pos.nii.gz'),
+            ('05FWECorrected_OneSampT_neg_exc_set_1.nii.gz', 'afni_design_perm_exc_set_neg.nii.gz'),
+            ('OneSampT_tstat1_2.nii.gz', 'spm_design_perm.nii.gz'),
+            ('05FWECorrected_OneSampT_pos_exc_set_2.nii.gz', 'spm_design_perm_exc_set_pos.nii.gz'),
+            ('05FWECorrected_OneSampT_neg_exc_set_2.nii.gz', 'spm_design_perm_exc_set_neg.nii.gz'),
         )
     else:
         # No permutation analyses for ds120
