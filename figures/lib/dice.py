@@ -118,7 +118,7 @@ def sorrenson_dice(data1_file, data2_file, reslice=True):
     return dices
 
 
-def ds109_dice_matrix(df, filename=None, comparison=False):
+def ds109_dice_matrix(df, filename=None, comparison=False, perm=False, design=False):
     mask = np.tri(df.shape[0], k=0)
     mask = 1-mask
     dfmsk = np.ma.array(df[:,:,0], mask=mask)
@@ -148,10 +148,24 @@ def ds109_dice_matrix(df, filename=None, comparison=False):
 
 
     plt.title('Positive Activation Dice Coefficients', fontsize=15)
-    if comparison==False:
-        labels=['','AFNI','FSL','SPM','AFNI perm','FSL perm','SPM perm']
-    else:
-        labels=['','AFNI','FSL','SPM','AFNI old', 'FSL old', 'SPM old']
+    if design==False:
+        if comparison==False:
+            labels=['','AFNI','FSL','SPM','AFNI perm','FSL perm','SPM perm']
+            plt.suptitle("DICE: Inter- and Intra-Software", fontsize=20)
+        else:
+            labels=['','AFNI SC2','FSL SC2','SPM SC2','AFNI SC1', 'FSL SC1', 'SPM SC1']
+            if perm==False:
+                plt.suptitle("DICE: SC1 vs SC2 parametric results", fontsize=20)
+            else:
+                plt.suptitle("DICE: SC1 vs SC2 permutation results", fontsize=20)
+    if design==True:
+        if perm==False:
+            labels=['','FSL','FSL (AFNI D.)','AFNI','FSL','FSL (SPM D.)','SPM']
+            plt.suptitle("DICE: FSL with AFNI/SPM design parametric results", fontsize=20)
+        if perm==True:
+            labels=['','FSL','FSL (AFNI D.)','AFNI','FSL','FSL (SPM D.)','SPM']
+            plt.suptitle("DICE: FSL with AFNI/SPM design permutation results", fontsize=20)
+    
     ax1.set_xticklabels(labels,fontsize=12)
     ax1.set_yticklabels(labels,fontsize=12)
     # Add colorbar, make sure to specify tick locations to match desired ticklabels
@@ -163,11 +177,11 @@ def ds109_dice_matrix(df, filename=None, comparison=False):
 
     if filename is not None:
         plt.savefig(os.path.join('img', filename))
-
+        
     plt.show()
 
 
-def negative_dice_matrix(df, filename=None, comparison=False, ds109_flag=False):
+def negative_dice_matrix(df, filename=None, comparison=False, ds109_flag=False, design=False):
     mask = np.tri(df.shape[0], k=0)
     mask = 1-mask
     dfmsk = np.ma.array(df[:,:,0], mask=mask)
@@ -195,12 +209,19 @@ def negative_dice_matrix(df, filename=None, comparison=False, ds109_flag=False):
                              edgecolor='0.3'))
 
     plt.title('Negative Activation Dice Coefficients', fontsize=15)
-    if comparison==False:
-        labels=['','AFNI','FSL','SPM','AFNI perm','FSL perm','SPM perm']
-    elif ds109_flag ==True:
-        labels=['','AFNI','','FSL','','AFNI old','','FSL old']
-    else:
-        labels=['','AFNI','FSL','SPM','AFNI old','FSL old','SPM old']
+    if design==False:
+        if comparison==False:
+            labels=['','AFNI','FSL','SPM','AFNI perm','FSL perm','SPM perm']
+        elif ds109_flag ==True:
+            labels=['','AFNI SC2','','FSL SC2','','AFNI SC1','','FSL SC1']
+        else:
+            labels=['','AFNI SC2','FSL SC2','SPM SC2','AFNI SC1','FSL SC1','SPM SC1']
+    if design==True: 
+        if ds109_flag==True:
+            labels=['','FSL', '', 'FSL (AFNI D.)', '', 'FSL', '', 'FSL (SPM D.)', '']
+        else:
+            labels=['','FSL','FSL (AFNI D.)','AFNI','FSL','FSL (SPM D.)','SPM']
+        
     ax1.set_xticklabels(labels,fontsize=12)
     ax1.set_yticklabels(labels,fontsize=12)
     # Add colorbar, make sure to specify tick locations to match desired ticklabels
@@ -215,7 +236,7 @@ def negative_dice_matrix(df, filename=None, comparison=False, ds109_flag=False):
 
     plt.show()
 
-def ds109_neg_dice_matrix(df, filename=None, comparison=False):
+def ds109_neg_dice_matrix(df, filename=None, comparison=False, design=False, ds109_flag=False):
     mask = np.tri(df.shape[0], k=0)
     mask = 1-mask
     dfmsk = np.ma.array(df[:, :, 0], mask=mask)
@@ -243,12 +264,14 @@ def ds109_neg_dice_matrix(df, filename=None, comparison=False):
                              edgecolor='0.3'))
 
     plt.title('Negative Activation Dice Coefficients', fontsize=15)
-    if comparison==False:
-        xlabels=['','AFNI', '', 'FSL']
-        ylabels=['','','AFNI','','','','FSL','','']
-    else:
-        xlabels=['','FSL', '', 'FSL old']
-        ylabels=['','','FSL','','','','FSL old','','']        
+    if design==False:
+        if comparison==False:
+            xlabels=['','AFNI', '', 'FSL']
+            ylabels=['','','AFNI','','','','FSL','','']
+        else:
+            xlabels=['','FSL SC2', '', 'FSL SC1']
+            ylabels=['','','FSL SC2','','','','FSL SC1','','']
+        
     ax1.set_xticklabels(xlabels,fontsize=12)
     ax1.set_yticklabels(ylabels,fontsize=12)
     # Add colorbar, make sure to specify tick locations to match desired ticklabels
@@ -350,8 +373,7 @@ def dice(afni_exc_set_file, spm_exc_set_file,
          afni_stat_file=None, spm_stat_file=None, 
          afni_perm=None, spm_perm=None,
          fsl_stat_file=None, fsl_perm=None,
-         study=None
-         ):
+         study=None):
 
     afni_exc_set_file = mask_using_nan(afni_exc_set_file, afni_stat_file)
     spm_exc_set_file = mask_using_nan(spm_exc_set_file, spm_stat_file)
@@ -576,8 +598,7 @@ def dice_old_comparison(afni_pos_exc=None, old_afni_pos_exc=None,
          afni_neg_exc=None, old_afni_neg_exc=None, fsl_pos_exc=None, old_fsl_pos_exc=None,
          fsl_neg_exc=None, old_fsl_neg_exc=None, spm_pos_exc=None, old_spm_pos_exc=None,
          spm_neg_exc=None, old_spm_neg_exc=None, afni_stat_file=None, old_afni_stat_file=None,
-         fsl_stat_file=None, old_fsl_stat_file=None, spm_stat_file=None, old_spm_stat_file=None, study=""
-         ):
+         fsl_stat_file=None, old_fsl_stat_file=None, spm_stat_file=None, old_spm_stat_file=None, study="", perm=False, design=False, ds109_flag=False):
     
     if afni_pos_exc is not None:
         afni_pos_exc = mask_using_nan(afni_pos_exc, afni_stat_file)
@@ -737,7 +758,7 @@ def dice_old_comparison(afni_pos_exc=None, old_afni_pos_exc=None,
                 1
                 ]
 
-        ds109_dice_matrix(dice_coefficients, 'Fig_' + study + '_Comparison_Dice.png', comparison=True)
+        ds109_dice_matrix(dice_coefficients, 'Fig_' + study + '_Comparison_Dice.png', perm=perm, comparison=True, design=design)
 
     if spm_neg_exc is not None:
         negative_dice_coefficients = np.zeros([6, 6, 3])
@@ -791,7 +812,7 @@ def dice_old_comparison(afni_pos_exc=None, old_afni_pos_exc=None,
                 old_fsl_old_spm_neg_dice[i],
                 1
                 ]
-        negative_dice_matrix(negative_dice_coefficients, 'Fig_' + study + '_Comparison_neg_Dice.png', comparison=True, ds109_flag=False)
+        negative_dice_matrix(negative_dice_coefficients, 'Fig_' + study + '_Comparison_neg_Dice.png', comparison=True, ds109_flag=False, design=design)
     elif fsl_neg_exc is not None:
         if afni_neg_exc is not None:
             ds109_neg_dice_coefficients = np.zeros([4, 4, 3])
@@ -802,7 +823,7 @@ def dice_old_comparison(afni_pos_exc=None, old_afni_pos_exc=None,
                 ds109_neg_dice_coefficients[:, 2, i] = [afni_old_afni_neg_dice[i], fsl_old_afni_neg_dice[i], 1, old_afni_old_fsl_neg_dice [i]]
                 ds109_neg_dice_coefficients[:, 3, i] = [afni_old_fsl_neg_dice[i], fsl_old_fsl_neg_dice[i], old_afni_old_fsl_neg_dice[i], 1]
 
-            negative_dice_matrix(ds109_neg_dice_coefficients, 'Fig_' + study + '_Comparison_neg_Dice.png', comparison=True, ds109_flag=True)
+            negative_dice_matrix(ds109_neg_dice_coefficients, 'Fig_' + study + '_Comparison_neg_Dice.png', comparison=True, ds109_flag=ds109_flag, design=design)
         else:
             ds109_perm_neg_dice_coefficients = np.zeros([2, 2, 3])
 
@@ -810,7 +831,7 @@ def dice_old_comparison(afni_pos_exc=None, old_afni_pos_exc=None,
                 ds109_perm_neg_dice_coefficients[:, 0, i] = [1, fsl_old_fsl_neg_dice[i]]
                 ds109_perm_neg_dice_coefficients[:, 1, i] = [fsl_old_fsl_neg_dice[i], 1]
 
-            ds109_neg_dice_matrix(ds109_perm_neg_dice_coefficients, 'Fig_' + study + '_Comparison_perm_neg_Dice.png', comparison=True)
+            ds109_neg_dice_matrix(ds109_perm_neg_dice_coefficients, 'Fig_' + study + '_Comparison_perm_neg_Dice.png', comparison=True, design=design, ds109_flag=ds109_flag)
 
     else:
         ds120_dice_coefficients = np.zeros([2, 2, 3])
