@@ -24,7 +24,7 @@ def sorrenson_dice(data1_file, data2_file, reslice=True):
         data2 = data2_img.get_data()
         data1 = data1_img.get_data()
 
-        # Get asbolute values (positive and negative blobs are of interest)
+        # Get absolute values (positive and negative blobs are of interest)
         data2 = np.absolute(data2)
         data1 = np.absolute(data1)
 
@@ -41,7 +41,6 @@ def sorrenson_dice(data1_file, data2_file, reslice=True):
             data2_res = np.absolute(data2_res)
 
         # Masking (compute Dice using intersection of both masks)
-        if reslice:
             background_1 = np.logical_or(np.isnan(data1), np.isnan(data2_res))
             background_2 = np.logical_or(np.isnan(data1_res), np.isnan(data2))
 
@@ -97,8 +96,7 @@ def sorrenson_dice(data1_file, data2_file, reslice=True):
         if reslice:
             data1_res = np.reshape(data1_res, -1)
             data2_res = np.reshape(data2_res, -1)
-
-        if reslice:
+            
             dice_res_1 = 1-scipy.spatial.distance.dice(data1_res>0, data2>0)
             dice_res_2 = 1-scipy.spatial.distance.dice(data1>0, data2_res>0)
 
@@ -813,7 +811,7 @@ def dice_old_comparison(afni_pos_exc=None, old_afni_pos_exc=None,
                 1
                 ]
         negative_dice_matrix(negative_dice_coefficients, 'Fig_' + study + '_Comparison_neg_Dice.png', comparison=True, ds109_flag=False, design=design)
-    elif fsl_neg_exc is not None:
+    elif old_fsl_neg_exc is not None:
         if afni_neg_exc is not None:
             ds109_neg_dice_coefficients = np.zeros([4, 4, 3])
 
@@ -833,7 +831,7 @@ def dice_old_comparison(afni_pos_exc=None, old_afni_pos_exc=None,
 
             ds109_neg_dice_matrix(ds109_perm_neg_dice_coefficients, 'Fig_' + study + '_Comparison_perm_neg_Dice.png', comparison=True, design=design, ds109_flag=ds109_flag)
 
-    else:
+    elif design==False:
         ds120_dice_coefficients = np.zeros([2, 2, 3])
 
         for i in range(0, 3):

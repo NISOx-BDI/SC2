@@ -126,11 +126,11 @@ def correlation_summary_across_processing_opts_matrix(df, title):
     plt.title(title, fontsize=15)
     
     if title=="Correlations: Summary across common processing options - Parametric" or title=="Correlations: Summary across common processing options - Permutation":
-        xlabels=['','AFNI','','SPM']
-        ylabels=['','FSL','','FSL (common fMRIprep)','','FSL (common fMRIprep + design)']
+        xlabels=['','AFNI','SPM']
+        ylabels=['','FSL','','FSL (common fMRIprep)','','FSL (common fMRIprep + design)','','FSL (common fMRIprep + design + drift)']
     else:
-        xlabels=['','FSL/AFNI','','FSL/SPM','','AFNI/SPM']
-        ylabels=['','Software preproc, Software design','','FMRIprep preproc, Software design','','FMRIprep preproc, Common design']
+        xlabels=['','FSL/AFNI','FSL/SPM','AFNI/SPM']
+        ylabels=['','Software preproc, Software design','','fMRIprep preproc, Software design','','fMRIprep preproc, Common design','','fMRIprep preproc, Common design, Common drift']
         
     ax1.set_xticklabels(xlabels,fontsize=12)
     ax1.set_yticklabels(ylabels,fontsize=12)
@@ -235,7 +235,7 @@ def correlation_tables(stat_file_1, stat_file_2, stat_file_3, stat_file_4, stat_
 
     correlation_matrix(correlation_coefficients, title)
         
-def correlation_summary_across_processing_opts(afni_SC1_stat, fsl_SC1_stat, spm_SC1_stat, afni_SC2_stat, fsl_SC2_stat, spm_SC2_stat, fsl_afni_design, fsl_spm_design, title="", num_subjects=None):
+def correlation_summary_across_processing_opts(afni_SC1_stat, fsl_SC1_stat, spm_SC1_stat, afni_SC2_stat, fsl_SC2_stat, spm_SC2_stat, fsl_afni_design, fsl_spm_design, fsl_afni_drift, fsl_spm_drift, title="", num_subjects=None):
         
     if title=="Correlations: Summary across common processing options - Permutation":
         afni_SC1_stat = z_to_t(afni_SC2_stat,
@@ -249,29 +249,33 @@ def correlation_summary_across_processing_opts(afni_SC1_stat, fsl_SC1_stat, spm_
     correlation_11=get_correlation_value(afni_SC1_stat, fsl_SC1_stat)
     correlation_12=get_correlation_value(afni_SC2_stat, fsl_SC2_stat)
     correlation_13=get_correlation_value(afni_SC2_stat, fsl_afni_design)
+    correlation_14=get_correlation_value(afni_SC2_stat, fsl_afni_drift)
     
     # Get all correlations for the SPM column
     correlation_21=get_correlation_value(spm_SC1_stat, fsl_SC1_stat)
     correlation_22=get_correlation_value(spm_SC2_stat, fsl_SC2_stat)
     correlation_23=get_correlation_value(spm_SC2_stat, fsl_spm_design)
+    correlation_24=get_correlation_value(spm_SC2_stat, fsl_spm_drift)
     
-    correlation_coefficients = np.zeros([3,2])
+    correlation_coefficients = np.zeros([4,2])
         
     correlation_coefficients[:, 0] = [
     correlation_11,
     correlation_12,
-    correlation_13
+    correlation_13,
+    correlation_14
     ]
     
     correlation_coefficients[:, 1] = [
     correlation_21,
     correlation_22,
-    correlation_23
+    correlation_23,
+    correlation_24
     ]
     
     correlation_summary_across_processing_opts_matrix(correlation_coefficients, title)
     
-def correlation_summary_across_processing_opts_alternate(afni_SC1_stat, fsl_SC1_stat, spm_SC1_stat, afni_SC2_stat, fsl_SC2_stat, spm_SC2_stat, fsl_afni_design, fsl_spm_design, title="", num_subjects=None):
+def correlation_summary_across_processing_opts_alternate(afni_SC1_stat, fsl_SC1_stat, spm_SC1_stat, afni_SC2_stat, fsl_SC2_stat, spm_SC2_stat, fsl_afni_design, fsl_spm_design, fsl_afni_drift, fsl_spm_drift, title="", num_subjects=None):
     
     if title=="Correlations: Summary across common processing options - Permutation":
         afni_SC1_stat = z_to_t(afni_SC2_stat,
@@ -285,35 +289,41 @@ def correlation_summary_across_processing_opts_alternate(afni_SC1_stat, fsl_SC1_
     correlation_11=get_correlation_value(afni_SC1_stat, fsl_SC1_stat)
     correlation_12=get_correlation_value(afni_SC2_stat, fsl_SC2_stat)
     correlation_13=get_correlation_value(afni_SC2_stat, fsl_afni_design)
+    correlation_14=get_correlation_value(afni_SC2_stat, fsl_afni_drift)
     
     # Get all correlations for the FSL/SPM column
     correlation_21=get_correlation_value(spm_SC1_stat, fsl_SC1_stat)
     correlation_22=get_correlation_value(spm_SC2_stat, fsl_SC2_stat)
     correlation_23=get_correlation_value(spm_SC2_stat, fsl_spm_design)
+    correlation_24=get_correlation_value(spm_SC2_stat, fsl_spm_drift)
     
     # Get all correlations for the AFNI/SPM column
     correlation_31=get_correlation_value(spm_SC1_stat, afni_SC1_stat)
     correlation_32=get_correlation_value(spm_SC2_stat, afni_SC2_stat)
     correlation_33=0
+    correlation_34=0
     
-    correlation_coefficients = np.zeros([3,3])
+    correlation_coefficients = np.zeros([4,3])
         
     correlation_coefficients[:, 0] = [
     correlation_11,
     correlation_12,
-    correlation_13
+    correlation_13,
+    correlation_14    
     ]
     
     correlation_coefficients[:, 1] = [
     correlation_21,
     correlation_22,
-    correlation_23
+    correlation_23,
+    correlation_24
     ]
 
     correlation_coefficients[:, 2] = [
     correlation_31,
     correlation_32,
-    correlation_33
+    correlation_33,
+    correlation_34
     ]
     
     correlation_summary_across_processing_opts_matrix(correlation_coefficients, title)

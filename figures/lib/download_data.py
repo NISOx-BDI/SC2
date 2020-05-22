@@ -130,6 +130,13 @@ def download_data(nv_collection, study, output_dir):
             ('OneSampT_tstat1_2.nii.gz', 'spm_design_perm.nii.gz'),
             ('05FWECorrected_OneSampT_pos_exc_set_2.nii.gz', 'spm_design_perm_exc_set_pos.nii.gz'),
             ('05FWECorrected_OneSampT_neg_exc_set_2.nii.gz', 'spm_design_perm_exc_set_neg.nii.gz'),
+            # AFNI/SPM drift in FSL permutation results
+            ('OneSampT_tstat1_3.nii.gz', 'afni_drift_perm.nii.gz'),
+            ('05FWECorrected_OneSampT_pos_exc_set_3.nii.gz', 'afni_drift_perm_exc_set_pos.nii.gz'),
+            ('05FWECorrected_OneSampT_neg_exc_set_3.nii.gz', 'afni_drift_perm_exc_set_neg.nii.gz'),
+            ('OneSampT_tstat1_4.nii.gz', 'spm_drift_perm.nii.gz'),
+            ('05FWECorrected_OneSampT_pos_exc_set_4.nii.gz', 'spm_drift_perm_exc_set_pos.nii.gz'),
+            ('05FWECorrected_OneSampT_neg_exc_set_4.nii.gz', 'spm_drift_perm_exc_set_neg.nii.gz'),
         )
     else:
         # No permutation analyses for ds120
