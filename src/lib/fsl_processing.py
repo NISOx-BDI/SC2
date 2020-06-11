@@ -689,7 +689,7 @@ def run_group_level_spm_subject_level(spm_subject_level_dir, group_level_fsf, le
     #   - out_dir: Path to output feat directory
     #   - feat_xx: Path to subject-level combined feat directory 'xx'
     values = dict()
-    values = {'out_dir': level3_dir, 'FSLDIR': os.environ['FSLDIR']}
+    values = {'out_dir': os.path.join(level3_dir,'group'), 'FSLDIR': os.environ['FSLDIR']}
 
     if software_package == 'spm':
         copes = glob.glob(os.path.join(
