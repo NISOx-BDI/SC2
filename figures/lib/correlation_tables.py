@@ -300,8 +300,8 @@ def correlation_summary_across_processing_opts_alternate(afni_SC1_stat, fsl_SC1_
     # Get all correlations for the AFNI/SPM column
     correlation_31=get_correlation_value(spm_SC1_stat, afni_SC1_stat)
     correlation_32=get_correlation_value(spm_SC2_stat, afni_SC2_stat)
-    correlation_33=0
-    correlation_34=0
+    correlation_33=get_correlation_value(fsl_spm_design, fsl_afni_design)
+    correlation_34=get_correlation_value(fsl_spm_drift, fsl_afni_drift)
     
     correlation_coefficients = np.zeros([4,3])
         
