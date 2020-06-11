@@ -671,6 +671,9 @@ def run_run_level_spm_drift(fmriprep_dir, run_level_fsf, level1_dir, spm_design_
 def run_group_level_spm_subject_level(spm_subject_level_dir, group_level_fsf, level3_dir,
                              *args):
 
+    if not os.path.isdir(level3_dir):
+        os.mkdir(level3_dir)
+
     scripts_dir = os.path.join(level3_dir, os.pardir, 'SCRIPTS')
 
     if not os.path.isdir(scripts_dir):
