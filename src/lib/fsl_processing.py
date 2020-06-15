@@ -676,7 +676,7 @@ def fsl_spm_subject_level_files(spm_level1_dir, fsl_level1_dir, fsl_spm_subject_
         os.mkdir(fsl_spm_subject_dir)
 
     # All subject directories
-    sub_dirs = glob.glob(os.path.join(level1_dir, 'sub-*'))
+    sub_dirs = glob.glob(os.path.join(fsl_level1_dir, 'sub-*'))
 
     # For each subject
     for sub_dir in sub_dirs:
