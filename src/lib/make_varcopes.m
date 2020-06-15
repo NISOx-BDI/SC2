@@ -22,7 +22,7 @@ function make_varcopes(level1_dir)
 		spm_imcalc(SPM.VResMS,varfn,'i1*vsca',{[],[],[],spm_type('float32'),sprintf('Contrast %d variance', ic)},vsca);
 
 		error_dof = SPM.xX.erdf;
-		fileID = fopen(sprintf('%s_error_dof.txt', sub)),'w');
+		fileID = fopen(fullfile(out_dir, sprintf('%s_error_dof.txt', sub)),'w');
 		fprintf(fprintf(fileID,"%4.1f",error_dof));
 		fclose(fildID);
 	end
