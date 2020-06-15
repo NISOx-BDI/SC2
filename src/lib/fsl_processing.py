@@ -10,6 +10,7 @@ import stat
 import numpy as np
 import pandas as pd
 from distutils.dir_util import copy_tree
+import gzip
 
 
 def copy_and_BET(raw_dir, preproc_dir, *args):
