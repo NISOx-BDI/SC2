@@ -9,6 +9,7 @@ import shutil
 import stat
 import numpy as np
 import pandas as pd
+from distutils.dir_util import copy_tree
 
 
 def copy_and_BET(raw_dir, preproc_dir, *args):
@@ -668,52 +669,23 @@ def run_run_level_spm_drift(fmriprep_dir, run_level_fsf, level1_dir, spm_design_
             print(cmd)
             check_call(cmd, shell=True)
 
-def run_group_level_spm_subject_level(spm_subject_level_dir, group_level_fsf, level3_dir,
-                             *args):
+def fsl_spm_subject_level_files(spm_level1_dir, fsl_level1_dir, fsl_spm_subject_dir):
+	# Copies the FSL subject-level combined.feat dirs, and replaces the copes and varcopes with SPM's corresponding images
 
-    if not os.path.isdir(level3_dir):
-        os.mkdir(level3_dir)
+    if not os.path.isdir(fsl_spm_subject_dir):
+        os.mkdir(fsl_spm_subject_dir)
 
-    scripts_dir = os.path.join(level3_dir, os.pardir, 'SCRIPTS')
+    # All subject directories
+    sub_dirs = glob.glob(os.path.join(level1_dir, 'sub-*'))
 
-    if not os.path.isdir(scripts_dir):
-        os.mkdir(scripts_dir)
+    # For each subject
+    for sub_dir in sub_dirs:
 
-    # If 'afni' is included in the function as an optional argument, we are using AFNI's first-level copes instead of SPM
-    if args:
-        software_package = args[0]
-    else:
-        software_package = 'spm'
+        subreg = re.search('sub-\d+', sub_dir)
+        sub = subreg.group(0)
 
-    # Retreive values inputs to fill-in the design.fsf template:
-    #   - out_dir: Path to output feat directory
-    #   - feat_xx: Path to subject-level combined feat directory 'xx'
-    values = dict()
-    values = {'out_dir': os.path.join(level3_dir,'group'), 'FSLDIR': os.environ['FSLDIR']}
+        os.mkdir(os.path.join(fsl_spm_subject_dir, sub))
+        copy_tree(os.path.join(sub_dir,'combined.gfeat'), os.path.join(fsl_spm_subject_dir,sub,'combined.gfeat'))
 
-    if software_package == 'spm':
-        copes = glob.glob(os.path.join(
-            spm_subject_level_dir, 'sub-*', 'con_0001.nii'))
-    else:
-        copes = glob.glob(os.path.join(
-            spm_subject_level_dir, 'beta_niftis', '*.nii.gz'))
 
-    for i, cope in enumerate(copes):
-        values['cope_' + str(i+1)] = cope
-
-    # Fill-in the template group-level design.fsf
-    with open(group_level_fsf) as f:
-        tpm = f.read()
-        t = string.Template(tpm)
-        sub_fsf = t.substitute(values)
-
-    group_fsf_file = os.path.join(scripts_dir, 'level3_' + software_package + '_subject_level.fsf')
-    
-    with open(group_fsf_file, "w") as f:
-        f.write(sub_fsf)
-
-    # Run feat
-    cmd = "feat " + group_fsf_file
-    print(cmd)
-    check_call(cmd, shell=True)
 
