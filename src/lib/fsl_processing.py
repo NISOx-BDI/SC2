@@ -670,7 +670,7 @@ def run_run_level_spm_drift(fmriprep_dir, run_level_fsf, level1_dir, spm_design_
             check_call(cmd, shell=True)
 
 def fsl_spm_subject_level_files(spm_level1_dir, fsl_level1_dir, fsl_spm_subject_dir):
-	# Copies the FSL subject-level combined.feat dirs, and replaces the copes and varcopes with SPM's corresponding images
+    # Copies the FSL subject-level combined.feat dirs, and replaces the copes and varcopes with SPM's corresponding images
 
     if not os.path.isdir(fsl_spm_subject_dir):
         os.mkdir(fsl_spm_subject_dir)
@@ -691,19 +691,19 @@ def fsl_spm_subject_level_files(spm_level1_dir, fsl_level1_dir, fsl_spm_subject_
         spm_varcope_path = fullfile(os.path.join(spm_level1_dir, 'varcopes', sub + '_convar_0001.nii'))
 
         fsl_cope_path = fullfile(os.path.join(fsl_spm_subject_dir,sub,'combined.gfeat','cope1.feat','stats','cope1.nii.gz'))
-    	fsl_varcope_path = fullfile(os.path.join(fsl_spm_subject_dir,sub,'combined.gfeat','cope1.feat','stats','varcope1.nii.gz'))
+        fsl_varcope_path = fullfile(os.path.join(fsl_spm_subject_dir,sub,'combined.gfeat','cope1.feat','stats','varcope1.nii.gz'))
 
-    	# Delete FSL copes and varcopes and replace with SPMs
-    	os.remove(fsl_cope_path)
-    	os.remove(fsl_varcope_path)
+        # Delete FSL copes and varcopes and replace with SPMs
+        os.remove(fsl_cope_path)
+        os.remove(fsl_varcope_path)
 
-    	with open(spm_cope_path, 'rb') as f_in:
-    		with gzip.open(fsl_cope_path, 'wb') as f_out:
-        		shutil.copyfileobj(f_in, f_out)
+        with open(spm_cope_path, 'rb') as f_in:
+            with gzip.open(fsl_cope_path, 'wb') as f_out:
+                shutil.copyfileobj(f_in, f_out)
 
-    	with open(spm_varcope_path, 'rb') as f_in:
-    		with gzip.open(fsl_varcope_path, 'wb') as f_out:
-        		shutil.copyfileobj(f_in, f_out)
+        with open(spm_varcope_path, 'rb') as f_in:
+            with gzip.open(fsl_varcope_path, 'wb') as f_out:
+                shutil.copyfileobj(f_in, f_out)
 
 
 
