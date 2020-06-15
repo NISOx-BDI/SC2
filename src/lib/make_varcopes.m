@@ -23,6 +23,6 @@ function make_varcopes(level1_dir)
 
 		error_dof = SPM.xX.erdf
 
-		save -ascii fullfile(out_dir, sprintf('%s_error_dof.txt', sub)) error_dof
+		save -text fullfile(out_dir, sprintf('%s_error_dof.txt', sub)) error_dof
 	end
 end
