@@ -690,9 +690,11 @@ def fsl_spm_subject_level_files(spm_level1_dir, fsl_level1_dir, fsl_spm_subject_
 
         spm_cope_path = os.path.join(spm_level1_dir, sub, 'con_0001.nii')
         spm_varcope_path = os.path.join(spm_level1_dir, 'varcopes', sub + '_convar_0001.nii')
+        spm_dof_path = os.path.join(spm_level1_dir, 'varcopes', sub + '_error_dof.txt')
 
         fsl_cope_path = os.path.join(fsl_spm_subject_dir,sub,'combined.gfeat','cope1.feat','stats','cope1.nii.gz')
         fsl_varcope_path = os.path.join(fsl_spm_subject_dir,sub,'combined.gfeat','cope1.feat','stats','varcope1.nii.gz')
+        fsl_dof_path = os.path.join(fsl_spm_subject_dir,sub,'combined.gfeat','cope1.feat','stats','tdof_t1.nii.gz')
 
         # Delete FSL copes and varcopes and replace with SPMs
         os.remove(fsl_cope_path)
@@ -705,6 +707,17 @@ def fsl_spm_subject_level_files(spm_level1_dir, fsl_level1_dir, fsl_spm_subject_
         with open(spm_varcope_path, 'rb') as f_in:
             with gzip.open(fsl_varcope_path, 'wb') as f_out:
                 shutil.copyfileobj(f_in, f_out)
+
+        dof_file = open(spm_dof_path, 'r')
+        lines = dof_file.readlines()
+        dof = 0
+        for line in lines:
+            number = float(line)
+            dof = dof + number
+
+        cmd = "fslmaths " + fsl_dof_path " -bin -mul " + dof + " " + fsl_dof_path
+        print(cmd)
+        check_call(cmd, shell=True)
 
 
 
