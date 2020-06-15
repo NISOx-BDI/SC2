@@ -23,7 +23,7 @@ function make_varcopes(level1_dir)
 
 		error_dof = SPM.xX.erdf;
 		fileID = fopen(fullfile(out_dir, sprintf('%s_error_dof.txt', sub)),'w');
-		fprintf(fprintf(fileID,"%4.1f",error_dof));
+		fprintf(fileID,"%4.1f",error_dof);
 		fclose(fileID);
 	end
 end
