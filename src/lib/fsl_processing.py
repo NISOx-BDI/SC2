@@ -715,7 +715,7 @@ def fsl_spm_subject_level_files(spm_level1_dir, fsl_level1_dir, fsl_spm_subject_
             number = float(line)
             dof = dof + number
 
-        cmd = "fslmaths " + fsl_dof_path " -bin -mul " + dof + " " + fsl_dof_path
+        cmd = "fslmaths " + fsl_dof_path + " -bin -mul " + dof + " " + fsl_dof_path
         print(cmd)
         check_call(cmd, shell=True)
 
