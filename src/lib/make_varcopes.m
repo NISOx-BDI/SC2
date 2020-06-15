@@ -20,5 +20,9 @@ function make_varcopes(level1_dir)
 		varfn = fullfile(out_dir, sprintf('%s_convar_%04d.nii', sub, ic));
 		cd(sub_dirs{i})
 		spm_imcalc(SPM.VResMS,varfn,'i1*vsca',{[],[],[],spm_type('float32'),sprintf('Contrast %d variance', ic)},vsca);
+
+		error_dof = SPM.xX.error_dof
+		dof_fn = fullfile(out_dir, sprintf('%s_error_dof.txt', sub));
+		save(dof_fn, error_dof)
 	end
 end
