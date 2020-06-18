@@ -245,7 +245,7 @@ set fmri(regstandard_yn) 1
 set fmri(alternateReference_yn) 0
 
 # Standard image
-set fmri(regstandard) "/well/win/software/packages/fsl/6.0.3/data/standard/MNI152_T1_2mm_brain"
+set fmri(regstandard) "/well/nichols/shared/fsl/6.0.3/data/standard/MNI152_T1_2mm_brain"
 
 # Search space for registration to standard space
 # 0   : No search
@@ -282,7 +282,7 @@ set fmri(confoundevs) 1
 set confoundev_files(1) "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/FSL/LEVEL1/../MOTION_REGRESSORS/sub-32_run-01_motion_regressors.txt"
 
 # EV 1 title
-set fmri(evtitle1) "false_belief_question"
+set fmri(evtitle1) "false_belief_story"
 
 # Basic waveform shape (EV 1)
 # 0 : Square
@@ -332,7 +332,7 @@ set fmri(ortho1.3) 0
 set fmri(ortho1.4) 0
 
 # EV 2 title
-set fmri(evtitle2) "false_belief_story"
+set fmri(evtitle2) "false_belief_question"
 
 # Basic waveform shape (EV 2)
 # 0 : Square
@@ -382,7 +382,7 @@ set fmri(ortho2.3) 0
 set fmri(ortho2.4) 0
 
 # EV 3 title
-set fmri(evtitle3) "false_photo_question"
+set fmri(evtitle3) "false_photo_story"
 
 # Basic waveform shape (EV 3)
 # 0 : Square
@@ -432,7 +432,7 @@ set fmri(ortho3.3) 0
 set fmri(ortho3.4) 0
 
 # EV 4 title
-set fmri(evtitle4) "false_photo_story"
+set fmri(evtitle4) "false_photo_question"
 
 # Basic waveform shape (EV 4)
 # 0 : Square
@@ -494,16 +494,16 @@ set fmri(conpic_real.1) 1
 set fmri(conname_real.1) "false_belief_vs_false_photograph"
 
 # Real contrast_real vector 1 element 1
-set fmri(con_real1.1) 0.0
+set fmri(con_real1.1) 1.0
 
 # Real contrast_real vector 1 element 2
-set fmri(con_real1.2) 1.0
+set fmri(con_real1.2) 0
 
 # Real contrast_real vector 1 element 3
-set fmri(con_real1.3) 0
+set fmri(con_real1.3) -1.0
 
 # Real contrast_real vector 1 element 4
-set fmri(con_real1.4) -1.0
+set fmri(con_real1.4) 0
 
 # Display images for contrast_orig 1
 set fmri(conpic_orig.1) 1
@@ -512,16 +512,16 @@ set fmri(conpic_orig.1) 1
 set fmri(conname_orig.1) "false_belief_vs_false_photograph"
 
 # Real contrast_orig vector 1 element 1
-set fmri(con_orig1.1) 0.0
+set fmri(con_orig1.1) 1.0
 
 # Real contrast_orig vector 1 element 2
-set fmri(con_orig1.2) 1.0
+set fmri(con_orig1.2) 0
 
 # Real contrast_orig vector 1 element 3
-set fmri(con_orig1.3) 0
+set fmri(con_orig1.3) -1.0
 
 # Real contrast_orig vector 1 element 4
-set fmri(con_orig1.4) -1.0
+set fmri(con_orig1.4) 0
 
 # Contrast masking - use >0 instead of thresholding?
 set fmri(conmask_zerothresh_yn) 0
