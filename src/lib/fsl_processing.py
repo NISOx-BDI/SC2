@@ -691,10 +691,12 @@ def fsl_spm_subject_level_files(spm_level1_dir, fsl_level1_dir, fsl_spm_subject_
         spm_cope_path = os.path.join(spm_level1_dir, sub, 'con_0001.nii')
         spm_varcope_path = os.path.join(spm_level1_dir, 'varcopes', sub + '_convar_0001.nii')
         spm_dof_path = os.path.join(spm_level1_dir, 'varcopes', sub + '_error_dof.txt')
+	spm_mask_path = os.path.join(spm_level1_dir, sub, 'mask.nii')	
 
         fsl_cope_path = os.path.join(fsl_spm_subject_dir,sub,'combined.gfeat','cope1.feat','stats','cope1.nii.gz')
         fsl_varcope_path = os.path.join(fsl_spm_subject_dir,sub,'combined.gfeat','cope1.feat','stats','varcope1.nii.gz')
         fsl_dof_path = os.path.join(fsl_spm_subject_dir,sub,'combined.gfeat','cope1.feat','stats','tdof_t1.nii.gz')
+	fsl_mask_path = os.path.join(fsl_spm_subject_dir,sub,'combined.gfeat','cope1.feat','mask.nii.gz')
 
         # Delete FSL copes and varcopes and replace with SPMs
         os.remove(fsl_cope_path)
