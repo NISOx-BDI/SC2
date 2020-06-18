@@ -691,16 +691,17 @@ def fsl_spm_subject_level_files(spm_level1_dir, fsl_level1_dir, fsl_spm_subject_
         spm_cope_path = os.path.join(spm_level1_dir, sub, 'con_0001.nii')
         spm_varcope_path = os.path.join(spm_level1_dir, 'varcopes', sub + '_convar_0001.nii')
         spm_dof_path = os.path.join(spm_level1_dir, 'varcopes', sub + '_error_dof.txt')
-	spm_mask_path = os.path.join(spm_level1_dir, sub, 'mask.nii')	
+        spm_mask_path = os.path.join(spm_level1_dir, sub, 'mask.nii')	
 
         fsl_cope_path = os.path.join(fsl_spm_subject_dir,sub,'combined.gfeat','cope1.feat','stats','cope1.nii.gz')
         fsl_varcope_path = os.path.join(fsl_spm_subject_dir,sub,'combined.gfeat','cope1.feat','stats','varcope1.nii.gz')
         fsl_dof_path = os.path.join(fsl_spm_subject_dir,sub,'combined.gfeat','cope1.feat','stats','tdof_t1.nii.gz')
-	fsl_mask_path = os.path.join(fsl_spm_subject_dir,sub,'combined.gfeat','cope1.feat','mask.nii.gz')
+        fsl_mask_path = os.path.join(fsl_spm_subject_dir,sub,'combined.gfeat','cope1.feat','mask.nii.gz')
 
         # Delete FSL copes and varcopes and replace with SPMs
         os.remove(fsl_cope_path)
         os.remove(fsl_varcope_path)
+        os.remove(fsl_mask_path)
 
         with open(spm_cope_path, 'rb') as f_in:
             with gzip.open(fsl_cope_path, 'wb') as f_out:
@@ -708,6 +709,10 @@ def fsl_spm_subject_level_files(spm_level1_dir, fsl_level1_dir, fsl_spm_subject_
 
         with open(spm_varcope_path, 'rb') as f_in:
             with gzip.open(fsl_varcope_path, 'wb') as f_out:
+                shutil.copyfileobj(f_in, f_out)
+
+        with open(spm_mask_path, 'rb') as f_in:
+            with gzip.open(fsl_mask_path, 'wb') as f_out:
                 shutil.copyfileobj(f_in, f_out)
 
         dof_file = open(spm_dof_path, 'r')
