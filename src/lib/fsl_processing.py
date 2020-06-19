@@ -670,7 +670,7 @@ def run_run_level_spm_drift(fmriprep_dir, run_level_fsf, level1_dir, spm_design_
             print(cmd)
             check_call(cmd, shell=True)
 
-def fsl_spm_subject_level_files(spm_level1_dir, fsl_level1_dir, fsl_spm_subject_dir):
+def fsl_spm_subject_level_files(spm_level1_dir, fsl_level1_dir, fsl_spm_subject_dir, *args):
     # Copies the FSL subject-level combined.feat dirs, and replaces the copes and varcopes with SPM's corresponding images
 
     if not os.path.isdir(fsl_spm_subject_dir):
@@ -678,6 +678,12 @@ def fsl_spm_subject_level_files(spm_level1_dir, fsl_level1_dir, fsl_spm_subject_
 
     # All subject directories
     sub_dirs = glob.glob(os.path.join(fsl_level1_dir, 'sub-*'))
+
+    # If 'afni' is included in the function as an optional argument, we are using AFNI's first-level results instead of SPM
+    if args:
+        software_package = args[0]
+    else:
+        software_package = 'spm'
 
     # For each subject
     for sub_dir in sub_dirs:
@@ -688,10 +694,16 @@ def fsl_spm_subject_level_files(spm_level1_dir, fsl_level1_dir, fsl_spm_subject_
         os.mkdir(os.path.join(fsl_spm_subject_dir, sub))
         copy_tree(os.path.join(sub_dir,'combined.gfeat'), os.path.join(fsl_spm_subject_dir,sub,'combined.gfeat'))
 
-        spm_cope_path = os.path.join(spm_level1_dir, sub, 'con_0001.nii')
-        spm_varcope_path = os.path.join(spm_level1_dir, 'varcopes', sub + '_convar_0001.nii')
-        spm_dof_path = os.path.join(spm_level1_dir, 'varcopes', sub + '_error_dof.txt')
-        spm_mask_path = os.path.join(spm_level1_dir, sub, 'mask.nii')	
+        if software_package == 'spm':
+            spm_cope_path = os.path.join(spm_level1_dir, sub, 'con_0001.nii')
+            spm_varcope_path = os.path.join(spm_level1_dir, 'varcopes', sub + '_convar_0001.nii')
+            spm_dof_path = os.path.join(spm_level1_dir, 'varcopes', sub + '_error_dof.txt')
+            spm_mask_path = os.path.join(spm_level1_dir, sub, 'mask.nii')
+        elif software_package == 'afni':
+            spm_cope_path = os.path.join(spm_level1_dir, 'varcopes', sub + '_cope_masked.nii.gz')
+            spm_varcope_path = os.path.join(spm_level1_dir, 'varcopes', sub + '_varcope_masked.nii.gz')
+            spm_dof_path = os.path.join(spm_level1_dir, 'varcopes', sub + '_error_dof.txt')
+            spm_mask_path = os.path.join(spm_level1_dir, 'varcopes', sub + '_mask.nii.gz')
 
         fsl_cope_path = os.path.join(fsl_spm_subject_dir,sub,'combined.gfeat','cope1.feat','stats','cope1.nii.gz')
         fsl_varcope_path = os.path.join(fsl_spm_subject_dir,sub,'combined.gfeat','cope1.feat','stats','varcope1.nii.gz')
@@ -703,17 +715,22 @@ def fsl_spm_subject_level_files(spm_level1_dir, fsl_level1_dir, fsl_spm_subject_
         os.remove(fsl_varcope_path)
         os.remove(fsl_mask_path)
 
-        with open(spm_cope_path, 'rb') as f_in:
-            with gzip.open(fsl_cope_path, 'wb') as f_out:
-                shutil.copyfileobj(f_in, f_out)
+        if software_package == 'spm':
+            with open(spm_cope_path, 'rb') as f_in:
+                with gzip.open(fsl_cope_path, 'wb') as f_out:
+                    shutil.copyfileobj(f_in, f_out)
 
-        with open(spm_varcope_path, 'rb') as f_in:
-            with gzip.open(fsl_varcope_path, 'wb') as f_out:
-                shutil.copyfileobj(f_in, f_out)
+            with open(spm_varcope_path, 'rb') as f_in:
+                with gzip.open(fsl_varcope_path, 'wb') as f_out:
+                    shutil.copyfileobj(f_in, f_out)
 
-        with open(spm_mask_path, 'rb') as f_in:
-            with gzip.open(fsl_mask_path, 'wb') as f_out:
-                shutil.copyfileobj(f_in, f_out)
+            with open(spm_mask_path, 'rb') as f_in:
+                with gzip.open(fsl_mask_path, 'wb') as f_out:
+                    shutil.copyfileobj(f_in, f_out)
+        elif software_package == 'afni':
+            shutil.copyfile(spm_cope_path, fsl_cope_path)
+            shutil.copyfile(spm_varcope_path, fsl_varcope_path)
+            shutil.copyfile(spm_mask_path, fsl_mask_path)
 
         dof_file = open(spm_dof_path, 'r')
         lines = dof_file.readlines()
