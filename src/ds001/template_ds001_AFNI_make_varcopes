@@ -1,7 +1,7 @@
 cd $NIFTI_dir
 
 for f in $level1_dir/sub*; do
-    subID=`echo $$(basename $$f) | awk -F '[-]' '{print $2}'`
+    subID=`echo $$(basename $$f) | awk -F '[-]' '{print $$2}'`
 
     # Make COPE NIFTI
     $AFNI_bin/3dAFNItoNIFTI -prefix $NIFTI_dir/sub-$$subID_cope.nii.gz $level1_dir/sub-$$subID/sub$$subID.results/stats.sub$$subID_REML+tlrc['pumps_demean_vs_ctrl_demean#0_Coef']
