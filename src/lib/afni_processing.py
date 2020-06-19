@@ -578,9 +578,38 @@ def extract_design_columns(level1_dir, design_dir):
         out_name = os.path.join(design_dir, 'afni_drift_basis_' + format(t,'02') + '.txt')
         drift_basis_data.to_csv(out_name, index=None, header=False)
 
+def make_varcopes(level1_dir, fmriprep_dir, make_nifti_and_varcopes_template, home_dir, AFNI_SPM_singularity_image, AFNI_bin):
 
+    out_dir = os.path.join(level1_dir, 'varcopes')
 
+    if not os.path.isdir(out_dir):
+        os.mkdir(out_dir)
 
+    scripts_dir = os.path.join(level1_dir, os.pardir, 'SCRIPTS')
 
+    # Fill-in the make varcopes template
+    values = dict()
+    values["NIFTI_dir"] = out_dir
+    values["level1_dir"] = level1_dir
+    values["AFNI_bin"] = AFNI_bin
+    values["fmriprep_dir"] = fmriprep_dir
+
+    with open(make_nifti_and_varcopes_template) as f:
+        tpm = f.read()
+        t = string.Template(tpm)
+        group_script = t.substitute(values)
+
+    make_nifti_and_varcopes_file = os.path.join(scripts_dir, 'make_nifti_and_varcopes.sh')
+
+    with open(make_nifti_and_varcopes_file, "w") as f:
+            f.write(make_nifti_and_varcopes_file)
+
+    # Make the script executable and run
+    st = os.stat(make_nifti_and_varcopes_file)
+    os.chmod(make_nifti_and_varcopes_file, st.st_mode | stat.S_IEXEC)
+
+    cmd = os.path.join('singularity exec --cleanenv -B ' + home_dir + ' ' + AFNI_SPM_singularity_image + ' ' + make_nifti_and_varcopes_file)
+    print(cmd)
+    check_call(cmd, shell=True)
 
 
