@@ -602,7 +602,7 @@ def make_varcopes(level1_dir, fmriprep_dir, make_nifti_and_varcopes_template, ho
     make_nifti_and_varcopes_file = os.path.join(scripts_dir, 'make_nifti_and_varcopes.sh')
 
     with open(make_nifti_and_varcopes_file, "w") as f:
-            f.write(make_nifti_and_varcopes_file)
+            f.write(group_script)
 
     # Make the script executable and run
     st = os.stat(make_nifti_and_varcopes_file)
