@@ -33,7 +33,7 @@ for f in $level1_dir/sub*; do
     $AFNI_bin/3dcalc                                \
     -a $NIFTI_dir/sub-$${subID}_cope_masked.nii.gz           \
     -b $NIFTI_dir/sub-$${subID}_tstat_masked.nii.gz           \
-    -expr 'a/b'                                     \
+    -expr '(a/b)^2'                                     \
     -prefix $NIFTI_dir/sub-$${subID}_varcope_masked.nii.gz 
 done
 
