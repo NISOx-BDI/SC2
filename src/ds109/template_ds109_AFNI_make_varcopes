@@ -37,5 +37,5 @@ for f in $level1_dir/sub*; do
     -prefix $NIFTI_dir/sub-$${subID}_varcope_masked.nii.gz 
 
     # Getting the estimated error dof
-    awk '/final/{print $4}' $level1_dir/sub-$$subID/sub$$subID.results/out.df_info.txt >> $NIFTI_dir/sub-$${subID}_error_dof.txt
+    awk '/final/{print $$4}' $level1_dir/sub-$$subID/sub$$subID.results/out.df_info.txt >> $NIFTI_dir/sub-$${subID}_error_dof.txt
 done
