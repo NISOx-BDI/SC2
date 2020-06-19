@@ -1,0 +1,38 @@
+cd $NIFTI_dir
+
+for f in $level1_dir/sub*; do
+    subID=`echo $$(basename $$f) | awk -F '[-]' '{print $$2}'`
+
+    # Make COPE NIFTI
+    $AFNI_bin/3dAFNItoNIFTI -prefix $NIFTI_dir/sub-$${subID}_cope.nii.gz $level1_dir/sub-$$subID/sub$$subID.results/stats.sub$${subID}_REML+tlrc['false_belief_vs_false_photo#0_Coef']
+
+    # Make T-STAT NIFTI
+    $AFNI_bin/3dAFNItoNIFTI -prefix $NIFTI_dir/sub-$${subID}_tstat.nii.gz $level1_dir/sub-$$subID/sub$$subID.results/stats.sub$${subID}_REML+tlrc['false_belief_vs_false_photo#0_Tstat']
+
+    # Create subject-level masks
+    $AFNI_bin/3dmask_tool                                             \
+        -prefix $NIFTI_dir/sub-$${subID}_mask.nii.gz                    \
+        -input `ls $fmriprep_dir/sub-$$subID/func/*brain_mask.nii.gz` \
+        -frac 1.0
+
+    # Masking COPE
+    $AFNI_bin/3dcalc                                \
+    -a $NIFTI_dir/sub-$${subID}_cope.nii.gz		    \
+    -b $NIFTI_dir/sub-$${subID}_mask.nii.gz           \
+    -expr 'a*b'                                     \
+    -prefix $NIFTI_dir/sub-$${subID}_cope_masked.nii.gz 
+
+    # Masking TSTAT
+    $AFNI_bin/3dcalc                                \
+    -a $NIFTI_dir/sub-$${subID}_tstat.nii.gz           \
+    -b $NIFTI_dir/sub-$${subID}_mask.nii.gz           \
+    -expr 'a*b'                                     \
+    -prefix $NIFTI_dir/sub-$${subID}_tstat_masked.nii.gz 
+
+    # Making VARCOPE
+    $AFNI_bin/3dcalc                                \
+    -a $NIFTI_dir/sub-$${subID}_cope_masked.nii.gz           \
+    -b $NIFTI_dir/sub-$${subID}_tstat_masked.nii.gz           \
+    -expr '(a/b)^2'                                     \
+    -prefix $NIFTI_dir/sub-$${subID}_varcope_masked.nii.gz 
+done
