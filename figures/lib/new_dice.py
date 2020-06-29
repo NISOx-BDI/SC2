@@ -97,8 +97,15 @@ def sorrenson_dice(data1_file, data2_file, reslice=True):
             data1_res = np.reshape(data1_res, -1)
             data2_res = np.reshape(data2_res, -1)
             
-            dice_res_1 = 1-scipy.spatial.distance.dice(data1_res>0, data2>0)
-            dice_res_2 = 1-scipy.spatial.distance.dice(data1>0, data2_res>0)
+            if (data1_res * data2).sum() == 0:
+                dice_res_1 = 0
+            else:
+                dice_res_1 = 1-scipy.spatial.distance.dice(data1_res>0, data2>0)
+                
+            if (data1 * data2_res).sum() == 0:
+                dice_res_2 = 0
+            else:
+                dice_res_2 = 1-scipy.spatial.distance.dice(data1>0, data2_res>0)
 
             if not np.isclose(dice_res_1, dice_res_2, atol=0.01):
                 warnings.warn("Resliced 1/2 and 2/1 dices are not close")
