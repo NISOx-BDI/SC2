@@ -111,6 +111,35 @@ def correlation_matrix(df, title):
     ax1.yaxis.set_ticks_position('none')
     ax1.xaxis.set_ticks_position('none')
     
+def new_correlation_matrix(df, title):
+    mask = np.tri(df.shape[0], k=0)
+    mask = 1-mask
+    dfmsk = np.ma.array(df[:,:], mask=mask)
+    fig = plt.figure(figsize=(8,8))
+    ax1 = fig.add_subplot(111)
+    cmap = cm.get_cmap('Reds')
+    cmap.set_bad('w')
+    cax = ax1.imshow(dfmsk, interpolation="nearest", cmap=cmap, vmin=0, vmax=1)
+    
+    for (i, j), z in np.ndenumerate(df):
+        if (j < i):
+             ax1.text(j, i, '{:0.3f}'.format(z), ha='center', va='center',
+             bbox=dict(boxstyle='round', facecolor='white', 
+             edgecolor='0.3'))
+                
+    labels=['','1','2','3','4','5','6','7']
+    
+    plt.title(title, fontsize=15)
+        
+    ax1.set_xticklabels(labels,fontsize=12)
+    ax1.set_yticklabels(labels,fontsize=12)
+    # Add colorbar, make sure to specify tick locations to match desired ticklabels
+    fig.colorbar(cax, ticks=[0,1/6,2/6,3/6,4/6,5/6,1], fraction=0.046, pad=0.04)
+    ax1.spines['right'].set_visible(False)
+    ax1.spines['top'].set_visible(False)
+    ax1.yaxis.set_ticks_position('none')
+    ax1.xaxis.set_ticks_position('none')
+    
 def correlation_summary_across_processing_opts_matrix(df, title):
     fig = plt.figure()
     ax1 = fig.add_subplot(111)
@@ -327,3 +356,108 @@ def correlation_summary_across_processing_opts_alternate(afni_SC1_stat, fsl_SC1_
     ]
     
     correlation_summary_across_processing_opts_matrix(correlation_coefficients, title)
+    
+def new_correlation_tables(stat_file_1, stat_file_2, stat_file_3, stat_file_4, stat_file_5, stat_file_6, stat_file_7, title="", num_subjects=None):
+    
+    # Convert AFNI permutation Z-stat to T-stat
+    if title == "Perm Correlations: AFNI and FSL":
+        stat_file_1 = z_to_t(stat_file_1,
+        stat_file_1.replace('.nii.gz', '_t.nii.gz'),
+        num_subjects)
+        
+    # Get all correlation values between the 6 images
+    correlation_12 = get_correlation_value(stat_file_1, stat_file_2)
+    correlation_13 = get_correlation_value(stat_file_1, stat_file_3)
+    correlation_14 = get_correlation_value(stat_file_1, stat_file_4)
+    correlation_15 = get_correlation_value(stat_file_1, stat_file_5)
+    correlation_16 = get_correlation_value(stat_file_1, stat_file_6)
+    correlation_17 = get_correlation_value(stat_file_1, stat_file_7)
+    correlation_23 = get_correlation_value(stat_file_2, stat_file_3)
+    correlation_24 = get_correlation_value(stat_file_2, stat_file_4)
+    correlation_25 = get_correlation_value(stat_file_2, stat_file_5)
+    correlation_26 = get_correlation_value(stat_file_2, stat_file_6)
+    correlation_27 = get_correlation_value(stat_file_2, stat_file_7)
+    correlation_34 = get_correlation_value(stat_file_3, stat_file_4)
+    correlation_35 = get_correlation_value(stat_file_3, stat_file_5)
+    correlation_36 = get_correlation_value(stat_file_3, stat_file_6)
+    correlation_37 = get_correlation_value(stat_file_3, stat_file_7)
+    correlation_45 = get_correlation_value(stat_file_4, stat_file_5)
+    correlation_46 = get_correlation_value(stat_file_4, stat_file_6)
+    correlation_47 = get_correlation_value(stat_file_4, stat_file_7)
+    correlation_56 = get_correlation_value(stat_file_5, stat_file_6)
+    correlation_57 = get_correlation_value(stat_file_5, stat_file_7)
+    correlation_67 = get_correlation_value(stat_file_6, stat_file_7)
+    
+    correlation_coefficients = np.zeros([7,7])
+    
+    correlation_coefficients[:, 0] = [
+    1,
+    correlation_12,
+    correlation_13,
+    correlation_14,
+    correlation_15,
+    correlation_16,
+    correlation_17
+    ]
+    
+    correlation_coefficients[:, 1] = [
+    correlation_12,
+    1,
+    correlation_23,
+    correlation_24,
+    correlation_25,
+    correlation_26,
+    correlation_27
+    ]
+    
+    correlation_coefficients[:, 2] = [
+    correlation_13,
+    correlation_23,
+    1,
+    correlation_34,
+    correlation_35,
+    correlation_36,
+    correlation_37
+    ]
+    
+    correlation_coefficients[:, 3] = [
+    correlation_14,
+    correlation_24,
+    correlation_34,
+    1,
+    correlation_45,
+    correlation_46,
+    correlation_47
+    ]
+    
+    correlation_coefficients[:, 4] = [
+    correlation_15,
+    correlation_25,
+    correlation_35,
+    correlation_45,
+    1,
+    correlation_56,
+    correlation_57
+    ]
+    
+    correlation_coefficients[:, 5] = [
+    correlation_16,
+    correlation_26,
+    correlation_36,
+    correlation_46,
+    correlation_56,
+    1,
+    correlation_57
+    ]
+    
+    correlation_coefficients[:, 6] = [
+    correlation_17,
+    correlation_27,
+    correlation_37,
+    correlation_47,
+    correlation_57,
+    correlation_67,
+    1
+    ]
+
+    new_correlation_matrix(correlation_coefficients, title)
