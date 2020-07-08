@@ -65,7 +65,7 @@ echo "++ The voxelwise stat value threshold is: $voxstat_thr"
 # Converting the masked z-stat result to a t-stat
 /opt/afni-latest/3dcalc \
     -a perm_ttest++_Clustsim_result_z_stat_masked_4d.nii.gz'[1]'   \
-    -expr 'cdf2stat(stat2cdf(a,5,0,0,0),3,15,0,0)' \
+    -expr 'cdf2stat(stat2cdf(a,5,0,0,0),3,14,0,0)' \
     -prefix perm_ttest++_Clustsim_result_t_stat_masked.nii.gz
 
 # Applying cluster masks to the t-stat result image to get final thresholded maps
