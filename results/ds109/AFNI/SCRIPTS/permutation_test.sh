@@ -38,7 +38,7 @@ cd /well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds109/AFNI/LEVEL2/pe
 # This can be used to obtain cluster extent threshold from the ClustSim.*.1D table for AFNI versions > 18.2.04
 clust_thrvol=`/opt/afni-latest/1d_tool.py -verb 0                                       \
                         -infile Clustsim.CSimA.NN1_1sided.1D           \
-                        -csim_pthr   0.01                              \
+                        -csim_pthr   0.005                              \
                         -csim_alpha "0.05"`
 echo "++ The final cluster volume threshold is: $clust_thrvol"
 
