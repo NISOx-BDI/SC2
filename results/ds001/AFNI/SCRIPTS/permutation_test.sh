@@ -13,21 +13,21 @@ cd /well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/AFNI/LEVEL2/pe
     -prefix_clustsim Clustsim                  \
     -mask /well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/AFNI/LEVEL2/permutation_test/mask.nii.gz                \
     -setA setA                                 \
-     	     01 "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/AFNI/LEVEL1/sub-01/sub01.results/stats.sub01_REML+tlrc.HEAD[49]" \
-             02 "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/AFNI/LEVEL1/sub-02/sub02.results/stats.sub02_REML+tlrc.HEAD[49]" \
-             03 "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/AFNI/LEVEL1/sub-03/sub03.results/stats.sub03_REML+tlrc.HEAD[49]" \
-             04 "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/AFNI/LEVEL1/sub-05/sub05.results/stats.sub05_REML+tlrc.HEAD[49]" \
-             05 "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/AFNI/LEVEL1/sub-06/sub06.results/stats.sub06_REML+tlrc.HEAD[49]" \
-             06 "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/AFNI/LEVEL1/sub-07/sub07.results/stats.sub07_REML+tlrc.HEAD[49]" \
-             07 "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/AFNI/LEVEL1/sub-08/sub08.results/stats.sub08_REML+tlrc.HEAD[49]" \
-             08 "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/AFNI/LEVEL1/sub-09/sub09.results/stats.sub09_REML+tlrc.HEAD[49]" \
-             09 "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/AFNI/LEVEL1/sub-10/sub10.results/stats.sub10_REML+tlrc.HEAD[49]" \
-             10 "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/AFNI/LEVEL1/sub-11/sub11.results/stats.sub11_REML+tlrc.HEAD[49]" \
-             11 "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/AFNI/LEVEL1/sub-12/sub12.results/stats.sub12_REML+tlrc.HEAD[49]" \
-             12 "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/AFNI/LEVEL1/sub-13/sub13.results/stats.sub13_REML+tlrc.HEAD[49]" \
-             13 "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/AFNI/LEVEL1/sub-14/sub14.results/stats.sub14_REML+tlrc.HEAD[49]" \
-             14 "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/AFNI/LEVEL1/sub-15/sub15.results/stats.sub15_REML+tlrc.HEAD[49]" \
-             15 "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/AFNI/LEVEL1/sub-16/sub16.results/stats.sub16_REML+tlrc.HEAD[49]" 
+     	     01 "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/AFNI/LEVEL1/sub-01/sub01.results/stats.sub01_REML+tlrc.HEAD[48]" \
+             02 "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/AFNI/LEVEL1/sub-02/sub02.results/stats.sub02_REML+tlrc.HEAD[48]" \
+             03 "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/AFNI/LEVEL1/sub-03/sub03.results/stats.sub03_REML+tlrc.HEAD[48]" \
+             04 "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/AFNI/LEVEL1/sub-05/sub05.results/stats.sub05_REML+tlrc.HEAD[48]" \
+             05 "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/AFNI/LEVEL1/sub-06/sub06.results/stats.sub06_REML+tlrc.HEAD[48]" \
+             06 "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/AFNI/LEVEL1/sub-07/sub07.results/stats.sub07_REML+tlrc.HEAD[48]" \
+             07 "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/AFNI/LEVEL1/sub-08/sub08.results/stats.sub08_REML+tlrc.HEAD[48]" \
+             08 "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/AFNI/LEVEL1/sub-09/sub09.results/stats.sub09_REML+tlrc.HEAD[48]" \
+             09 "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/AFNI/LEVEL1/sub-10/sub10.results/stats.sub10_REML+tlrc.HEAD[48]" \
+             10 "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/AFNI/LEVEL1/sub-11/sub11.results/stats.sub11_REML+tlrc.HEAD[48]" \
+             11 "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/AFNI/LEVEL1/sub-12/sub12.results/stats.sub12_REML+tlrc.HEAD[48]" \
+             12 "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/AFNI/LEVEL1/sub-13/sub13.results/stats.sub13_REML+tlrc.HEAD[48]" \
+             13 "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/AFNI/LEVEL1/sub-14/sub14.results/stats.sub14_REML+tlrc.HEAD[48]" \
+             14 "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/AFNI/LEVEL1/sub-15/sub15.results/stats.sub15_REML+tlrc.HEAD[48]" \
+             15 "/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/results/ds001/AFNI/LEVEL1/sub-16/sub16.results/stats.sub16_REML+tlrc.HEAD[48]" 
 
 # This can be used to obtain cluster extent threshold from the ClustSim.*.1D table for AFNI versions > 18.2.04
 clust_thrvol=`/opt/afni-latest/1d_tool.py -verb 0                                       \
@@ -65,7 +65,7 @@ echo "++ The voxelwise stat value threshold is: $voxstat_thr"
 # Converting the masked z-stat result to a t-stat
 /opt/afni-latest/3dcalc \
     -a perm_ttest++_Clustsim_result_z_stat_masked_4d.nii.gz'[1]'   \
-    -expr 'cdf2stat(stat2cdf(a,5,0,0,0),3,15,0,0)' \
+    -expr 'cdf2stat(stat2cdf(a,5,0,0,0),3,14,0,0)' \
     -prefix perm_ttest++_Clustsim_result_t_stat_masked.nii.gz
 
 # Applying cluster masks to the t-stat result image to get final thresholded maps

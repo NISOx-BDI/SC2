@@ -13,21 +13,21 @@ $AFNI_bin/3dttest++                            \
     -prefix_clustsim Clustsim                  \
     -mask $perm_dir/mask.nii.gz                \
     -setA setA                                 \
-     	     01 "$level1_dir/sub-01/sub01.results/stats.sub01_REML+tlrc.HEAD[49]" \
-             02 "$level1_dir/sub-02/sub02.results/stats.sub02_REML+tlrc.HEAD[49]" \
-             03 "$level1_dir/sub-03/sub03.results/stats.sub03_REML+tlrc.HEAD[49]" \
-             04 "$level1_dir/sub-05/sub05.results/stats.sub05_REML+tlrc.HEAD[49]" \
-             05 "$level1_dir/sub-06/sub06.results/stats.sub06_REML+tlrc.HEAD[49]" \
-             06 "$level1_dir/sub-07/sub07.results/stats.sub07_REML+tlrc.HEAD[49]" \
-             07 "$level1_dir/sub-08/sub08.results/stats.sub08_REML+tlrc.HEAD[49]" \
-             08 "$level1_dir/sub-09/sub09.results/stats.sub09_REML+tlrc.HEAD[49]" \
-             09 "$level1_dir/sub-10/sub10.results/stats.sub10_REML+tlrc.HEAD[49]" \
-             10 "$level1_dir/sub-11/sub11.results/stats.sub11_REML+tlrc.HEAD[49]" \
-             11 "$level1_dir/sub-12/sub12.results/stats.sub12_REML+tlrc.HEAD[49]" \
-             12 "$level1_dir/sub-13/sub13.results/stats.sub13_REML+tlrc.HEAD[49]" \
-             13 "$level1_dir/sub-14/sub14.results/stats.sub14_REML+tlrc.HEAD[49]" \
-             14 "$level1_dir/sub-15/sub15.results/stats.sub15_REML+tlrc.HEAD[49]" \
-             15 "$level1_dir/sub-16/sub16.results/stats.sub16_REML+tlrc.HEAD[49]" 
+     	     01 "$level1_dir/sub-01/sub01.results/stats.sub01_REML+tlrc.HEAD[48]" \
+             02 "$level1_dir/sub-02/sub02.results/stats.sub02_REML+tlrc.HEAD[48]" \
+             03 "$level1_dir/sub-03/sub03.results/stats.sub03_REML+tlrc.HEAD[48]" \
+             04 "$level1_dir/sub-05/sub05.results/stats.sub05_REML+tlrc.HEAD[48]" \
+             05 "$level1_dir/sub-06/sub06.results/stats.sub06_REML+tlrc.HEAD[48]" \
+             06 "$level1_dir/sub-07/sub07.results/stats.sub07_REML+tlrc.HEAD[48]" \
+             07 "$level1_dir/sub-08/sub08.results/stats.sub08_REML+tlrc.HEAD[48]" \
+             08 "$level1_dir/sub-09/sub09.results/stats.sub09_REML+tlrc.HEAD[48]" \
+             09 "$level1_dir/sub-10/sub10.results/stats.sub10_REML+tlrc.HEAD[48]" \
+             10 "$level1_dir/sub-11/sub11.results/stats.sub11_REML+tlrc.HEAD[48]" \
+             11 "$level1_dir/sub-12/sub12.results/stats.sub12_REML+tlrc.HEAD[48]" \
+             12 "$level1_dir/sub-13/sub13.results/stats.sub13_REML+tlrc.HEAD[48]" \
+             13 "$level1_dir/sub-14/sub14.results/stats.sub14_REML+tlrc.HEAD[48]" \
+             14 "$level1_dir/sub-15/sub15.results/stats.sub15_REML+tlrc.HEAD[48]" \
+             15 "$level1_dir/sub-16/sub16.results/stats.sub16_REML+tlrc.HEAD[48]" 
 
 # This can be used to obtain cluster extent threshold from the ClustSim.*.1D table for AFNI versions > 18.2.04
 clust_thrvol=`$AFNI_bin/1d_tool.py -verb 0                                       \
@@ -65,7 +65,7 @@ $AFNI_bin/3dclust                                                               
 # Converting the masked z-stat result to a t-stat
 $AFNI_bin/3dcalc \
     -a perm_ttest++_Clustsim_result_z_stat_masked_4d.nii.gz'[1]'   \
-    -expr 'cdf2stat(stat2cdf(a,5,0,0,0),3,15,0,0)' \
+    -expr 'cdf2stat(stat2cdf(a,5,0,0,0),3,14,0,0)' \
     -prefix perm_ttest++_Clustsim_result_t_stat_masked.nii.gz
 
 # Applying cluster masks to the t-stat result image to get final thresholded maps
