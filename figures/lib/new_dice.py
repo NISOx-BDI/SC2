@@ -140,7 +140,7 @@ def dice_matrix(df, Positive=True, Title=''):
     for (i, j, k), z in np.ndenumerate(df):
         if (j < i):
             if (k == 0):
-                ax1.text(j, i, '{:0.3f}'.format(z), ha='center', va='center',
+                ax1.text(j, i, '{:0.2f}'.format(z), ha='center', va='center',
                          bbox=dict(boxstyle='round', facecolor='white', 
                          edgecolor='0.3'))
             else:
@@ -225,58 +225,37 @@ def new_dice(exc_1=None, exc_2=None, exc_3 = None, exc_4=None, exc_5=None, exc_6
 
     # *** Obtain Dice coefficient for each combination of images
     dice_11 = 1
-    if (exc_1 is not None) or (exc_2 is not None):
-        dice_12 = sorrenson_dice(exc_1, exc_2)
-    if (exc_1 is not None) or (exc_3 is not None):
-        dice_13 = sorrenson_dice(exc_1, exc_3)
-    if (exc_1 is not None) or (exc_4 is not None):
-        dice_14 = sorrenson_dice(exc_1, exc_4)
-    if (exc_1 is not None) or (exc_5 is not None):
-        dice_15 = sorrenson_dice(exc_1, exc_5)
-    if (exc_1 is not None) or (exc_6 is not None):
-        dice_16 = sorrenson_dice(exc_1, exc_6)
-    if (exc_1 is not None) or (exc_7 is not None):
-        dice_17 = sorrenson_dice(exc_1, exc_7)
+    dice_12 = sorrenson_dice(exc_1, exc_2)
+    dice_13 = sorrenson_dice(exc_1, exc_3)
+    dice_14 = sorrenson_dice(exc_1, exc_4)
+    dice_15 = sorrenson_dice(exc_1, exc_5)
+    dice_16 = sorrenson_dice(exc_1, exc_6)
+    dice_17 = sorrenson_dice(exc_1, exc_7)
 
     dice_22 = 1
-    if (exc_2 is not None) or (exc_3 is not None):
-        dice_23 = sorrenson_dice(exc_2, exc_3)
-    if (exc_2 is not None) or (exc_4 is not None):
-        dice_24 = sorrenson_dice(exc_2, exc_4)   
-    if (exc_2 is not None) or (exc_5 is not None):
-        dice_25 = sorrenson_dice(exc_2, exc_5)   
-    if (exc_2 is not None) or (exc_6 is not None):
-        dice_26 = sorrenson_dice(exc_2, exc_6) 
-    if (exc_2 is not None) or (exc_7 is not None):
-        dice_27 = sorrenson_dice(exc_2, exc_7) 
+    dice_23 = sorrenson_dice(exc_2, exc_3)
+    dice_24 = sorrenson_dice(exc_2, exc_4)   
+    dice_25 = sorrenson_dice(exc_2, exc_5)   
+    dice_26 = sorrenson_dice(exc_2, exc_6) 
+    dice_27 = sorrenson_dice(exc_2, exc_7) 
 
     dice_33 = 1
-    if (exc_3 is not None) or (exc_4 is not None):
-        dice_34 = sorrenson_dice(exc_3, exc_4)
-    if (exc_3 is not None) or (exc_5 is not None):
-        dice_35 = sorrenson_dice(exc_3, exc_5)
-    if (exc_3 is not None) or (exc_6 is not None):
-        dice_36 = sorrenson_dice(exc_3, exc_6)
-    if (exc_3 is not None) or (exc_7 is not None):
-        dice_37 = sorrenson_dice(exc_3, exc_7)
+    dice_34 = sorrenson_dice(exc_3, exc_4)
+    dice_35 = sorrenson_dice(exc_3, exc_5)
+    dice_36 = sorrenson_dice(exc_3, exc_6)
+    dice_37 = sorrenson_dice(exc_3, exc_7)
 
     dice_44 = 1
-    if (exc_4 is not None) or (exc_5 is not None):
-        dice_45 = sorrenson_dice(exc_4, exc_5)
-    if (exc_4 is not None) or (exc_6 is not None):
-        dice_46 = sorrenson_dice(exc_4, exc_6)
-    if (exc_4 is not None) or (exc_7 is not None):
-        dice_47 = sorrenson_dice(exc_4, exc_7)
+    dice_45 = sorrenson_dice(exc_4, exc_5)
+    dice_46 = sorrenson_dice(exc_4, exc_6)
+    dice_47 = sorrenson_dice(exc_4, exc_7)
 
     dice_55 = 1
-    if (exc_5 is not None) or (exc_6 is not None):
-        dice_56 = sorrenson_dice(exc_5, exc_6)
-    if (exc_5 is not None) or (exc_7 is not None):
-        dice_57 = sorrenson_dice(exc_5, exc_7) 
+    dice_56 = sorrenson_dice(exc_5, exc_6)
+    dice_57 = sorrenson_dice(exc_5, exc_7) 
 
     dice_66 = 1
-    if (exc_6 is not None) or (exc_7 is not None):
-        dice_67 = sorrenson_dice(exc_6, exc_7)
+    dice_67 = sorrenson_dice(exc_6, exc_7)
 
     dice_77 = 1
 

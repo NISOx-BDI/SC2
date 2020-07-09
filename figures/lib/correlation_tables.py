@@ -87,7 +87,7 @@ def correlation_matrix(df, title):
     
     for (i, j), z in np.ndenumerate(df):
         if (j < i):
-             ax1.text(j, i, '{:0.3f}'.format(z), ha='center', va='center',
+             ax1.text(j, i, '{:0.2f}'.format(z), ha='center', va='center',
              bbox=dict(boxstyle='round', facecolor='white', 
              edgecolor='0.3'))
      
@@ -123,7 +123,7 @@ def new_correlation_matrix(df, title):
     
     for (i, j), z in np.ndenumerate(df):
         if (j < i):
-             ax1.text(j, i, '{:0.3f}'.format(z), ha='center', va='center',
+             ax1.text(j, i, '{:0.2f}'.format(z), ha='center', va='center',
              bbox=dict(boxstyle='round', facecolor='white', 
              edgecolor='0.3'))
                 
@@ -148,7 +148,7 @@ def correlation_summary_across_processing_opts_matrix(df, title):
     cax = ax1.imshow(df, interpolation="nearest", cmap=cmap, vmin=0, vmax=1)
     
     for (i, j), z in np.ndenumerate(df):
-         ax1.text(j, i, '{:0.3f}'.format(z), ha='center', va='center',
+         ax1.text(j, i, '{:0.2f}'.format(z), ha='center', va='center',
          bbox=dict(boxstyle='round', facecolor='white', 
          edgecolor='0.3'))
      
@@ -359,6 +359,12 @@ def correlation_summary_across_processing_opts_alternate(afni_SC1_stat, fsl_SC1_
     
 def new_correlation_tables(stat_file_1, stat_file_2, stat_file_3, stat_file_4, stat_file_5, stat_file_6, stat_file_7, title="", num_subjects=None):
     
+    # Convert AFNI permutation Z-stat to T-stat
+    if title == "Perm Correlations: AFNI and FSL":
+        stat_file_1 = z_to_t(stat_file_1,
+        stat_file_1.replace('.nii.gz', '_t.nii.gz'),
+        num_subjects)
+        
     # Get all correlation values between the 6 images
     correlation_12 = get_correlation_value(stat_file_1, stat_file_2)
     correlation_13 = get_correlation_value(stat_file_1, stat_file_3)

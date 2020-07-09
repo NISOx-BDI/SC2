@@ -137,14 +137,14 @@ def download_data(nv_collection, study, output_dir):
             ('OneSampT_tstat1_4.nii.gz', 'spm_drift_perm.nii.gz'),
             ('05FWECorrected_OneSampT_pos_exc_set_4.nii.gz', 'spm_drift_perm_exc_set_pos.nii.gz'),
             ('05FWECorrected_OneSampT_neg_exc_set_4.nii.gz', 'spm_drift_perm_exc_set_neg.nii.gz'),
-            # SPM subject-level in FSL permutation results
-            ('OneSampT_tstat1_5.nii.gz', 'fsl_spm_subject_level_perm.nii.gz'),
-            ('05FWECorrected_OneSampT_pos_exc_set_5.nii.gz', 'fsl_spm_subject_level_perm_exc_set_pos.nii.gz'),
-            ('05FWECorrected_OneSampT_neg_exc_set_5.nii.gz', 'fsl_spm_subject_level_perm_exc_set_neg.nii.gz'),
             # AFNI subject-level in FSL permutation results
-            ('OneSampT_tstat1_6.nii.gz', 'fsl_afni_subject_level_perm.nii.gz'),
-            ('05FWECorrected_OneSampT_pos_exc_set_6.nii.gz', 'fsl_afni_subject_level_perm_exc_set_pos.nii.gz'),
-            ('05FWECorrected_OneSampT_neg_exc_set_6.nii.gz', 'fsl_afni_subject_level_perm_exc_set_neg.nii.gz'),
+            ('OneSampT_tstat1_5.nii.gz', 'fsl_afni_subject_level_perm.nii.gz'),
+            ('05FWECorrected_OneSampT_pos_exc_set_5.nii.gz', 'fsl_afni_subject_level_perm_exc_set_pos.nii.gz'),
+            ('05FWECorrected_OneSampT_neg_exc_set_5.nii.gz', 'fsl_afni_subject_level_perm_exc_set_neg.nii.gz'),
+            # SPM subject-level in FSL permutation results
+            ('OneSampT_tstat1_6.nii.gz', 'fsl_spm_subject_level_perm.nii.gz'),
+            ('05FWECorrected_OneSampT_pos_exc_set_6.nii.gz', 'fsl_spm_subject_level_perm_exc_set_pos.nii.gz'),
+            ('05FWECorrected_OneSampT_neg_exc_set_6.nii.gz', 'fsl_spm_subject_level_perm_exc_set_neg.nii.gz'),
         )
     else:
         # No permutation analyses for ds120
