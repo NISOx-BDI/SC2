@@ -1,14 +1,13 @@
-from urllib2 import urlopen, URLError, HTTPError
-from urllib2 import Request
+from urllib3.exceptions import HTTPError
+import requests
 from shutil import copyfile
 import json
 import os
 
 def download_old_data(nv_collection, study, output_dir):
-    request = Request('http://neurovault.org/api/collections/' + nv_collection + '/nidm_results/?limit=184&format=json')
-    response = urlopen(request)
-    elevations = response.read()
-    data = json.loads(elevations)
+    url = 'http://neurovault.org/api/collections/' + nv_collection + '/nidm_results/?limit=184&format=json'
+    response = requests.get(url)
+    data = response.json()
 
     pwd = os.path.dirname(os.path.realpath('__file__'))
     input_dir = os.path.join(pwd, "input")
@@ -30,14 +29,12 @@ def download_old_data(nv_collection, study, output_dir):
         if not os.path.isfile(localzip):
             # Copy .nidm.zip export locally in a the data directory
             try:
-                f = urlopen(url)
+                f = requests.get(url)
                 print("downloading " + url + " at " + localzip_rel)
                 with open(localzip, "wb") as local_file:
-                    local_file.write(f.read())
-            except HTTPError, e:
+                    local_file.write(f.content)
+            except (HTTPError, e):
                 raise Exception(["HTTP Error:" + str(e.code) + url])
-            except URLError, e:
-                raise Exception(["URL Error:" + str(e.reason) + url])
         else:
             print(url + " already downloaded at " + localzip_rel)
 
@@ -111,13 +108,11 @@ def download_old_data(nv_collection, study, output_dir):
         if not os.path.isfile(local_file):
             # Copy file locally in a the data directory
             try:
-                f = urlopen(url)
+                f = requests.get(url)
                 print("downloading " + url + " at " + local_file)
                 with open(local_file, "wb") as local_fid:
-                    local_fid.write(f.read())
-            except HTTPError, e:
+                    local_fid.write(f.content)
+            except (HTTPError, e):
                 raise Exception(["HTTP Error:" + str(e.code) + url])
-            except URLError, e:
-                raise Exception(["URL Error:" + str(e.reason) + url])
         else:
             print(url + " already downloaded at " + local_file)

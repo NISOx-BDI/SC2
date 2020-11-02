@@ -230,7 +230,7 @@ def bland_altman(Title, afni_stat_file, spm_stat_file, AFNI_SPM_title,
 
         plt.show()
         
-        print "Mean = ",md,", Standard Devation = ",sd,", Correlation Coefficient = ",corr
+        print("Mean = ",md,", Standard Devation = ",sd,", Correlation Coefficient = ",corr)
 
     # AFNI/SPM B-A plots
     f = plt.figure(figsize=(13, 5))
@@ -279,7 +279,7 @@ def bland_altman(Title, afni_stat_file, spm_stat_file, AFNI_SPM_title,
 
     plt.show()
 
-    print "Mean = ",md,", Standard Devation = ",sd,", Correlation Coefficient = ",corr
+    print("Mean = ",md,", Standard Devation = ",sd,", Correlation Coefficient = ",corr)
     
     # FSL/SPM B-A plots
     if fsl_stat_file is not None:
@@ -317,7 +317,7 @@ def bland_altman(Title, afni_stat_file, spm_stat_file, AFNI_SPM_title,
                           )
 
         plt.show()
-        print "Mean = ",md,", Standard Devation = ",sd,", Correlation Coefficient = ",corr
+        print("Mean = ",md,", Standard Devation = ",sd,", Correlation Coefficient = ",corr)
         
 def bland_altman_intra(Title, afni_stat_file, afni_perm_file,
                        fsl_stat_file, fsl_perm_file,
@@ -347,7 +347,7 @@ def bland_altman_intra(Title, afni_stat_file, afni_perm_file,
                       )
     
     plt.show()
-    print "Mean = ",md,", Standard Devation = ",sd,", Correlation Coefficient = ",corr
+    print("Mean = ",md,", Standard Devation = ",sd,", Correlation Coefficient = ",corr)
 
     # FSL Parametric/FSL Permutation Bland-Altman
     f = plt.figure(figsize=(13, 5))
@@ -366,7 +366,7 @@ def bland_altman_intra(Title, afni_stat_file, afni_perm_file,
                       )
     
     plt.show()
-    print "Mean = ",md,", Standard Devation = ",sd,", Correlation Coefficient = ",corr
+    print("Mean = ",md,", Standard Devation = ",sd,", Correlation Coefficient = ",corr)
 
     # SPM Parametric/SPM Permutation Bland-Altman
     f = plt.figure(figsize=(13, 5))
@@ -391,7 +391,7 @@ def bland_altman_intra(Title, afni_stat_file, afni_perm_file,
     f1.suptitle(Title, fontsize=20, x=0.47, y=1.00)
 
     plt.show()
-    print "Mean = ",md,", Standard Devation = ",sd,", Correlation Coefficient = ",corr
+    print("Mean = ",md,", Standard Devation = ",sd,", Correlation Coefficient = ",corr)
     
 def scatter_values(data1_file, data2_file, reslice_on_2=True,
                         *args, **kwargs):
@@ -644,7 +644,7 @@ def bland_altman_old_comparison(Title, afni_stat_file, spm_stat_file, afni_old_s
     f.suptitle(Title, fontsize=20, x=0.47, y=1.00)
 
     plt.show()
-    print "Mean = ",md,", Standard Devation = ",sd,", Correlation Coefficient = ",corr
+    print("Mean = ",md,", Standard Devation = ",sd,", Correlation Coefficient = ",corr)
     
     if fsl_stat_file is not None:
     # FSL B-A plot
@@ -676,7 +676,7 @@ def bland_altman_old_comparison(Title, afni_stat_file, spm_stat_file, afni_old_s
                           lims=lims)
 
         plt.show()
-        print "Mean = ",md,", Standard Devation = ",sd,", Correlation Coefficient = ",corr
+        print("Mean = ",md,", Standard Devation = ",sd,", Correlation Coefficient = ",corr)
 
     # SPM B-A plot
     f = plt.figure(figsize=(13, 5))
@@ -704,4 +704,4 @@ def bland_altman_old_comparison(Title, afni_stat_file, spm_stat_file, afni_old_s
                       ' of T-statistics (SPM - SPM old)')
 
     plt.show()
-    print "Mean = ",md,", Standard Devation = ",sd,", Correlation Coefficient = ",corr
+    print("Mean = ",md,", Standard Devation = ",sd,", Correlation Coefficient = ",corr)
