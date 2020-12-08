@@ -257,7 +257,7 @@ def run_permutation_test(level1_dir, perm_dir, perm_template, home_dir, AFNI_SPM
     st = os.stat(group_script_file)
     os.chmod(group_script_file, st.st_mode | stat.S_IEXEC)
 
-    cmd = os.path.join('singularity exec --cleanenv -B ' + home_dir + ' ' + AFNI_SPM_singularity_image + ' ' + group_script_file)
+    cmd = os.path.join('.', group_script_file)
     print(cmd)
     check_call(cmd, shell=True)
 
