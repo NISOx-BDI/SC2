@@ -135,7 +135,7 @@ def dice_matrix(df, Positive=True, Title=''):
         cmap = cm.get_cmap('Blues')
     cmap.set_bad('w')
 
-    cax = ax1.imshow(dfmsk, interpolation="nearest", cmap=cmap, vmin=0, vmax=1)
+    cax = ax1.imshow(dfmsk, interpolation="nearest", cmap=cmap, vmin=0.5, vmax=1)
 
     for (i, j, k), z in np.ndenumerate(df):
         if (j < i):
@@ -163,7 +163,7 @@ def dice_matrix(df, Positive=True, Title=''):
     ax1.set_xticklabels(labels,fontsize=12)
     ax1.set_yticklabels(labels,fontsize=12)
     # Add colorbar, make sure to specify tick locations to match desired ticklabels
-    fig.colorbar(cax, ticks=[0,1/6,2/6,3/6,4/6,5/6,1], fraction=0.046, pad=0.04)
+    fig.colorbar(cax, ticks=[0.5,7/12,8/12,9/12,10/12,11/12,1], fraction=0.046, pad=0.04)
     ax1.spines['right'].set_visible(False)
     ax1.spines['top'].set_visible(False)
     ax1.yaxis.set_ticks_position('none')
