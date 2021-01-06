@@ -3,7 +3,7 @@ import sys
 sys.path.append("..")
 
 from config import paths
-from lib.afni_processing import run_orthogonalize, create_afni_onset_files, run_subject_level_analyses, create_confound_files
+from lib.afni_processing import run_orthogonalize, create_afni_onset_files, run_subject_level_analyses, create_confound_files, run_group_level_analysis, run_permutation_test, extract_design_columns, make_varcopes
 
 locals().update(paths)
 
@@ -18,9 +18,10 @@ if not os.path.isdir(afni_dir):
 onsets_dir = os.path.join(afni_dir, 'ONSETS')
 confounds_dir = os.path.join(afni_dir, 'MOTION_REGRESSORS')
 level1_dir = os.path.join(afni_dir, 'LEVEL1')
-level3_dir = os.path.join(afni_dir, 'LEVEL2', 'group')
+level2_dir = os.path.join(afni_dir, 'LEVEL2', 'group')
 perm_dir = os.path.join(afni_dir, 'LEVEL2', 'permutation_test')
 mni_dir = os.path.join(afni_dir, 'mean_mni_images')
+design_dir = os.path.join(afni_dir, 'DESIGN')
 
 # Set default orientation to origin (instead of standardised space) for
 # ambiguous NIfTi (required for ds001)
@@ -58,6 +59,7 @@ orthogonalize_template = os.path.join(cwd, 'template_ds001_AFNI_orthogonalize')
 sub_level_template = os.path.join(cwd, 'template_ds001_AFNI_level1')
 grp_level_template = os.path.join(cwd, 'template_ds001_AFNI_level2')
 perm_template = os.path.join(cwd, 'template_ds001_AFNI_perm_test')
+varcopes_template = os.path.join(cwd, 'template_ds001_AFNI_make_varcopes')
 
 # Orthogonalize conditions following the original study
 #run_orthogonalize(fmriprep_dir, onsets_dir, orthogonalize_template, home_dir, AFNI_SPM_singularity_image, AFNI_bin)
@@ -66,10 +68,16 @@ perm_template = os.path.join(cwd, 'template_ds001_AFNI_perm_test')
 #run_subject_level_analyses(fmriprep_dir, onsets_dir, level1_dir, sub_level_template, home_dir, AFNI_SPM_singularity_image, AFNI_bin)
 
 # Run the group-level GLM
-run_group_level_analysis(level1_dir, level2_dir, grp_level_template, home_dir, AFNI_SPM_singularity_image, AFNI_bin)
+#run_group_level_analysis(level1_dir, level2_dir, grp_level_template, home_dir, AFNI_SPM_singularity_image, AFNI_bin, fmriprep_dir)
 
 # Run a permutation test
-#run_permutation_test(level1_dir, perm_dir, perm_template)
+run_permutation_test(level1_dir, perm_dir, perm_template, home_dir, AFNI_SPM_singularity_image, AFNI_bin, fmriprep_dir)
+
+# Extracting the design matrix column, to be used in FSL's FEAT for further analyses
+#extract_design_columns(level1_dir, design_dir)
+
+# Convert subject-level copes and masks to NIFTI, and create varcopes, to be used for group-analyses in FSL FEAT
+#make_varcopes(level1_dir, fmriprep_dir, varcopes_template, home_dir, AFNI_SPM_singularity_image, AFNI_bin)
 
 # Create mean and standard deviations maps of the mean func and anat images in MNI space
 #mean_mni_images(preproc_dir, level1_dir, mni_dir)

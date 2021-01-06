@@ -5,7 +5,7 @@ from subprocess import check_call
 sys.path.append("..")
 
 from config import paths
-from lib.afni_processing import create_afni_onset_files, run_subject_level_analyses, create_confound_files
+from lib.afni_processing import create_afni_onset_files, run_subject_level_analyses, create_confound_files, run_group_level_analysis
 
 locals().update(paths)
 
@@ -21,8 +21,7 @@ if not os.path.isdir(afni_dir):
 onsets_dir = os.path.join(afni_dir, 'ONSETS')
 confounds_dir = os.path.join(afni_dir, 'MOTION_REGRESSORS')
 level1_dir = os.path.join(afni_dir, 'LEVEL1')
-level3_dir = os.path.join(afni_dir, 'LEVEL2', 'group')
-perm_dir = os.path.join(afni_dir, 'LEVEL2', 'permutation_test')
+level2_dir = os.path.join(afni_dir, 'LEVEL2', 'group')
 mni_dir = os.path.join(afni_dir, 'mean_mni_images')
 
 # The original event files are not compatible with Bidsto3col.sh, so we copy the raw data and amend the events
@@ -57,20 +56,20 @@ conditions = (
     ('reward', ('reward_resp', 'duration')))
 
 # Create onset files based on BIDS tsv files
-cond_files = create_afni_onset_files(ds120_raw_dir, onsets_dir, conditions, removed_TR_time, subject_ids)
+#cond_files = create_afni_onset_files(ds120_raw_dir, onsets_dir, conditions, removed_TR_time, subject_ids)
 
 # Extract motion regressors from fmriprep confounds .tsv
-create_confound_files(fmriprep_dir, confounds_dir, num_ignored_volumes)
+#create_confound_files(fmriprep_dir, confounds_dir, num_ignored_volumes)
 
 cwd = os.path.dirname(os.path.realpath(__file__))
 sub_level_template = os.path.join(cwd, 'template_ds120_AFNI_level1')
-#grp_level_template = os.path.join(cwd, 'template_ds120_AFNI_level2')
+grp_level_template = os.path.join(cwd, 'template_ds120_AFNI_level2')
 
 # Run a GLM combining all the fMRI runs of each subject
-run_subject_level_analyses(fmriprep_dir, onsets_dir, level1_dir, sub_level_template, home_dir, AFNI_SPM_singularity_image, AFNI_bin)
+#run_subject_level_analyses(fmriprep_dir, onsets_dir, level1_dir, sub_level_template, home_dir, AFNI_SPM_singularity_image, AFNI_bin)
 
 # Run the group-level GLM
-#run_group_level_analysis(level1_dir, level2_dir, grp_level_template)
+run_group_level_analysis(level1_dir, level2_dir, grp_level_template, home_dir, AFNI_SPM_singularity_image, AFNI_bin, fmriprep_dir)
 
 # Create mean and standard deviations maps of the mean func and anat images in MNI space
 #mean_mni_images(preproc_dir, level1_dir, mni_dir)

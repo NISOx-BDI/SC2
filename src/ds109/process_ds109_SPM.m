@@ -16,6 +16,7 @@ level1_dir = fullfile(spm_dir, 'LEVEL1');
 level2_dir = fullfile(spm_dir, 'LEVEL2');
 perm_dir = fullfile(level2_dir, 'permutation_test');
 mni_dir = fullfile(spm_dir, 'mean_mni_images');
+design_dir = fullfile(spm_dir, 'DESIGN');
 
 % Specify the subjects of interest from the raw data
 subject_ids = [1,2,3,8,9,10,11,14,15,17,18,21,22,26,27,28,30,31,32,43,48];
@@ -43,6 +44,7 @@ conditions = {...
 %spm('defaults','FMRI');
 %copy_unzip_func(fmriprep_dir, spm_dir)
 %run_subject_level_analyses(fmriprep_dir, 'template_ds109_SPM_level1', level1_dir, num_ignored_volumes, TR);
-run_group_level_analysis(level1_dir, 'template_ds109_SPM_level2', level2_dir, '0001');
+%run_group_level_analysis(level1_dir, 'template_ds109_SPM_level2', level2_dir, '0001');
 %run_permutation_test(level1_dir, 'template_ds109_SPM_perm_test', perm_dir, '0001');
-%mean_mni_images(preproc_dir, level1_dir, mni_dir);
+%extract_design_columns(level1_dir, design_dir);
+make_varcopes(level1_dir);

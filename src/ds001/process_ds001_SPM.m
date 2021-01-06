@@ -16,6 +16,7 @@ level1_dir = fullfile(spm_dir, 'LEVEL1');
 level2_dir = fullfile(spm_dir, 'LEVEL2');
 perm_dir = fullfile(level2_dir, 'permutation_test');
 mni_dir = fullfile(spm_dir, 'mean_mni_images');
+design_dir = fullfile(spm_dir, 'DESIGN');
 
 % Specify the number of functional volumes ignored in the study
 TR = 2;
@@ -40,9 +41,10 @@ conditions = {...
 
 %create_onset_files(ds001_raw_dir, onsets_dir, conditions, removed_TR_time);
 %create_confound_files(fmriprep_dir,confounds_dir,num_ignored_volumes);
-spm('defaults','FMRI');
+%spm('defaults','FMRI');
 %copy_unzip_func(fmriprep_dir, spm_dir)
 %run_subject_level_analyses(fmriprep_dir, 'template_ds001_SPM_level1', level1_dir, num_ignored_volumes, TR);
 %run_group_level_analysis(level1_dir, 'template_ds001_SPM_level2', level2_dir, '0001');
-run_permutation_test(level1_dir, 'template_ds001_SPM_perm_test', perm_dir, '0001');
-%mean_mni_images(preproc_dir, level1_dir, mni_dir);
+%run_permutation_test(level1_dir, 'template_ds001_SPM_perm_test', perm_dir, '0001');
+%extract_design_columns(level1_dir, design_dir);
+make_varcopes(level1_dir);
