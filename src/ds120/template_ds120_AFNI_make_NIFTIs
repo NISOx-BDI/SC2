@@ -1,0 +1,39 @@
+cd $NIFTI_dir
+
+for f in $level1_dir/sub*; do
+    subID=`echo $$(basename $$f) | awk -F '[-]' '{print $$2}'`
+
+    # Make COPE NIFTIS
+    $AFNI_bin/3dAFNItoNIFTI -prefix $NIFTI_dir/sub-$${subID}_neutral_00.nii.gz $level1_dir/sub-$$subID/sub$$subID.results/stats.sub$${subID}_REML+tlrc'[neutral#0_Coef]'
+
+    $AFNI_bin/3dAFNItoNIFTI -prefix $NIFTI_dir/sub-$${subID}_neutral_01.nii.gz $level1_dir/sub-$$subID/sub$$subID.results/stats.sub$${subID}_REML+tlrc'[neutral#1_Coef]'
+
+    $AFNI_bin/3dAFNItoNIFTI -prefix $NIFTI_dir/sub-$${subID}_neutral_02.nii.gz $level1_dir/sub-$$subID/sub$$subID.results/stats.sub$${subID}_REML+tlrc'[neutral#2_Coef]'
+
+    $AFNI_bin/3dAFNItoNIFTI -prefix $NIFTI_dir/sub-$${subID}_neutral_03.nii.gz $level1_dir/sub-$$subID/sub$$subID.results/stats.sub$${subID}_REML+tlrc'[neutral#3_Coef]'
+
+    $AFNI_bin/3dAFNItoNIFTI -prefix $NIFTI_dir/sub-$${subID}_neutral_04.nii.gz $level1_dir/sub-$$subID/sub$$subID.results/stats.sub$${subID}_REML+tlrc'[neutral#4_Coef]'
+
+    $AFNI_bin/3dAFNItoNIFTI -prefix $NIFTI_dir/sub-$${subID}_neutral_05.nii.gz $level1_dir/sub-$$subID/sub$$subID.results/stats.sub$${subID}_REML+tlrc'[neutral#5_Coef]'
+
+    $AFNI_bin/3dAFNItoNIFTI -prefix $NIFTI_dir/sub-$${subID}_neutral_06.nii.gz $level1_dir/sub-$$subID/sub$$subID.results/stats.sub$${subID}_REML+tlrc'[neutral#6_Coef]'
+
+    $AFNI_bin/3dAFNItoNIFTI -prefix $NIFTI_dir/sub-$${subID}_neutral_07.nii.gz $level1_dir/sub-$$subID/sub$$subID.results/stats.sub$${subID}_REML+tlrc'[neutral#7_Coef]'
+
+    $AFNI_bin/3dAFNItoNIFTI -prefix $NIFTI_dir/sub-$${subID}_reward_00.nii.gz $level1_dir/sub-$$subID/sub$$subID.results/stats.sub$${subID}_REML+tlrc'[reward#0_Coef]'
+
+    $AFNI_bin/3dAFNItoNIFTI -prefix $NIFTI_dir/sub-$${subID}_reward_01.nii.gz $level1_dir/sub-$$subID/sub$$subID.results/stats.sub$${subID}_REML+tlrc'[reward#1_Coef]'
+
+    $AFNI_bin/3dAFNItoNIFTI -prefix $NIFTI_dir/sub-$${subID}_reward_02.nii.gz $level1_dir/sub-$$subID/sub$$subID.results/stats.sub$${subID}_REML+tlrc'[reward#2_Coef]'
+
+    $AFNI_bin/3dAFNItoNIFTI -prefix $NIFTI_dir/sub-$${subID}_reward_03.nii.gz $level1_dir/sub-$$subID/sub$$subID.results/stats.sub$${subID}_REML+tlrc'[reward#3_Coef]'
+
+    $AFNI_bin/3dAFNItoNIFTI -prefix $NIFTI_dir/sub-$${subID}_reward_04.nii.gz $level1_dir/sub-$$subID/sub$$subID.results/stats.sub$${subID}_REML+tlrc'[reward#4_Coef]'
+
+    $AFNI_bin/3dAFNItoNIFTI -prefix $NIFTI_dir/sub-$${subID}_reward_05.nii.gz $level1_dir/sub-$$subID/sub$$subID.results/stats.sub$${subID}_REML+tlrc'[reward#5_Coef]'
+
+    $AFNI_bin/3dAFNItoNIFTI -prefix $NIFTI_dir/sub-$${subID}_reward_06.nii.gz $level1_dir/sub-$$subID/sub$$subID.results/stats.sub$${subID}_REML+tlrc'[reward#6_Coef]'
+
+    $AFNI_bin/3dAFNItoNIFTI -prefix $NIFTI_dir/sub-$${subID}_reward_07.nii.gz $level1_dir/sub-$$subID/sub$$subID.results/stats.sub$${subID}_REML+tlrc'[reward#7_Coef]'
+
+done
