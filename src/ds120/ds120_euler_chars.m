@@ -5,7 +5,7 @@ if ~exist('euler_chars', 'file')
     addpath(fullfile(base_dir, 'src', 'lib'))
 end 
 
-study_dir = fullfile(base_dir, study);
+study_dir = fullfile(base_dir, 'results', study);
 spm_stat_file = fullfile(study_dir, 'SPM', 'LEVEL2', 'spmF_0002.nii');
 afni_stat_file = fullfile(study_dir, 'AFNI', 'LEVEL2', 'Group_f_stat_masked.nii.gz');
 spm_mask = fullfile(study_dir, 'SPM', 'LEVEL2', 'mask.nii');
