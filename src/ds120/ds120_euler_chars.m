@@ -2,7 +2,7 @@ base_dir = '/well/nichols/users/bas627/BIDS_Data/RESULTS/SC2/';
 study = 'ds120';
 
 if ~exist('euler_chars', 'file')
-    addpath(fullfile(fileparts(mfilename('fullpath')), 'lib'))
+    addpath(fullfile(base_dir, 'src', 'lib'))
 end 
 
 study_dir = fullfile(base_dir, study);
