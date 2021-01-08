@@ -3,7 +3,7 @@ cd $NIFTI_dir
 for f in $level1_dir/sub*; do
     subID=`echo $$(basename $$f) | awk -F '[-]' '{print $$2}'`
 
-    # Make COPE NIFTIS
+    # Make NIFTIs of the Neutral and Reward sine coefficient condition images
     $AFNI_bin/3dAFNItoNIFTI -prefix $NIFTI_dir/sub-$${subID}_neutral_00.nii.gz $level1_dir/sub-$$subID/sub$$subID.results/stats.sub$${subID}_REML+tlrc'[neutral#0_Coef]'
 
     $AFNI_bin/3dAFNItoNIFTI -prefix $NIFTI_dir/sub-$${subID}_neutral_01.nii.gz $level1_dir/sub-$$subID/sub$$subID.results/stats.sub$${subID}_REML+tlrc'[neutral#1_Coef]'
@@ -35,5 +35,54 @@ for f in $level1_dir/sub*; do
     $AFNI_bin/3dAFNItoNIFTI -prefix $NIFTI_dir/sub-$${subID}_reward_06.nii.gz $level1_dir/sub-$$subID/sub$$subID.results/stats.sub$${subID}_REML+tlrc'[reward#6_Coef]'
 
     $AFNI_bin/3dAFNItoNIFTI -prefix $NIFTI_dir/sub-$${subID}_reward_07.nii.gz $level1_dir/sub-$$subID/sub$$subID.results/stats.sub$${subID}_REML+tlrc'[reward#7_Coef]'
+
+    # Average each coefficient across the two conditions
+    $AFNI_bin/3dcalc                                \
+    -a $NIFTI_dir/sub-$${subID}_neutral_00.nii.gz         \
+    -b $NIFTI_dir/sub-$${subID}_reward_00.nii.gz           \
+    -expr '(a+b)/2'                                     \
+    -prefix $NIFTI_dir/sub-$${subID}_cope_00.nii.gz 
+
+    $AFNI_bin/3dcalc                                \
+    -a $NIFTI_dir/sub-$${subID}_neutral_01.nii.gz         \
+    -b $NIFTI_dir/sub-$${subID}_reward_01.nii.gz           \
+    -expr '(a+b)/2'                                     \
+    -prefix $NIFTI_dir/sub-$${subID}_cope_01.nii.gz 
+
+    $AFNI_bin/3dcalc                                \
+    -a $NIFTI_dir/sub-$${subID}_neutral_02.nii.gz         \
+    -b $NIFTI_dir/sub-$${subID}_reward_02.nii.gz           \
+    -expr '(a+b)/2'                                     \
+    -prefix $NIFTI_dir/sub-$${subID}_cope_02.nii.gz 
+
+    $AFNI_bin/3dcalc                                \
+    -a $NIFTI_dir/sub-$${subID}_neutral_03.nii.gz         \
+    -b $NIFTI_dir/sub-$${subID}_reward_03.nii.gz           \
+    -expr '(a+b)/2'                                     \
+    -prefix $NIFTI_dir/sub-$${subID}_cope_03.nii.gz 
+
+    $AFNI_bin/3dcalc                                \
+    -a $NIFTI_dir/sub-$${subID}_neutral_04.nii.gz         \
+    -b $NIFTI_dir/sub-$${subID}_reward_04.nii.gz           \
+    -expr '(a+b)/2'                                     \
+    -prefix $NIFTI_dir/sub-$${subID}_cope_04.nii.gz 
+
+    $AFNI_bin/3dcalc                                \
+    -a $NIFTI_dir/sub-$${subID}_neutral_05.nii.gz         \
+    -b $NIFTI_dir/sub-$${subID}_reward_05.nii.gz           \
+    -expr '(a+b)/2'                                     \
+    -prefix $NIFTI_dir/sub-$${subID}_cope_05.nii.gz 
+
+    $AFNI_bin/3dcalc                                \
+    -a $NIFTI_dir/sub-$${subID}_neutral_06.nii.gz         \
+    -b $NIFTI_dir/sub-$${subID}_reward_06.nii.gz           \
+    -expr '(a+b)/2'                                     \
+    -prefix $NIFTI_dir/sub-$${subID}_cope_06.nii.gz 
+
+    $AFNI_bin/3dcalc                                \
+    -a $NIFTI_dir/sub-$${subID}_neutral_07.nii.gz         \
+    -b $NIFTI_dir/sub-$${subID}_reward_07.nii.gz           \
+    -expr '(a+b)/2'                                     \
+    -prefix $NIFTI_dir/sub-$${subID}_cope_07.nii.gz 
 
 done
