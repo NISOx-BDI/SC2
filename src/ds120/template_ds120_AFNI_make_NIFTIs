@@ -3,7 +3,7 @@ cd $NIFTI_dir
 for f in $level1_dir/sub*; do
     subID=`echo $$(basename $$f) | awk -F '[-]' '{print $$2}'`
 
-    # Make NIFTIs of the Neutral and Reward sine coefficient condition images
+    # Make NIFTIs of the Neutral and Reward sine coefficient condition images, and the subject maskes
     $AFNI_bin/3dAFNItoNIFTI -prefix $NIFTI_dir/sub-$${subID}_neutral_00.nii.gz $level1_dir/sub-$$subID/sub$$subID.results/stats.sub$${subID}_REML+tlrc'[neutral#0_Coef]'
 
     $AFNI_bin/3dAFNItoNIFTI -prefix $NIFTI_dir/sub-$${subID}_neutral_01.nii.gz $level1_dir/sub-$$subID/sub$$subID.results/stats.sub$${subID}_REML+tlrc'[neutral#1_Coef]'
@@ -36,53 +36,67 @@ for f in $level1_dir/sub*; do
 
     $AFNI_bin/3dAFNItoNIFTI -prefix $NIFTI_dir/sub-$${subID}_reward_07.nii.gz $level1_dir/sub-$$subID/sub$$subID.results/stats.sub$${subID}_REML+tlrc'[reward#7_Coef]'
 
+    # Create subject-level masks
+    $AFNI_bin/3dmask_tool                                             \
+        -prefix $NIFTI_dir/sub-$${subID}_mask.nii.gz                    \
+        -input `ls $fmriprep_dir/sub-$$subID/func/*brain_mask.nii.gz` \
+        -frac 1.0   
+
     # Average each coefficient across the two conditions, save as .nii for compatibility with SPM
     $AFNI_bin/3dcalc                                \
     -a $NIFTI_dir/sub-$${subID}_neutral_00.nii.gz         \
     -b $NIFTI_dir/sub-$${subID}_reward_00.nii.gz           \
-    -expr '(a+b)/2'                                     \
+    -c $NIFTI_dir/sub-$${subID}_mask.nii.gz                \
+    -expr '((a+b)*c)/2'                                     \
     -prefix $NIFTI_dir/sub-$${subID}_cope_00.nii
 
     $AFNI_bin/3dcalc                                \
     -a $NIFTI_dir/sub-$${subID}_neutral_01.nii.gz         \
     -b $NIFTI_dir/sub-$${subID}_reward_01.nii.gz           \
-    -expr '(a+b)/2'                                     \
+    -c $NIFTI_dir/sub-$${subID}_mask.nii.gz                \
+    -expr '((a+b)*c)/2'                                     \
     -prefix $NIFTI_dir/sub-$${subID}_cope_01.nii
 
     $AFNI_bin/3dcalc                                \
     -a $NIFTI_dir/sub-$${subID}_neutral_02.nii.gz         \
     -b $NIFTI_dir/sub-$${subID}_reward_02.nii.gz           \
-    -expr '(a+b)/2'                                     \
+    -c $NIFTI_dir/sub-$${subID}_mask.nii.gz                \
+    -expr '((a+b)*c)/2'                                     \
     -prefix $NIFTI_dir/sub-$${subID}_cope_02.nii
 
     $AFNI_bin/3dcalc                                \
     -a $NIFTI_dir/sub-$${subID}_neutral_03.nii.gz         \
     -b $NIFTI_dir/sub-$${subID}_reward_03.nii.gz           \
-    -expr '(a+b)/2'                                     \
+    -c $NIFTI_dir/sub-$${subID}_mask.nii.gz                \
+    -expr '((a+b)*c)/2'                                     \
     -prefix $NIFTI_dir/sub-$${subID}_cope_03.nii
 
     $AFNI_bin/3dcalc                                \
     -a $NIFTI_dir/sub-$${subID}_neutral_04.nii.gz         \
     -b $NIFTI_dir/sub-$${subID}_reward_04.nii.gz           \
-    -expr '(a+b)/2'                                     \
+    -c $NIFTI_dir/sub-$${subID}_mask.nii.gz                \
+    -expr '((a+b)*c)/2'                                     \
     -prefix $NIFTI_dir/sub-$${subID}_cope_04.nii 
 
     $AFNI_bin/3dcalc                                \
     -a $NIFTI_dir/sub-$${subID}_neutral_05.nii.gz         \
     -b $NIFTI_dir/sub-$${subID}_reward_05.nii.gz           \
-    -expr '(a+b)/2'                                     \
+    -c $NIFTI_dir/sub-$${subID}_mask.nii.gz                \
+    -expr '((a+b)*c)/2'                                     \
     -prefix $NIFTI_dir/sub-$${subID}_cope_05.nii
 
     $AFNI_bin/3dcalc                                \
     -a $NIFTI_dir/sub-$${subID}_neutral_06.nii.gz         \
     -b $NIFTI_dir/sub-$${subID}_reward_06.nii.gz           \
-    -expr '(a+b)/2'                                     \
+    -c $NIFTI_dir/sub-$${subID}_mask.nii.gz                \
+    -expr '((a+b)*c)/2'                                     \
     -prefix $NIFTI_dir/sub-$${subID}_cope_06.nii 
 
     $AFNI_bin/3dcalc                                \
     -a $NIFTI_dir/sub-$${subID}_neutral_07.nii.gz         \
     -b $NIFTI_dir/sub-$${subID}_reward_07.nii.gz           \
-    -expr '(a+b)/2'                                     \
+    -c $NIFTI_dir/sub-$${subID}_mask.nii.gz                \
+    -expr '((a+b)*c)/2'                                     \
     -prefix $NIFTI_dir/sub-$${subID}_cope_07.nii
 
 done
