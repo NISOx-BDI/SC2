@@ -48,10 +48,10 @@ conditions = {...
 %spm('defaults','FMRI');
 %copy_unzip_func(fmriprep_dir, spm_dir)
 %run_subject_level_analyses(fmriprep_dir, 'template_ds120_SPM_level1', level1_dir, num_ignored_volumes, TR);
-%run_group_level_analysis(level1_dir, 'template_ds120_SPM_level2', level2_dir, '0001');
+run_group_level_analysis(level1_dir, 'template_ds120_SPM_level2', level2_dir, '0001');
 %mean_mni_images(preproc_dir, level1_dir, mni_dir);
 
 % Analyses where AFNI's subject-level results are run through SPM's group-level model
 afni_level1_dir = fullfile(home_dir,'results','ds120','AFNI','LEVEL1');
 level2_dir_afni_subject_level = fullfile(spm_dir, 'LEVEL2_AFNI_SUBJECT');
-run_group_level_analysis(afni_level1_dir, 'template_ds120_SPM_level2_AFNI_level1', level2_dir_afni_subject_level, '0001');
+run_group_level_analysis(afni_level1_dir, 'template_ds120_SPM_level2_AFNI_level1', level2_dir_afni_subject_level, '0001', 'AFNI_level1');
