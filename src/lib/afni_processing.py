@@ -525,7 +525,7 @@ def create_confound_files(fmriprep_dir, confounds_dir, *args):
         rot_z_data = combined_regressor_data[["rot_z"]]
         rot_z_data.to_csv(os.path.join(confounds_dir, sub + '_' + 'combined_rot_z.1d'), index=None, sep='\t', header=False)
 
-def extract_design_columns(level1_dir, design_dir):
+def extract_design_columns(level1_dir, design_dir, *args):
     """
     For each sucject, exports each column of the run-level design matrix to a text-file so that the design can be inputted into FSL FEAT
     """
@@ -537,7 +537,12 @@ def extract_design_columns(level1_dir, design_dir):
     # Getting the number of condition regressors from the onset dir
     onsets_dir = os.path.join(level1_dir, os.pardir, 'ONSETS')
     sub_regressors = glob.glob(os.path.join(onsets_dir,'sub-01*.1d'))
-    nregressors = len(sub_regressors)
+
+    # Optional arg used for ds120, where there are 8 sine basis functions for each regressor
+    if args:
+        nregressors = len(sub_regressors)*8
+    else:
+        nregressors = len(sub_regressors)
 
     for sub_dir in sub_dirs:
         # Copying each subjects X.xmat.1D file to the design_dir and removing all the comment lines so the file only contains the X-matrix
