@@ -38,11 +38,11 @@ function create_afni_regressor_files(fmriprep_dir, out_dir, afni_regressors_dir,
             % Getting the motion regressors into one matrix
             regressor_data = importdata(regressor_files{j}, '\t');
             motion_regressor_mat = [regressor_data.data(:,find(strcmp(regressor_data.colheaders, 'trans_x'),1)), regressor_data.data(:,find(strcmp(regressor_data.colheaders, 'trans_y'),1)), regressor_data.data(:,find(strcmp(regressor_data.colheaders, 'trans_z'),1)), regressor_data.data(:,find(strcmp(regressor_data.colheaders, 'rot_x'),1)), regressor_data.data(:,find(strcmp(regressor_data.colheaders, 'rot_y'),1)), regressor_data.data(:,find(strcmp(regressor_data.colheaders, 'rot_z'),1))];
-            R = motion_regressor_mat(removed_TRs+1:end,:);
+            motion_regressor_mat = motion_regressor_mat(removed_TRs+1:end,:);
 
             % Concatenate the AFNI sine basis regressors and motion regressors 
-            final = [afni_regressor_mat, R];
-            save(fullfile(out_dir, [sub '_run-' num2str(j,'%02d') '_afni_regressors.mat']), 'final')
+            R = [afni_regressor_mat, motion_regressor_mat];
+            save(fullfile(out_dir, [sub '_run-' num2str(j,'%02d') '_afni_regressors.mat']), 'R')
         end
     end
 end
