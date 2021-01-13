@@ -50,7 +50,7 @@ function run_subject_level_analyses_afni_design(fmriprep_dir, sub_template, leve
             % Create the matlabbatch for this subject
             eval(sub_template);
             
-            save(fullfile(scripts_dir, [strrep(sub,'^','') '_level1.mat']), 'matlabbatch');
+            save(fullfile(scripts_dir, [strrep(sub,'^','') '_level1_afni_design.mat']), 'matlabbatch');
             spm_jobman('run', matlabbatch);
         end
     end
