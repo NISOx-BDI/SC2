@@ -44,7 +44,7 @@ function run_subject_level_analyses_afni_design(fmriprep_dir, sub_template, leve
                 fmris = fmris(num_ignored_volumes+1:end);
                 eval(['FUNC_RUN_' num2str(r) ' =  fmris;']);
                 afni_regressor_file = spm_select('FPList', afni_regressors_dir, [sub_run '.*\.mat']);
-                eval(['AFNI_REGRESSORS_RUN_' num2str(r) ' = motion_regressor_file;']);
+                eval(['AFNI_REGRESSORS_RUN_' num2str(r) ' = afni_regressor_file;']);
             end
             
             % Create the matlabbatch for this subject
