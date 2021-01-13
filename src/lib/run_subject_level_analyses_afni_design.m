@@ -6,7 +6,7 @@ function run_subject_level_analyses_afni_design(fmriprep_dir, sub_template, leve
 
     func_dir = fullfile(level1_dir, '..', 'FUNCTIONAL');
     scripts_dir = fullfile(level1_dir, '..', 'SCRIPTS');
-    arni_regressors_dir = fullfile(level1_dir, '..', 'AFNI_REGRESSORS');
+    afni_regressors_dir = fullfile(level1_dir, '..', 'AFNI_REGRESSORS');
     FUNC_DIR = func_dir; 
 
     if ~isdir(scripts_dir)
