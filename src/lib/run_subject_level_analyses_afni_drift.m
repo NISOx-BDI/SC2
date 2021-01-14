@@ -20,7 +20,6 @@ function run_subject_level_analyses_afni_drift(sub_template, level1_dir_afni_des
         
         copyfile(sub_dirs{i}, level1_dir_afni_drift);
         [~,sub,~] = fileparts(sub_dirs{i});
-        sub = ['^' sub];
 
         % Load the subject's SPM.mat and replace the drift basis
         load(fullfile(level1_dir_afni_drift, sub, 'SPM.mat'));
