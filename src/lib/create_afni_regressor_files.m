@@ -45,4 +45,23 @@ function create_afni_regressor_files(fmriprep_dir, out_dir, afni_regressors_dir,
             save(fullfile(out_dir, [sub '_run-' num2str(j,'%02d') '_afni_regressors.mat']), 'R')
         end
     end
+
+    % Finally, getting the AFNI drift basis vectors into a .mat and making the vectors orthonormal
+    afni_drift_files = cellstr(spm_select('FPList', afni_regressors_dir, 'afni_drift_basis_.*\.txt'));
+    afni_first_drift = importdata(afni_drift_files{1}, '\t');
+    afni_drift_mat = zeros(length(afni_first_drift), length(afni_drift_files));
+    afni_drift_mat(:,1) = afni_first_drift;
+
+    for k = 2:numel(afni_drift_files)
+        afni_drift_data = importdata(afni_drift_files{k}, '\t');
+        afni_drift_mat(:,k) = afni_drift_data;
+    end
+
+    % Orthogonalizing
+    afni_drift_mat = orth(afni_drift_mat);
+
+    % Removing the intercept
+    afni_drift_mat = afni_drift_mat(:, 2:end);
+    save(fullfile(out_dir, 'afni_drift_basis.mat'), 'afni_drift_mat'));
+
 end
