@@ -62,6 +62,6 @@ function create_afni_regressor_files(fmriprep_dir, out_dir, afni_regressors_dir,
 
     % Removing the intercept
     afni_drift_mat = afni_drift_mat(:, 2:end);
-    save(fullfile(out_dir, 'afni_drift_basis.mat'), 'afni_drift_mat'));
+    save(fullfile(out_dir, 'afni_drift_basis.mat'), 'afni_drift_mat');
 
 end
