@@ -26,7 +26,7 @@ function run_subject_level_analyses_afni_drift(sub_template, level1_dir_afni_des
         SPM.xX.K(1).X0 = afni_drift_mat;
 
         % Also change the working directory to the new LEVEL1_DRIFT directory
-        SPM.swd = level1_dir_afni_drift;
+        SPM.swd = fullfile(level1_dir_afni_drift, sub);
 
         save(fullfile(level1_dir_afni_drift, sub, 'SPM.mat'), 'SPM');
     end
