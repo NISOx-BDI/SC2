@@ -23,7 +23,7 @@ function run_subject_level_analyses_afni_drift(sub_template, level1_dir_afni_des
         [~,sub,~] = fileparts(sub_dirs{i});
 
         % Delete all the .nidm.zip files as they will be replaced
-        delete(spm_select('FPList',level1_dir_afni_drift, sub, '.*nidm.zip'));
+        delete(spm_select('FPList',level1_dir_afni_drift, [sub '.*nidm.zip']));
 
         % Load the subject's SPM.mat and replace the drift basis
         load(fullfile(level1_dir_afni_drift, sub, 'SPM.mat'));
@@ -39,7 +39,7 @@ function run_subject_level_analyses_afni_drift(sub_template, level1_dir_afni_des
         % Create the matlabbatch for this subject
         eval(sub_template);
         
-        save(fullfile(scripts_dir, [strrep(sub,'^','') '_level1_afni_design.mat']), 'matlabbatch');
+        save(fullfile(scripts_dir, [strrep(sub,'^','') '_level1_afni_drift.mat']), 'matlabbatch');
         spm_jobman('run', matlabbatch);
     end
 end
