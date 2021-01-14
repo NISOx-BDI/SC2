@@ -4,7 +4,7 @@ function run_subject_level_analyses_afni_drift(sub_template, level1_dir_afni_des
         mkdir(level1_dir_afni_drift)
     end
 
-    scripts_dir = fullfile(level1_dir, '..', 'SCRIPTS');
+    scripts_dir = fullfile(level1_dir_afni_drift, '..', 'SCRIPTS');
 
     if ~isdir(scripts_dir)
         mkdir(scripts_dir)
