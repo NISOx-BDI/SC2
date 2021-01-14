@@ -23,7 +23,7 @@ function run_subject_level_analyses_afni_drift(sub_template, level1_dir_afni_des
         [~,sub,~] = fileparts(sub_dirs{i});
 
         % Delete all the .nidm.zip files as they will be replaced
-        delete(fullfile(level1_dir_afni_drift, sub, '.*nidm.zip'));
+        delete(cellstr(spm_select('FPList',level1_dir_afni_drift, sub, '.*nidm.zip')));
 
         % Load the subject's SPM.mat and replace the drift basis
         load(fullfile(level1_dir_afni_drift, sub, 'SPM.mat'));
