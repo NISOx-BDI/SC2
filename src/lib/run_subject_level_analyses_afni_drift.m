@@ -13,7 +13,7 @@ function run_subject_level_analyses_afni_drift(sub_template, level1_dir_afni_des
     sub_dirs = cellstr(spm_select('FPList',level1_dir_afni_design, 'dir','sub-*'));
 
     % Load in the afni drift basis
-    afni_drift = load(fullfile(afni_regressors_dir), 'afni_drift_basis.mat');   
+    afni_drift = load(fullfile(afni_regressors_dir, 'afni_drift_basis.mat'));   
     afni_drift_mat = afni_drift.afni_drift_mat;
     
     for i = 1:numel(sub_dirs)
