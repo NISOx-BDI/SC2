@@ -17,7 +17,8 @@ function run_subject_level_analyses_afni_drift(sub_template, level1_dir_afni_des
     afni_drift_mat = afni_drift.afni_drift_mat;
     
     for i = 1:numel(sub_dirs)
-        
+        clear SPM_MAT matlabbatch
+
         copyfile(sub_dirs{i}, level1_dir_afni_drift);
         [~,sub,~] = fileparts(sub_dirs{i});
 
@@ -29,5 +30,13 @@ function run_subject_level_analyses_afni_drift(sub_template, level1_dir_afni_des
         SPM.swd = fullfile(level1_dir_afni_drift, sub);
 
         save(fullfile(level1_dir_afni_drift, sub, 'SPM.mat'), 'SPM');
+
+        SPM_MAT = fullfile(level1_dir_afni_drift, sub, 'SPM.mat'); 
+
+        % Create the matlabbatch for this subject
+        eval(sub_template);
+        
+        save(fullfile(scripts_dir, [strrep(sub,'^','') '_level1_afni_design.mat']), 'matlabbatch');
+        spm_jobman('run', matlabbatch);
     end
 end
