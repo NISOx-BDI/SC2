@@ -19,10 +19,12 @@ function run_subject_level_analyses_afni_drift(sub_template, level1_dir_afni_des
     for i = 1:numel(sub_dirs)
         
         copyfile(sub_dirs{i}, level1_dir_afni_drift);
+        [~,sub,~] = fileparts(sub_dirs{i});
+        sub = ['^' sub];
 
         % Load the subject's SPM.mat and replace the drift basis
-        load(fullfile(level1_dir_afni_drift, sub_dirs{i}, 'SPM.mat'));
+        load(fullfile(level1_dir_afni_drift, sub, 'SPM.mat'));
         SPM.xX.K(1).X0 = afni_drift_mat;
-        save(fullfile(level1_dir_afni_drift, sub_dirs{i}, 'SPM.mat'), 'SPM');
+        save(fullfile(level1_dir_afni_drift, sub, 'SPM.mat'), 'SPM');
     end
 end
