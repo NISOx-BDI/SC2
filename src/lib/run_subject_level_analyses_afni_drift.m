@@ -14,10 +14,11 @@ function run_subject_level_analyses_afni_drift(sub_template, level1_dir_afni_dri
     afni_drift = load(fullfile(afni_regressors_dir, 'afni_drift_basis.mat'));   
     afni_drift_mat = afni_drift.afni_drift_mat;
     
+    sub_dirs = cellstr(spm_select('FPList',level1_dir_afni_drift, 'dir','sub-*'));
+
     for i = 1:numel(sub_dirs)
         clear SPM_MAT matlabbatch
 
-        copyfile(sub_dirs{i}, level1_dir_afni_drift);
         [~,sub,~] = fileparts(sub_dirs{i});
 
         % Load the subject's SPM.mat and replace the drift basis
