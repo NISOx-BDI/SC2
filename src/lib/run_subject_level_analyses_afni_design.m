@@ -1,7 +1,14 @@
-function run_subject_level_analyses_afni_design(fmriprep_dir, sub_template, level1_dir, num_ignored_volumes, TR)
+function run_subject_level_analyses_afni_design(fmriprep_dir, sub_template, level1_dir, num_ignored_volumes, TR, varargin)
     
     if ~isdir(level1_dir)
         mkdir(level1_dir)
+    end
+
+    % An optional argument means that we are doing the AFNI design + drift analysis rather than just the AFNI design analysis
+    if length(varargin) == 0 
+        end_of_file_name = 'design';
+    else
+        end_of_file_name = 'drift';
     end
 
     func_dir = fullfile(level1_dir, '..', 'FUNCTIONAL');
@@ -50,7 +57,7 @@ function run_subject_level_analyses_afni_design(fmriprep_dir, sub_template, leve
             % Create the matlabbatch for this subject
             eval(sub_template);
             
-            save(fullfile(scripts_dir, [strrep(sub,'^','') '_level1_afni_design.mat']), 'matlabbatch');
+            save(fullfile(scripts_dir, [strrep(sub,'^','') sprintf('_level1_afni_%s.mat', end_of_file_name)]), 'matlabbatch');
             spm_jobman('run', matlabbatch);
         end
     end
