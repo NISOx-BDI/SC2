@@ -8,7 +8,7 @@ function run_subject_level_analyses_afni_design(fmriprep_dir, sub_template, leve
     if length(varargin) == 0 
         end_of_file_name = 'design';
     else
-        end_of_file_name = 'drift';
+        end_of_file_name = varargin{1};
     end
 
     func_dir = fullfile(level1_dir, '..', 'FUNCTIONAL');
