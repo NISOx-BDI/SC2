@@ -31,7 +31,7 @@ function run_subject_level_analyses_afni_drift(sub_template, level1_dir_afni_dri
         % Create the matlabbatch for this subject
         eval(sub_template);
         
-        save(fullfile(scripts_dir, [strrep(sub,'^','') '_level1_afni_drift.mat']), 'matlabbatch');
+        save(fullfile(scripts_dir, [strrep(sub,'^','') '_level1_afni_drift_2.mat']), 'matlabbatch');
         spm_jobman('run', matlabbatch);
     end
 end
