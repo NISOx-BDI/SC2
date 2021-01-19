@@ -40,8 +40,8 @@ function run_subject_level_analyses_afni_design(fmriprep_dir, sub_template, leve
                 rmdir(OUT_DIR,'s')
             end
             
-            if exist(fullfile(scripts_dir, [strrep(sub,'^','') '_level1.mat']))
-                delete(fullfile(scripts_dir, [strrep(sub,'^','') '_level1.mat']))
+            if exist(fullfile(scripts_dir, [strrep(sub,'^','') sprintf('_level1_afni_%s.mat', end_of_file_name)]))
+                delete(fullfile(scripts_dir, [strrep(sub,'^','') sprintf('_level1_afni_%s.mat', end_of_file_name)]))
             end
 
             fmri_files = cellstr(spm_select('List', func_dir, [sub '.*\-preproc_bold.nii']));
