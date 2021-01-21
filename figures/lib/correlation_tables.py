@@ -134,7 +134,7 @@ def new_correlation_matrix(df, title):
     ax1.set_xticklabels(labels,fontsize=12)
     ax1.set_yticklabels(labels,fontsize=12)
     # Add colorbar, make sure to specify tick locations to match desired ticklabels
-    fig.colorbar(cax, ticks=[0.5,7/12,8/12,9/12,10/12,11/12,1], fraction=0.046, pad=0.04)
+    fig.colorbar(cax, ticks=[0.5,1], fraction=0.046, pad=0.04)
     ax1.spines['right'].set_visible(False)
     ax1.spines['top'].set_visible(False)
     ax1.yaxis.set_ticks_position('none')
