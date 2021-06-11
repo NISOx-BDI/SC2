@@ -171,6 +171,7 @@ def consensus_analysis(t_stat_maps, N, study,  max_activation, x_coords, y_coord
     tdata = timg.get_fdata()[:, :, :, 0]
     threshdata = (pdata > 0.95)*tdata
     threshimg = nibabel.Nifti1Image(np.nan_to_num(threshdata), affine=timg.affine)
+    thresimg_file = threshimg.to_filename('./img/' + study + '_consensus_t_thresholded.nii.gz')
     
     pmap_neg = os.path.join('img', study + '_consensus_1-fdr_neg.nii.gz')
     tmap_neg = os.path.join('img', study + '_consensus_t_neg.nii.gz')
@@ -180,6 +181,7 @@ def consensus_analysis(t_stat_maps, N, study,  max_activation, x_coords, y_coord
     tdata_neg = timg_neg.get_fdata()[:, :, :, 0]
     threshdata_neg = (pdata_neg > 0.95)*tdata_neg
     threshimg_neg = nibabel.Nifti1Image(np.nan_to_num(threshdata_neg), affine=timg_neg.affine)
+    threshimg_neg_file = threshimg_neg.to_filename('./img/' + study + '_consensus_t_neg_thresholded.nii.gz')
 
     
     # Combine activations and deactivations in a single image 

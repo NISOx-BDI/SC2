@@ -100,6 +100,16 @@ def download_data(nv_collection, study, output_dir):
             # ds120 uses F-stats no T-stats
             (('Positive_clustered_t_stat.nii.gz', 'afni_exc_set_pos.nii.gz'),) +
             (('3dMEMA_result_t_stat_masked.nii.gz', 'afni_stat.nii.gz'),))
+        if study not in ('ds109'):
+            # We also need to download the 'old' results for ds001
+            afni_images = (
+                afni_images +
+                # There is no deactivations in ds120 with AFNI
+                (('Negative_clustered_t_stat_1.nii.gz', 'old_afni_exc_set_neg.nii.gz'),) +
+                # ds120 uses F-stats no T-stats
+                (('Positive_clustered_t_stat_1.nii.gz', 'old_afni_exc_set_pos.nii.gz'),) +
+                (('3dMEMA_result_t_stat_masked_1.nii.gz', 'old_afni_stat.nii.gz'),) +
+                (('mask_1.nii.gz', 'old_afni_mask.nii.gz'),))
     else:
         # ds120 uses F-stats no T-stats
         afni_images = (
@@ -143,6 +153,18 @@ def download_data(nv_collection, study, output_dir):
             ('05FWECorrected_OneSampT_pos_exc_set_6.nii.gz', 'fsl_spm_subject_level_perm_exc_set_pos.nii.gz'),
             ('05FWECorrected_OneSampT_neg_exc_set_6.nii.gz', 'fsl_spm_subject_level_perm_exc_set_neg.nii.gz'),
         )
+        if study not in ('ds109'):
+            # Download 'old' ds001 results
+            perm_images = ( perm_images +
+                (('perm_ttest++_Clustsim_result_t_stat_masked_1.nii.gz', 'old_afni_perm.nii.gz'),) +
+                (('perm_Positive_clustered_t_stat_1.nii.gz', 'old_afni_perm_exc_set_pos.nii.gz'),) +
+                (('perm_Negative_clustered_t_stat_1.nii.gz', 'old_afni_perm_exc_set_neg.nii.gz'),) +
+                (('OneSampT_tstat1_7.nii.gz', 'old_fsl_perm.nii.gz'),) +
+                (('05FWECorrected_OneSampT_pos_exc_set_7.nii.gz', 'old_fsl_perm_exc_set_pos.nii.gz'),) +
+                (('05FWECorrected_OneSampT_neg_exc_set_7.nii.gz', 'old_fsl_perm_exc_set_neg.nii.gz'),) +
+                (('snpmT%2B_1.nii.gz', 'old_spm_perm.nii.gz'),) +
+                (('SnPM_pos_filtered_1.nii.gz', 'old_spm_perm_exc_set_pos.nii.gz'),) +
+                (('SnPM_neg_filtered_1.nii.gz', 'old_spm_perm_exc_set_neg.nii.gz'),))
     else:
         # No permutation analyses for ds120
         perm_images = ()
@@ -173,6 +195,7 @@ def download_data(nv_collection, study, output_dir):
         
         to_download = (
             afni_images + perm_images)
+        print(to_download)
 
     for image, local_name in to_download:
         url = "http://neurovault.org/media/images/" + nv_collection + '/' + image
