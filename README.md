@@ -16,12 +16,8 @@ Supporting code to perform the analyses and create the figures of the manuscript
 
 To cite this repository, please cite the corresponding manuscript: 
 
-Alexander Bowring, Camille Maumet, Thomas Nichols, "Isolating the sources of pipeline-variability in group-level task-fMRI results" (2021). _Human Brain Mapping_, https://doi.org/10.1002/hbm.25713 .
+Alexander Bowring, Thomas Nichols*, Camille Maumet* "Isolating the sources of pipeline-variability in group-level task-fMRI results" (2021). _Human Brain Mapping_, https://doi.org/10.1002/hbm.25713 .
 
-
-# Contents overview
-
-<Summarise what's in this repository>
 
 ## Reproducing figures and tables
 
