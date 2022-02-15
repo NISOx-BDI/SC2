@@ -29,6 +29,50 @@ Alexander Bowring, Thomas Nichols*, Camille Maumet* "Isolating the sources of pi
 
 ### Fig. 1
 
+1. From a Terminal, run:
+
+    ```
+    jupyter notebook ./figures/ds001_notebook.ipynb
+    ```
+2. Run all cells
+
+#### First row: AFNI to FSL parametric
+
+#### Second row: AFNI to FSL non-parametric
+
+#### Last row: correlations
+
+##### Correlation AFNI/FSL PARAMETRIC: 
+
+Displayed by the cell that includes: 
+```
+correlation_tables.new_correlation_tables(old_afni_stat_file, afni_stat_file, fsl_afni_subject_level_stat_file, afni_drift_stat_file, afni_design_stat_file, fsl_stat_file, old_fsl_stat_file, title= "Correlations: AFNI and FSL")
+```
+
+##### Correlation AFNI/FSL PERMUTATION:
+
+Displayed by the cell that includes: 
+```
+correlation_tables.new_correlation_tables(old_afni_perm_z, afni_perm, fsl_afni_subject_level_perm, afni_drift_perm, afni_design_perm, fsl_perm, old_fsl_perm, "Perm Correlations: AFNI and FSL", 15)
+```
+
+##### DICE (+ve Activations): AFNI/FSL PARAMETRIC
+
+Displayed by the cell that includes: 
+```
+new_dice.new_dice(old_afni_exc_set_file, afni_exc_set_file, fsl_afni_subject_level_exc_set_file, afni_drift_exc_set_file, afni_design_exc_set_file, fsl_exc_set_file, old_fsl_exc_set_file,
+                  old_afni_stat_file, afni_stat_file, fsl_afni_subject_level_stat_file, afni_drift_stat_file, afni_design_stat_file, fsl_stat_file, old_fsl_stat_file,
+                 Title='Dice (Positive Activations): AFNI and FSL')
+```
+
+
+##### DICE (+ve Activations): AFNI/FSL PERMUTATION
+Displayed by the cell that includes: 
+```
+new_dice.new_dice(old_afni_perm_pos_exc, afni_perm_pos_exc, fsl_afni_subject_level_perm_pos_exc, afni_drift_perm_pos_exc, afni_design_perm_pos_exc, fsl_perm_pos_exc, old_fsl_perm_pos_exc,
+                  old_afni_perm_z, afni_perm, fsl_afni_subject_level_perm, afni_drift_perm, afni_design_perm, fsl_perm, old_fsl_perm,
+                 Title='Perm Dice (Positive Activations): AFNI and FSL')
+```
 ### Fig. 2
 
 ## Reproducing full analysis
