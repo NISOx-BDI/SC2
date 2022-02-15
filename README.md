@@ -27,7 +27,7 @@ Alexander Bowring, Thomas Nichols*, Camille Maumet* "Isolating the sources of pi
 
 ### Table 1
 
-### Fig. 1
+### Fig. 2
 
 1. From a Terminal, run:
 
@@ -36,11 +36,11 @@ Alexander Bowring, Thomas Nichols*, Camille Maumet* "Isolating the sources of pi
     ```
 2. Run all cells
 
-#### First row: AFNI to FSL parametric
+#### First row: ds001 AFNI to FSL parametric
 
-#### Second row: AFNI to FSL non-parametric
+#### Second row: ds001  AFNI to FSL non-parametric
 
-#### Last row: correlations
+#### Last row: ds001 AFNI to FSL correlations
 
 ##### Correlation AFNI/FSL PARAMETRIC: 
 
@@ -73,7 +73,48 @@ new_dice.new_dice(old_afni_perm_pos_exc, afni_perm_pos_exc, fsl_afni_subject_lev
                   old_afni_perm_z, afni_perm, fsl_afni_subject_level_perm, afni_drift_perm, afni_design_perm, fsl_perm, old_fsl_perm,
                  Title='Perm Dice (Positive Activations): AFNI and FSL')
 ```
-### Fig. 2
+### Fig. 3
+
+1. From a Terminal, run:
+
+    ```
+    jupyter notebook ./figures/ds109_notebook.ipynb
+    ```
+2. Run all cells
+
+#### First row: ds109 AFNI to FSL parametric
+
+#### Second row: ds109  AFNI to FSL non-parametric
+
+#### Last row: ds109 AFNI to FSL correlations
+
+##### Correlation AFNI/FSL PARAMETRIC: 
+
+Displayed by the cell that includes: 
+```
+ 
+```
+
+##### Correlation AFNI/FSL PERMUTATION:
+
+Displayed by the cell that includes: 
+```
+ 
+```
+
+##### DICE (+ve Activations): AFNI/FSL PARAMETRIC
+
+Displayed by the cell that includes: 
+```
+ 
+```
+
+
+##### DICE (+ve Activations): AFNI/FSL PERMUTATION
+Displayed by the cell that includes: 
+```
+ 
+```
 
 ## Reproducing full analysis
 
