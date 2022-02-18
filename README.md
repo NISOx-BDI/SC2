@@ -8,10 +8,10 @@ Supporting code to perform the analyses and create the figures of the manuscript
    * [Contents overview](#contents-overview)
    * [Reproducing figures and tables](#reproducing-figures-and-tables)
       * [Fig. 2](#fig-2)
-      * [Fig. 3](#fig-2)
-      * [Fig. 4](#fig-2)
-      * [Fig. 5](#fig-2)
-      * [Fig. 6](#fig-2)
+      * [Fig. 3](#fig-3)
+      * [Fig. 4](#fig-4)
+      * [Fig. 5](#fig-5)
+      * [Fig. 6](#fig-6)
    * [Reproducing full analysis](#reproducing-full-analysis)
 
 ## How to cite?
