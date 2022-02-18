@@ -82,39 +82,41 @@ new_dice.new_dice(old_afni_perm_pos_exc, afni_perm_pos_exc, fsl_afni_subject_lev
     ```
 2. Run all cells
 
-#### First row: ds109 AFNI to FSL parametric
+### Fig. 4
 
-#### Second row: ds109  AFNI to FSL non-parametric
+1. From a Terminal, run:
 
-#### Last row: ds109 AFNI to FSL correlations
+    ```
+    jupyter notebook ./figures/ds120_notebook.ipynb
+    ```
+2. Run all cells
 
-##### Correlation AFNI/FSL PARAMETRIC: 
+### Fig. 5
 
-Displayed by the cell that includes: 
+1. From a Terminal, run:
+
+    ```
+    jupyter notebook ./figures/ds001_notebook.ipynb
+    ```
+2. The consensus analysis is displayed by the cell that stars with:
 ```
- 
-```
-
-##### Correlation AFNI/FSL PERMUTATION:
-
-Displayed by the cell that includes: 
-```
- 
-```
-
-##### DICE (+ve Activations): AFNI/FSL PARAMETRIC
-
-Displayed by the cell that includes: 
-```
- 
+from lib import consensus_analysis
 ```
 
+### Fig. 6
 
-##### DICE (+ve Activations): AFNI/FSL PERMUTATION
-Displayed by the cell that includes: 
+1. From a Terminal, run:
+
+    ```
+    jupyter notebook ./figures/ds109_notebook.ipynb
+    ```
+2. The consensus analysis is displayed by the cell that stars with:
 ```
- 
+from lib import consensus_analysis
 ```
+
+
+
 
 ## Reproducing full analysis
 
