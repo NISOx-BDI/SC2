@@ -7,9 +7,11 @@ Supporting code to perform the analyses and create the figures of the manuscript
    * [How to cite?](#how-to-cite)
    * [Contents overview](#contents-overview)
    * [Reproducing figures and tables](#reproducing-figures-and-tables)
-      * [Table 1](#table-1)
-      * [Fig. 1](#fig-1)
       * [Fig. 2](#fig-2)
+      * [Fig. 3](#fig-2)
+      * [Fig. 4](#fig-2)
+      * [Fig. 5](#fig-2)
+      * [Fig. 6](#fig-2)
    * [Reproducing full analysis](#reproducing-full-analysis)
 
 ## How to cite?
@@ -20,12 +22,6 @@ Alexander Bowring, Thomas Nichols*, Camille Maumet* "Isolating the sources of pi
 
 
 ## Reproducing figures and tables
-
-<Instructions on how to use summary/derived data in the `results` directory to create figures and tables>
-
-<Specify precise steps, including any datasets that need to be downloaded and path variables that need to be set>
-
-### Table 1
 
 ### Fig. 2
 
